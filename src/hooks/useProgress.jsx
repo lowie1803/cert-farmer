@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const ProgressContext = createContext(null);
 
-const STORAGE_KEY = 'netstudy_progress';
+const STORAGE_KEY = 'certfarmer_progress';
 
 /**
  * Progress data structure:

@@ -18,10 +18,10 @@ export default function Layout() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <div className="w-8 h-8 bg-amber-500 rounded-lg flex items-center justify-center font-bold text-slate-900 group-hover:bg-amber-400 transition-colors">
-              N
+              C
             </div>
             <span className="font-semibold text-white hidden sm:block">
-              NetStudy
+              CertFarmer
             </span>
           </Link>
           
@@ -57,7 +57,7 @@ export default function Layout() {
       {/* Footer */}
       <footer className="border-t border-slate-800 py-6 mt-12">
         <div className="max-w-5xl mx-auto px-4 text-center text-sm text-slate-500">
-          <p>NetStudy — CCNA Preparation Platform</p>
+          <p>CertFarmer — Software Engineering Certification Platform</p>
           <p className="mt-1">
             Built for efficient learning with Vietnamese language support
           </p>
