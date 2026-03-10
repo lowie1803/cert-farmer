@@ -74,8 +74,9 @@ export default function Layout() {
         <div className="max-w-5xl mx-auto px-4 text-center text-sm text-slate-500">
           <p>CertFarmer — Software Engineering Certification Platform</p>
           <p className="mt-1">
-            Built for efficient learning with Vietnamese language support
+            Copyright by lowie1803 &copy; 2026. All rights reserved.
           </p>
+          <p>100% làm từ tình iu của anh Dũng dành cho bé Phanh 😘</p>
         </div>
       </footer>
     </div>

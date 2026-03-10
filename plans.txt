@@ -1,8 +1,235 @@
-Here are my upcoming plans for this website:
+# Scale CCNA Course to Full 200-301 v1.1 Syllabus
 
-- UI: It should show users' progress throughout their study. This can be done by local storage or building authentications.
-- Data: There should be either
-   + a database, containing quizzes, answers, course materials, references, ... so that it's easier to manage data. But I think it might need some cloud storage so can consider that for later.
-   + a file system that organizes markdown course materials & json containing quizzes.
+## Context
 
-The current way of managing courses is not scalable yet, since everything is in 2 files right now.
+CertFarmer currently has 5 modules covering a fraction of the CCNA 200-301 syllabus. The goal is to expand to the full 6-domain syllabus (~20 modules), add midterm/final exams, and build a quiz bank of ~230 questions. No usable free JSON quiz bank exists — we'll generate our own via a Claude API script.
+
+**Reference resources for content accuracy:**
+- [Jeremy's IT Lab](https://courses.jeremysitlab.com/p/ccna) — free 63-day YouTube course, community notes at github.com/psaumur/CCNA_Course_Notes
+- [NetworkLessons.com](https://networklessons.com/cisco/ccna-200-301) — 100+ lessons in 13 units
+- [Study-CCNA.com](https://study-ccna.com/) — 100+ free tutorials, 13 chapters
+
+---
+
+## Complete Module Structure (20 modules)
+
+Existing modules are renumbered but keep their IDs (progress preserved via lesson IDs in localStorage). New modules marked with `*`.
+
+```
+# Domain 1: Network Fundamentals (20%)
+001_network-fundamentals          ← EXISTING (id: network-fundamentals)
+002_cabling-and-topology        * ← cabling types, fiber/copper, wireless principles, PoE
+003_ipv6-fundamentals           * ← IPv6 addressing, types, EUI-64, SLAAC, DHCPv6
+004_virtualization-switching    * ← VMs, containers, cloud models, MAC learning, switching concepts
+
+# Domain 2: Network Access (20%)
+005_network-access                ← EXISTING (id: network-access)
+006_stp-etherchannel            * ← STP/RSTP, port states, EtherChannel/LACP, CDP/LLDP
+007_wireless-architectures      * ← AP modes, WLC, WLAN config, device management (SSH/Telnet)
+
+008_midterm-1                   * ← EXAM: 40 questions covering domains 1+2
+
+# Domain 3: IP Connectivity (25%)
+009_ip-connectivity               ← EXISTING (id: ip-connectivity)
+010_routing-fundamentals        * ← routing table, AD, longest match, static/default/floating routes
+011_ospf                        * ← single-area OSPFv2, neighbors, DR/BDR, router ID, config
+012_fhrp                        * ← HSRP/VRRP/GLBP concepts
+
+# Domain 4: IP Services (10%)
+013_ip-services                   ← EXISTING (id: ip-services) — ADD missing quiz
+014_network-services            * ← NTP, SNMP, syslog, QoS (DSCP/queuing), SSH, TFTP/FTP
+
+015_midterm-2                   * ← EXAM: 40 questions covering domains 3+4
+
+# Domain 5: Security Fundamentals (15%)
+016_security-fundamentals         ← EXISTING (id: security-fundamentals) — ADD missing quiz
+017_network-security            * ← passwords, VPNs (IPsec), L2 security (DHCP snooping, DAI, port security), AAA, wireless security (WPA2/3)
+
+# Domain 6: Automation & Programmability (10%)
+018_automation-fundamentals     * ← SDN, control/data plane, DNA Center, intent-based networking
+019_network-programmability     * ← REST APIs, CRUD, JSON/XML, Ansible, Terraform, AI/ML in networking
+
+020_final-exam                  * ← EXAM: 60 questions covering all 6 domains
+```
+
+**Totals:** 17 study modules (~38 note lessons, ~17 quizzes ≈ 90 questions) + 3 exams (140 questions) = ~230 questions
+
+---
+
+## Step 1: Add exam infrastructure (code changes)
+
+### 1a. ExamView component — `src/components/ExamView.jsx` (new, ~200 lines)
+
+Differences from QuizView:
+
+| Feature | QuizView | ExamView |
+|---------|----------|----------|
+| Feedback | After each question | Only at end |
+| Questions | 4-5 | 40-60 |
+| Timer | None | Countdown (45/90 min) |
+| Navigation | Sequential | Question palette (jump, flag for review) |
+| Pass threshold | 70% | 80% (matches Cisco) |
+| Order | Fixed | Shuffled per attempt |
+
+**Phases:** intro → active → review → results
+- `intro`: exam info + "Start Exam" button
+- `active`: question display + navigation grid + timer + flag button
+- `review`: summary of answered/unanswered/flagged, confirm submit
+- `results`: score, per-domain breakdown (optional `domain` field on questions), pass/fail, review explanations
+
+### 1b. Update LessonPage.jsx
+
+- Import ExamView
+- Add third branch: `lesson.type === 'exam'` → `<ExamView>` with `timeLimit` and `passingScore` from lesson metadata
+- Hide prev/next nav for exam lessons
+- Add `tag-exam` to the type tag switch
+
+### 1c. Update ModulePage.jsx + Dashboard.jsx
+
+- Add `tag-exam` rendering in lesson type tags
+- Dashboard: add `module.category === 'exam'` styling (distinct card appearance — gold border)
+- Optional: add domain headers in module list using `module.domain` field from module.json
+
+### 1d. CSS — `src/styles/index.css`
+
+```css
+.tag-exam {
+  @apply text-xs px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300;
+}
+```
+
+### 1e. module.json schema for exams
+
+```json
+{
+  "id": "midterm-1",
+  "title": "Midterm 1: Fundamentals & Access",
+  "icon": "📋",
+  "description": "40 questions covering Domains 1-2",
+  "category": "exam",
+  "lessons": [{
+    "id": "midterm-1-exam",
+    "title": "Midterm Exam 1",
+    "type": "exam",
+    "timeLimit": 45,
+    "passingScore": 80
+  }]
+}
+```
+
+**No changes needed to `contentLoader.js`** — exam JSON files use the same `{ questions: [...] }` schema and get auto-wired by filename matching.
+
+---
+
+## Step 2: Fill existing gaps
+
+- Add `ip-services-quiz.json` (5 questions) to `013_ip-services/`, update its module.json
+- Add `security-quiz.json` (5 questions) to `016_security-fundamentals/`, update its module.json
+
+---
+
+## Step 3: Content generation tooling
+
+### 3a. `scripts/syllabus-outline.json` — topic definitions
+
+Manually authored file defining what each module/lesson should cover:
+```json
+{
+  "modules": {
+    "cabling-and-topology": {
+      "domain": 1,
+      "icon": "🔌",
+      "description": "Physical infrastructure and cabling",
+      "lessons": {
+        "cabling-types": {
+          "title": "Cabling Types & Topology",
+          "subtopics": ["UTP Cat5e/6/6a", "straight-through vs crossover", "single-mode vs multi-mode fiber", "PoE 802.3af/at/bt"]
+        },
+        "wireless-principles": {
+          "title": "Wireless Principles",
+          "subtopics": ["802.11 standards", "2.4 vs 5 GHz", "RF channels", "SSID/BSS/ESS"]
+        }
+      },
+      "quizCount": 5
+    }
+  },
+  "exams": {
+    "midterm-1": { "domains": [1,2], "questionCount": 40, "timeLimit": 45 },
+    "midterm-2": { "domains": [3,4], "questionCount": 40, "timeLimit": 45 },
+    "final-exam": { "domains": [1,2,3,4,5,6], "questionCount": 60, "timeLimit": 90 }
+  }
+}
+```
+
+### 3b. `scripts/generate-content.js` — Claude API content generator
+
+Node script (requires `ANTHROPIC_API_KEY` env var) that:
+1. Reads `syllabus-outline.json`
+2. For each lesson without a `.md` file → calls Claude API with a structured prompt → writes `.md`
+3. For each module without a quiz `.json` → generates quiz questions → writes `.json`
+4. For each exam → generates questions with `domain` tags → writes exam `.json`
+5. Creates `module.json` for any new module directories
+6. Idempotent — skips files that already exist (run incrementally)
+
+**Dependency:** `npm install @anthropic-ai/sdk` (dev dependency)
+
+### 3c. `scripts/validate-content.js` — content validator
+
+Checks all content files for:
+- Every lesson in module.json has a matching .md or .json file
+- Quiz schema validity (4 options, correct in 0-3, explanation present)
+- No duplicate question IDs within a file
+- Exam questions have `domain` field
+- Minimum word count on .md files (200+ words)
+
+---
+
+## Step 4: Scaffold new modules + renumber existing
+
+- Rename existing directories: 002→005, 003→009, 004→013, 005→016 (001 stays)
+- Create all new module directories with module.json files
+- Update `course.json` modules array + bump version to "1.1"
+
+---
+
+## Step 5: Generate content (iterative)
+
+Run `generate-content.js` to produce all .md and .json files, then manually review for accuracy against Cisco documentation and the reference resources listed above.
+
+---
+
+## Step 6: Glossary expansion
+
+Add new terms to `src/data/glossary.js` for concepts introduced in new modules (OSPF, HSRP, SDN, etc.).
+
+---
+
+## Files modified/created summary
+
+| File | Action |
+|------|--------|
+| `src/components/ExamView.jsx` | CREATE — exam component |
+| `src/pages/LessonPage.jsx` | MODIFY — add exam type branch |
+| `src/pages/ModulePage.jsx` | MODIFY — exam tag display |
+| `src/pages/Dashboard.jsx` | MODIFY — exam module styling, domain headers |
+| `src/styles/index.css` | MODIFY — add `.tag-exam` |
+| `src/content/ccna/course.json` | MODIFY — full module list, version 1.1 |
+| `src/content/ccna/013_ip-services/` | MODIFY — add quiz, update module.json |
+| `src/content/ccna/016_security-fundamentals/` | MODIFY — add quiz, update module.json |
+| `src/content/ccna/002-020_*/` | CREATE — 15 new module directories with all files |
+| `scripts/syllabus-outline.json` | CREATE — topic definitions |
+| `scripts/generate-content.js` | CREATE — Claude API generation script |
+| `scripts/validate-content.js` | CREATE — content validator |
+| `src/data/glossary.js` | MODIFY — add new terms |
+
+**No changes:** `contentLoader.js`, `useProgress.jsx`, `QuizView.jsx`, `App.jsx`
+
+---
+
+## Verification
+
+1. After Step 1: create a test exam module, verify ExamView renders with timer/navigation/results
+2. After Step 2: verify existing quiz flow still works, check localStorage progress intact
+3. After Step 4: `npm run build` succeeds with all 20 module directories
+4. After Step 5: `node scripts/validate-content.js` passes, manual spot-check of generated content
+5. Full end-to-end: navigate all modules, complete quizzes, take midterm, verify progress tracking
