@@ -1,0 +1,18 @@
+{
+  "id": "security-fundamentals",
+  "title": "Security Fundamentals",
+  "icon": "🔒",
+  "description": "Network security concepts and configurations",
+  "lessons": [
+    {
+      "id": "security-concepts",
+      "title": "Security Concepts",
+      "type": "notes"
+    },
+    {
+      "id": "acl",
+      "title": "Access Control Lists",
+      "type": "notes"
+    }
+  ]
+}

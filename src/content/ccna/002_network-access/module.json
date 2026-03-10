@@ -1,0 +1,30 @@
+{
+  "id": "network-access",
+  "title": "Network Access",
+  "icon": "🔌",
+  "description": "Ethernet, switching, and VLANs",
+  "lessons": [
+    {
+      "id": "ethernet-switching",
+      "title": "Ethernet & Switching",
+      "type": "notes"
+    },
+    {
+      "id": "vlans",
+      "title": "VLANs & Trunking",
+      "type": "notes",
+      "resources": [
+        {
+          "type": "video",
+          "title": "VLAN Deep Dive",
+          "url": "https://www.youtube.com/watch?v=MmwF1oHOvmg"
+        }
+      ]
+    },
+    {
+      "id": "switching-quiz",
+      "title": "Switching Quiz",
+      "type": "quiz"
+    }
+  ]
+}

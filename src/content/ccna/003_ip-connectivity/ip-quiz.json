@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "How many usable host addresses are in a /26 network?",
+      "options": [
+        "64",
+        "62",
+        "30",
+        "126"
+      ],
+      "correct": 1,
+      "explanation": "A /26 has 6 host bits. 2⁶ = 64, minus 2 for network and broadcast = 62 usable hosts."
+    },
+    {
+      "id": "q2",
+      "question": "Which address range is private (RFC 1918)?",
+      "options": [
+        "192.0.0.0/8",
+        "172.16.0.0/12",
+        "168.0.0.0/8",
+        "11.0.0.0/8"
+      ],
+      "correct": 1,
+      "explanation": "RFC 1918 private ranges are: 10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16."
+    },
+    {
+      "id": "q3",
+      "question": "What is the broadcast address for 192.168.1.0/25?",
+      "options": [
+        "192.168.1.255",
+        "192.168.1.127",
+        "192.168.1.128",
+        "192.168.1.63"
+      ],
+      "correct": 1,
+      "explanation": "/25 gives block size of 128. Network is .0, broadcast is .127 (one less than next network .128)."
+    },
+    {
+      "id": "q4",
+      "question": "The IP 169.254.10.5 indicates:",
+      "options": [
+        "Private network",
+        "APIPA/link-local (DHCP failed)",
+        "Loopback",
+        "Multicast"
+      ],
+      "correct": 1,
+      "explanation": "169.254.0.0/16 is the APIPA range, assigned when a device cannot reach a DHCP server."
+    },
+    {
+      "id": "q5",
+      "question": "What subnet mask corresponds to /28?",
+      "options": [
+        "255.255.255.240",
+        "255.255.255.224",
+        "255.255.255.248",
+        "255.255.255.192"
+      ],
+      "correct": 0,
+      "explanation": "/28 means 28 network bits. In the 4th octet: 11110000 = 240. So 255.255.255.240."
+    }
+  ]
+}

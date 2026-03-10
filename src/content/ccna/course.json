@@ -1,0 +1,13 @@
+{
+  "id": "ccna",
+  "title": "CCNA 200-301",
+  "description": "Cisco Certified Network Associate",
+  "version": "1.0",
+  "modules": [
+    "001_network-fundamentals",
+    "002_network-access",
+    "003_ip-connectivity",
+    "004_ip-services",
+    "005_security-fundamentals"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "id": "ip-connectivity",
+  "title": "IP Connectivity",
+  "icon": "🛣️",
+  "description": "IP addressing, subnetting, and routing",
+  "lessons": [
+    {
+      "id": "ipv4-addressing",
+      "title": "IPv4 Addressing",
+      "type": "notes",
+      "resources": [
+        {
+          "type": "video",
+          "title": "Subnetting Made Easy",
+          "url": "https://www.youtube.com/watch?v=ecCuyq-Wprc"
+        }
+      ]
+    },
+    {
+      "id": "subnetting",
+      "title": "Subnetting Practice",
+      "type": "notes",
+      "resources": [
+        {
+          "type": "link",
+          "title": "Subnet Calculator",
+          "url": "https://www.subnet-calculator.com/"
+        }
+      ]
+    },
+    {
+      "id": "ip-quiz",
+      "title": "IP Addressing Quiz",
+      "type": "quiz"
+    }
+  ]
+}

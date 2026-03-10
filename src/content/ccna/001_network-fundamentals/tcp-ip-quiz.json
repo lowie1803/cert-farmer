@@ -1,0 +1,52 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "How many layers does the TCP/IP model have?",
+      "options": [
+        "7 layers",
+        "5 layers",
+        "4 layers",
+        "3 layers"
+      ],
+      "correct": 2,
+      "explanation": "The TCP/IP model has 4 layers: Application, Transport, Internet, and Network Access."
+    },
+    {
+      "id": "q2",
+      "question": "Which protocol would you use for real-time video streaming?",
+      "options": [
+        "TCP",
+        "UDP",
+        "ICMP",
+        "ARP"
+      ],
+      "correct": 1,
+      "explanation": "UDP is preferred for real-time streaming because it has lower latency. Occasional packet loss is acceptable for video/audio."
+    },
+    {
+      "id": "q3",
+      "question": "What is the default port for HTTPS?",
+      "options": [
+        "80",
+        "443",
+        "8080",
+        "22"
+      ],
+      "correct": 1,
+      "explanation": "HTTPS uses port 443 by default. HTTP uses port 80."
+    },
+    {
+      "id": "q4",
+      "question": "In the TCP three-way handshake, what does the server send in response to SYN?",
+      "options": [
+        "ACK",
+        "FIN",
+        "SYN-ACK",
+        "RST"
+      ],
+      "correct": 2,
+      "explanation": "The server responds with SYN-ACK, acknowledging the client's SYN and sending its own synchronization."
+    }
+  ]
+}

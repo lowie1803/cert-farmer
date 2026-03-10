@@ -12,6 +12,7 @@ export default defineConfig({
       '@data': path.resolve(__dirname, './src/data'),
       '@hooks': path.resolve(__dirname, './src/hooks'),
       '@utils': path.resolve(__dirname, './src/utils'),
+      '@content': path.resolve(__dirname, './src/content'),
     },
   },
   build: {

@@ -6,10 +6,17 @@ import { getCourse } from '@data/courses';
 export default function Layout() {
   const location = useLocation();
   const { calculateCourseProgress } = useProgress();
-  
+
   // Get current course progress (default to CCNA)
   const courseProgress = calculateCourseProgress(getCourse('ccna'));
-  
+
+  const progressColor =
+    courseProgress === 0
+      ? 'bg-slate-600'
+      : courseProgress < 100
+        ? 'bg-amber-500'
+        : 'bg-green-500';
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800 text-slate-100">
       {/* Navigation */}
@@ -24,7 +31,7 @@ export default function Layout() {
               CertFarmer
             </span>
           </Link>
-          
+
           {/* Right side */}
           <div className="flex items-center gap-4">
             {/* Glossary link */}
@@ -39,7 +46,7 @@ export default function Layout() {
               <span>🇻🇳</span>
               <span className="hidden sm:inline">Glossary</span>
             </Link>
-            
+
             {/* Progress indicator */}
             <div className="text-sm text-slate-400">
               <span className="text-amber-400 font-semibold">{courseProgress}%</span>
@@ -47,13 +54,21 @@ export default function Layout() {
             </div>
           </div>
         </div>
+
+        {/* Thin progress bar along bottom of navbar */}
+        <div className="h-0.5 bg-slate-800">
+          <div
+            className={`h-full ${progressColor} transition-all duration-500`}
+            style={{ width: `${courseProgress}%` }}
+          />
+        </div>
       </nav>
-      
+
       {/* Main content */}
       <main>
         <Outlet />
       </main>
-      
+
       {/* Footer */}
       <footer className="border-t border-slate-800 py-6 mt-12">
         <div className="max-w-5xl mx-auto px-4 text-center text-sm text-slate-500">

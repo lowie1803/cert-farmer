@@ -1,0 +1,8 @@
+Here are my upcoming plans for this website:
+
+- UI: It should show users' progress throughout their study. This can be done by local storage or building authentications.
+- Data: There should be either
+   + a database, containing quizzes, answers, course materials, references, ... so that it's easier to manage data. But I think it might need some cloud storage so can consider that for later.
+   + a file system that organizes markdown course materials & json containing quizzes.
+
+The current way of managing courses is not scalable yet, since everything is in 2 files right now.

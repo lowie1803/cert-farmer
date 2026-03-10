@@ -1,0 +1,25 @@
+{
+  "id": "ip-services",
+  "title": "IP Services",
+  "icon": "⚙️",
+  "description": "DHCP, DNS, NAT, and network services",
+  "lessons": [
+    {
+      "id": "dhcp-dns",
+      "title": "DHCP & DNS",
+      "type": "notes"
+    },
+    {
+      "id": "nat",
+      "title": "NAT & PAT",
+      "type": "notes",
+      "resources": [
+        {
+          "type": "video",
+          "title": "NAT Explained",
+          "url": "https://www.youtube.com/watch?v=FTUV0t6JaDA"
+        }
+      ]
+    }
+  ]
+}

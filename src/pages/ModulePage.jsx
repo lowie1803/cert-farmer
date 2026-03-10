@@ -5,10 +5,10 @@ import { getModule } from '@data/courses';
 
 export default function ModulePage() {
   const { courseId = 'ccna', moduleId } = useParams();
-  const { getLessonProgress, isLessonCompleted } = useProgress();
-  
+  const { getLessonProgress, isLessonCompleted, calculateModuleProgress } = useProgress();
+
   const module = getModule(courseId, moduleId);
-  
+
   if (!module) {
     return (
       <div className="p-8 text-center">
@@ -19,7 +19,16 @@ export default function ModulePage() {
       </div>
     );
   }
-  
+
+  const moduleProgress = calculateModuleProgress(module);
+  const completedCount = module.lessons.filter(l => isLessonCompleted(l.id)).length;
+  const progressColor =
+    moduleProgress === 0
+      ? 'bg-slate-600'
+      : moduleProgress < 100
+        ? 'bg-amber-500'
+        : 'bg-green-500';
+
   return (
     <div className="p-4 md:p-8">
       <div className="max-w-4xl mx-auto">
@@ -30,22 +39,33 @@ export default function ModulePage() {
         >
           <span>←</span> Back to Dashboard
         </Link>
-        
+
         {/* Module header */}
-        <div className="flex items-center gap-4 mb-8">
+        <div className="flex items-center gap-4 mb-4">
           <div className="text-4xl">{module.icon}</div>
           <div>
             <h1 className="text-2xl font-bold text-white">{module.title}</h1>
-            <p className="text-slate-400">{module.lessons.length} lessons</p>
+            <p className="text-slate-400">{completedCount}/{module.lessons.length} lessons completed</p>
           </div>
         </div>
-        
+
+        {/* Module progress bar */}
+        <div className="mb-8">
+          <div className="h-2 bg-slate-700 rounded-full overflow-hidden">
+            <div
+              className={`h-full ${progressColor} transition-all duration-500`}
+              style={{ width: `${moduleProgress}%` }}
+            />
+          </div>
+          <p className="text-xs text-slate-500 mt-1 text-right">{moduleProgress}%</p>
+        </div>
+
         {/* Lessons list */}
         <div className="space-y-2">
           {module.lessons.map((lesson, index) => {
             const progress = getLessonProgress(lesson.id);
             const completed = isLessonCompleted(lesson.id);
-            
+
             return (
               <Link
                 key={lesson.id}
@@ -61,24 +81,24 @@ export default function ModulePage() {
                   }`}>
                     {completed ? '✓' : index + 1}
                   </div>
-                  
+
                   <div className="flex-1 min-w-0">
                     <h3 className="font-medium text-white group-hover:text-amber-400 transition-colors">
                       {lesson.title}
                     </h3>
-                    
+
                     <span className={lesson.type === 'quiz' ? 'tag-quiz' : 'tag-notes'}>
                       {lesson.type === 'quiz' ? '📝 Quiz' : '📖 Notes'}
                     </span>
                   </div>
-                  
+
                   {/* Quiz score if available */}
                   {progress?.quizScore !== undefined && (
                     <span className="text-sm text-amber-400">
                       {progress.quizScore}/{progress.quizTotal}
                     </span>
                   )}
-                  
+
                   <span className="text-slate-500 group-hover:text-amber-400 transition-colors">
                     →
                   </span>

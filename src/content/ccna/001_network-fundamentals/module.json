@@ -1,0 +1,47 @@
+{
+  "id": "network-fundamentals",
+  "title": "Network Fundamentals",
+  "icon": "🌐",
+  "description": "Core networking concepts and the OSI/TCP-IP models",
+  "lessons": [
+    {
+      "id": "osi-model",
+      "title": "OSI Model",
+      "type": "notes",
+      "resources": [
+        {
+          "type": "video",
+          "title": "OSI Model Deep Dive",
+          "url": "https://www.youtube.com/watch?v=vv4y_uOneC0"
+        },
+        {
+          "type": "link",
+          "title": "Cisco Learning Network",
+          "url": "https://learningnetwork.cisco.com"
+        }
+      ]
+    },
+    {
+      "id": "osi-quiz",
+      "title": "OSI Model Quiz",
+      "type": "quiz"
+    },
+    {
+      "id": "tcp-ip-model",
+      "title": "TCP/IP Model",
+      "type": "notes",
+      "resources": [
+        {
+          "type": "video",
+          "title": "TCP vs UDP Explained",
+          "url": "https://www.youtube.com/watch?v=uwoD5YsGACg"
+        }
+      ]
+    },
+    {
+      "id": "tcp-ip-quiz",
+      "title": "TCP/IP Quiz",
+      "type": "quiz"
+    }
+  ]
+}

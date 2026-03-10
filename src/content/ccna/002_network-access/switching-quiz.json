@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "How many bits are in a MAC address?",
+      "options": [
+        "32 bits",
+        "48 bits",
+        "64 bits",
+        "128 bits"
+      ],
+      "correct": 1,
+      "explanation": "MAC addresses are 48 bits (6 bytes), typically displayed as 12 hexadecimal characters."
+    },
+    {
+      "id": "q2",
+      "question": "What does a switch do when it receives a frame with an unknown destination MAC address?",
+      "options": [
+        "Drops the frame",
+        "Sends to default gateway",
+        "Floods to all ports except source",
+        "Sends an ARP request"
+      ],
+      "correct": 2,
+      "explanation": "When the destination MAC is not in the MAC table, the switch floods the frame out all ports except the source port."
+    },
+    {
+      "id": "q3",
+      "question": "Which IEEE standard defines VLAN tagging on trunk ports?",
+      "options": [
+        "802.3",
+        "802.11",
+        "802.1Q",
+        "802.1X"
+      ],
+      "correct": 2,
+      "explanation": "802.1Q defines VLAN tagging, adding a 4-byte tag to Ethernet frames to identify VLAN membership."
+    },
+    {
+      "id": "q4",
+      "question": "What is the native VLAN used for?",
+      "options": [
+        "Management traffic only",
+        "Untagged traffic on trunk links",
+        "Voice traffic",
+        "Guest network"
+      ],
+      "correct": 1,
+      "explanation": "The native VLAN carries untagged traffic on trunk links. By default it is VLAN 1."
+    },
+    {
+      "id": "q5",
+      "question": "A switch port connected to a PC should be configured as:",
+      "options": [
+        "Trunk port",
+        "Access port",
+        "Hybrid port",
+        "Native port"
+      ],
+      "correct": 1,
+      "explanation": "End devices connect to access ports, which belong to a single VLAN and do not tag frames."
+    }
+  ]
+}
