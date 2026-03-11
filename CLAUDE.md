@@ -34,8 +34,11 @@ src/
 - **Deploy**: Vercel (see `vercel.json`)
 - **Path aliases**: `@/` → src, `@components/`, `@pages/`, `@data/`, `@hooks/`, `@utils/`, `@content/`
 
-## Skill Files
-See `.claude/skills/` for detailed conventions:
-- `content-authoring/SKILL.md` — How to add/modify lessons, quizzes, modules
-- `architecture/SKILL.md` — App structure, routing, components, state management
-- `project-roadmap/SKILL.md` — Current state and planned work
+## Where to find things
+- Backlog: `.project/backlog/BACKLOG.md` (table + inbox)
+- Architecture decisions: `.project/decisions/`
+- Roadmap: `.project/product/ROADMAP.md`
+- Skills: `.claude/skills/`
+  - `content-authoring/SKILL.md` — How to add/modify lessons, quizzes, modules
+  - `architecture/SKILL.md` — App structure, routing, components, state management
+  - `project-roadmap/SKILL.md` — Current state and planned work
