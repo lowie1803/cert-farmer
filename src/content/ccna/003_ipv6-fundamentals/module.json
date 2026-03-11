@@ -16,6 +16,11 @@
       "type": "notes"
     },
     {
+      "id": "ipv6-ndp",
+      "title": "IPv6 Neighbor Discovery (NDP)",
+      "type": "notes"
+    },
+    {
       "id": "ipv6-fundamentals-quiz",
       "title": "IPv6 Fundamentals Quiz",
       "type": "quiz"

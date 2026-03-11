@@ -33,6 +33,16 @@
       "id": "ip-quiz",
       "title": "IP Addressing Quiz",
       "type": "quiz"
+    },
+    {
+      "id": "icmp-troubleshooting",
+      "title": "ICMP & Troubleshooting",
+      "type": "notes"
+    },
+    {
+      "id": "icmp-troubleshooting-quiz",
+      "title": "ICMP & Troubleshooting Quiz",
+      "type": "quiz"
     }
   ]
 }

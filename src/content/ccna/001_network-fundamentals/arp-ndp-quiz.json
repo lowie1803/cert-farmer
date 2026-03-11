@@ -1,0 +1,124 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What type of frame does an ARP request use?",
+      "options": [
+        "Unicast",
+        "Broadcast",
+        "Multicast",
+        "Anycast"
+      ],
+      "correct": 1,
+      "explanation": "ARP requests are sent as Layer 2 broadcasts (destination ff:ff:ff:ff:ff:ff) so all hosts on the segment receive them."
+    },
+    {
+      "id": "q2",
+      "question": "What does ARP resolve?",
+      "options": [
+        "MAC addresses to IP addresses",
+        "IP addresses to MAC addresses",
+        "Hostnames to IP addresses",
+        "IP addresses to port numbers"
+      ],
+      "correct": 1,
+      "explanation": "ARP resolves a known IPv4 address to an unknown MAC address so the host can build a Layer 2 frame."
+    },
+    {
+      "id": "q3",
+      "question": "What is a gratuitous ARP?",
+      "options": [
+        "An ARP request for another host's MAC address",
+        "An ARP reply sent without a corresponding request",
+        "An ARP request sent by a router on behalf of a host",
+        "An ARP reply that contains an incorrect MAC address"
+      ],
+      "correct": 1,
+      "explanation": "A gratuitous ARP is an unsolicited ARP reply a host sends to announce or update its own IP-to-MAC mapping."
+    },
+    {
+      "id": "q4",
+      "question": "Which ICMPv6 message type is used for IPv6 address resolution (similar to ARP request)?",
+      "options": [
+        "Router Solicitation (Type 133)",
+        "Router Advertisement (Type 134)",
+        "Neighbor Solicitation (Type 135)",
+        "Neighbor Advertisement (Type 136)"
+      ],
+      "correct": 2,
+      "explanation": "Neighbor Solicitation (NS, Type 135) is the IPv6 equivalent of an ARP request, asking a target to respond with its MAC address."
+    },
+    {
+      "id": "q5",
+      "question": "What destination address does an NDP Neighbor Solicitation use instead of broadcast?",
+      "options": [
+        "ff02::1 (all-nodes multicast)",
+        "ff02::2 (all-routers multicast)",
+        "Solicited-node multicast (ff02::1:ffXX:XXXX)",
+        "The target's unicast address"
+      ],
+      "correct": 2,
+      "explanation": "NS messages are sent to the solicited-node multicast address, which is derived from the last 24 bits of the target IPv6 address. This is more efficient than broadcast."
+    },
+    {
+      "id": "q6",
+      "question": "What is the purpose of Duplicate Address Detection (DAD)?",
+      "options": [
+        "To detect duplicate MAC addresses on the network",
+        "To verify an IPv6 address is unique before using it",
+        "To find duplicate ARP entries in the cache",
+        "To detect rogue DHCP servers"
+      ],
+      "correct": 1,
+      "explanation": "DAD sends a Neighbor Solicitation for the host's own address. If no one responds, the address is unique and safe to use."
+    },
+    {
+      "id": "q7",
+      "question": "Which Cisco IOS command displays the ARP table on a router?",
+      "options": [
+        "show mac address-table",
+        "show arp",
+        "show ip neighbors",
+        "show ip interface"
+      ],
+      "correct": 1,
+      "explanation": "The 'show arp' command displays the ARP cache on a Cisco router, showing IP-to-MAC address mappings."
+    },
+    {
+      "id": "q8",
+      "question": "What security feature mitigates ARP spoofing attacks?",
+      "options": [
+        "Port security",
+        "DHCP snooping",
+        "Dynamic ARP Inspection (DAI)",
+        "802.1X authentication"
+      ],
+      "correct": 2,
+      "explanation": "Dynamic ARP Inspection (DAI) validates ARP packets against the DHCP snooping binding table to prevent ARP spoofing attacks."
+    },
+    {
+      "id": "q9",
+      "question": "What is Proxy ARP?",
+      "options": [
+        "A host responding to ARP requests for its own address",
+        "A router answering ARP requests on behalf of hosts on another network",
+        "A switch flooding ARP requests to all ports",
+        "A firewall filtering malicious ARP packets"
+      ],
+      "correct": 1,
+      "explanation": "Proxy ARP allows a router to respond to ARP requests for hosts on a different subnet, using its own MAC address so it can forward the traffic."
+    },
+    {
+      "id": "q10",
+      "question": "Which of the following is an advantage of NDP over ARP?",
+      "options": [
+        "NDP uses broadcasts for better compatibility",
+        "NDP operates at Layer 2 for faster processing",
+        "NDP uses multicast instead of broadcast, reducing unnecessary traffic",
+        "NDP does not require any security mechanisms"
+      ],
+      "correct": 2,
+      "explanation": "NDP uses solicited-node multicast addresses instead of broadcasts, meaning only relevant hosts process the message. This is more efficient than ARP's broadcast approach."
+    }
+  ]
+}

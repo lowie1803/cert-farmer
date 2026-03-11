@@ -43,6 +43,16 @@
       "id": "tcp-ip-quiz",
       "title": "TCP/IP Quiz",
       "type": "quiz"
+    },
+    {
+      "id": "arp-ndp",
+      "title": "ARP & Neighbor Discovery",
+      "type": "notes"
+    },
+    {
+      "id": "arp-ndp-quiz",
+      "title": "ARP & NDP Quiz",
+      "type": "quiz"
     }
   ]
 }

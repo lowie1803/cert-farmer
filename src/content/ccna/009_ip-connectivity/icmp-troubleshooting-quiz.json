@@ -1,0 +1,124 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What ICMP message type does the 'ping' command send?",
+      "options": [
+        "Echo Reply (Type 0)",
+        "Destination Unreachable (Type 3)",
+        "Echo Request (Type 8)",
+        "Time Exceeded (Type 11)"
+      ],
+      "correct": 2,
+      "explanation": "Ping sends ICMP Echo Request (Type 8) messages. The destination responds with Echo Reply (Type 0) if reachable."
+    },
+    {
+      "id": "q2",
+      "question": "How does traceroute discover the path to a destination?",
+      "options": [
+        "It reads the routing table of each router along the path",
+        "It sends packets with incrementing TTL values and collects Time Exceeded replies",
+        "It uses SNMP to query each router for next-hop information",
+        "It floods the network and records which interfaces respond"
+      ],
+      "correct": 1,
+      "explanation": "Traceroute sends packets with TTL starting at 1 and incrementing. Each router that decrements TTL to 0 returns an ICMP Time Exceeded message, revealing its IP address."
+    },
+    {
+      "id": "q3",
+      "question": "What does an ICMP Type 3, Code 13 message indicate?",
+      "options": [
+        "Network unreachable",
+        "Host unreachable",
+        "Port unreachable",
+        "Administratively prohibited (filtered by ACL)"
+      ],
+      "correct": 3,
+      "explanation": "ICMP Type 3, Code 13 means 'Communication Administratively Prohibited' — the packet was blocked by an access control list or firewall rule."
+    },
+    {
+      "id": "q4",
+      "question": "In Cisco IOS ping output, what does a '.' (period) indicate?",
+      "options": [
+        "Reply received successfully",
+        "Destination unreachable",
+        "Timeout — no reply received",
+        "Packet was fragmented"
+      ],
+      "correct": 2,
+      "explanation": "A period (.) in ping output means the request timed out — no ICMP Echo Reply was received within the timeout period."
+    },
+    {
+      "id": "q5",
+      "question": "Which troubleshooting approach starts at the middle of the OSI model?",
+      "options": [
+        "Bottom-up",
+        "Top-down",
+        "Divide-and-conquer",
+        "Follow-the-path"
+      ],
+      "correct": 2,
+      "explanation": "Divide-and-conquer starts at Layer 3 (the middle) and moves up or down based on results. It is the most efficient approach for experienced troubleshooters."
+    },
+    {
+      "id": "q6",
+      "question": "You can ping the default gateway but not a remote server. Which layer should you investigate next?",
+      "options": [
+        "Layer 1 — Physical",
+        "Layer 2 — Data Link",
+        "Layer 3 — Network (routing beyond the gateway)",
+        "Layer 7 — Application"
+      ],
+      "correct": 2,
+      "explanation": "If the gateway is reachable but the remote server is not, the problem is in the Layer 3 path beyond the gateway. Check routing tables, ACLs, and use traceroute to find where connectivity breaks."
+    },
+    {
+      "id": "q7",
+      "question": "What protocol does Cisco IOS traceroute use by default?",
+      "options": [
+        "ICMP Echo Request",
+        "TCP SYN",
+        "UDP",
+        "GRE"
+      ],
+      "correct": 2,
+      "explanation": "Cisco IOS traceroute uses UDP by default, sending packets to incrementing high-numbered destination ports. Windows tracert uses ICMP Echo Request instead."
+    },
+    {
+      "id": "q8",
+      "question": "Which command shows a quick summary of all interface statuses and IP addresses on a Cisco device?",
+      "options": [
+        "show interfaces",
+        "show ip interface brief",
+        "show ip route",
+        "show running-config"
+      ],
+      "correct": 1,
+      "explanation": "'show ip interface brief' provides a concise table showing each interface's IP address, method, status, and protocol state — ideal as a first troubleshooting step."
+    },
+    {
+      "id": "q9",
+      "question": "Why should you NOT completely block ICMPv6 with an ACL?",
+      "options": [
+        "ICMPv6 is required for IPsec to function",
+        "ICMPv6 carries NDP messages required for basic IPv6 operation",
+        "ICMPv6 is used for DNS resolution in IPv6",
+        "ICMPv6 provides encryption for IPv6 traffic"
+      ],
+      "correct": 1,
+      "explanation": "ICMPv6 carries Neighbor Discovery Protocol (NDP) messages that are essential for IPv6 address resolution, router discovery, and DAD. Blocking ICMPv6 breaks basic IPv6 connectivity."
+    },
+    {
+      "id": "q10",
+      "question": "A traceroute shows * * * at hop 5 but succeeds at hops 6 and beyond. What is the most likely cause?",
+      "options": [
+        "The router at hop 5 is down",
+        "The router at hop 5 is filtering ICMP Time Exceeded responses",
+        "There is a routing loop at hop 5",
+        "The TTL value is too low"
+      ],
+      "correct": 1,
+      "explanation": "If later hops respond normally, the hop 5 router is reachable but configured to not send ICMP Time Exceeded replies (rate-limited or filtered). This is common on internet routers."
+    }
+  ]
+}
