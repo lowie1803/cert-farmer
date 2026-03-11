@@ -3,6 +3,7 @@
   "title": "IP Connectivity",
   "icon": "🛣️",
   "description": "IP addressing, subnetting, and routing",
+  "domain": "Domain 3: IP Connectivity",
   "lessons": [
     {
       "id": "ipv4-addressing",

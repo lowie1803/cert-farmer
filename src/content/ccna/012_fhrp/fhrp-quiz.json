@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "id": "fhrp-001",
+      "question": "In an HSRP group, which router role actively forwards traffic destined for the virtual IP address?",
+      "options": [
+        "Standby router",
+        "Active router",
+        "Listen router",
+        "Backup router"
+      ],
+      "correct": 1,
+      "explanation": "The Active router in an HSRP group is responsible for forwarding traffic sent to the virtual IP address. The Standby router monitors the Active and takes over if it fails. Routers in the Listen state monitor both Active and Standby."
+    },
+    {
+      "id": "fhrp-002",
+      "question": "Which FHRP is an IEEE open standard that uses the terms Master and Backup for its router roles?",
+      "options": [
+        "HSRP",
+        "GLBP",
+        "VRRP",
+        "IRDP"
+      ],
+      "correct": 2,
+      "explanation": "VRRP (Virtual Router Redundancy Protocol) is the IEEE standard (RFC 5798) that uses Master and Backup terminology. HSRP and GLBP are both Cisco proprietary."
+    },
+    {
+      "id": "fhrp-003",
+      "question": "Which Cisco FHRP provides load balancing by distributing traffic across multiple routers using different virtual MAC addresses?",
+      "options": [
+        "HSRP",
+        "VRRP",
+        "STP",
+        "GLBP"
+      ],
+      "correct": 3,
+      "explanation": "GLBP (Gateway Load Balancing Protocol) is the only FHRP that provides active-active load balancing. The AVG assigns different virtual MACs to AVF routers, and hosts receive different MACs via ARP, distributing traffic across all participating routers."
+    },
+    {
+      "id": "fhrp-004",
+      "question": "Router A has HSRP priority 110 and Router B has HSRP priority 100. Router B is currently the Active router. What must be configured on Router A for it to take over the Active role?",
+      "options": [
+        "standby timers must be reduced",
+        "standby preempt must be enabled on Router A",
+        "Router B must be manually shut down",
+        "A higher standby group number on Router A"
+      ],
+      "correct": 1,
+      "explanation": "HSRP preemption is disabled by default. Even though Router A has a higher priority, it will not take over from the current Active router unless 'standby preempt' is configured. Without preemption, the Active role only changes when the current Active router fails."
+    },
+    {
+      "id": "fhrp-005",
+      "question": "What virtual IP address do hosts configure as their default gateway when HSRP is deployed?",
+      "options": [
+        "The physical IP address of the Active router",
+        "The physical IP address of the Standby router",
+        "The HSRP virtual IP address shared by the group",
+        "The multicast address 224.0.0.2"
+      ],
+      "correct": 2,
+      "explanation": "Hosts are configured with the HSRP virtual IP address as their default gateway. This virtual IP is shared between the Active and Standby routers, ensuring seamless failover. Hosts should never point to a physical router IP when HSRP is in use."
+    }
+  ]
+}

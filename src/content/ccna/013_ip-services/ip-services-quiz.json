@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "id": "ips-q1",
+      "question": "Which protocol automatically assigns IP addresses to devices on a network?",
+      "options": [
+        "DNS",
+        "DHCP",
+        "NAT",
+        "ARP"
+      ],
+      "correct": 1,
+      "explanation": "DHCP (Dynamic Host Configuration Protocol) automatically assigns IP addresses, subnet masks, default gateways, and DNS servers to devices through a DORA process (Discover, Offer, Request, Acknowledge)."
+    },
+    {
+      "id": "ips-q2",
+      "question": "What type of NAT maps multiple private IP addresses to a single public IP address using port numbers?",
+      "options": [
+        "Static NAT",
+        "Dynamic NAT",
+        "PAT (Port Address Translation)",
+        "Reverse NAT"
+      ],
+      "correct": 2,
+      "explanation": "PAT (also called NAT overload) maps multiple private addresses to one public address by using unique port numbers to distinguish connections. This is the most common form of NAT."
+    },
+    {
+      "id": "ips-q3",
+      "question": "What does DNS primarily do?",
+      "options": [
+        "Assigns IP addresses to hosts automatically",
+        "Resolves domain names to IP addresses",
+        "Translates private IPs to public IPs",
+        "Encrypts network traffic"
+      ],
+      "correct": 1,
+      "explanation": "DNS (Domain Name System) resolves human-readable domain names (like google.com) into IP addresses that routers can use to forward packets."
+    },
+    {
+      "id": "ips-q4",
+      "question": "In the DHCP DORA process, what does the 'O' stand for?",
+      "options": [
+        "Open",
+        "Offer",
+        "Obtain",
+        "Operate"
+      ],
+      "correct": 1,
+      "explanation": "DORA stands for Discover, Offer, Request, Acknowledge. After the client sends a Discover broadcast, the DHCP server responds with an Offer containing an available IP address."
+    },
+    {
+      "id": "ips-q5",
+      "question": "Which NAT type creates a permanent one-to-one mapping between a private and public IP address?",
+      "options": [
+        "Dynamic NAT",
+        "PAT",
+        "Static NAT",
+        "NAT64"
+      ],
+      "correct": 2,
+      "explanation": "Static NAT creates a fixed one-to-one mapping between a private IP and a public IP. It's commonly used for servers that need to be accessible from the internet with a consistent address."
+    }
+  ]
+}

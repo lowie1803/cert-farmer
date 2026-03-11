@@ -97,8 +97,11 @@ export default function Dashboard() {
                   to={`/course/${courseId}/module/${lesson.moduleId}/lesson/${lesson.id}`}
                   className="card p-3 group hover:bg-slate-700"
                 >
-                  <span className={lesson.type === 'quiz' ? 'tag-quiz' : 'tag-notes'}>
-                    {lesson.type === 'quiz' ? '📝 Quiz' : '📖 Notes'}
+                  <span className={
+                    lesson.type === 'exam' ? 'tag-exam' :
+                    lesson.type === 'quiz' ? 'tag-quiz' : 'tag-notes'
+                  }>
+                    {lesson.type === 'exam' ? '📋 Exam' : lesson.type === 'quiz' ? '📝 Quiz' : '📖 Notes'}
                   </span>
                   <h4 className="font-medium text-white mt-1 truncate group-hover:text-amber-400 transition-colors">
                     {lesson.title}
@@ -116,16 +119,28 @@ export default function Dashboard() {
         </h2>
 
         <div className="space-y-3">
-          {course.modules.map((module) => {
+          {course.modules.map((module, idx) => {
             const moduleProgress = calculateModuleProgress(module);
             const completed = module.lessons.filter(l => progress[l.id]?.completed).length;
+            const isExam = module.category === 'exam';
+
+            // Domain headers
+            const prevModule = idx > 0 ? course.modules[idx - 1] : null;
+            const showDomainHeader = module.domain && (!prevModule || prevModule.domain !== module.domain);
 
             return (
-              <Link
-                key={module.id}
-                to={`/course/${courseId}/module/${module.id}`}
-                className="card block p-4 md:p-5 group hover:bg-slate-700"
-              >
+              <React.Fragment key={module.id}>
+                {showDomainHeader && (
+                  <h3 className="text-sm font-semibold text-amber-400 uppercase tracking-wider pt-4 first:pt-0">
+                    {module.domain}
+                  </h3>
+                )}
+                <Link
+                  to={`/course/${courseId}/module/${module.id}`}
+                  className={`card block p-4 md:p-5 group hover:bg-slate-700 ${
+                    isExam ? 'border-amber-500/50 bg-amber-500/5' : ''
+                  }`}
+                >
                 <div className="flex items-center gap-4">
                   <div className="text-3xl">{module.icon}</div>
 
@@ -157,6 +172,7 @@ export default function Dashboard() {
                   </div>
                 </div>
               </Link>
+              </React.Fragment>
             );
           })}
         </div>

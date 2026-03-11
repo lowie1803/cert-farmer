@@ -1,0 +1,17 @@
+{
+  "id": "midterm-2",
+  "title": "Midterm 2: Connectivity & Services",
+  "icon": "📋",
+  "description": "40 questions covering Domains 3-4",
+  "category": "exam",
+  "domain": "Domain 3: IP Connectivity",
+  "lessons": [
+    {
+      "id": "midterm-2-exam",
+      "title": "Midterm Exam 2",
+      "type": "exam",
+      "timeLimit": 45,
+      "passingScore": 80
+    }
+  ]
+}

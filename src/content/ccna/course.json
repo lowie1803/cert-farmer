@@ -2,12 +2,27 @@
   "id": "ccna",
   "title": "CCNA 200-301",
   "description": "Cisco Certified Network Associate",
-  "version": "1.0",
+  "version": "1.1",
   "modules": [
     "001_network-fundamentals",
-    "002_network-access",
-    "003_ip-connectivity",
-    "004_ip-services",
-    "005_security-fundamentals"
+    "002_cabling-and-topology",
+    "003_ipv6-fundamentals",
+    "004_virtualization-switching",
+    "005_network-access",
+    "006_stp-etherchannel",
+    "007_wireless-architectures",
+    "008_midterm-1",
+    "009_ip-connectivity",
+    "010_routing-fundamentals",
+    "011_ospf",
+    "012_fhrp",
+    "013_ip-services",
+    "014_network-services",
+    "015_midterm-2",
+    "016_security-fundamentals",
+    "017_network-security",
+    "018_automation-fundamentals",
+    "019_network-programmability",
+    "020_final-exam"
   ]
 }

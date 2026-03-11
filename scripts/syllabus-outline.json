@@ -1,0 +1,372 @@
+{
+  "modules": {
+    "cabling-and-topology": {
+      "domain": 1,
+      "domainName": "Domain 1: Network Fundamentals",
+      "icon": "🔌",
+      "title": "Cabling & Topology",
+      "description": "Physical infrastructure, cabling types, and wireless principles",
+      "lessons": {
+        "cabling-types": {
+          "title": "Cabling Types & Topology",
+          "subtopics": [
+            "UTP Cat5e/6/6a specifications",
+            "Straight-through vs crossover cables",
+            "Single-mode vs multi-mode fiber",
+            "Connector types: RJ-45, LC, SC, ST",
+            "PoE standards: 802.3af/at/bt",
+            "Network topologies: star, mesh, hybrid"
+          ]
+        },
+        "wireless-principles": {
+          "title": "Wireless Principles",
+          "subtopics": [
+            "802.11 standards: a/b/g/n/ac/ax (Wi-Fi 6)",
+            "2.4 GHz vs 5 GHz frequency bands",
+            "RF channels and interference",
+            "SSID, BSS, ESS concepts",
+            "Wireless security overview"
+          ]
+        }
+      },
+      "quizCount": 5
+    },
+    "ipv6-fundamentals": {
+      "domain": 1,
+      "domainName": "Domain 1: Network Fundamentals",
+      "icon": "🌐",
+      "title": "IPv6 Fundamentals",
+      "description": "IPv6 addressing, types, and autoconfiguration",
+      "lessons": {
+        "ipv6-addressing": {
+          "title": "IPv6 Addressing",
+          "subtopics": [
+            "IPv6 address format and notation",
+            "Address types: unicast, multicast, anycast",
+            "Link-local, global unicast, unique local addresses",
+            "EUI-64 interface ID generation",
+            "IPv6 prefix length notation"
+          ]
+        },
+        "ipv6-config": {
+          "title": "IPv6 Configuration",
+          "subtopics": [
+            "SLAAC (Stateless Address Autoconfiguration)",
+            "DHCPv6 stateful and stateless",
+            "NDP (Neighbor Discovery Protocol)",
+            "Router Solicitation and Router Advertisement",
+            "IPv4 to IPv6 transition mechanisms"
+          ]
+        }
+      },
+      "quizCount": 5
+    },
+    "virtualization-switching": {
+      "domain": 1,
+      "domainName": "Domain 1: Network Fundamentals",
+      "icon": "☁️",
+      "title": "Virtualization & Cloud",
+      "description": "VMs, containers, cloud models, and switching concepts",
+      "lessons": {
+        "virtualization": {
+          "title": "Virtualization & Cloud",
+          "subtopics": [
+            "Virtual machines vs containers",
+            "Type 1 and Type 2 hypervisors",
+            "Cloud service models: IaaS, PaaS, SaaS",
+            "Cloud deployment: public, private, hybrid, community",
+            "Virtual network infrastructure"
+          ]
+        },
+        "switching-concepts": {
+          "title": "Switching Concepts",
+          "subtopics": [
+            "MAC address learning and aging",
+            "Frame forwarding methods: store-and-forward, cut-through",
+            "Switch port types and configurations",
+            "Collision domains vs broadcast domains with switches"
+          ]
+        }
+      },
+      "quizCount": 5
+    },
+    "stp-etherchannel": {
+      "domain": 2,
+      "domainName": "Domain 2: Network Access",
+      "icon": "🌳",
+      "title": "STP & EtherChannel",
+      "description": "Spanning Tree Protocol, RSTP, EtherChannel, and discovery protocols",
+      "lessons": {
+        "stp": {
+          "title": "Spanning Tree Protocol",
+          "subtopics": [
+            "STP purpose and loop prevention",
+            "Bridge ID, root bridge election",
+            "Port roles: root, designated, non-designated",
+            "Port states: blocking, listening, learning, forwarding",
+            "RSTP (802.1w) improvements",
+            "PortFast and BPDU Guard"
+          ]
+        },
+        "etherchannel": {
+          "title": "EtherChannel & Discovery",
+          "subtopics": [
+            "EtherChannel concepts and benefits",
+            "LACP (802.3ad) and PAgP",
+            "EtherChannel configuration modes",
+            "CDP (Cisco Discovery Protocol)",
+            "LLDP (Link Layer Discovery Protocol)"
+          ]
+        }
+      },
+      "quizCount": 5
+    },
+    "wireless-architectures": {
+      "domain": 2,
+      "domainName": "Domain 2: Network Access",
+      "icon": "📡",
+      "title": "Wireless Architectures",
+      "description": "AP modes, WLC, WLAN configuration, and device management",
+      "lessons": {
+        "wireless-arch": {
+          "title": "Wireless Architectures",
+          "subtopics": [
+            "Autonomous vs lightweight access points",
+            "WLC (Wireless LAN Controller) functions",
+            "Split-MAC architecture",
+            "FlexConnect and local mode",
+            "CAPWAP protocol"
+          ]
+        },
+        "device-management": {
+          "title": "Device Management",
+          "subtopics": [
+            "Console, SSH, and Telnet access",
+            "Device configuration basics",
+            "IOS navigation: user/privileged/global config modes",
+            "Password and login security",
+            "Configuration backup and restore"
+          ]
+        }
+      },
+      "quizCount": 5
+    },
+    "routing-fundamentals": {
+      "domain": 3,
+      "domainName": "Domain 3: IP Connectivity",
+      "icon": "🗺️",
+      "title": "Routing Fundamentals",
+      "description": "Routing table, administrative distance, and static routes",
+      "lessons": {
+        "routing-concepts": {
+          "title": "Routing Concepts",
+          "subtopics": [
+            "Routing table structure and components",
+            "Administrative distance values",
+            "Longest prefix match",
+            "Connected and local routes",
+            "Routing decision process"
+          ]
+        },
+        "static-routes": {
+          "title": "Static & Default Routes",
+          "subtopics": [
+            "Static route configuration",
+            "Default route (gateway of last resort)",
+            "Floating static routes",
+            "Next-hop vs exit interface",
+            "IPv4 and IPv6 static routing"
+          ]
+        }
+      },
+      "quizCount": 5
+    },
+    "ospf": {
+      "domain": 3,
+      "domainName": "Domain 3: IP Connectivity",
+      "icon": "🔄",
+      "title": "OSPF",
+      "description": "Single-area OSPFv2 configuration and concepts",
+      "lessons": {
+        "ospf-concepts": {
+          "title": "OSPF Concepts",
+          "subtopics": [
+            "Link-state routing protocol overview",
+            "OSPF areas and single-area design",
+            "Neighbor adjacencies and hello protocol",
+            "DR/BDR election process",
+            "OSPF router ID selection",
+            "LSA types and LSDB"
+          ]
+        },
+        "ospf-config": {
+          "title": "OSPF Configuration",
+          "subtopics": [
+            "OSPFv2 basic configuration",
+            "Network command and wildcard masks",
+            "Passive interfaces",
+            "OSPF cost and reference bandwidth",
+            "Verifying OSPF operation"
+          ]
+        }
+      },
+      "quizCount": 5
+    },
+    "fhrp": {
+      "domain": 3,
+      "domainName": "Domain 3: IP Connectivity",
+      "icon": "🔁",
+      "title": "First Hop Redundancy",
+      "description": "HSRP, VRRP, and GLBP concepts",
+      "lessons": {
+        "fhrp-concepts": {
+          "title": "FHRP Concepts",
+          "subtopics": [
+            "Default gateway redundancy need",
+            "HSRP (Hot Standby Router Protocol)",
+            "HSRP active/standby roles and priority",
+            "VRRP (Virtual Router Redundancy Protocol)",
+            "GLBP (Gateway Load Balancing Protocol)",
+            "Preemption and tracking"
+          ]
+        }
+      },
+      "quizCount": 5
+    },
+    "network-services": {
+      "domain": 4,
+      "domainName": "Domain 4: IP Services",
+      "icon": "🛠️",
+      "title": "Network Services",
+      "description": "NTP, SNMP, syslog, QoS, and management protocols",
+      "lessons": {
+        "management-protocols": {
+          "title": "Management Protocols",
+          "subtopics": [
+            "NTP (Network Time Protocol) and time synchronization",
+            "SNMP versions (v2c, v3) and components",
+            "Syslog severity levels and configuration",
+            "TFTP and FTP for file transfers",
+            "SSH configuration best practices"
+          ]
+        },
+        "qos-basics": {
+          "title": "QoS Fundamentals",
+          "subtopics": [
+            "QoS concepts and need",
+            "Classification and marking",
+            "DSCP values and per-hop behaviors",
+            "Queuing mechanisms overview",
+            "Trust boundaries"
+          ]
+        }
+      },
+      "quizCount": 5
+    },
+    "network-security": {
+      "domain": 5,
+      "domainName": "Domain 5: Security Fundamentals",
+      "icon": "🛡️",
+      "title": "Network Security",
+      "description": "VPNs, L2 security, AAA, and wireless security",
+      "lessons": {
+        "security-infrastructure": {
+          "title": "Security Infrastructure",
+          "subtopics": [
+            "Password types and encryption",
+            "Site-to-site and remote-access VPNs",
+            "IPsec framework overview",
+            "AAA with RADIUS and TACACS+",
+            "Wireless security: WPA2-Personal, WPA2-Enterprise, WPA3"
+          ]
+        },
+        "layer2-security": {
+          "title": "Layer 2 Security",
+          "subtopics": [
+            "DHCP snooping",
+            "Dynamic ARP Inspection (DAI)",
+            "Port security configuration",
+            "Sticky MAC addresses",
+            "Violation modes: protect, restrict, shutdown"
+          ]
+        }
+      },
+      "quizCount": 5
+    },
+    "automation-fundamentals": {
+      "domain": 6,
+      "domainName": "Domain 6: Automation & Programmability",
+      "icon": "🤖",
+      "title": "Automation Fundamentals",
+      "description": "SDN, controllers, and intent-based networking",
+      "lessons": {
+        "sdn-concepts": {
+          "title": "SDN & Controllers",
+          "subtopics": [
+            "Traditional vs software-defined networking",
+            "Control plane vs data plane separation",
+            "SDN controller functions",
+            "Cisco DNA Center overview",
+            "Intent-based networking concepts",
+            "Northbound and southbound APIs"
+          ]
+        }
+      },
+      "quizCount": 5
+    },
+    "network-programmability": {
+      "domain": 6,
+      "domainName": "Domain 6: Automation & Programmability",
+      "icon": "💻",
+      "title": "Network Programmability",
+      "description": "REST APIs, data formats, and configuration management",
+      "lessons": {
+        "apis-and-automation": {
+          "title": "APIs & Automation Tools",
+          "subtopics": [
+            "REST API concepts and CRUD operations",
+            "HTTP methods: GET, POST, PUT, DELETE",
+            "JSON and XML data formats",
+            "Ansible for network automation",
+            "Terraform and infrastructure as code",
+            "AI/ML applications in networking"
+          ]
+        }
+      },
+      "quizCount": 5
+    }
+  },
+  "exams": {
+    "midterm-1": {
+      "title": "Midterm 1: Fundamentals & Access",
+      "domains": [1, 2],
+      "domainNames": ["Domain 1: Network Fundamentals", "Domain 2: Network Access"],
+      "questionCount": 40,
+      "timeLimit": 45,
+      "passingScore": 80
+    },
+    "midterm-2": {
+      "title": "Midterm 2: Connectivity & Services",
+      "domains": [3, 4],
+      "domainNames": ["Domain 3: IP Connectivity", "Domain 4: IP Services"],
+      "questionCount": 40,
+      "timeLimit": 45,
+      "passingScore": 80
+    },
+    "final-exam": {
+      "title": "Final Exam: Full CCNA",
+      "domains": [1, 2, 3, 4, 5, 6],
+      "domainNames": [
+        "Domain 1: Network Fundamentals",
+        "Domain 2: Network Access",
+        "Domain 3: IP Connectivity",
+        "Domain 4: IP Services",
+        "Domain 5: Security Fundamentals",
+        "Domain 6: Automation & Programmability"
+      ],
+      "questionCount": 60,
+      "timeLimit": 90,
+      "passingScore": 80
+    }
+  }
+}

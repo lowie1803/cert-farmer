@@ -1,0 +1,39 @@
+{
+  "questions": [
+    {
+      "id": "netprog-001",
+      "question": "Which HTTP method corresponds to the CRUD 'Read' operation in a REST API?",
+      "options": ["POST", "GET", "PUT", "DELETE"],
+      "correct": 1,
+      "explanation": "GET is the HTTP method used to read or retrieve a resource from the server. The CRUD-to-HTTP mapping is: Create=POST, Read=GET, Update=PUT/PATCH, Delete=DELETE. GET requests should not modify any data on the server."
+    },
+    {
+      "id": "netprog-002",
+      "question": "What does an HTTP 401 response code indicate when interacting with a REST API?",
+      "options": ["The request was successful", "The requested resource was not found", "Authentication is required or credentials are invalid", "The server encountered an internal error"],
+      "correct": 2,
+      "explanation": "HTTP 401 Unauthorized indicates that the request lacks valid authentication credentials or the provided credentials are invalid. This is different from 403 Forbidden, which means the client is authenticated but does not have permission to access the resource."
+    },
+    {
+      "id": "netprog-003",
+      "question": "Which data format is the most common choice for REST API communication due to its concise syntax and native support in most programming languages?",
+      "options": ["XML", "JSON", "YAML", "CSV"],
+      "correct": 1,
+      "explanation": "JSON (JavaScript Object Notation) is the most widely used data format for REST APIs. It is more concise and human-readable than XML, supports native data types (strings, numbers, booleans, arrays, objects), and is natively parsed by Python, JavaScript, and most modern languages."
+    },
+    {
+      "id": "netprog-004",
+      "question": "What is a key characteristic of Ansible that makes it well-suited for network device automation?",
+      "options": ["It requires an agent to be installed on every managed device", "It is agentless and connects to network devices via SSH", "It only works with Cisco devices", "It requires devices to run a Linux operating system"],
+      "correct": 1,
+      "explanation": "Ansible is agentless, meaning it does not require any software to be installed on managed devices. It connects to network devices via SSH (or APIs) and pushes configurations from a control node. This makes it ideal for network devices that cannot run third-party agents."
+    },
+    {
+      "id": "netprog-005",
+      "question": "In Terraform's workflow, what does the 'terraform plan' command do?",
+      "options": ["It immediately applies all configuration changes to the infrastructure", "It initializes the Terraform working directory and downloads providers", "It shows a preview of proposed changes without making any modifications", "It destroys all managed infrastructure resources"],
+      "correct": 2,
+      "explanation": "The 'terraform plan' command generates an execution plan that shows what changes Terraform will make to reach the desired state defined in the configuration files. It does not make any actual changes — it only previews them. The 'terraform apply' command then executes those changes after confirmation."
+    }
+  ]
+}

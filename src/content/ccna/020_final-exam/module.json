@@ -1,0 +1,17 @@
+{
+  "id": "final-exam",
+  "title": "Final Exam: Full CCNA",
+  "icon": "📋",
+  "description": "60 questions covering all 6 domains",
+  "category": "exam",
+  "domain": "Domain 1: Network Fundamentals",
+  "lessons": [
+    {
+      "id": "final-exam-exam",
+      "title": "Final Exam",
+      "type": "exam",
+      "timeLimit": 90,
+      "passingScore": 80
+    }
+  ]
+}

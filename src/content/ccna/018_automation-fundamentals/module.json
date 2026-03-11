@@ -1,0 +1,19 @@
+{
+  "id": "automation-fundamentals",
+  "title": "Automation Fundamentals",
+  "icon": "🤖",
+  "description": "SDN, controllers, and intent-based networking",
+  "domain": "Domain 6: Automation & Programmability",
+  "lessons": [
+    {
+      "id": "sdn-concepts",
+      "title": "SDN & Controllers",
+      "type": "notes"
+    },
+    {
+      "id": "automation-fundamentals-quiz",
+      "title": "Automation Fundamentals Quiz",
+      "type": "quiz"
+    }
+  ]
+}

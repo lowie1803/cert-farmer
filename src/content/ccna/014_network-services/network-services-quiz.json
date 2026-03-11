@@ -1,0 +1,39 @@
+{
+  "questions": [
+    {
+      "id": "ns-mgmt-001",
+      "question": "What is the NTP stratum level that indicates an unsynchronized or invalid clock source?",
+      "options": ["Stratum 0", "Stratum 1", "Stratum 15", "Stratum 16"],
+      "correct": 3,
+      "explanation": "Stratum 16 indicates that a device is unsynchronized and has no valid time source. Valid stratum levels range from 0 (reference clock) to 15. Any device at stratum 16 is considered unreachable for time synchronization."
+    },
+    {
+      "id": "ns-mgmt-002",
+      "question": "Which version of SNMP provides both authentication and encryption?",
+      "options": ["SNMPv1", "SNMPv2c", "SNMPv3 with authPriv", "All versions support encryption"],
+      "correct": 2,
+      "explanation": "Only SNMPv3 supports authentication and encryption. The authPriv security level provides both username-based authentication and AES/DES encryption. SNMPv1 and SNMPv2c use plaintext community strings with no encryption."
+    },
+    {
+      "id": "ns-mgmt-003",
+      "question": "Which syslog severity level corresponds to 'Warning' messages?",
+      "options": ["Level 3", "Level 4", "Level 5", "Level 6"],
+      "correct": 1,
+      "explanation": "Syslog level 4 corresponds to Warning conditions. The levels are: 0-Emergency, 1-Alert, 2-Critical, 3-Error, 4-Warning, 5-Notification, 6-Informational, 7-Debugging."
+    },
+    {
+      "id": "ns-mgmt-004",
+      "question": "What DSCP value is recommended for voice traffic to ensure low latency and low jitter?",
+      "options": ["AF41 (34)", "CS5 (40)", "EF (46)", "BE (0)"],
+      "correct": 2,
+      "explanation": "DSCP EF (Expedited Forwarding), with a decimal value of 46, is the standard marking for voice traffic. EF provides low latency, low jitter, and low packet loss treatment through the LLQ strict priority queue."
+    },
+    {
+      "id": "ns-mgmt-005",
+      "question": "Which command is required before generating RSA keys for SSH on a Cisco device?",
+      "options": ["transport input ssh", "ip ssh version 2", "ip domain-name", "line vty 0 4"],
+      "correct": 2,
+      "explanation": "The 'ip domain-name' command must be configured before generating RSA keys because the fully qualified domain name (hostname + domain name) is used as the key label. Without it, the 'crypto key generate rsa' command will fail."
+    }
+  ]
+}

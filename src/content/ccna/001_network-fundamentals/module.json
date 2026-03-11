@@ -3,6 +3,7 @@
   "title": "Network Fundamentals",
   "icon": "🌐",
   "description": "Core networking concepts and the OSI/TCP-IP models",
+  "domain": "Domain 1: Network Fundamentals",
   "lessons": [
     {
       "id": "osi-model",

@@ -1,0 +1,17 @@
+{
+  "id": "midterm-1",
+  "title": "Midterm 1: Fundamentals & Access",
+  "icon": "📋",
+  "description": "40 questions covering Domains 1-2",
+  "category": "exam",
+  "domain": "Domain 1: Network Fundamentals",
+  "lessons": [
+    {
+      "id": "midterm-1-exam",
+      "title": "Midterm Exam 1",
+      "type": "exam",
+      "timeLimit": 45,
+      "passingScore": 80
+    }
+  ]
+}

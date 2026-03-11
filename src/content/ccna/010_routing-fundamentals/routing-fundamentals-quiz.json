@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "id": "rf-001",
+      "question": "A router has the following routes in its routing table: 10.0.0.0/8 via EIGRP, 10.1.0.0/16 via OSPF, and 10.1.1.0/24 via RIP. A packet arrives destined for 10.1.1.50. Which route will the router use?",
+      "options": [
+        "10.0.0.0/8 via EIGRP because EIGRP has the lowest AD",
+        "10.1.0.0/16 via OSPF because OSPF is a link-state protocol",
+        "10.1.1.0/24 via RIP because it is the longest prefix match",
+        "The router will load-balance across all three routes"
+      ],
+      "correct": 2,
+      "explanation": "Routers always prefer the longest prefix match regardless of administrative distance or metric. The /24 route is the most specific match for 10.1.1.50, so it is selected even though RIP has the highest AD of the three protocols."
+    },
+    {
+      "id": "rf-002",
+      "question": "What is the default administrative distance of OSPF?",
+      "options": [
+        "90",
+        "100",
+        "110",
+        "120"
+      ],
+      "correct": 2,
+      "explanation": "OSPF has a default administrative distance of 110. EIGRP internal is 90, and RIP is 120. AD is used to rank the trustworthiness of different routing sources."
+    },
+    {
+      "id": "rf-003",
+      "question": "An engineer configures the command 'ip route 10.10.0.0 255.255.0.0 192.168.1.2 115' on a router. What does the value 115 represent?",
+      "options": [
+        "The metric for the static route",
+        "The OSPF process ID",
+        "The administrative distance assigned to this static route",
+        "The VLAN number for the route"
+      ],
+      "correct": 2,
+      "explanation": "The trailing number on an ip route command sets a custom administrative distance. The default AD for a static route is 1. Setting it to 115 makes it a floating static route that is only used when routes with lower AD (such as OSPF at 110) are unavailable."
+    },
+    {
+      "id": "rf-004",
+      "question": "Which command configures a default route on a Cisco router pointing to next-hop 203.0.113.1?",
+      "options": [
+        "ip route 255.255.255.255 0.0.0.0 203.0.113.1",
+        "ip default-network 203.0.113.1",
+        "ip route 0.0.0.0 0.0.0.0 203.0.113.1",
+        "ip route default 203.0.113.1"
+      ],
+      "correct": 2,
+      "explanation": "A default route uses the destination 0.0.0.0 with a mask of 0.0.0.0, which matches any destination not explicitly found in the routing table. This route becomes the gateway of last resort."
+    },
+    {
+      "id": "rf-005",
+      "question": "In the output of 'show ip route', what do the codes 'C' and 'L' represent?",
+      "options": [
+        "C = cached route, L = learned route",
+        "C = connected network, L = local host route for the router's own interface IP",
+        "C = classful route, L = longest-match route",
+        "C = configured route, L = loopback route"
+      ],
+      "correct": 1,
+      "explanation": "C indicates a connected route representing the network on a directly attached interface. L indicates a local route, which is a /32 host route for the IP address assigned to the router's own interface. Both are automatically created when an interface is configured and enabled."
+    }
+  ]
+}

@@ -1,0 +1,324 @@
+{
+  "questions": [
+    {
+      "id": "midterm-2-q1",
+      "question": "A router has the following routes: 10.1.0.0/16, 10.1.1.0/24, and 10.1.1.128/25. A packet is destined for 10.1.1.200. Which route will be used?",
+      "options": ["10.1.0.0/16", "10.1.1.0/24", "10.1.1.128/25", "The packet will be dropped"],
+      "correct": 2,
+      "explanation": "Routers use longest prefix match to select routes. 10.1.1.200 matches all three routes, but /25 is the longest (most specific) prefix match, so the 10.1.1.128/25 route is selected.",
+      "domain": "Domain 3: IP Connectivity"
+    },
+    {
+      "id": "midterm-2-q2",
+      "question": "What is the default administrative distance of OSPF?",
+      "options": ["90", "100", "110", "120"],
+      "correct": 2,
+      "explanation": "OSPF has a default administrative distance of 110. EIGRP is 90, static routes are 1, and RIP is 120. Lower AD values are preferred when multiple routing protocols have routes to the same destination.",
+      "domain": "Domain 3: IP Connectivity"
+    },
+    {
+      "id": "midterm-2-q3",
+      "question": "Which type of route has an administrative distance of 0?",
+      "options": ["Static route", "Connected route", "OSPF route", "Default route"],
+      "correct": 1,
+      "explanation": "Connected routes have an administrative distance of 0, making them the most trusted. They represent networks directly attached to the router's interfaces. Local routes also have AD 0.",
+      "domain": "Domain 3: IP Connectivity"
+    },
+    {
+      "id": "midterm-2-q4",
+      "question": "What command creates a default static route on a Cisco router?",
+      "options": ["ip route 0.0.0.0 0.0.0.0 10.1.1.1", "ip default-network 10.1.1.1", "ip route default 10.1.1.1", "ip route 255.255.255.255 0.0.0.0 10.1.1.1"],
+      "correct": 0,
+      "explanation": "The command 'ip route 0.0.0.0 0.0.0.0 <next-hop>' creates a default static route (also called a gateway of last resort). The 0.0.0.0 0.0.0.0 matches all destinations.",
+      "domain": "Domain 3: IP Connectivity"
+    },
+    {
+      "id": "midterm-2-q5",
+      "question": "What is a floating static route?",
+      "options": ["A route that uses load balancing across multiple paths", "A static route with a higher AD than the primary route, used as a backup", "A route that dynamically changes based on bandwidth", "A static route that only appears in the routing table during business hours"],
+      "correct": 1,
+      "explanation": "A floating static route has a manually configured administrative distance higher than the primary route. It stays out of the routing table unless the primary route fails, serving as a backup path.",
+      "domain": "Domain 3: IP Connectivity"
+    },
+    {
+      "id": "midterm-2-q6",
+      "question": "Which two conditions must match for OSPF routers to form a neighbor adjacency? (Choose the best answer.)",
+      "options": ["Area ID and authentication type only", "Hello/dead timers and area ID", "Router ID and process ID", "Subnet mask and hostname"],
+      "correct": 1,
+      "explanation": "OSPF neighbors must agree on hello/dead timers, area ID, subnet mask (on the shared link), authentication, and stub area flags. Process ID is local and does not need to match. Hello/dead timers and area ID are among the most common requirements tested.",
+      "domain": "Domain 3: IP Connectivity"
+    },
+    {
+      "id": "midterm-2-q7",
+      "question": "In an OSPF multi-access network, what is the role of the DR (Designated Router)?",
+      "options": ["It is the fastest router on the segment", "It reduces OSPF traffic by collecting and distributing LSAs on behalf of all routers on the segment", "It is always the router with the lowest router ID", "It provides the default route for the area"],
+      "correct": 1,
+      "explanation": "The DR reduces OSPF overhead on multi-access networks by acting as a central point for LSA exchange. All routers form adjacencies with the DR and BDR rather than with every other router, reducing the number of adjacencies.",
+      "domain": "Domain 3: IP Connectivity"
+    },
+    {
+      "id": "midterm-2-q8",
+      "question": "How is the OSPF router ID selected if no router-id command or loopback interface is configured?",
+      "options": ["The lowest IP address on any active physical interface", "The highest IP address on any active physical interface", "The IP address of the first interface configured", "A random 32-bit number"],
+      "correct": 1,
+      "explanation": "The OSPF router ID is selected in this order: (1) manually configured router-id, (2) highest IP on a loopback interface, (3) highest IP on any active physical interface. Without a router-id or loopback, the highest active physical interface IP is used.",
+      "domain": "Domain 3: IP Connectivity"
+    },
+    {
+      "id": "midterm-2-q9",
+      "question": "The default OSPF cost for a 1 Gbps interface is (using the default reference bandwidth of 100 Mbps):",
+      "options": ["1", "10", "100", "1000"],
+      "correct": 0,
+      "explanation": "OSPF cost = reference bandwidth / interface bandwidth. With default reference of 100 Mbps: 100/1000 = 0.1, but OSPF rounds up to a minimum of 1. This is why it's recommended to increase the reference bandwidth on modern networks.",
+      "domain": "Domain 3: IP Connectivity"
+    },
+    {
+      "id": "midterm-2-q10",
+      "question": "Which command advertises the 192.168.1.0/24 network in OSPF process 1, area 0?",
+      "options": ["network 192.168.1.0 0.0.0.255 area 0", "network 192.168.1.0 255.255.255.0 area 0", "redistribute 192.168.1.0/24 area 0", "ospf network 192.168.1.0 area 0"],
+      "correct": 0,
+      "explanation": "OSPF uses wildcard masks (inverse masks) in the network statement. For a /24 network, the wildcard mask is 0.0.0.255. The full command under 'router ospf 1' is 'network 192.168.1.0 0.0.0.255 area 0'.",
+      "domain": "Domain 3: IP Connectivity"
+    },
+    {
+      "id": "midterm-2-q11",
+      "question": "Which FHRP protocol is Cisco proprietary and uses an active/standby model?",
+      "options": ["VRRP", "HSRP", "GLBP", "OSPF"],
+      "correct": 1,
+      "explanation": "HSRP (Hot Standby Router Protocol) is Cisco proprietary and uses an active/standby model where one router is active and another is standby. VRRP is the IEEE standard equivalent. GLBP is also Cisco proprietary but supports load balancing.",
+      "domain": "Domain 3: IP Connectivity"
+    },
+    {
+      "id": "midterm-2-q12",
+      "question": "What is the virtual IP address used for in HSRP?",
+      "options": ["It is the management IP of the active router", "It serves as the default gateway IP for hosts on the subnet", "It is used for inter-router communication only", "It identifies the HSRP group number"],
+      "correct": 1,
+      "explanation": "The HSRP virtual IP address is configured as the default gateway for hosts on the subnet. If the active router fails, the standby router takes over the virtual IP, providing seamless failover for hosts.",
+      "domain": "Domain 3: IP Connectivity"
+    },
+    {
+      "id": "midterm-2-q13",
+      "question": "Which FHRP protocol allows multiple routers to actively forward traffic simultaneously for load balancing?",
+      "options": ["HSRP", "VRRP", "GLBP", "STP"],
+      "correct": 2,
+      "explanation": "GLBP (Gateway Load Balancing Protocol) is the only FHRP that allows multiple routers to actively forward traffic using a single virtual IP. It assigns different virtual MACs to different routers via the AVG (Active Virtual Gateway).",
+      "domain": "Domain 3: IP Connectivity"
+    },
+    {
+      "id": "midterm-2-q14",
+      "question": "What does the 'ip route 10.10.0.0 255.255.0.0 192.168.1.1 200' command configure?",
+      "options": ["A static route with metric 200", "A static route with administrative distance 200", "An OSPF route with cost 200", "A default route through 192.168.1.1"],
+      "correct": 1,
+      "explanation": "The optional number at the end of a static route command sets the administrative distance. Here, 200 makes this a floating static route that only enters the routing table if no route with AD < 200 exists for 10.10.0.0/16.",
+      "domain": "Domain 3: IP Connectivity"
+    },
+    {
+      "id": "midterm-2-q15",
+      "question": "A local route in the routing table is identified by which prefix length for IPv4?",
+      "options": ["/0", "/24", "/30", "/32"],
+      "correct": 3,
+      "explanation": "Local routes in the IPv4 routing table always have a /32 prefix length, representing the exact IP address configured on the router's interface. They are used by the router to identify traffic destined for itself.",
+      "domain": "Domain 3: IP Connectivity"
+    },
+    {
+      "id": "midterm-2-q16",
+      "question": "Which multicast address does OSPFv2 use to send Hello packets to all OSPF routers?",
+      "options": ["224.0.0.5", "224.0.0.6", "224.0.0.9", "224.0.0.10"],
+      "correct": 0,
+      "explanation": "OSPF uses 224.0.0.5 (AllSPFRouters) for Hello packets and other messages sent to all OSPF routers. 224.0.0.6 (AllDRouters) is used to send updates to the DR/BDR only.",
+      "domain": "Domain 3: IP Connectivity"
+    },
+    {
+      "id": "midterm-2-q17",
+      "question": "What is the default OSPF Hello interval on a broadcast network?",
+      "options": ["5 seconds", "10 seconds", "30 seconds", "40 seconds"],
+      "correct": 1,
+      "explanation": "The default OSPF Hello interval on broadcast and point-to-point networks is 10 seconds. On non-broadcast multi-access (NBMA) networks, it is 30 seconds. The Dead interval is 4 times the Hello interval by default.",
+      "domain": "Domain 3: IP Connectivity"
+    },
+    {
+      "id": "midterm-2-q18",
+      "question": "An OSPF router has the following: router-id 1.1.1.1, loopback 10.0.0.1, and physical interface 192.168.1.1. What is the OSPF router ID?",
+      "options": ["192.168.1.1", "10.0.0.1", "1.1.1.1", "The highest of all three"],
+      "correct": 2,
+      "explanation": "The manually configured router-id command takes highest priority for OSPF router ID selection. Even though the loopback and physical interface IPs exist, the explicit router-id 1.1.1.1 is used.",
+      "domain": "Domain 3: IP Connectivity"
+    },
+    {
+      "id": "midterm-2-q19",
+      "question": "Which OSPF network type uses DR/BDR election?",
+      "options": ["Point-to-point", "Broadcast", "Point-to-multipoint", "Virtual link"],
+      "correct": 1,
+      "explanation": "OSPF elects a DR and BDR on broadcast (e.g., Ethernet) and non-broadcast multi-access (NBMA) network types. Point-to-point and point-to-multipoint networks do not use DR/BDR election.",
+      "domain": "Domain 3: IP Connectivity"
+    },
+    {
+      "id": "midterm-2-q20",
+      "question": "What is the administrative distance of a directly connected static route (using an exit interface)?",
+      "options": ["0", "1", "5", "20"],
+      "correct": 0,
+      "explanation": "A static route configured with an exit interface (e.g., 'ip route 10.0.0.0 255.0.0.0 GigabitEthernet0/0') has an administrative distance of 0 because it appears as a directly connected route in the routing table. A static route using a next-hop IP has AD 1.",
+      "domain": "Domain 3: IP Connectivity"
+    },
+    {
+      "id": "midterm-2-q21",
+      "question": "What are the four steps of the DHCP process in order?",
+      "options": ["Discover, Offer, Request, Acknowledge", "Request, Discover, Offer, Acknowledge", "Discover, Request, Offer, Acknowledge", "Offer, Discover, Acknowledge, Request"],
+      "correct": 0,
+      "explanation": "The DHCP DORA process is: Discover (client broadcasts to find servers), Offer (server offers an IP), Request (client requests the offered IP), Acknowledge (server confirms the lease). All initial messages use broadcast.",
+      "domain": "Domain 4: IP Services"
+    },
+    {
+      "id": "midterm-2-q22",
+      "question": "Which DHCP message is sent as a broadcast by the client even after receiving an offer?",
+      "options": ["Discover", "Offer", "Request", "Acknowledge"],
+      "correct": 2,
+      "explanation": "The DHCP Request is sent as a broadcast so that all DHCP servers on the network know which server's offer was accepted and can release any other offers. The client doesn't yet have a confirmed IP, so it still uses broadcast.",
+      "domain": "Domain 4: IP Services"
+    },
+    {
+      "id": "midterm-2-q23",
+      "question": "A host needs to resolve a domain name to an IP address. Which protocol does it use?",
+      "options": ["DHCP", "DNS", "ARP", "SNMP"],
+      "correct": 1,
+      "explanation": "DNS (Domain Name System) resolves domain names (like www.example.com) to IP addresses. DHCP assigns IP configuration, ARP resolves IP to MAC addresses, and SNMP is for network management.",
+      "domain": "Domain 4: IP Services"
+    },
+    {
+      "id": "midterm-2-q24",
+      "question": "Which type of NAT maps multiple private IP addresses to a single public IP address using port numbers?",
+      "options": ["Static NAT", "Dynamic NAT", "PAT (NAT overload)", "NAT64"],
+      "correct": 2,
+      "explanation": "PAT (Port Address Translation), also called NAT overload, maps multiple private IPs to a single public IP by using unique source port numbers to track each session. This is the most common form of NAT.",
+      "domain": "Domain 4: IP Services"
+    },
+    {
+      "id": "midterm-2-q25",
+      "question": "What is the purpose of a DHCP relay agent (ip helper-address)?",
+      "options": ["It assigns IP addresses directly to clients", "It forwards DHCP broadcast messages to a DHCP server on a different subnet", "It provides DNS resolution for DHCP clients", "It caches DHCP leases for faster assignment"],
+      "correct": 1,
+      "explanation": "A DHCP relay agent (configured with 'ip helper-address') forwards DHCP broadcast messages from clients to a DHCP server located on a different subnet. Broadcasts don't cross routers by default, so the relay is necessary.",
+      "domain": "Domain 4: IP Services"
+    },
+    {
+      "id": "midterm-2-q26",
+      "question": "An NTP server with stratum 3 provides time to a client. What stratum level does the client become?",
+      "options": ["Stratum 2", "Stratum 3", "Stratum 4", "Stratum 0"],
+      "correct": 2,
+      "explanation": "NTP stratum indicates distance from the reference clock. A client synchronized to a stratum 3 server becomes stratum 4. Stratum 0 is the reference clock itself (atomic clock, GPS). Stratum 1 is directly connected to stratum 0.",
+      "domain": "Domain 4: IP Services"
+    },
+    {
+      "id": "midterm-2-q27",
+      "question": "Which SNMP version provides encryption and authentication?",
+      "options": ["SNMPv1", "SNMPv2c", "SNMPv3", "All versions support encryption"],
+      "correct": 2,
+      "explanation": "SNMPv3 is the only version that provides both authentication (verifying the identity of the sender) and encryption (privacy of data). SNMPv1 and v2c use community strings sent in clear text, providing no real security.",
+      "domain": "Domain 4: IP Services"
+    },
+    {
+      "id": "midterm-2-q28",
+      "question": "What syslog severity level is 'Warning'?",
+      "options": ["3", "4", "5", "6"],
+      "correct": 1,
+      "explanation": "Syslog severity levels: 0=Emergency, 1=Alert, 2=Critical, 3=Error, 4=Warning, 5=Notification, 6=Informational, 7=Debugging. Lower numbers indicate more severe events.",
+      "domain": "Domain 4: IP Services"
+    },
+    {
+      "id": "midterm-2-q29",
+      "question": "Which syslog severity level should be used for normal but significant conditions?",
+      "options": ["Level 4 (Warning)", "Level 5 (Notification)", "Level 6 (Informational)", "Level 7 (Debugging)"],
+      "correct": 1,
+      "explanation": "Syslog level 5 (Notification) is for normal but significant conditions, such as interface state changes. Level 6 is for informational messages, level 4 is for warnings, and level 7 is for debug output.",
+      "domain": "Domain 4: IP Services"
+    },
+    {
+      "id": "midterm-2-q30",
+      "question": "Which QoS marking operates at Layer 3 and uses a 6-bit field in the IP header?",
+      "options": ["CoS (802.1p)", "DSCP", "MPLS EXP", "IP Precedence"],
+      "correct": 1,
+      "explanation": "DSCP (Differentiated Services Code Point) uses 6 bits of the 8-bit ToS (Type of Service) field in the IPv4 header, providing 64 possible values. CoS operates at Layer 2. IP Precedence uses only 3 bits of the ToS field.",
+      "domain": "Domain 4: IP Services"
+    },
+    {
+      "id": "midterm-2-q31",
+      "question": "Static NAT provides what type of mapping?",
+      "options": ["One-to-many: one private IP to many public IPs", "One-to-one: one private IP permanently mapped to one public IP", "Many-to-one: many private IPs to one public IP", "Many-to-many: a pool of private IPs to a pool of public IPs"],
+      "correct": 1,
+      "explanation": "Static NAT creates a permanent one-to-one mapping between a private (inside local) address and a public (inside global) address. This is commonly used for servers that need to be accessible from the internet.",
+      "domain": "Domain 4: IP Services"
+    },
+    {
+      "id": "midterm-2-q32",
+      "question": "When configuring NAT on a router, the interface facing the private network should be designated as:",
+      "options": ["ip nat outside", "ip nat inside", "ip nat source", "ip nat pool"],
+      "correct": 1,
+      "explanation": "The interface connected to the private (internal) network is configured with 'ip nat inside'. The interface connected to the public (external) network is configured with 'ip nat outside'. This tells the router which direction to translate.",
+      "domain": "Domain 4: IP Services"
+    },
+    {
+      "id": "midterm-2-q33",
+      "question": "What transport protocol and port does DNS primarily use for standard queries?",
+      "options": ["TCP port 53", "UDP port 53", "TCP port 80", "UDP port 161"],
+      "correct": 1,
+      "explanation": "DNS primarily uses UDP port 53 for standard queries because it is faster (no connection setup). TCP port 53 is used for zone transfers and when response data exceeds 512 bytes.",
+      "domain": "Domain 4: IP Services"
+    },
+    {
+      "id": "midterm-2-q34",
+      "question": "Which command configures a router to use an NTP server at 10.1.1.1?",
+      "options": ["ntp server 10.1.1.1", "ntp master 10.1.1.1", "clock set ntp 10.1.1.1", "ntp peer 10.1.1.1"],
+      "correct": 0,
+      "explanation": "The command 'ntp server 10.1.1.1' configures the router to synchronize its clock with the NTP server at 10.1.1.1. 'ntp master' makes the router an NTP server. 'ntp peer' sets up a symmetric NTP association.",
+      "domain": "Domain 4: IP Services"
+    },
+    {
+      "id": "midterm-2-q35",
+      "question": "In SNMPv2c, what is a community string used for?",
+      "options": ["Encrypting SNMP data", "Authenticating SNMP access (like a password sent in clear text)", "Identifying the SNMP trap destination", "Defining the MIB structure"],
+      "correct": 1,
+      "explanation": "In SNMPv2c, community strings act as passwords for authentication but are sent in clear text, providing minimal security. Common defaults are 'public' (read-only) and 'private' (read-write).",
+      "domain": "Domain 4: IP Services"
+    },
+    {
+      "id": "midterm-2-q36",
+      "question": "Which QoS mechanism determines the order in which packets are sent out an interface?",
+      "options": ["Classification", "Marking", "Queuing", "Policing"],
+      "correct": 2,
+      "explanation": "Queuing (also called scheduling) determines the order packets are transmitted from an interface. Different queuing methods (FIFO, WFQ, LLQ, CBWFQ) prioritize traffic differently. Classification identifies traffic, marking tags it, and policing limits it.",
+      "domain": "Domain 4: IP Services"
+    },
+    {
+      "id": "midterm-2-q37",
+      "question": "What is the default SSH timeout for authentication on a Cisco device?",
+      "options": ["30 seconds", "60 seconds", "120 seconds", "300 seconds"],
+      "correct": 2,
+      "explanation": "The default SSH authentication timeout on Cisco IOS is 120 seconds. This can be changed with the 'ip ssh time-out <seconds>' global configuration command.",
+      "domain": "Domain 4: IP Services"
+    },
+    {
+      "id": "midterm-2-q38",
+      "question": "Which protocol is used to transfer a Cisco IOS image to a router and operates over UDP without authentication?",
+      "options": ["FTP", "TFTP", "SCP", "HTTPS"],
+      "correct": 1,
+      "explanation": "TFTP (Trivial File Transfer Protocol) uses UDP port 69 and provides no authentication or encryption. It is commonly used for transferring IOS images and configuration files. FTP uses TCP and requires authentication; SCP uses SSH for encryption.",
+      "domain": "Domain 4: IP Services"
+    },
+    {
+      "id": "midterm-2-q39",
+      "question": "Dynamic NAT differs from PAT in that dynamic NAT:",
+      "options": ["Uses port numbers to differentiate translations", "Maps each inside host to a unique public IP from a pool (one-to-one, no port multiplexing)", "Always uses a single public IP address", "Does not require an access list"],
+      "correct": 1,
+      "explanation": "Dynamic NAT allocates a public IP from a defined pool for each inside host on a one-to-one basis without port multiplexing. When the pool is exhausted, additional hosts cannot be translated. PAT multiplexes many hosts onto one or few public IPs using port numbers.",
+      "domain": "Domain 4: IP Services"
+    },
+    {
+      "id": "midterm-2-q40",
+      "question": "What DSCP value is recommended for Expedited Forwarding (EF), typically used for voice traffic?",
+      "options": ["DSCP 0", "DSCP 26", "DSCP 34", "DSCP 46"],
+      "correct": 3,
+      "explanation": "DSCP 46 (binary 101110) corresponds to Expedited Forwarding (EF), which is recommended for real-time voice traffic. It provides low latency, low jitter, and low loss service. DSCP 0 is best effort, DSCP 26 is AF31, and DSCP 34 is AF41.",
+      "domain": "Domain 4: IP Services"
+    }
+  ]
+}

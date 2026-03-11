@@ -3,6 +3,7 @@
   "title": "Security Fundamentals",
   "icon": "🔒",
   "description": "Network security concepts and configurations",
+  "domain": "Domain 5: Security Fundamentals",
   "lessons": [
     {
       "id": "security-concepts",
@@ -13,6 +14,11 @@
       "id": "acl",
       "title": "Access Control Lists",
       "type": "notes"
+    },
+    {
+      "id": "security-quiz",
+      "title": "Security Fundamentals Quiz",
+      "type": "quiz"
     }
   ]
 }

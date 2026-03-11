@@ -1,0 +1,39 @@
+{
+  "questions": [
+    {
+      "id": "virt-sw-q1",
+      "question": "Which hypervisor type runs directly on the physical hardware without a host operating system?",
+      "options": ["Type 2 (hosted)", "Type 1 (bare-metal)", "Container runtime", "Virtual appliance"],
+      "correct": 1,
+      "explanation": "Type 1 (bare-metal) hypervisors run directly on physical hardware without needing a host OS. Examples include VMware ESXi and Microsoft Hyper-V. Type 2 hypervisors run as applications on top of a host operating system."
+    },
+    {
+      "id": "virt-sw-q2",
+      "question": "A company wants to use cloud-hosted virtual servers where they manage the operating system and applications, but the provider manages the physical infrastructure. Which cloud service model is this?",
+      "options": ["SaaS", "PaaS", "IaaS", "DaaS"],
+      "correct": 2,
+      "explanation": "Infrastructure as a Service (IaaS) provides virtualized computing resources (servers, storage, networking) where the customer manages the OS, middleware, and applications. The cloud provider manages the underlying physical infrastructure and virtualization layer."
+    },
+    {
+      "id": "virt-sw-q3",
+      "question": "A switch receives a frame with an unknown destination MAC address. What action does the switch take?",
+      "options": ["Drops the frame", "Sends the frame to the default gateway", "Floods the frame out all ports except the source port", "Sends an ARP request to resolve the address"],
+      "correct": 2,
+      "explanation": "When a switch receives a frame with a destination MAC address not found in its MAC address table (unknown unicast), it floods the frame out all ports except the port on which it was received. This ensures the frame reaches its destination regardless of which port it is connected to."
+    },
+    {
+      "id": "virt-sw-q4",
+      "question": "A 24-port switch has no VLANs configured. How many collision domains and broadcast domains does it have?",
+      "options": ["1 collision domain, 1 broadcast domain", "24 collision domains, 24 broadcast domains", "24 collision domains, 1 broadcast domain", "1 collision domain, 24 broadcast domains"],
+      "correct": 2,
+      "explanation": "Each switch port creates a separate collision domain through microsegmentation, giving 24 collision domains. However, without VLANs, all ports belong to a single broadcast domain — a broadcast frame received on any port is forwarded to all other ports."
+    },
+    {
+      "id": "virt-sw-q5",
+      "question": "What is a key difference between containers and virtual machines?",
+      "options": ["Containers include a full operating system while VMs share the host kernel", "Containers share the host OS kernel while VMs each include a full operating system", "Containers require a Type 1 hypervisor while VMs use a Type 2 hypervisor", "Containers cannot run on Linux while VMs can run on any platform"],
+      "correct": 1,
+      "explanation": "Containers share the host operating system's kernel and only package the application and its dependencies, making them lightweight (megabytes) and fast to start (seconds). Virtual machines each include a full guest operating system, making them larger (gigabytes) but providing stronger isolation."
+    }
+  ]
+}

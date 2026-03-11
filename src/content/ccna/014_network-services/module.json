@@ -1,0 +1,24 @@
+{
+  "id": "network-services",
+  "title": "Network Services",
+  "icon": "🛠️",
+  "description": "NTP, SNMP, syslog, QoS, and management protocols",
+  "domain": "Domain 4: IP Services",
+  "lessons": [
+    {
+      "id": "management-protocols",
+      "title": "Management Protocols",
+      "type": "notes"
+    },
+    {
+      "id": "qos-basics",
+      "title": "QoS Fundamentals",
+      "type": "notes"
+    },
+    {
+      "id": "network-services-quiz",
+      "title": "Network Services Quiz",
+      "type": "quiz"
+    }
+  ]
+}

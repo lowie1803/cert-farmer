@@ -1,0 +1,39 @@
+{
+  "questions": [
+    {
+      "id": "auto-fund-001",
+      "question": "What is the primary difference between traditional networking and SDN?",
+      "options": ["SDN eliminates the data plane from network devices", "SDN centralizes the control plane in a controller while devices retain the data plane", "SDN replaces all physical devices with virtual machines", "SDN uses only wireless connections between devices"],
+      "correct": 1,
+      "explanation": "SDN separates the control plane from the data plane. The control plane is centralized in an SDN controller, which has a global view of the network and makes forwarding decisions. Network devices retain their data plane to forward traffic based on instructions from the controller."
+    },
+    {
+      "id": "auto-fund-002",
+      "question": "Which plane is responsible for making forwarding decisions such as running routing protocols and building routing tables?",
+      "options": ["Data plane", "Management plane", "Control plane", "Forwarding plane"],
+      "correct": 2,
+      "explanation": "The control plane is responsible for making forwarding decisions. It runs routing protocols (OSPF, EIGRP, BGP), builds routing and ARP tables, and determines how traffic should be forwarded. The data plane then uses these decisions to actually forward packets."
+    },
+    {
+      "id": "auto-fund-003",
+      "question": "What is the primary function of Cisco DNA Center in an enterprise network?",
+      "options": ["It serves as a DHCP and DNS server for all network clients", "It is an intent-based networking platform that provides centralized automation, policy, and assurance", "It replaces all switches and routers with a single virtual device", "It functions exclusively as a syslog and SNMP monitoring server"],
+      "correct": 1,
+      "explanation": "Cisco DNA Center is an intent-based networking (IBN) platform that serves as a centralized controller for enterprise networks. It provides design, policy, provisioning, and assurance capabilities, allowing administrators to manage the network through business intent rather than device-by-device configuration."
+    },
+    {
+      "id": "auto-fund-004",
+      "question": "Which type of API connects an SDN controller to network devices such as switches and routers?",
+      "options": ["Northbound API", "Southbound API", "Westbound API", "Eastbound API"],
+      "correct": 1,
+      "explanation": "Southbound APIs connect the SDN controller to the network infrastructure devices below it. Examples include OpenFlow, NETCONF, and RESTCONF. Northbound APIs connect the controller upward to applications and automation scripts, typically using REST APIs."
+    },
+    {
+      "id": "auto-fund-005",
+      "question": "In intent-based networking, what happens after the administrator expresses a business intent to the controller?",
+      "options": ["The administrator must manually configure each device to match the intent", "The controller translates the intent into policies, pushes configurations to devices, and continuously verifies compliance", "The controller generates a report and waits for manual approval before making any changes", "The intent is stored but only applied during a scheduled maintenance window"],
+      "correct": 1,
+      "explanation": "In intent-based networking, the controller automatically translates business intent into network policies, activates those policies by pushing configurations to relevant devices, and then continuously monitors (assurance) the network to verify it matches the expressed intent. This closed-loop process is a key differentiator of IBN."
+    }
+  ]
+}

@@ -87,8 +87,11 @@ export default function ModulePage() {
                       {lesson.title}
                     </h3>
 
-                    <span className={lesson.type === 'quiz' ? 'tag-quiz' : 'tag-notes'}>
-                      {lesson.type === 'quiz' ? '📝 Quiz' : '📖 Notes'}
+                    <span className={
+                      lesson.type === 'exam' ? 'tag-exam' :
+                      lesson.type === 'quiz' ? 'tag-quiz' : 'tag-notes'
+                    }>
+                      {lesson.type === 'exam' ? '📋 Exam' : lesson.type === 'quiz' ? '📝 Quiz' : '📖 Notes'}
                     </span>
                   </div>
 

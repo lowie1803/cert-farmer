@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "id": "ospf-001",
+      "question": "Which of the following is NOT a requirement for two OSPF routers to form a neighbor adjacency?",
+      "options": [
+        "Matching Hello and Dead timers",
+        "Matching OSPF process IDs",
+        "Same subnet on the connecting interfaces",
+        "Same OSPF area ID on the connecting interfaces"
+      ],
+      "correct": 1,
+      "explanation": "The OSPF process ID is locally significant and does not need to match between neighbors. Adjacency requirements include matching Hello/Dead timers, area ID, subnet, authentication, and MTU."
+    },
+    {
+      "id": "ospf-002",
+      "question": "On a broadcast multi-access network, how is the OSPF Designated Router (DR) elected?",
+      "options": [
+        "The router with the lowest OSPF cost becomes DR",
+        "The router with the highest OSPF priority wins; if tied, the highest Router ID wins",
+        "The first router to boot always becomes DR",
+        "The router with the lowest Router ID becomes DR"
+      ],
+      "correct": 1,
+      "explanation": "The DR is elected based on the highest OSPF interface priority (default 1). If priorities are equal, the router with the highest Router ID is chosen. The election is non-preemptive once complete."
+    },
+    {
+      "id": "ospf-003",
+      "question": "A router has a reference bandwidth of 10000 Mbps configured. What is the OSPF cost of a GigabitEthernet interface?",
+      "options": [
+        "1",
+        "10",
+        "100",
+        "1000"
+      ],
+      "correct": 1,
+      "explanation": "OSPF cost = reference bandwidth / interface bandwidth. With a reference of 10,000 Mbps and a GigabitEthernet bandwidth of 1,000 Mbps, the cost is 10,000 / 1,000 = 10."
+    },
+    {
+      "id": "ospf-004",
+      "question": "What is the correct wildcard mask to match the subnet 172.16.4.0/22 in an OSPF network statement?",
+      "options": [
+        "0.0.0.255",
+        "0.0.3.255",
+        "0.0.7.255",
+        "0.0.15.255"
+      ],
+      "correct": 1,
+      "explanation": "A /22 subnet mask is 255.255.252.0. The wildcard mask is calculated by subtracting each octet from 255: 255-255=0, 255-255=0, 255-252=3, 255-0=255, yielding 0.0.3.255."
+    },
+    {
+      "id": "ospf-005",
+      "question": "Which command prevents an OSPF-enabled interface from sending Hello packets while still advertising its subnet?",
+      "options": [
+        "no ip ospf hello",
+        "passive-interface GigabitEthernet0/0",
+        "ip ospf shutdown",
+        "shutdown"
+      ],
+      "correct": 1,
+      "explanation": "The passive-interface command (configured under the OSPF router process) stops the interface from sending and receiving Hello packets, preventing neighbor formation, while still including the interface's subnet in OSPF advertisements."
+    }
+  ]
+}

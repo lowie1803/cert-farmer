@@ -1,0 +1,39 @@
+{
+  "questions": [
+    {
+      "id": "netsec-001",
+      "question": "Which VPN type creates a permanent encrypted tunnel between two network gateways to connect branch offices?",
+      "options": ["Remote-access VPN", "Site-to-site VPN", "SSL VPN", "GRE tunnel"],
+      "correct": 1,
+      "explanation": "A site-to-site VPN connects entire networks by establishing an IPsec tunnel between two VPN gateways (routers or firewalls). It is always-on and transparent to end users, unlike remote-access VPN which is initiated by individual clients."
+    },
+    {
+      "id": "netsec-002",
+      "question": "What is a key difference between RADIUS and TACACS+?",
+      "options": ["RADIUS uses TCP while TACACS+ uses UDP", "RADIUS encrypts the entire packet while TACACS+ encrypts only the password", "TACACS+ separates authentication, authorization, and accounting while RADIUS combines authentication and authorization", "RADIUS is Cisco proprietary while TACACS+ is an open standard"],
+      "correct": 2,
+      "explanation": "TACACS+ separates all three AAA functions (authentication, authorization, and accounting), allowing granular control such as per-command authorization. RADIUS combines authentication and authorization into a single process. TACACS+ uses TCP port 49 and encrypts the entire packet body, while RADIUS uses UDP and only encrypts the password."
+    },
+    {
+      "id": "netsec-003",
+      "question": "What does DHCP snooping use to determine which ports are allowed to send DHCP server messages?",
+      "options": ["MAC address table", "ARP inspection table", "Trusted and untrusted port classification", "VLAN access control lists"],
+      "correct": 2,
+      "explanation": "DHCP snooping classifies ports as trusted or untrusted. Only trusted ports (typically uplinks and ports connected to legitimate DHCP servers) are allowed to send DHCP server messages such as OFFER and ACK. Untrusted ports can only send client messages like DISCOVER and REQUEST."
+    },
+    {
+      "id": "netsec-004",
+      "question": "A switch port is configured with port security and the violation mode is set to 'restrict'. What happens when an unauthorized MAC address is detected?",
+      "options": ["The port is placed in err-disabled state", "Traffic from the violating MAC is dropped, a log message is generated, and the violation counter increments", "Traffic from the violating MAC is dropped silently with no logging", "All traffic on the port is blocked until the administrator clears the violation"],
+      "correct": 1,
+      "explanation": "In restrict mode, traffic from the violating MAC address is dropped, a syslog message is generated, an SNMP trap is sent, and the violation counter is incremented. The port remains in an up/up state. This differs from protect (silent drop) and shutdown (err-disables the port)."
+    },
+    {
+      "id": "netsec-005",
+      "question": "Which wireless security standard uses SAE (Simultaneous Authentication of Equals) to replace PSK authentication?",
+      "options": ["WPA2-Personal", "WPA2-Enterprise", "WPA3-Personal", "WPA3-Enterprise"],
+      "correct": 2,
+      "explanation": "WPA3-Personal uses SAE instead of PSK for authentication. SAE provides protection against offline dictionary attacks and enables forward secrecy, meaning that compromising one session key does not compromise past sessions. WPA2-Personal uses PSK, while Enterprise versions use 802.1X with RADIUS."
+    }
+  ]
+}

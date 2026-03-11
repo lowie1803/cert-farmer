@@ -1,0 +1,24 @@
+{
+  "id": "wireless-architectures",
+  "title": "Wireless Architectures",
+  "icon": "📡",
+  "description": "AP modes, WLC, WLAN configuration, and device management",
+  "domain": "Domain 2: Network Access",
+  "lessons": [
+    {
+      "id": "wireless-arch",
+      "title": "Wireless Architectures",
+      "type": "notes"
+    },
+    {
+      "id": "device-management",
+      "title": "Device Management",
+      "type": "notes"
+    },
+    {
+      "id": "wireless-architectures-quiz",
+      "title": "Wireless Architectures Quiz",
+      "type": "quiz"
+    }
+  ]
+}

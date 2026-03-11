@@ -1,0 +1,24 @@
+{
+  "id": "routing-fundamentals",
+  "title": "Routing Fundamentals",
+  "icon": "🗺️",
+  "description": "Routing table, administrative distance, and static routes",
+  "domain": "Domain 3: IP Connectivity",
+  "lessons": [
+    {
+      "id": "routing-concepts",
+      "title": "Routing Concepts",
+      "type": "notes"
+    },
+    {
+      "id": "static-routes",
+      "title": "Static & Default Routes",
+      "type": "notes"
+    },
+    {
+      "id": "routing-fundamentals-quiz",
+      "title": "Routing Fundamentals Quiz",
+      "type": "quiz"
+    }
+  ]
+}

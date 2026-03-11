@@ -1,0 +1,484 @@
+{
+  "questions": [
+    {
+      "id": "final-exam-q1",
+      "question": "At which OSI layer does a switch primarily operate?",
+      "options": ["Layer 1", "Layer 2", "Layer 3", "Layer 4"],
+      "correct": 1,
+      "explanation": "Switches primarily operate at Layer 2 (Data Link), using MAC addresses to forward frames. Layer 3 switches can also perform routing, but traditional switching is a Layer 2 function.",
+      "domain": "Domain 1: Network Fundamentals"
+    },
+    {
+      "id": "final-exam-q2",
+      "question": "Which protocol operates at the Transport layer and provides reliable, connection-oriented delivery?",
+      "options": ["UDP", "IP", "TCP", "ICMP"],
+      "correct": 2,
+      "explanation": "TCP (Transmission Control Protocol) operates at Layer 4 (Transport) and provides reliable delivery through sequencing, acknowledgments, and retransmission. UDP is also Layer 4 but is connectionless and unreliable.",
+      "domain": "Domain 1: Network Fundamentals"
+    },
+    {
+      "id": "final-exam-q3",
+      "question": "What is the purpose of the ARP protocol?",
+      "options": ["Resolve domain names to IP addresses", "Resolve IP addresses to MAC addresses", "Assign IP addresses dynamically", "Encrypt Layer 2 frames"],
+      "correct": 1,
+      "explanation": "ARP (Address Resolution Protocol) resolves a known IPv4 address to an unknown MAC address on the local network. The requesting host sends an ARP broadcast, and the target replies with its MAC address.",
+      "domain": "Domain 1: Network Fundamentals"
+    },
+    {
+      "id": "final-exam-q4",
+      "question": "A crossover cable is traditionally required when connecting which two devices directly?",
+      "options": ["A PC to a switch", "A router to a switch", "A switch to a switch", "A PC to a router's console port"],
+      "correct": 2,
+      "explanation": "A crossover cable is traditionally needed to connect like devices (switch-to-switch, PC-to-PC, router-to-router). A straight-through cable connects unlike devices (PC-to-switch). Modern devices with Auto-MDIX eliminate this requirement.",
+      "domain": "Domain 1: Network Fundamentals"
+    },
+    {
+      "id": "final-exam-q5",
+      "question": "Which IPv6 address prefix identifies a link-local address?",
+      "options": ["2000::/3", "fe80::/10", "fc00::/7", "ff00::/8"],
+      "correct": 1,
+      "explanation": "IPv6 link-local addresses use the prefix fe80::/10. They are automatically assigned to every IPv6-enabled interface and are only valid on the local link (not routable).",
+      "domain": "Domain 1: Network Fundamentals"
+    },
+    {
+      "id": "final-exam-q6",
+      "question": "In the PaaS cloud model, which of the following is managed by the customer?",
+      "options": ["Networking infrastructure", "Operating system", "Runtime environment", "Application code and data"],
+      "correct": 3,
+      "explanation": "In PaaS (Platform as a Service), the provider manages the infrastructure, OS, and runtime. The customer is only responsible for the application code and its data. IaaS requires the customer to manage the OS as well.",
+      "domain": "Domain 1: Network Fundamentals"
+    },
+    {
+      "id": "final-exam-q7",
+      "question": "How many bits are in an IPv6 address?",
+      "options": ["32", "48", "64", "128"],
+      "correct": 3,
+      "explanation": "IPv6 addresses are 128 bits long, written as eight groups of four hexadecimal digits. IPv4 addresses are 32 bits. 48 bits is the length of a MAC address. 64 bits is the interface ID portion of an IPv6 address.",
+      "domain": "Domain 1: Network Fundamentals"
+    },
+    {
+      "id": "final-exam-q8",
+      "question": "Which encapsulation order is correct when data travels down the OSI model from Application to Physical?",
+      "options": ["Data → Segment → Frame → Packet → Bits", "Data → Segment → Packet → Frame → Bits", "Data → Packet → Segment → Frame → Bits", "Data → Frame → Packet → Segment → Bits"],
+      "correct": 1,
+      "explanation": "Data is created at the Application layer, encapsulated into segments at Transport (L4), then packets at Network (L3), then frames at Data Link (L2), and finally converted to bits at Physical (L1).",
+      "domain": "Domain 1: Network Fundamentals"
+    },
+    {
+      "id": "final-exam-q9",
+      "question": "What is the subnet ID and broadcast address for host 172.16.45.100/22?",
+      "options": ["172.16.44.0 and 172.16.47.255", "172.16.45.0 and 172.16.45.255", "172.16.44.0 and 172.16.44.255", "172.16.40.0 and 172.16.43.255"],
+      "correct": 0,
+      "explanation": "A /22 means the third octet has 6 network bits. 45 in binary is 00101101; the first 6 bits give 00101100 = 44. So the subnet is 172.16.44.0. With 10 host bits (2^10=1024), the broadcast is 172.16.47.255.",
+      "domain": "Domain 1: Network Fundamentals"
+    },
+    {
+      "id": "final-exam-q10",
+      "question": "What multicast address does NDP use for Neighbor Solicitation messages?",
+      "options": ["ff02::1", "ff02::2", "ff02::1:ff00:0/104 (solicited-node multicast)", "ff02::5"],
+      "correct": 2,
+      "explanation": "NDP Neighbor Solicitation messages are sent to the solicited-node multicast address ff02::1:ffXX:XXXX, where the last 24 bits are derived from the target's IPv6 address. This is more efficient than broadcasting.",
+      "domain": "Domain 1: Network Fundamentals"
+    },
+    {
+      "id": "final-exam-q11",
+      "question": "Which PoE standard delivers up to 30W per port?",
+      "options": ["802.3af", "802.3at", "802.3bt Type 3", "802.3bt Type 4"],
+      "correct": 1,
+      "explanation": "IEEE 802.3at (PoE+) provides up to 30W per port (25.5W at the device). 802.3af provides 15.4W. 802.3bt Type 3 provides 60W and Type 4 provides 90W.",
+      "domain": "Domain 1: Network Fundamentals"
+    },
+    {
+      "id": "final-exam-q12",
+      "question": "What is the well-known TCP port for HTTPS?",
+      "options": ["80", "443", "22", "8080"],
+      "correct": 1,
+      "explanation": "HTTPS uses TCP port 443. HTTP uses port 80, SSH uses port 22, and 8080 is a common alternative HTTP port. HTTPS provides encrypted web communication using TLS.",
+      "domain": "Domain 1: Network Fundamentals"
+    },
+    {
+      "id": "final-exam-q13",
+      "question": "What is the maximum number of VLANs supported by the 802.1Q VLAN ID field?",
+      "options": ["1024", "2048", "4094", "4096"],
+      "correct": 2,
+      "explanation": "The 802.1Q VLAN ID field is 12 bits, allowing 4096 values (0–4095). However, VLAN 0 and VLAN 4095 are reserved, so 4094 usable VLANs are supported (1–4094).",
+      "domain": "Domain 2: Network Access"
+    },
+    {
+      "id": "final-exam-q14",
+      "question": "Which DTP mode actively attempts to form a trunk with the neighbor?",
+      "options": ["access", "trunk", "dynamic auto", "dynamic desirable"],
+      "correct": 3,
+      "explanation": "DTP dynamic desirable actively sends DTP frames to negotiate a trunk. Dynamic auto only forms a trunk if the neighbor initiates. For security, it is recommended to manually set ports as access or trunk and disable DTP with 'switchport nonegotiate'.",
+      "domain": "Domain 2: Network Access"
+    },
+    {
+      "id": "final-exam-q15",
+      "question": "What STP port role is assigned to the port with the best path to the root bridge on a non-root switch?",
+      "options": ["Designated port", "Root port", "Alternate port", "Backup port"],
+      "correct": 1,
+      "explanation": "Each non-root switch has exactly one root port — the port with the lowest cost path to the root bridge. Designated ports are the best ports on each segment. Alternate and backup ports are blocking roles in RSTP.",
+      "domain": "Domain 2: Network Access"
+    },
+    {
+      "id": "final-exam-q16",
+      "question": "What is the default STP bridge priority?",
+      "options": ["4096", "8192", "32768", "65535"],
+      "correct": 2,
+      "explanation": "The default STP bridge priority is 32768. Priority values must be multiples of 4096. To make a switch the root bridge, you lower its priority (e.g., to 4096 or 0). The bridge ID is priority + system ID extension + MAC address.",
+      "domain": "Domain 2: Network Access"
+    },
+    {
+      "id": "final-exam-q17",
+      "question": "An administrator configures PAgP on a switch port. Which mode actively negotiates EtherChannel formation?",
+      "options": ["Active", "Passive", "Desirable", "Auto"],
+      "correct": 2,
+      "explanation": "PAgP uses desirable (actively negotiates) and auto (passively waits) modes. LACP uses active and passive. Desirable–desirable or desirable–auto will form a PAgP EtherChannel; auto–auto will not.",
+      "domain": "Domain 2: Network Access"
+    },
+    {
+      "id": "final-exam-q18",
+      "question": "Which wireless AP deployment mode requires a WLC and uses split-MAC architecture?",
+      "options": ["Autonomous mode", "Lightweight mode", "FlexConnect mode (local switching)", "Bridge mode"],
+      "correct": 1,
+      "explanation": "Lightweight APs operate in a split-MAC architecture where the WLC handles management functions and the AP handles real-time functions. Autonomous APs operate independently without a WLC.",
+      "domain": "Domain 2: Network Access"
+    },
+    {
+      "id": "final-exam-q19",
+      "question": "What is an inter-VLAN routing method that uses a single physical router interface with subinterfaces?",
+      "options": ["Layer 3 switching", "Router-on-a-stick", "Policy-based routing", "Static routing"],
+      "correct": 1,
+      "explanation": "Router-on-a-stick uses a single physical router interface divided into subinterfaces, each configured with a VLAN tag (via encapsulation dot1q) and an IP address for its respective VLAN. The link to the switch is a trunk.",
+      "domain": "Domain 2: Network Access"
+    },
+    {
+      "id": "final-exam-q20",
+      "question": "Which command verifies the trunk status and allowed VLANs on a switch interface?",
+      "options": ["show vlan brief", "show interfaces trunk", "show running-config interface", "show spanning-tree"],
+      "correct": 1,
+      "explanation": "'show interfaces trunk' displays trunk ports, their mode, encapsulation, native VLAN, and the VLANs allowed and active on each trunk. 'show vlan brief' shows VLAN-to-port assignments for access ports.",
+      "domain": "Domain 2: Network Access"
+    },
+    {
+      "id": "final-exam-q21",
+      "question": "When a switch port is configured with 'switchport mode access' and 'switchport voice vlan 50', what happens?",
+      "options": ["The port becomes a trunk port", "The port carries data VLAN traffic untagged and voice VLAN 50 traffic tagged", "The port only carries VLAN 50", "The configuration is invalid"],
+      "correct": 1,
+      "explanation": "A port configured as an access port with a voice VLAN carries data traffic untagged on the access VLAN and voice traffic tagged with 802.1Q on VLAN 50. The phone uses CDP/LLDP to learn the voice VLAN.",
+      "domain": "Domain 2: Network Access"
+    },
+    {
+      "id": "final-exam-q22",
+      "question": "RSTP defines how many port states?",
+      "options": ["3", "4", "5", "6"],
+      "correct": 0,
+      "explanation": "RSTP simplifies STP's five port states into three: Discarding (combines STP's disabled, blocking, and listening), Learning, and Forwarding. This simplification helps with faster convergence.",
+      "domain": "Domain 2: Network Access"
+    },
+    {
+      "id": "final-exam-q23",
+      "question": "What is the CAPWAP control tunnel port number?",
+      "options": ["UDP 5246", "TCP 5246", "UDP 5247", "TCP 5247"],
+      "correct": 0,
+      "explanation": "CAPWAP uses UDP port 5246 for the control tunnel (encrypted with DTLS) and UDP port 5247 for the data tunnel. Both are UDP-based, not TCP.",
+      "domain": "Domain 2: Network Access"
+    },
+    {
+      "id": "final-exam-q24",
+      "question": "Which command displays the MAC address table on a Cisco switch?",
+      "options": ["show arp", "show mac address-table", "show interfaces", "show ip route"],
+      "correct": 1,
+      "explanation": "'show mac address-table' displays the switch's MAC address table, showing MAC addresses, associated VLANs, port types (dynamic/static), and the interfaces where they were learned.",
+      "domain": "Domain 2: Network Access"
+    },
+    {
+      "id": "final-exam-q25",
+      "question": "A router has routes to 10.0.0.0/8 via OSPF (AD 110) and via RIP (AD 120). Which route is installed in the routing table?",
+      "options": ["RIP route because it has a higher AD", "OSPF route because it has a lower AD", "Both routes are installed for load balancing", "Neither — the router will drop packets to 10.0.0.0/8"],
+      "correct": 1,
+      "explanation": "When multiple routing protocols have routes to the same destination with the same prefix length, the route with the lowest administrative distance wins. OSPF (AD 110) is preferred over RIP (AD 120).",
+      "domain": "Domain 3: IP Connectivity"
+    },
+    {
+      "id": "final-exam-q26",
+      "question": "Which command displays the OSPF neighbor table?",
+      "options": ["show ip ospf interface", "show ip ospf neighbor", "show ip route ospf", "show ip protocols"],
+      "correct": 1,
+      "explanation": "'show ip ospf neighbor' displays OSPF neighbor relationships including router ID, state (e.g., FULL, 2WAY), dead time, address, and interface. This is essential for verifying OSPF adjacencies.",
+      "domain": "Domain 3: IP Connectivity"
+    },
+    {
+      "id": "final-exam-q27",
+      "question": "What is the OSPF Dead interval if the Hello interval is set to 5 seconds?",
+      "options": ["10 seconds", "15 seconds", "20 seconds", "30 seconds"],
+      "correct": 2,
+      "explanation": "By default, the OSPF Dead interval is 4 times the Hello interval. If the Hello interval is set to 5 seconds, the Dead interval is 20 seconds. If no Hello is received within the Dead interval, the neighbor is declared down.",
+      "domain": "Domain 3: IP Connectivity"
+    },
+    {
+      "id": "final-exam-q28",
+      "question": "Which command correctly configures a static route to the 192.168.10.0/24 network via next-hop 10.0.0.2?",
+      "options": ["ip route 192.168.10.0 255.255.255.0 10.0.0.2", "ip route 192.168.10.0/24 10.0.0.2", "ip route 10.0.0.2 192.168.10.0 255.255.255.0", "route add 192.168.10.0 mask 255.255.255.0 10.0.0.2"],
+      "correct": 0,
+      "explanation": "Cisco IOS uses the syntax 'ip route <destination> <subnet-mask> <next-hop>'. The correct command is 'ip route 192.168.10.0 255.255.255.0 10.0.0.2'. Cisco IOS does not use CIDR notation in the ip route command.",
+      "domain": "Domain 3: IP Connectivity"
+    },
+    {
+      "id": "final-exam-q29",
+      "question": "An OSPF router's interface cost can be manually set using which command?",
+      "options": ["bandwidth <value>", "ip ospf cost <value>", "ip ospf priority <value>", "ip ospf metric <value>"],
+      "correct": 1,
+      "explanation": "'ip ospf cost <value>' directly sets the OSPF cost on an interface. While changing the bandwidth also affects cost (since cost = reference BW / interface BW), 'ip ospf cost' provides direct control.",
+      "domain": "Domain 3: IP Connectivity"
+    },
+    {
+      "id": "final-exam-q30",
+      "question": "In HSRP version 2, what is the default Hello timer?",
+      "options": ["1 second", "3 seconds", "5 seconds", "10 seconds"],
+      "correct": 1,
+      "explanation": "HSRP version 2 uses a default Hello timer of 3 seconds and a Hold timer of 10 seconds. If the standby router does not receive a Hello from the active router within the Hold time, it assumes the active role.",
+      "domain": "Domain 3: IP Connectivity"
+    },
+    {
+      "id": "final-exam-q31",
+      "question": "What is the purpose of the 'passive-interface' command in OSPF?",
+      "options": ["It prevents the router from sending OSPF packets on the interface while still advertising the subnet", "It disables OSPF completely on that interface", "It sets the interface to receive-only mode for LSAs", "It configures the interface as a stub area"],
+      "correct": 0,
+      "explanation": "'passive-interface' stops OSPF from sending Hello packets on the interface, preventing neighbor adjacencies from forming. However, the network on that interface is still advertised in OSPF. This is used on interfaces facing end users.",
+      "domain": "Domain 3: IP Connectivity"
+    },
+    {
+      "id": "final-exam-q32",
+      "question": "Which OSPF state indicates a full adjacency has been established?",
+      "options": ["INIT", "2WAY", "EXSTART", "FULL"],
+      "correct": 3,
+      "explanation": "The FULL state indicates that OSPF routers have fully exchanged their LSDBs and have a complete adjacency. The states progress: Down → Init → 2Way → ExStart → Exchange → Loading → Full.",
+      "domain": "Domain 3: IP Connectivity"
+    },
+    {
+      "id": "final-exam-q33",
+      "question": "If the reference bandwidth is changed to 10000 (10 Gbps) using 'auto-cost reference-bandwidth 10000', what is the OSPF cost of a 1 Gbps link?",
+      "options": ["1", "10", "100", "1000"],
+      "correct": 1,
+      "explanation": "OSPF cost = reference bandwidth / interface bandwidth. With reference 10000 Mbps and interface 1000 Mbps: 10000/1000 = 10. This gives better granularity between high-speed links.",
+      "domain": "Domain 3: IP Connectivity"
+    },
+    {
+      "id": "final-exam-q34",
+      "question": "What route type represents a network that is directly attached to a router's interface?",
+      "options": ["Static route (S)", "Connected route (C)", "Local route (L)", "OSPF route (O)"],
+      "correct": 1,
+      "explanation": "A connected route (C) represents a network directly attached to the router's interface. It is automatically added to the routing table when an interface is configured with an IP address and is in the up/up state.",
+      "domain": "Domain 3: IP Connectivity"
+    },
+    {
+      "id": "final-exam-q35",
+      "question": "Which VRRP term is equivalent to HSRP's 'active' router?",
+      "options": ["Primary", "Master", "Standby", "Backup"],
+      "correct": 1,
+      "explanation": "VRRP uses the term 'Master' for the router actively forwarding traffic (equivalent to HSRP's 'Active'). VRRP uses 'Backup' instead of HSRP's 'Standby'. VRRP also allows the virtual IP to be the same as a router's real IP.",
+      "domain": "Domain 3: IP Connectivity"
+    },
+    {
+      "id": "final-exam-q36",
+      "question": "How does the OSPF DR/BDR election prioritize candidates?",
+      "options": ["Lowest router ID wins", "Highest OSPF priority, then highest router ID", "Lowest OSPF priority, then lowest router ID", "The first router to boot always becomes DR"],
+      "correct": 1,
+      "explanation": "OSPF DR election is based on highest priority (default 1, range 0-255; priority 0 means ineligible). If priorities tie, the highest router ID wins. The DR/BDR election is non-preemptive — changing priority does not force a new election.",
+      "domain": "Domain 3: IP Connectivity"
+    },
+    {
+      "id": "final-exam-q37",
+      "question": "What is the purpose of the 'ip helper-address' command?",
+      "options": ["It configures a static ARP entry", "It relays UDP broadcast packets (including DHCP) to a specified server", "It sets the default gateway for the router", "It enables NAT on the interface"],
+      "correct": 1,
+      "explanation": "'ip helper-address' on a router interface forwards specified UDP broadcast packets (by default including DHCP, DNS, TFTP, and others) to a unicast address. This allows DHCP to work across subnets.",
+      "domain": "Domain 4: IP Services"
+    },
+    {
+      "id": "final-exam-q38",
+      "question": "Which NAT term describes the private IP address of an internal host?",
+      "options": ["Inside global", "Outside global", "Inside local", "Outside local"],
+      "correct": 2,
+      "explanation": "Inside local is the private IP address assigned to an internal host. Inside global is the public IP representing that host to the outside. Outside global is the real IP of an external host. Outside local is how an external host appears to the inside network.",
+      "domain": "Domain 4: IP Services"
+    },
+    {
+      "id": "final-exam-q39",
+      "question": "Which command displays active NAT translations on a Cisco router?",
+      "options": ["show ip nat statistics", "show ip nat translations", "show ip nat pool", "show running-config | include nat"],
+      "correct": 1,
+      "explanation": "'show ip nat translations' displays the current NAT translation table, showing inside local, inside global, outside local, and outside global addresses for each active translation.",
+      "domain": "Domain 4: IP Services"
+    },
+    {
+      "id": "final-exam-q40",
+      "question": "What syslog severity level number corresponds to 'Emergency'?",
+      "options": ["0", "1", "7", "255"],
+      "correct": 0,
+      "explanation": "Syslog level 0 is Emergency — the most severe level indicating the system is unusable. The mnemonic for remembering levels 0-7: 'Every Awesome Cisco Engineer Will Need Ice-cream Daily' (Emergency, Alert, Critical, Error, Warning, Notification, Informational, Debugging).",
+      "domain": "Domain 4: IP Services"
+    },
+    {
+      "id": "final-exam-q41",
+      "question": "What is the NTP stratum level of a device synchronized directly to an atomic clock?",
+      "options": ["Stratum 0", "Stratum 1", "Stratum 2", "Stratum 16"],
+      "correct": 1,
+      "explanation": "Stratum 0 is the reference clock itself (atomic clock, GPS receiver). A device directly synchronized to a stratum 0 source is stratum 1. Stratum 16 means the device is unsynchronized.",
+      "domain": "Domain 4: IP Services"
+    },
+    {
+      "id": "final-exam-q42",
+      "question": "Which SNMP operation does a managed device use to send an unsolicited alert to the NMS?",
+      "options": ["GET", "SET", "TRAP", "INFORM"],
+      "correct": 2,
+      "explanation": "SNMP Trap is an unsolicited notification sent from the agent (managed device) to the NMS when a significant event occurs. Unlike INFORM, Trap does not require acknowledgment. GET retrieves data, SET modifies data.",
+      "domain": "Domain 4: IP Services"
+    },
+    {
+      "id": "final-exam-q43",
+      "question": "FTP uses which two well-known TCP ports?",
+      "options": ["20 and 21", "22 and 23", "80 and 443", "69 and 70"],
+      "correct": 0,
+      "explanation": "FTP uses TCP port 21 for the control connection (commands and responses) and TCP port 20 for the data connection (file transfers in active mode). TFTP uses UDP port 69.",
+      "domain": "Domain 4: IP Services"
+    },
+    {
+      "id": "final-exam-q44",
+      "question": "What is the primary benefit of QoS classification and marking at the network edge?",
+      "options": ["It reduces bandwidth consumption", "It allows devices in the network core to make forwarding decisions without deep packet inspection", "It encrypts traffic for secure transport", "It removes duplicate packets"],
+      "correct": 1,
+      "explanation": "Marking traffic at the edge (with DSCP or CoS values) allows core devices to quickly classify and prioritize traffic based on markings without performing expensive deep packet inspection on every packet.",
+      "domain": "Domain 4: IP Services"
+    },
+    {
+      "id": "final-exam-q45",
+      "question": "What does an extended ACL use to filter traffic that a standard ACL cannot?",
+      "options": ["Source IP address only", "Source and destination IP addresses, protocols, and port numbers", "MAC addresses", "VLAN IDs"],
+      "correct": 1,
+      "explanation": "Extended ACLs can filter based on source IP, destination IP, protocol (TCP/UDP/ICMP), and port numbers. Standard ACLs can only filter based on source IP address. Extended ACLs use numbers 100-199 or named.",
+      "domain": "Domain 5: Security Fundamentals"
+    },
+    {
+      "id": "final-exam-q46",
+      "question": "Where should a standard ACL be placed?",
+      "options": ["As close to the source as possible", "As close to the destination as possible", "On the core router", "On the WAN interface only"],
+      "correct": 1,
+      "explanation": "Standard ACLs should be placed as close to the destination as possible because they only filter by source address. Placing them close to the source could inadvertently block traffic to other legitimate destinations. Extended ACLs should be placed close to the source.",
+      "domain": "Domain 5: Security Fundamentals"
+    },
+    {
+      "id": "final-exam-q47",
+      "question": "What is the implicit rule at the end of every Cisco ACL?",
+      "options": ["permit any", "deny any (implicit deny)", "permit any log", "deny any log"],
+      "correct": 1,
+      "explanation": "Every Cisco ACL has an invisible 'deny any' (implicit deny) at the end. Any traffic not explicitly permitted by an ACE in the list is dropped. This is why at least one permit statement is typically needed.",
+      "domain": "Domain 5: Security Fundamentals"
+    },
+    {
+      "id": "final-exam-q48",
+      "question": "Which VPN type connects two sites with a permanent tunnel between routers or firewalls?",
+      "options": ["Remote-access VPN", "Site-to-site VPN", "SSL VPN", "DMVPN"],
+      "correct": 1,
+      "explanation": "A site-to-site VPN creates a permanent encrypted tunnel between two network devices (routers/firewalls) at different locations. Remote-access VPN connects individual users to a corporate network. SSL VPN is commonly used for remote access via a browser.",
+      "domain": "Domain 5: Security Fundamentals"
+    },
+    {
+      "id": "final-exam-q49",
+      "question": "Which security framework provides Authentication, Authorization, and Accounting?",
+      "options": ["ACL", "AAA", "IPS", "NAC"],
+      "correct": 1,
+      "explanation": "AAA (Authentication, Authorization, and Accounting) is the security framework that verifies user identity (authentication), determines access permissions (authorization), and tracks user activities (accounting).",
+      "domain": "Domain 5: Security Fundamentals"
+    },
+    {
+      "id": "final-exam-q50",
+      "question": "Which AAA protocol encrypts the entire payload and separates authentication from authorization?",
+      "options": ["RADIUS", "TACACS+", "Kerberos", "LDAP"],
+      "correct": 1,
+      "explanation": "TACACS+ encrypts the entire packet payload (not just the password like RADIUS) and separates authentication, authorization, and accounting into distinct functions. RADIUS combines authentication and authorization and only encrypts the password.",
+      "domain": "Domain 5: Security Fundamentals"
+    },
+    {
+      "id": "final-exam-q51",
+      "question": "Which wireless security standard uses SAE (Simultaneous Authentication of Equals) for key exchange?",
+      "options": ["WEP", "WPA", "WPA2", "WPA3"],
+      "correct": 3,
+      "explanation": "WPA3 uses SAE (based on the Dragonfly handshake) instead of the PSK 4-way handshake used in WPA2. SAE provides forward secrecy and protection against offline dictionary attacks, even with weak passwords.",
+      "domain": "Domain 5: Security Fundamentals"
+    },
+    {
+      "id": "final-exam-q52",
+      "question": "What is the purpose of DHCP snooping on a switch?",
+      "options": ["It encrypts DHCP traffic", "It filters untrusted DHCP messages and builds a binding table of legitimate IP-MAC mappings", "It load-balances DHCP requests across multiple servers", "It provides DHCP relay agent functionality"],
+      "correct": 1,
+      "explanation": "DHCP snooping validates DHCP messages from untrusted sources and builds a binding table mapping IPs to MACs and ports. Untrusted ports can only send DHCP client messages. This prevents rogue DHCP server attacks and is the foundation for DAI and IP Source Guard.",
+      "domain": "Domain 5: Security Fundamentals"
+    },
+    {
+      "id": "final-exam-q53",
+      "question": "What port security violation mode drops violating traffic and sends an SNMP trap and syslog message?",
+      "options": ["protect", "restrict", "shutdown", "err-disable"],
+      "correct": 1,
+      "explanation": "Restrict mode drops frames from unauthorized MAC addresses, increments the violation counter, and sends a syslog message and SNMP trap. Protect mode silently drops traffic. Shutdown (default) err-disables the port.",
+      "domain": "Domain 5: Security Fundamentals"
+    },
+    {
+      "id": "final-exam-q54",
+      "question": "In SDN, which plane is responsible for making forwarding decisions?",
+      "options": ["Data plane", "Control plane", "Management plane", "Application plane"],
+      "correct": 1,
+      "explanation": "The control plane makes forwarding decisions (routing protocols, building forwarding tables). The data plane (forwarding plane) moves packets based on those decisions. In SDN, the control plane is centralized in a controller.",
+      "domain": "Domain 6: Automation & Programmability"
+    },
+    {
+      "id": "final-exam-q55",
+      "question": "Cisco DNA Center is an example of what type of networking solution?",
+      "options": ["Traditional CLI-based management", "Intent-based networking (IBN)", "Software-defined WAN only", "Cloud-only management"],
+      "correct": 1,
+      "explanation": "Cisco DNA Center is an intent-based networking (IBN) platform that translates business intent into network policies. It provides centralized management, automation, assurance, and analytics for the entire network.",
+      "domain": "Domain 6: Automation & Programmability"
+    },
+    {
+      "id": "final-exam-q56",
+      "question": "Which HTTP method is used to create a new resource in a REST API?",
+      "options": ["GET", "POST", "PUT", "DELETE"],
+      "correct": 1,
+      "explanation": "In REST APIs using CRUD operations: POST = Create, GET = Read, PUT = Update/Replace, PATCH = Partial Update, DELETE = Delete. POST is used to create new resources on the server.",
+      "domain": "Domain 6: Automation & Programmability"
+    },
+    {
+      "id": "final-exam-q57",
+      "question": "Which data format uses curly braces and key-value pairs, and is commonly used with REST APIs?",
+      "options": ["XML", "JSON", "YAML", "CSV"],
+      "correct": 1,
+      "explanation": "JSON (JavaScript Object Notation) uses curly braces {} for objects, square brackets [] for arrays, and key-value pairs. It is lightweight, human-readable, and the most common data format for REST APIs.",
+      "domain": "Domain 6: Automation & Programmability"
+    },
+    {
+      "id": "final-exam-q58",
+      "question": "Which automation tool is agentless, uses SSH to connect to devices, and uses YAML playbooks?",
+      "options": ["Puppet", "Chef", "Ansible", "Terraform"],
+      "correct": 2,
+      "explanation": "Ansible is agentless (no software required on managed devices), uses SSH or NETCONF to connect, and defines automation tasks in YAML-based playbooks. Puppet and Chef require agents. Terraform focuses on infrastructure provisioning.",
+      "domain": "Domain 6: Automation & Programmability"
+    },
+    {
+      "id": "final-exam-q59",
+      "question": "Terraform is primarily used for which purpose?",
+      "options": ["Real-time network monitoring", "Infrastructure provisioning and management as code", "Packet capture and analysis", "Wireless controller management"],
+      "correct": 1,
+      "explanation": "Terraform is an Infrastructure as Code (IaC) tool used to provision and manage infrastructure across multiple providers (cloud, on-premises). It uses declarative configuration files (HCL) and maintains a state file to track resources.",
+      "domain": "Domain 6: Automation & Programmability"
+    },
+    {
+      "id": "final-exam-q60",
+      "question": "In a REST API response, HTTP status code 401 indicates:",
+      "options": ["Success — the request was processed", "Not Found — the resource does not exist", "Unauthorized — authentication is required or has failed", "Internal Server Error — the server encountered a problem"],
+      "correct": 2,
+      "explanation": "HTTP 401 Unauthorized means the request lacks valid authentication credentials. Common REST API codes: 200=OK, 201=Created, 400=Bad Request, 401=Unauthorized, 403=Forbidden, 404=Not Found, 500=Internal Server Error.",
+      "domain": "Domain 6: Automation & Programmability"
+    }
+  ]
+}

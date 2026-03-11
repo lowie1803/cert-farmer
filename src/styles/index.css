@@ -68,6 +68,10 @@
   .tag-notes {
     @apply text-xs px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-300;
   }
+
+  .tag-exam {
+    @apply text-xs px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300;
+  }
 }
 
 /* Utility styles */

@@ -1,0 +1,24 @@
+{
+  "id": "ipv6-fundamentals",
+  "title": "IPv6 Fundamentals",
+  "icon": "🌐",
+  "description": "IPv6 addressing, types, and autoconfiguration",
+  "domain": "Domain 1: Network Fundamentals",
+  "lessons": [
+    {
+      "id": "ipv6-addressing",
+      "title": "IPv6 Addressing",
+      "type": "notes"
+    },
+    {
+      "id": "ipv6-config",
+      "title": "IPv6 Configuration",
+      "type": "notes"
+    },
+    {
+      "id": "ipv6-fundamentals-quiz",
+      "title": "IPv6 Fundamentals Quiz",
+      "type": "quiz"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "stp-etherchannel",
+  "title": "STP & EtherChannel",
+  "icon": "🌳",
+  "description": "Spanning Tree Protocol, RSTP, EtherChannel, and discovery protocols",
+  "domain": "Domain 2: Network Access",
+  "lessons": [
+    {
+      "id": "stp",
+      "title": "Spanning Tree Protocol",
+      "type": "notes"
+    },
+    {
+      "id": "etherchannel",
+      "title": "EtherChannel & Discovery",
+      "type": "notes"
+    },
+    {
+      "id": "stp-etherchannel-quiz",
+      "title": "STP & EtherChannel Quiz",
+      "type": "quiz"
+    }
+  ]
+}

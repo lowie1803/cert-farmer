@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "id": "sec-q1",
+      "question": "What is the primary purpose of an Access Control List (ACL)?",
+      "options": [
+        "Encrypt network traffic",
+        "Filter traffic based on defined rules",
+        "Assign IP addresses to devices",
+        "Monitor network performance"
+      ],
+      "correct": 1,
+      "explanation": "ACLs filter network traffic by defining permit or deny rules based on criteria like source/destination IP addresses, protocols, and port numbers."
+    },
+    {
+      "id": "sec-q2",
+      "question": "Which security framework provides Authentication, Authorization, and Accounting?",
+      "options": [
+        "ACL",
+        "NAT",
+        "AAA",
+        "VPN"
+      ],
+      "correct": 2,
+      "explanation": "AAA (Authentication, Authorization, and Accounting) is a security framework that controls who can access the network (authentication), what they can do (authorization), and tracks what they did (accounting)."
+    },
+    {
+      "id": "sec-q3",
+      "question": "What does a standard ACL filter traffic based on?",
+      "options": [
+        "Source and destination IP addresses",
+        "Source IP address only",
+        "Port numbers only",
+        "MAC addresses only"
+      ],
+      "correct": 1,
+      "explanation": "Standard ACLs (numbered 1-99) filter traffic based on source IP address only. Extended ACLs can filter based on source/destination IPs, protocols, and port numbers."
+    },
+    {
+      "id": "sec-q4",
+      "question": "Which technology creates a secure, encrypted tunnel over a public network?",
+      "options": [
+        "NAT",
+        "ACL",
+        "VPN",
+        "VLAN"
+      ],
+      "correct": 2,
+      "explanation": "A VPN (Virtual Private Network) creates an encrypted tunnel over a public network like the internet, allowing secure communication between remote sites or users."
+    },
+    {
+      "id": "sec-q5",
+      "question": "What is the implicit rule at the end of every ACL?",
+      "options": [
+        "Permit all traffic",
+        "Deny all traffic",
+        "Log all traffic",
+        "Forward all traffic"
+      ],
+      "correct": 1,
+      "explanation": "Every ACL has an implicit 'deny all' rule at the end. Any traffic that doesn't match an explicit permit or deny statement is automatically denied."
+    }
+  ]
+}

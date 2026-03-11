@@ -4,6 +4,7 @@ import { useProgress } from '@hooks/useProgress';
 import { getLesson, getModule } from '@data/courses';
 import ContentRenderer from '@components/ContentRenderer';
 import QuizView from '@components/QuizView';
+import ExamView from '@components/ExamView';
 
 export default function LessonPage() {
   const { courseId = 'ccna', moduleId, lessonId } = useParams();
@@ -52,14 +53,24 @@ export default function LessonPage() {
 
         {/* Lesson header */}
         <div className="mb-6 pb-6 border-b border-slate-700">
-          <span className={lesson.type === 'quiz' ? 'tag-quiz' : 'tag-notes'}>
-            {lesson.type === 'quiz' ? '📝 Quiz' : '📖 Notes'}
+          <span className={
+            lesson.type === 'exam' ? 'tag-exam' :
+            lesson.type === 'quiz' ? 'tag-quiz' : 'tag-notes'
+          }>
+            {lesson.type === 'exam' ? '📋 Exam' : lesson.type === 'quiz' ? '📝 Quiz' : '📖 Notes'}
           </span>
           <h1 className="text-2xl font-bold text-white mt-2">{lesson.title}</h1>
         </div>
 
         {/* Lesson content */}
-        {lesson.type === 'quiz' ? (
+        {lesson.type === 'exam' ? (
+          <ExamView
+            questions={lesson.questions}
+            timeLimit={lesson.timeLimit || 45}
+            passingScore={lesson.passingScore || 80}
+            onComplete={handleQuizComplete}
+          />
+        ) : lesson.type === 'quiz' ? (
           <QuizView
             questions={lesson.questions}
             onComplete={handleQuizComplete}
@@ -110,8 +121,8 @@ export default function LessonPage() {
           </>
         )}
 
-        {/* Prev / Next navigation */}
-        <div className="mt-10 pt-6 border-t border-slate-700 flex items-center justify-between">
+        {/* Prev / Next navigation (hidden for exams) */}
+        {lesson.type !== 'exam' && <div className="mt-10 pt-6 border-t border-slate-700 flex items-center justify-between">
           {prevLesson ? (
             <Link
               to={`/course/${courseId}/module/${moduleId}/lesson/${prevLesson.id}`}
@@ -140,7 +151,7 @@ export default function LessonPage() {
               <span>→</span>
             </Link>
           )}
-        </div>
+        </div>}
       </div>
     </div>
   );

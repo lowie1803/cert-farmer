@@ -1,0 +1,24 @@
+{
+  "id": "virtualization-switching",
+  "title": "Virtualization & Cloud",
+  "icon": "☁️",
+  "description": "VMs, containers, cloud models, and switching concepts",
+  "domain": "Domain 1: Network Fundamentals",
+  "lessons": [
+    {
+      "id": "virtualization",
+      "title": "Virtualization & Cloud",
+      "type": "notes"
+    },
+    {
+      "id": "switching-concepts",
+      "title": "Switching Concepts",
+      "type": "notes"
+    },
+    {
+      "id": "virtualization-switching-quiz",
+      "title": "Virtualization & Cloud Quiz",
+      "type": "quiz"
+    }
+  ]
+}

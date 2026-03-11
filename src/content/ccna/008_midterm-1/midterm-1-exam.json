@@ -1,0 +1,324 @@
+{
+  "questions": [
+    {
+      "id": "midterm-1-q1",
+      "question": "Which layer of the OSI model is responsible for logical addressing and routing?",
+      "options": ["Data Link", "Network", "Transport", "Session"],
+      "correct": 1,
+      "explanation": "The Network layer (Layer 3) handles logical addressing (IP addresses) and routing decisions to forward packets between networks.",
+      "domain": "Domain 1: Network Fundamentals"
+    },
+    {
+      "id": "midterm-1-q2",
+      "question": "What is the PDU at Layer 2 of the OSI model?",
+      "options": ["Packet", "Segment", "Frame", "Bit"],
+      "correct": 2,
+      "explanation": "At the Data Link layer (Layer 2), data is encapsulated into frames. Layer 3 uses packets, Layer 4 uses segments (TCP) or datagrams (UDP), and Layer 1 uses bits.",
+      "domain": "Domain 1: Network Fundamentals"
+    },
+    {
+      "id": "midterm-1-q3",
+      "question": "Which TCP/IP model layer corresponds to the OSI Session, Presentation, and Application layers?",
+      "options": ["Transport", "Internet", "Application", "Network Access"],
+      "correct": 2,
+      "explanation": "The TCP/IP Application layer maps to the top three OSI layers: Session (Layer 5), Presentation (Layer 6), and Application (Layer 7).",
+      "domain": "Domain 1: Network Fundamentals"
+    },
+    {
+      "id": "midterm-1-q4",
+      "question": "What is the maximum cable length for a Cat 5e UTP Ethernet cable?",
+      "options": ["55 meters", "100 meters", "150 meters", "300 meters"],
+      "correct": 1,
+      "explanation": "The maximum cable length for UTP copper Ethernet cabling (Cat 5e, Cat 6, Cat 6a) is 100 meters (328 feet) per the TIA/EIA-568 standard.",
+      "domain": "Domain 1: Network Fundamentals"
+    },
+    {
+      "id": "midterm-1-q5",
+      "question": "Which type of fiber optic cable is best suited for long-distance connections of 10 km or more?",
+      "options": ["Multimode OM3", "Multimode OM4", "Single-mode OS1", "Multimode OM1"],
+      "correct": 2,
+      "explanation": "Single-mode fiber (such as OS1 or OS2) uses a smaller core (8-10 microns) and a laser light source, allowing it to transmit over distances of 10 km or more. Multimode fiber is limited to shorter distances (up to about 400-550 meters for 10GbE).",
+      "domain": "Domain 1: Network Fundamentals"
+    },
+    {
+      "id": "midterm-1-q6",
+      "question": "A network administrator connects a VoIP phone that requires 15.4W of power. Which PoE standard meets this requirement at minimum?",
+      "options": ["PoE (802.3af)", "PoE+ (802.3at)", "PoE++ (802.3bt Type 3)", "None — PoE cannot provide 15.4W"],
+      "correct": 0,
+      "explanation": "IEEE 802.3af (PoE) provides up to 15.4W per port (12.95W at the device). This is sufficient for the 15.4W requirement. PoE+ (802.3at) provides up to 30W and PoE++ up to 60W or 90W.",
+      "domain": "Domain 1: Network Fundamentals"
+    },
+    {
+      "id": "midterm-1-q7",
+      "question": "What is the subnet mask for a /20 network?",
+      "options": ["255.255.240.0", "255.255.248.0", "255.255.224.0", "255.255.252.0"],
+      "correct": 0,
+      "explanation": "A /20 prefix means 20 bits for the network portion. The third octet has 4 network bits (8+8+4=20), giving 11110000 in binary = 240. So the mask is 255.255.240.0.",
+      "domain": "Domain 1: Network Fundamentals"
+    },
+    {
+      "id": "midterm-1-q8",
+      "question": "How many usable host addresses are available in a /26 IPv4 subnet?",
+      "options": ["30", "62", "64", "126"],
+      "correct": 1,
+      "explanation": "A /26 subnet has 6 host bits, providing 2^6 = 64 total addresses. Subtract 2 for the network and broadcast addresses, leaving 62 usable host addresses.",
+      "domain": "Domain 1: Network Fundamentals"
+    },
+    {
+      "id": "midterm-1-q9",
+      "question": "Which IPv6 address type is equivalent to a public IPv4 address?",
+      "options": ["Link-local", "Unique local", "Global unicast", "Multicast"],
+      "correct": 2,
+      "explanation": "Global unicast addresses (GUA) beginning with 2000::/3 are globally routable on the internet, making them equivalent to public IPv4 addresses. Link-local (fe80::/10) and unique local (fc00::/7) are not globally routable.",
+      "domain": "Domain 1: Network Fundamentals"
+    },
+    {
+      "id": "midterm-1-q10",
+      "question": "When using EUI-64 to generate an IPv6 interface ID, what value is inserted in the middle of the MAC address?",
+      "options": ["FF:FF", "FF:FE", "FE:FF", "00:00"],
+      "correct": 1,
+      "explanation": "EUI-64 splits the 48-bit MAC address in half and inserts FF:FE (16 bits) in the middle to create a 64-bit interface ID. Additionally, the 7th bit (U/L bit) is flipped.",
+      "domain": "Domain 1: Network Fundamentals"
+    },
+    {
+      "id": "midterm-1-q11",
+      "question": "Which protocol does SLAAC use to obtain prefix information from a router?",
+      "options": ["DHCPv6", "ARP", "NDP (Router Advertisement)", "DNS"],
+      "correct": 2,
+      "explanation": "SLAAC (Stateless Address Autoconfiguration) uses NDP Router Advertisement (RA) messages sent by routers to learn the network prefix, prefix length, and default gateway. The host then generates its own interface ID.",
+      "domain": "Domain 1: Network Fundamentals"
+    },
+    {
+      "id": "midterm-1-q12",
+      "question": "Which NDP message type replaces ARP in IPv6?",
+      "options": ["Router Advertisement", "Router Solicitation", "Neighbor Solicitation", "Redirect"],
+      "correct": 2,
+      "explanation": "Neighbor Solicitation (NS) and Neighbor Advertisement (NA) messages in NDP replace ARP in IPv6. NS is used to resolve an IPv6 address to a MAC address, similar to an ARP request.",
+      "domain": "Domain 1: Network Fundamentals"
+    },
+    {
+      "id": "midterm-1-q13",
+      "question": "What is a key difference between a Type 1 hypervisor and a Type 2 hypervisor?",
+      "options": ["Type 1 runs on top of a host OS; Type 2 runs directly on hardware", "Type 1 runs directly on hardware; Type 2 runs on top of a host OS", "Type 1 supports only Linux guests; Type 2 supports any OS", "Type 1 is used for containers; Type 2 is used for virtual machines"],
+      "correct": 1,
+      "explanation": "A Type 1 (bare-metal) hypervisor like VMware ESXi runs directly on the physical hardware. A Type 2 (hosted) hypervisor like VirtualBox runs as an application on top of a host operating system.",
+      "domain": "Domain 1: Network Fundamentals"
+    },
+    {
+      "id": "midterm-1-q14",
+      "question": "Which cloud service model provides virtual machines, storage, and networking, but the customer manages the OS and applications?",
+      "options": ["SaaS", "PaaS", "IaaS", "DaaS"],
+      "correct": 2,
+      "explanation": "IaaS (Infrastructure as a Service) provides virtualized computing resources like VMs, storage, and networking. The customer is responsible for managing the OS, middleware, runtime, and applications. PaaS manages the OS and runtime; SaaS manages everything.",
+      "domain": "Domain 1: Network Fundamentals"
+    },
+    {
+      "id": "midterm-1-q15",
+      "question": "A switch receives a frame with an unknown destination MAC address. What does it do?",
+      "options": ["Drops the frame", "Sends the frame back to the source", "Floods the frame out all ports except the source port", "Sends the frame to the default gateway"],
+      "correct": 2,
+      "explanation": "When a switch receives a frame with a destination MAC not in its MAC address table (unknown unicast), it floods the frame out all ports except the port it was received on. This is called unknown unicast flooding.",
+      "domain": "Domain 1: Network Fundamentals"
+    },
+    {
+      "id": "midterm-1-q16",
+      "question": "How does a switch populate its MAC address table?",
+      "options": ["By examining the destination MAC address of incoming frames", "By examining the source MAC address of incoming frames", "By sending ARP requests to all connected devices", "By reading the switch configuration file"],
+      "correct": 1,
+      "explanation": "A switch learns MAC addresses by examining the source MAC address of incoming frames and associating it with the port on which the frame arrived. This is dynamic MAC learning.",
+      "domain": "Domain 1: Network Fundamentals"
+    },
+    {
+      "id": "midterm-1-q17",
+      "question": "Which topology provides the highest redundancy but is the most expensive to implement?",
+      "options": ["Star", "Bus", "Full mesh", "Ring"],
+      "correct": 2,
+      "explanation": "A full mesh topology connects every device to every other device, providing maximum redundancy. However, the number of links grows as n(n-1)/2, making it very expensive for large networks.",
+      "domain": "Domain 1: Network Fundamentals"
+    },
+    {
+      "id": "midterm-1-q18",
+      "question": "Which of the following is a private IPv4 address?",
+      "options": ["172.32.0.1", "192.168.10.5", "11.0.0.1", "169.254.1.1"],
+      "correct": 1,
+      "explanation": "192.168.10.5 falls within the 192.168.0.0/16 private range. The private ranges are 10.0.0.0/8, 172.16.0.0/12 (172.16.0.0–172.31.255.255), and 192.168.0.0/16. 172.32.0.1 is outside the /12 range. 169.254.x.x is APIPA, not private.",
+      "domain": "Domain 1: Network Fundamentals"
+    },
+    {
+      "id": "midterm-1-q19",
+      "question": "What is the broadcast address for the subnet 10.1.128.0/21?",
+      "options": ["10.1.128.255", "10.1.135.255", "10.1.131.255", "10.1.143.255"],
+      "correct": 1,
+      "explanation": "A /21 subnet has 11 host bits (2^11 = 2048 addresses). Starting at 10.1.128.0, the range is 10.1.128.0 – 10.1.135.255. The broadcast address is the last address: 10.1.135.255.",
+      "domain": "Domain 1: Network Fundamentals"
+    },
+    {
+      "id": "midterm-1-q20",
+      "question": "Containers differ from virtual machines primarily because containers:",
+      "options": ["Each run their own full operating system kernel", "Share the host OS kernel and isolate only the application layer", "Require a Type 1 hypervisor", "Cannot communicate over a network"],
+      "correct": 1,
+      "explanation": "Containers share the host operating system's kernel and isolate processes at the application layer, making them lightweight and fast to start. Virtual machines each run their own full OS on top of a hypervisor.",
+      "domain": "Domain 1: Network Fundamentals"
+    },
+    {
+      "id": "midterm-1-q21",
+      "question": "Which command assigns a switch port to VLAN 10?",
+      "options": ["switchport mode trunk", "switchport access vlan 10", "vlan 10", "switchport trunk allowed vlan 10"],
+      "correct": 1,
+      "explanation": "The command 'switchport access vlan 10' assigns the interface to VLAN 10 as an access port. 'vlan 10' creates the VLAN in the VLAN database. 'switchport mode trunk' sets the port as a trunk.",
+      "domain": "Domain 2: Network Access"
+    },
+    {
+      "id": "midterm-1-q22",
+      "question": "What does 802.1Q trunking add to an Ethernet frame?",
+      "options": ["A 4-byte tag in the Ethernet header containing the VLAN ID", "A new IP header with VLAN information", "An 8-byte preamble extension", "A CRC field for VLAN validation"],
+      "correct": 0,
+      "explanation": "802.1Q inserts a 4-byte tag into the Ethernet frame header after the source MAC address. This tag contains the VLAN ID (12 bits, supporting VLANs 0–4095), priority bits, and other fields.",
+      "domain": "Domain 2: Network Access"
+    },
+    {
+      "id": "midterm-1-q23",
+      "question": "What is the native VLAN on a trunk port?",
+      "options": ["The VLAN used for management traffic only", "The VLAN whose traffic is sent untagged on the trunk", "The VLAN with the highest number", "The VLAN used exclusively for voice traffic"],
+      "correct": 1,
+      "explanation": "The native VLAN is the VLAN whose traffic is sent untagged across an 802.1Q trunk. By default, this is VLAN 1. Any untagged frame received on a trunk is assigned to the native VLAN.",
+      "domain": "Domain 2: Network Access"
+    },
+    {
+      "id": "midterm-1-q24",
+      "question": "In STP, how is the root bridge elected?",
+      "options": ["The switch with the highest MAC address", "The switch with the lowest bridge ID (priority + MAC)", "The switch with the most ports", "The first switch powered on"],
+      "correct": 1,
+      "explanation": "The root bridge is the switch with the lowest bridge ID. The bridge ID consists of a priority value (default 32768) and the MAC address. The lowest priority wins; if tied, the lowest MAC address wins.",
+      "domain": "Domain 2: Network Access"
+    },
+    {
+      "id": "midterm-1-q25",
+      "question": "Which STP port state forwards data frames and learns MAC addresses?",
+      "options": ["Blocking", "Listening", "Learning", "Forwarding"],
+      "correct": 3,
+      "explanation": "Only the Forwarding state both learns MAC addresses and forwards data frames. Listening processes BPDUs but does not learn MACs or forward. Learning learns MACs but does not forward. Blocking only receives BPDUs.",
+      "domain": "Domain 2: Network Access"
+    },
+    {
+      "id": "midterm-1-q26",
+      "question": "What is the primary advantage of RSTP (802.1w) over STP (802.1D)?",
+      "options": ["It supports more VLANs", "It converges significantly faster", "It does not require a root bridge", "It eliminates the need for trunk ports"],
+      "correct": 1,
+      "explanation": "RSTP (Rapid Spanning Tree Protocol) converges much faster than classic STP — typically in seconds rather than 30–50 seconds. It achieves this through proposal/agreement mechanisms and active topology change handling.",
+      "domain": "Domain 2: Network Access"
+    },
+    {
+      "id": "midterm-1-q27",
+      "question": "Which RSTP port role replaces the STP non-designated port role?",
+      "options": ["Root port", "Designated port", "Alternate port", "Backup port"],
+      "correct": 2,
+      "explanation": "RSTP defines the Alternate port role as a replacement for the STP blocking (non-designated) port that provides an alternate path to the root bridge. The Backup port provides a redundant path on the same segment.",
+      "domain": "Domain 2: Network Access"
+    },
+    {
+      "id": "midterm-1-q28",
+      "question": "Which EtherChannel protocol is an IEEE standard?",
+      "options": ["PAgP", "LACP", "VTP", "DTP"],
+      "correct": 1,
+      "explanation": "LACP (Link Aggregation Control Protocol), defined in IEEE 802.3ad (now 802.1AX), is the IEEE standard for EtherChannel negotiation. PAgP is Cisco proprietary. VTP and DTP are also Cisco proprietary protocols.",
+      "domain": "Domain 2: Network Access"
+    },
+    {
+      "id": "midterm-1-q29",
+      "question": "When configuring LACP, which mode combination will form an EtherChannel?",
+      "options": ["passive – passive", "active – passive", "on – active", "desirable – auto"],
+      "correct": 1,
+      "explanation": "LACP requires at least one side to be in active mode. Active–passive and active–active will form a channel. Passive–passive will not negotiate. Desirable and auto are PAgP modes, not LACP.",
+      "domain": "Domain 2: Network Access"
+    },
+    {
+      "id": "midterm-1-q30",
+      "question": "Which protocol is Cisco proprietary and operates at Layer 2 to discover directly connected Cisco devices?",
+      "options": ["LLDP", "CDP", "SNMP", "STP"],
+      "correct": 1,
+      "explanation": "CDP (Cisco Discovery Protocol) is a Cisco proprietary Layer 2 protocol that discovers directly connected Cisco devices. LLDP (IEEE 802.1AB) is the vendor-neutral alternative.",
+      "domain": "Domain 2: Network Access"
+    },
+    {
+      "id": "midterm-1-q31",
+      "question": "What is the function of a Wireless LAN Controller (WLC) in a centralized wireless architecture?",
+      "options": ["It acts as an autonomous AP for each SSID", "It manages lightweight APs and handles control plane functions centrally", "It replaces the need for a default gateway", "It provides PoE power to all APs"],
+      "correct": 1,
+      "explanation": "In a centralized (split-MAC) architecture, the WLC manages lightweight APs via CAPWAP tunnels. The WLC handles control plane functions like authentication, security policies, and RF management centrally.",
+      "domain": "Domain 2: Network Access"
+    },
+    {
+      "id": "midterm-1-q32",
+      "question": "Which protocol does a lightweight AP use to communicate with a WLC?",
+      "options": ["LWAPP", "CAPWAP", "SNMP", "RADIUS"],
+      "correct": 1,
+      "explanation": "CAPWAP (Control And Provisioning of Wireless Access Points) is the standard protocol used by lightweight APs to establish a tunnel to the WLC for management and data forwarding. LWAPP was the predecessor.",
+      "domain": "Domain 2: Network Access"
+    },
+    {
+      "id": "midterm-1-q33",
+      "question": "Which Cisco IOS mode allows you to configure interface-specific settings?",
+      "options": ["User EXEC mode", "Privileged EXEC mode", "Global configuration mode", "Interface configuration mode"],
+      "correct": 3,
+      "explanation": "Interface configuration mode (reached via 'interface <type> <number>' from global config) allows you to configure settings specific to an interface, such as IP addresses, speed, duplex, and shutdown/no shutdown.",
+      "domain": "Domain 2: Network Access"
+    },
+    {
+      "id": "midterm-1-q34",
+      "question": "Which command enables SSH version 2 on a Cisco device?",
+      "options": ["ssh version 2", "ip ssh version 2", "transport input ssh2", "crypto key ssh v2"],
+      "correct": 1,
+      "explanation": "The global configuration command 'ip ssh version 2' configures the device to use SSH version 2 only. SSH v2 is more secure than v1 and is recommended for all management access.",
+      "domain": "Domain 2: Network Access"
+    },
+    {
+      "id": "midterm-1-q35",
+      "question": "What is the purpose of PortFast on a switch port?",
+      "options": ["It increases the port speed to maximum", "It transitions the port immediately to forwarding, skipping STP listening and learning", "It disables STP on the entire switch", "It enables trunking on the port automatically"],
+      "correct": 1,
+      "explanation": "PortFast causes an access port to immediately transition to the STP forwarding state, bypassing listening and learning. This is used on ports connected to end devices to prevent delays during link-up.",
+      "domain": "Domain 2: Network Access"
+    },
+    {
+      "id": "midterm-1-q36",
+      "question": "What happens when a port with BPDU Guard enabled receives a BPDU?",
+      "options": ["The BPDU is forwarded normally", "The port enters a learning state", "The port is placed into an err-disabled state", "The switch becomes the root bridge"],
+      "correct": 2,
+      "explanation": "BPDU Guard shuts down (err-disables) a port if it receives a BPDU. This is typically enabled on PortFast ports to prevent rogue switches from affecting the STP topology.",
+      "domain": "Domain 2: Network Access"
+    },
+    {
+      "id": "midterm-1-q37",
+      "question": "On a trunk link, which command restricts the trunk to only carry VLANs 10, 20, and 30?",
+      "options": ["switchport trunk allowed vlan 10,20,30", "switchport access vlan 10,20,30", "vlan allowed 10 20 30", "switchport trunk native vlan 10,20,30"],
+      "correct": 0,
+      "explanation": "The command 'switchport trunk allowed vlan 10,20,30' limits the VLANs carried on the trunk to only 10, 20, and 30. By default, a trunk carries all VLANs (1–4094).",
+      "domain": "Domain 2: Network Access"
+    },
+    {
+      "id": "midterm-1-q38",
+      "question": "A switch has ports Fa0/1 through Fa0/4 bundled into an EtherChannel. What must be true of all member ports?",
+      "options": ["They must be on different VLANs", "They must have the same speed, duplex, and VLAN configuration", "They must connect to different switches", "They must use different cable types"],
+      "correct": 1,
+      "explanation": "All ports in an EtherChannel bundle must have matching configurations: same speed, duplex, switchport mode (access/trunk), and VLAN assignments. Mismatched settings will prevent the channel from forming.",
+      "domain": "Domain 2: Network Access"
+    },
+    {
+      "id": "midterm-1-q39",
+      "question": "Which cloud deployment model provides dedicated infrastructure for a single organization?",
+      "options": ["Public cloud", "Private cloud", "Community cloud", "Hybrid cloud"],
+      "correct": 1,
+      "explanation": "A private cloud provides infrastructure dedicated to a single organization, offering greater control and security. Public cloud shares infrastructure among multiple tenants. Hybrid combines public and private.",
+      "domain": "Domain 1: Network Fundamentals"
+    },
+    {
+      "id": "midterm-1-q40",
+      "question": "LLDP operates at which layer and is defined by which standard?",
+      "options": ["Layer 3, IEEE 802.3", "Layer 2, IEEE 802.1AB", "Layer 2, IEEE 802.1Q", "Layer 4, RFC 2131"],
+      "correct": 1,
+      "explanation": "LLDP (Link Layer Discovery Protocol) is an IEEE 802.1AB standard that operates at Layer 2. It is vendor-neutral and provides device discovery similar to Cisco's CDP.",
+      "domain": "Domain 2: Network Access"
+    }
+  ]
+}

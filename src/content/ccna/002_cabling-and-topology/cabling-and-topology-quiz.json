@@ -1,0 +1,39 @@
+{
+  "questions": [
+    {
+      "id": "cab-top-q1",
+      "question": "What is the maximum cable length for a Cat6a UTP cable running at 10 Gbps?",
+      "options": ["55 meters", "100 meters", "300 meters", "550 meters"],
+      "correct": 1,
+      "explanation": "Cat6a supports 10 Gbps at the full 100-meter distance. Cat6 (without the 'a') is limited to 55 meters at 10 Gbps, but Cat6a extends this to the standard 100-meter Ethernet maximum."
+    },
+    {
+      "id": "cab-top-q2",
+      "question": "Which fiber optic cable type uses a laser light source and supports distances over 10 km?",
+      "options": ["Multi-mode with LC connectors", "Single-mode fiber", "Cat6a shielded", "Multi-mode OM4"],
+      "correct": 1,
+      "explanation": "Single-mode fiber (SMF) uses a laser light source with a small 8-10 micron core, allowing light to travel in a single path. This enables distances of 80 km or more, far exceeding multi-mode fiber's typical 2 km limit."
+    },
+    {
+      "id": "cab-top-q3",
+      "question": "An administrator needs to power a PTZ security camera that requires 25 watts. Which minimum PoE standard must the switch port support?",
+      "options": ["802.3af (PoE)", "802.3at (PoE+)", "802.3bt Type 3 (PoE++)", "802.3bt Type 4 (PoE++)"],
+      "correct": 1,
+      "explanation": "802.3at (PoE+) delivers up to 30W at the PSE (25.5W at the powered device), which is sufficient for a 25W camera. 802.3af only provides 15.4W at the PSE (12.95W at the PD), which would be insufficient."
+    },
+    {
+      "id": "cab-top-q4",
+      "question": "In a network with 6 routers that need full mesh connectivity, how many point-to-point links are required?",
+      "options": ["6", "12", "15", "30"],
+      "correct": 2,
+      "explanation": "The formula for full mesh links is n(n-1)/2. With 6 routers: 6(6-1)/2 = 6(5)/2 = 30/2 = 15 links. Each device connects to every other device exactly once."
+    },
+    {
+      "id": "cab-top-q5",
+      "question": "Which three channels are non-overlapping in the 2.4 GHz Wi-Fi band and should be used when deploying multiple access points?",
+      "options": ["1, 5, 10", "1, 6, 11", "2, 7, 12", "1, 4, 8"],
+      "correct": 1,
+      "explanation": "Channels 1, 6, and 11 are the only three non-overlapping channels in the 2.4 GHz band (in the US). Each 2.4 GHz channel is 22 MHz wide with only 5 MHz spacing, so adjacent channels overlap. Only channels separated by 5 channel numbers avoid interference."
+    }
+  ]
+}

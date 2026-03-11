@@ -389,6 +389,128 @@ const glossary = {
     category: "Devices"
   },
 
+  // === AUTOMATION & PROGRAMMABILITY ===
+  "SDN": {
+    vi: "Software-Defined Networking - kiến trúc mạng tách riêng control plane và data plane",
+    category: "Automation"
+  },
+  "DNA Center": {
+    vi: "Cisco DNA Center - nền tảng quản lý mạng tập trung dựa trên intent-based networking",
+    category: "Automation"
+  },
+  "REST API": {
+    vi: "Giao diện lập trình ứng dụng dựa trên HTTP, sử dụng các phương thức GET/POST/PUT/DELETE",
+    category: "Automation"
+  },
+  "JSON": {
+    vi: "JavaScript Object Notation - định dạng dữ liệu nhẹ, dễ đọc cho máy và người",
+    category: "Automation"
+  },
+  "Ansible": {
+    vi: "Công cụ tự động hóa cấu hình mạng, không cần agent, dùng YAML playbook",
+    category: "Automation"
+  },
+  "Terraform": {
+    vi: "Công cụ Infrastructure as Code - quản lý hạ tầng bằng mã khai báo",
+    category: "Automation"
+  },
+  "control plane": {
+    vi: "Mặt phẳng điều khiển - xử lý logic định tuyến và quyết định chuyển tiếp",
+    category: "Automation"
+  },
+  "data plane": {
+    vi: "Mặt phẳng dữ liệu - thực hiện chuyển tiếp packet dựa trên bảng đã được xây dựng",
+    category: "Automation"
+  },
+
+  // === FHRP ===
+  "HSRP": {
+    vi: "Hot Standby Router Protocol - giao thức dự phòng gateway mặc định của Cisco",
+    category: "Routing"
+  },
+  "VRRP": {
+    vi: "Virtual Router Redundancy Protocol - giao thức dự phòng gateway chuẩn mở",
+    category: "Routing"
+  },
+  "GLBP": {
+    vi: "Gateway Load Balancing Protocol - dự phòng gateway với cân bằng tải",
+    category: "Routing"
+  },
+
+  // === ADDITIONAL PROTOCOLS & CONCEPTS ===
+  "LACP": {
+    vi: "Link Aggregation Control Protocol (802.3ad) - giao thức gộp link chuẩn mở",
+    category: "Switching"
+  },
+  "CDP": {
+    vi: "Cisco Discovery Protocol - giao thức khám phá thiết bị lân cận của Cisco",
+    category: "Switching"
+  },
+  "LLDP": {
+    vi: "Link Layer Discovery Protocol - giao thức khám phá thiết bị lân cận chuẩn mở",
+    category: "Switching"
+  },
+  "CAPWAP": {
+    vi: "Control and Provisioning of Wireless Access Points - giao thức quản lý AP từ WLC",
+    category: "Wireless"
+  },
+  "SLAAC": {
+    vi: "Stateless Address Autoconfiguration - tự cấu hình IPv6 không cần DHCP server",
+    category: "Addressing"
+  },
+  "NDP": {
+    vi: "Neighbor Discovery Protocol - giao thức IPv6 thay thế ARP, tìm router và neighbor",
+    category: "Protocols"
+  },
+  "DHCP snooping": {
+    vi: "Tính năng bảo mật lọc gói DHCP giả mạo trên switch",
+    category: "Security"
+  },
+  "DAI": {
+    vi: "Dynamic ARP Inspection - kiểm tra và lọc gói ARP giả mạo",
+    category: "Security"
+  },
+  "IPsec": {
+    vi: "Internet Protocol Security - bộ giao thức mã hóa và xác thực cho VPN",
+    category: "Security"
+  },
+  "TACACS+": {
+    vi: "Terminal Access Controller Access-Control System - giao thức AAA của Cisco",
+    category: "Security"
+  },
+  "syslog": {
+    vi: "Giao thức ghi log tập trung từ các thiết bị mạng",
+    category: "Protocols"
+  },
+  "DSCP": {
+    vi: "Differentiated Services Code Point - giá trị đánh dấu QoS trong IP header",
+    category: "Concepts"
+  },
+  "PoE": {
+    vi: "Power over Ethernet - cấp nguồn điện qua cáp mạng cho thiết bị",
+    category: "Concepts"
+  },
+  "EUI-64": {
+    vi: "Extended Unique Identifier - phương pháp tạo interface ID IPv6 từ MAC address",
+    category: "Addressing"
+  },
+  "hypervisor": {
+    vi: "Phần mềm tạo và quản lý máy ảo (Type 1: bare-metal, Type 2: hosted)",
+    category: "Concepts"
+  },
+  "IaaS": {
+    vi: "Infrastructure as a Service - thuê hạ tầng máy chủ, mạng, lưu trữ trên cloud",
+    category: "Concepts"
+  },
+  "PaaS": {
+    vi: "Platform as a Service - nền tảng phát triển ứng dụng trên cloud",
+    category: "Concepts"
+  },
+  "SaaS": {
+    vi: "Software as a Service - phần mềm chạy trên cloud, truy cập qua trình duyệt",
+    category: "Concepts"
+  },
+
   // === CONCEPTS ===
   "encapsulation": {
     vi: "Đóng gói - quá trình thêm header vào dữ liệu khi đi xuống các tầng mạng",

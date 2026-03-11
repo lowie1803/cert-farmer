@@ -3,6 +3,7 @@
   "title": "Network Access",
   "icon": "🔌",
   "description": "Ethernet, switching, and VLANs",
+  "domain": "Domain 2: Network Access",
   "lessons": [
     {
       "id": "ethernet-switching",

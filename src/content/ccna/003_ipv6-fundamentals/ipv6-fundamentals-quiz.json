@@ -1,0 +1,39 @@
+{
+  "questions": [
+    {
+      "id": "ipv6-fund-q1",
+      "question": "What is the correct abbreviated form of the IPv6 address 2001:0DB8:0000:0000:0000:0000:0000:0001?",
+      "options": ["2001:DB8::0001", "2001:DB8::1", "2001:DB8:0:0:0:0:0:1", "2001:0DB8::0001"],
+      "correct": 1,
+      "explanation": "Apply both abbreviation rules: first remove leading zeros (0DB8 becomes DB8, 0001 becomes 1), then replace consecutive groups of all zeros with :: (used only once). The most abbreviated form is 2001:DB8::1."
+    },
+    {
+      "id": "ipv6-fund-q2",
+      "question": "A host needs to automatically obtain an IPv6 address without any DHCP server. Which process does it use?",
+      "options": ["Stateful DHCPv6", "ARP request to the default gateway", "SLAAC with Router Solicitation and Router Advertisement", "BOOTP relay"],
+      "correct": 2,
+      "explanation": "SLAAC (Stateless Address Autoconfiguration) allows a host to build its own IPv6 address by combining the prefix received in a Router Advertisement (RA) with a self-generated interface ID (via EUI-64 or random). No DHCP server is required."
+    },
+    {
+      "id": "ipv6-fund-q3",
+      "question": "Which NDP message type replaces the function of an ARP request in IPv6?",
+      "options": ["Router Solicitation (RS)", "Router Advertisement (RA)", "Neighbor Solicitation (NS)", "Redirect"],
+      "correct": 2,
+      "explanation": "Neighbor Solicitation (NS), ICMPv6 type 135, is used to resolve an IPv6 address to a MAC address, directly replacing the ARP request used in IPv4. The target responds with a Neighbor Advertisement (NA)."
+    },
+    {
+      "id": "ipv6-fund-q4",
+      "question": "Given the MAC address 00:1A:2B:3C:4D:5E, what is the EUI-64 generated interface ID?",
+      "options": ["001A:2BFF:FE3C:4D5E", "021A:2BFF:FE3C:4D5E", "001A:2B3C:4D5E:FFFE", "021A:2B3C:FFFE:4D5E"],
+      "correct": 1,
+      "explanation": "EUI-64 splits the MAC in half, inserts FF:FE in the middle (00:1A:2B:FF:FE:3C:4D:5E), then flips the 7th bit of the first byte. The first byte 00 (00000000) becomes 02 (00000010), giving 021A:2BFF:FE3C:4D5E."
+    },
+    {
+      "id": "ipv6-fund-q5",
+      "question": "Which IPv6 address type is identified by the prefix FE80::/10 and is required on every IPv6-enabled interface?",
+      "options": ["Global unicast address", "Unique local address", "Link-local address", "Solicited-node multicast address"],
+      "correct": 2,
+      "explanation": "Link-local addresses use the prefix FE80::/10 and are automatically created on every IPv6-enabled interface. They are not routable beyond the local link and are essential for NDP, OSPFv3 neighbor relationships, and next-hop routing."
+    }
+  ]
+}

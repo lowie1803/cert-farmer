@@ -1,0 +1,24 @@
+{
+  "id": "cabling-and-topology",
+  "title": "Cabling & Topology",
+  "icon": "🔌",
+  "description": "Physical infrastructure, cabling types, and wireless principles",
+  "domain": "Domain 1: Network Fundamentals",
+  "lessons": [
+    {
+      "id": "cabling-types",
+      "title": "Cabling Types & Topology",
+      "type": "notes"
+    },
+    {
+      "id": "wireless-principles",
+      "title": "Wireless Principles",
+      "type": "notes"
+    },
+    {
+      "id": "cabling-and-topology-quiz",
+      "title": "Cabling & Topology Quiz",
+      "type": "quiz"
+    }
+  ]
+}

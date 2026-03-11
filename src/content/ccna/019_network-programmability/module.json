@@ -1,0 +1,19 @@
+{
+  "id": "network-programmability",
+  "title": "Network Programmability",
+  "icon": "💻",
+  "description": "REST APIs, data formats, and configuration management",
+  "domain": "Domain 6: Automation & Programmability",
+  "lessons": [
+    {
+      "id": "apis-and-automation",
+      "title": "APIs & Automation Tools",
+      "type": "notes"
+    },
+    {
+      "id": "network-programmability-quiz",
+      "title": "Network Programmability Quiz",
+      "type": "quiz"
+    }
+  ]
+}

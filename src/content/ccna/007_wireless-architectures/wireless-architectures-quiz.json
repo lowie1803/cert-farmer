@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "id": "wireless-mgmt-001",
+      "question": "What is the primary advantage of lightweight APs over autonomous APs?",
+      "options": [
+        "Lightweight APs do not require any network connectivity",
+        "Lightweight APs are centrally managed by a Wireless LAN Controller",
+        "Lightweight APs support higher data rates than autonomous APs",
+        "Lightweight APs do not use the 802.11 standard"
+      ],
+      "correct": 1,
+      "explanation": "Lightweight APs are centrally managed by a WLC, which handles configuration, firmware updates, security policies, and RF management. This makes them far more scalable for enterprise environments compared to autonomous APs that must be individually configured."
+    },
+    {
+      "id": "wireless-mgmt-002",
+      "question": "Which UDP ports does the CAPWAP protocol use for its control and data tunnels?",
+      "options": [
+        "UDP 5000 and UDP 5001",
+        "UDP 5246 for control and UDP 5247 for data",
+        "UDP 443 for control and UDP 8443 for data",
+        "UDP 1812 for control and UDP 1813 for data"
+      ],
+      "correct": 1,
+      "explanation": "CAPWAP uses UDP port 5246 for the control tunnel (management traffic, encrypted with DTLS by default) and UDP port 5247 for the data tunnel (client data traffic). These tunnels connect lightweight APs to the WLC."
+    },
+    {
+      "id": "wireless-mgmt-003",
+      "question": "A branch office AP loses connectivity to the centralized WLC. Which AP mode allows it to continue serving clients by switching traffic locally?",
+      "options": [
+        "Local mode",
+        "Monitor mode",
+        "FlexConnect mode",
+        "Sniffer mode"
+      ],
+      "correct": 2,
+      "explanation": "FlexConnect mode allows a lightweight AP to locally switch client traffic onto the LAN even when the WLC is unreachable. The AP uses cached security policies to continue authenticating and serving clients in standalone mode."
+    },
+    {
+      "id": "wireless-mgmt-004",
+      "question": "From the IOS user EXEC mode prompt (Switch>), what is the correct sequence to reach global configuration mode?",
+      "options": [
+        "configure terminal",
+        "enable, then configure terminal",
+        "login, then configure terminal",
+        "enable, then setup"
+      ],
+      "correct": 1,
+      "explanation": "From user EXEC mode (>), you must first type 'enable' to enter privileged EXEC mode (#), and then type 'configure terminal' to enter global configuration mode (config)#. You cannot go directly from user EXEC to global configuration mode."
+    },
+    {
+      "id": "wireless-mgmt-005",
+      "question": "Why should SSH always be used instead of Telnet for remote device management?",
+      "options": [
+        "SSH uses UDP and is therefore faster than Telnet",
+        "Telnet does not support the enable command",
+        "SSH encrypts the entire session including credentials, while Telnet sends everything in cleartext",
+        "SSH does not require any authentication to connect"
+      ],
+      "correct": 2,
+      "explanation": "SSH encrypts the entire management session, including usernames and passwords, protecting them from packet capture and eavesdropping. Telnet transmits all data in cleartext, making it a serious security risk on any network."
+    }
+  ]
+}

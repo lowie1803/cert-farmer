@@ -1,0 +1,19 @@
+{
+  "id": "fhrp",
+  "title": "First Hop Redundancy",
+  "icon": "🔁",
+  "description": "HSRP, VRRP, and GLBP concepts",
+  "domain": "Domain 3: IP Connectivity",
+  "lessons": [
+    {
+      "id": "fhrp-concepts",
+      "title": "FHRP Concepts",
+      "type": "notes"
+    },
+    {
+      "id": "fhrp-quiz",
+      "title": "FHRP Quiz",
+      "type": "quiz"
+    }
+  ]
+}

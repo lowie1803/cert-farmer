@@ -1,0 +1,24 @@
+{
+  "id": "ospf",
+  "title": "OSPF",
+  "icon": "🔄",
+  "description": "Single-area OSPFv2 configuration and concepts",
+  "domain": "Domain 3: IP Connectivity",
+  "lessons": [
+    {
+      "id": "ospf-concepts",
+      "title": "OSPF Concepts",
+      "type": "notes"
+    },
+    {
+      "id": "ospf-config",
+      "title": "OSPF Configuration",
+      "type": "notes"
+    },
+    {
+      "id": "ospf-quiz",
+      "title": "OSPF Quiz",
+      "type": "quiz"
+    }
+  ]
+}

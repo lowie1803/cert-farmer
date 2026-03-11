@@ -1,0 +1,24 @@
+{
+  "id": "network-security",
+  "title": "Network Security",
+  "icon": "🛡️",
+  "description": "VPNs, L2 security, AAA, and wireless security",
+  "domain": "Domain 5: Security Fundamentals",
+  "lessons": [
+    {
+      "id": "security-infrastructure",
+      "title": "Security Infrastructure",
+      "type": "notes"
+    },
+    {
+      "id": "layer2-security",
+      "title": "Layer 2 Security",
+      "type": "notes"
+    },
+    {
+      "id": "network-security-quiz",
+      "title": "Network Security Quiz",
+      "type": "quiz"
+    }
+  ]
+}

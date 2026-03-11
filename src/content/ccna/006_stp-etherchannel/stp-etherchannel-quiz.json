@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "id": "stp-ec-001",
+      "question": "Which value determines the root bridge in a Spanning Tree domain?",
+      "options": [
+        "Lowest Bridge ID (priority + MAC address)",
+        "Highest Bridge ID (priority + MAC address)",
+        "Lowest IP address on any SVI",
+        "Highest port count on the switch"
+      ],
+      "correct": 0,
+      "explanation": "The root bridge is elected based on the lowest Bridge ID, which is a combination of the bridge priority (default 32768) and the switch's base MAC address. The lowest priority wins; if tied, the lowest MAC address breaks the tie."
+    },
+    {
+      "id": "stp-ec-002",
+      "question": "In RSTP (802.1w), which port role provides an immediate failover path if the root port fails?",
+      "options": [
+        "Backup port",
+        "Designated port",
+        "Alternate port",
+        "Edge port"
+      ],
+      "correct": 2,
+      "explanation": "The RSTP alternate port is a port that receives a superior BPDU from another switch and serves as a standby replacement for the root port. If the root port fails, the alternate port can transition to forwarding almost immediately."
+    },
+    {
+      "id": "stp-ec-003",
+      "question": "What happens when a PortFast-enabled port receives a BPDU and BPDU Guard is configured?",
+      "options": [
+        "The port transitions to listening state",
+        "The port ignores the BPDU and stays forwarding",
+        "The port is placed into an err-disabled state",
+        "The switch restarts the STP election process"
+      ],
+      "correct": 2,
+      "explanation": "BPDU Guard disables (err-disables) a PortFast-enabled port as soon as it receives a BPDU. This prevents rogue switches connected to access ports from participating in STP and potentially disrupting the topology."
+    },
+    {
+      "id": "stp-ec-004",
+      "question": "Two switches are connected with LACP. Switch A is set to passive and Switch B is set to passive. What is the result?",
+      "options": [
+        "The EtherChannel forms successfully",
+        "The EtherChannel forms but only in half-duplex",
+        "The EtherChannel does not form",
+        "The switches fall back to PAgP negotiation"
+      ],
+      "correct": 2,
+      "explanation": "When both sides are set to LACP passive, neither side initiates negotiation, so the EtherChannel will not form. At least one side must be set to active to initiate LACP negotiation."
+    },
+    {
+      "id": "stp-ec-005",
+      "question": "Which statement correctly distinguishes CDP from LLDP?",
+      "options": [
+        "CDP is an IEEE standard while LLDP is Cisco proprietary",
+        "LLDP is enabled by default on Cisco devices while CDP must be manually enabled",
+        "CDP is Cisco proprietary and enabled by default; LLDP is IEEE 802.1AB and must be manually enabled on Cisco devices",
+        "Both protocols operate at Layer 3 and require IP addresses to function"
+      ],
+      "correct": 2,
+      "explanation": "CDP is a Cisco proprietary Layer 2 protocol that runs by default on Cisco devices. LLDP is the IEEE 802.1AB vendor-neutral equivalent but must be explicitly enabled on Cisco equipment using the 'lldp run' command."
+    }
+  ]
+}
