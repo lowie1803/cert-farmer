@@ -1,0 +1,29 @@
+{
+  "id": "investing-strategies",
+  "title": "Investing Strategies",
+  "icon": "♟️",
+  "description": "Value investing, growth investing, DCA, and passive strategies",
+  "domain": "Part 4: Strategy & Practice",
+  "lessons": [
+    {
+      "id": "value-vs-growth",
+      "title": "Value vs Growth Investing",
+      "type": "notes"
+    },
+    {
+      "id": "dollar-cost-averaging",
+      "title": "Dollar Cost Averaging",
+      "type": "notes"
+    },
+    {
+      "id": "passive-vs-active",
+      "title": "Passive vs Active Investing",
+      "type": "notes"
+    },
+    {
+      "id": "strategies-quiz",
+      "title": "Investing Strategies Quiz",
+      "type": "quiz"
+    }
+  ]
+}

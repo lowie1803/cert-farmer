@@ -1,0 +1,76 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What is the primary difference between the Glob tool and the Grep tool?",
+      "options": [
+        "Glob is faster than Grep",
+        "Glob matches file names/paths; Grep searches file contents",
+        "Glob works recursively; Grep only searches one directory",
+        "Glob supports regex; Grep only supports literal strings"
+      ],
+      "correct": 1,
+      "explanation": "Glob finds files by name patterns (e.g., **/*.js), while Grep searches inside files for content matching a regex pattern. They serve complementary purposes."
+    },
+    {
+      "id": "q2",
+      "question": "What is the default output_mode of the Grep tool?",
+      "options": [
+        "content",
+        "count",
+        "files_with_matches",
+        "verbose"
+      ],
+      "correct": 2,
+      "explanation": "The default output_mode is 'files_with_matches', which returns only the file paths containing matches. Use 'content' mode to see the actual matching lines."
+    },
+    {
+      "id": "q3",
+      "question": "When should you enable the multiline flag in the Grep tool?",
+      "options": [
+        "When searching for patterns longer than 80 characters",
+        "When searching in files with more than 1000 lines",
+        "When the pattern needs to match across multiple lines",
+        "When using the count output mode"
+      ],
+      "correct": 2,
+      "explanation": "Multiline mode (multiline: true) allows patterns to span multiple lines, with '.' matching newlines. By default, patterns only match within single lines."
+    },
+    {
+      "id": "q4",
+      "question": "How are Glob results sorted?",
+      "options": [
+        "Alphabetically by file path",
+        "By file size (largest first)",
+        "By modification time (most recent first)",
+        "By directory depth (shallowest first)"
+      ],
+      "correct": 2,
+      "explanation": "Glob results are sorted by modification time with the most recently modified files first. This is useful for finding actively worked-on files."
+    },
+    {
+      "id": "q5",
+      "question": "When is the Agent tool with subagent_type=Explore the best choice for searching?",
+      "options": [
+        "When you know exactly which file to search",
+        "When you need a simple regex search across the codebase",
+        "When the search is open-ended and may require multiple rounds of exploration",
+        "When you need to search only file names"
+      ],
+      "correct": 2,
+      "explanation": "The Agent/Explore tool is best for open-ended research questions that require multiple iterative rounds of searching and reading, like 'How does authentication work in this codebase?'"
+    },
+    {
+      "id": "q6",
+      "question": "Why should you NEVER use bash grep or rg commands directly?",
+      "options": [
+        "They are slower than the Grep tool",
+        "They don't support regex",
+        "The Grep tool has been optimized for correct permissions and access",
+        "Bash commands can't search recursively"
+      ],
+      "correct": 2,
+      "explanation": "The Grep tool has been specifically optimized for correct permissions and access within the Claude Code environment. Using bash grep or rg bypasses these optimizations."
+    }
+  ]
+}

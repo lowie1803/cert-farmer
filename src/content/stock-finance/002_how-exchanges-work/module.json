@@ -1,0 +1,29 @@
+{
+  "id": "how-exchanges-work",
+  "title": "How Stock Exchanges Work",
+  "icon": "🏛️",
+  "description": "NYSE, NASDAQ, order types, and how trades execute",
+  "domain": "Part 1: Foundations",
+  "lessons": [
+    {
+      "id": "major-exchanges",
+      "title": "Major Stock Exchanges",
+      "type": "notes"
+    },
+    {
+      "id": "order-types",
+      "title": "Order Types",
+      "type": "notes"
+    },
+    {
+      "id": "order-types-quiz",
+      "title": "Order Types Quiz",
+      "type": "quiz"
+    },
+    {
+      "id": "market-hours-and-sessions",
+      "title": "Market Hours & Sessions",
+      "type": "notes"
+    }
+  ]
+}

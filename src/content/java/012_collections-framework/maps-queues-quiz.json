@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Which Map method adds a value only if the key is not already present?",
+      "options": [
+        "put(key, value)",
+        "putIfAbsent(key, value)",
+        "computeIfAbsent(key, function)",
+        "Both B and C"
+      ],
+      "correct": 3,
+      "explanation": "putIfAbsent adds a value if the key is absent. computeIfAbsent also only computes and adds if absent, but takes a Function to lazily create the value. Both avoid overwriting existing entries."
+    },
+    {
+      "id": "q2",
+      "question": "What is the preferred class for implementing a Stack in modern Java?",
+      "options": [
+        "java.util.Stack",
+        "LinkedList",
+        "ArrayDeque",
+        "PriorityQueue"
+      ],
+      "correct": 2,
+      "explanation": "ArrayDeque is the recommended choice for stack (LIFO) and queue (FIFO) usage. java.util.Stack extends Vector and is synchronized (legacy). ArrayDeque is faster and more consistent."
+    },
+    {
+      "id": "q3",
+      "question": "What does `map.merge(\"count\", 1, Integer::sum)` do if the key already maps to 5?",
+      "options": [
+        "Sets the value to 1",
+        "Sets the value to 6",
+        "Throws IllegalStateException",
+        "Removes the key"
+      ],
+      "correct": 1,
+      "explanation": "merge() applies the BiFunction (Integer::sum) to the existing value (5) and the new value (1), resulting in 6. If the key were absent, it would set the value to 1."
+    },
+    {
+      "id": "q4",
+      "question": "Which is safe to remove elements during iteration?",
+      "options": [
+        "Enhanced for-each with list.remove()",
+        "Iterator with iterator.remove()",
+        "forEach lambda with list.remove()",
+        "All of the above"
+      ],
+      "correct": 1,
+      "explanation": "Only Iterator.remove() is safe during iteration. Using collection.remove() during for-each or forEach throws ConcurrentModificationException. Alternatively, use removeIf()."
+    },
+    {
+      "id": "q5",
+      "question": "What does PriorityQueue.poll() return when using default ordering?",
+      "options": [
+        "The largest element",
+        "The most recently added element",
+        "The smallest element (natural ordering)",
+        "A random element"
+      ],
+      "correct": 2,
+      "explanation": "PriorityQueue uses natural ordering (min-heap) by default, so poll() returns the smallest element. To get the largest first, provide a Comparator.reverseOrder()."
+    }
+  ]
+}

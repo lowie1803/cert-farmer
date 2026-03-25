@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Why can't you write `new T()` inside a generic class?",
+      "options": [
+        "Generics only work with reference types",
+        "Type erasure removes type information at runtime, so the JVM doesn't know which constructor to call",
+        "T might not have a no-arg constructor",
+        "Both B and C"
+      ],
+      "correct": 3,
+      "explanation": "Due to type erasure, T is replaced with Object at runtime — the JVM has no way to know the actual type. Additionally, there's no guarantee T has a no-arg constructor, so even if the type were known, instantiation might fail."
+    },
+    {
+      "id": "q2",
+      "question": "What does PECS stand for and when do you use `? extends T`?",
+      "options": [
+        "Producer Extends Consumer Super — use extends when producing (reading) values",
+        "Producer Extends Consumer Super — use extends when consuming (writing) values",
+        "Parameter Extends Class Super — use extends for class hierarchies",
+        "Polymorphic Extension Creates Subtypes — use extends for subtyping"
+      ],
+      "correct": 0,
+      "explanation": "PECS = Producer Extends, Consumer Super. When a generic structure produces (provides) values you read, use ? extends T. When it consumes (accepts) values you write, use ? super T."
+    },
+    {
+      "id": "q3",
+      "question": "Which is a valid bounded type parameter?",
+      "options": [
+        "<T super Number>",
+        "<T extends Number & Serializable>",
+        "<T extends Number & String>",
+        "<T implements Comparable>"
+      ],
+      "correct": 1,
+      "explanation": "Use 'extends' for both classes and interfaces in bounds (not 'implements' or 'super'). Multiple bounds are joined with '&'. You can have at most one class bound (listed first) plus multiple interface bounds. String is a final class so C is invalid."
+    },
+    {
+      "id": "q4",
+      "question": "Can you add an Integer to a `List<? extends Number>`?",
+      "options": [
+        "Yes — Integer extends Number",
+        "No — the compiler doesn't know the specific subtype, so only null can be added",
+        "Yes — but only if you cast to List<Number> first",
+        "No — it throws UnsupportedOperationException"
+      ],
+      "correct": 1,
+      "explanation": "List<? extends Number> could be List<Double>, List<Integer>, etc. Adding an Integer to what might be a List<Double> would break type safety. The compiler prevents all adds except null."
+    },
+    {
+      "id": "q5",
+      "question": "What is the type of `list.get(0)` when `list` is `List<? super Integer>`?",
+      "options": [
+        "Integer",
+        "Number",
+        "Object",
+        "Compilation error"
+      ],
+      "correct": 2,
+      "explanation": "With ? super Integer, the list could be List<Integer>, List<Number>, or List<Object>. The compiler can only guarantee the return type is Object, since that's the uppermost possibility."
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "final-exam",
+  "title": "Final Exam: Java Refresher",
+  "icon": "🏆",
+  "description": "50 questions covering all 4 domains",
+  "domain": "Exam",
+  "lessons": [
+    {
+      "id": "final-exam-exam",
+      "title": "Final Exam",
+      "type": "exam",
+      "timeLimit": 75,
+      "passingScore": 75
+    }
+  ]
+}

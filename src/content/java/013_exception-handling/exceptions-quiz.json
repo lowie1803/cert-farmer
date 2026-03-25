@@ -1,0 +1,76 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Which is a checked exception?",
+      "options": [
+        "NullPointerException",
+        "IOException",
+        "IllegalArgumentException",
+        "ArrayIndexOutOfBoundsException"
+      ],
+      "correct": 1,
+      "explanation": "IOException extends Exception (not RuntimeException), making it checked. The compiler forces you to either catch it or declare it in a throws clause. The others all extend RuntimeException."
+    },
+    {
+      "id": "q2",
+      "question": "In a try-with-resources, when are resources closed?",
+      "options": [
+        "When the JVM garbage collects them",
+        "After the finally block executes",
+        "After the try block completes, before catch/finally",
+        "Only when close() is explicitly called"
+      ],
+      "correct": 2,
+      "explanation": "Resources in try-with-resources are closed after the try block completes (whether normally or via exception) but before any catch or finally blocks execute."
+    },
+    {
+      "id": "q3",
+      "question": "What happens if both the try block and a resource's close() throw exceptions?",
+      "options": [
+        "The close() exception replaces the try exception",
+        "Both exceptions are lost",
+        "The try exception propagates; close() exception is suppressed",
+        "A new CompositeException is created"
+      ],
+      "correct": 2,
+      "explanation": "The primary exception (from try) propagates. The close() exception is added as a suppressed exception, accessible via Throwable.getSuppressed()."
+    },
+    {
+      "id": "q4",
+      "question": "Which multi-catch is valid?",
+      "options": [
+        "catch (IOException | SQLException e)",
+        "catch (IOException | FileNotFoundException e)",
+        "catch (Exception | RuntimeException e)",
+        "catch (IOException | SQLException | Error e)"
+      ],
+      "correct": 0,
+      "explanation": "Multi-catch exceptions cannot be in the same class hierarchy. FileNotFoundException extends IOException (B is invalid), and RuntimeException extends Exception (C is invalid). A is valid — IOException and SQLException are unrelated. D is technically valid but catching Error is a bad practice."
+    },
+    {
+      "id": "q5",
+      "question": "What is the best practice when wrapping a low-level exception?",
+      "options": [
+        "Catch and discard the original, throw a new one",
+        "Pass the original as the cause parameter to preserve the stack trace chain",
+        "Log the original and throw a completely new exception",
+        "Re-throw the original exception without wrapping"
+      ],
+      "correct": 1,
+      "explanation": "Exception chaining via the cause parameter (new CustomException(message, cause)) preserves the full stack trace, making debugging much easier while providing domain-specific exceptions to callers."
+    },
+    {
+      "id": "q6",
+      "question": "What does the following code print?\n```java\ntry {\n    return 1;\n} finally {\n    return 2;\n}\n```",
+      "options": [
+        "1",
+        "2",
+        "Compilation error",
+        "RuntimeException"
+      ],
+      "correct": 1,
+      "explanation": "The finally block always executes, even after a return statement. A return in finally overrides the return in try. This is a code smell — never return from finally blocks as it silently swallows exceptions too."
+    }
+  ]
+}

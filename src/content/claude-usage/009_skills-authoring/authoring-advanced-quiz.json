@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Why should SKILL.md files include both examples and anti-examples?",
+      "options": [
+        "To make the file longer and more impressive",
+        "Because Claude ignores instructions without examples",
+        "To clearly define the boundaries of correct vs incorrect behavior",
+        "To satisfy a required SKILL.md schema validation"
+      ],
+      "correct": 2,
+      "explanation": "Examples show what correct output looks like, and anti-examples show what to avoid. Together, they clearly define boundaries so Claude understands the acceptable range of behavior."
+    },
+    {
+      "id": "q2",
+      "question": "What voice should skill instructions be written in?",
+      "options": [
+        "Passive voice: 'The tests should be run'",
+        "Imperative voice: 'Run the test suite before building'",
+        "Conditional voice: 'You might want to consider running tests'",
+        "First person: 'I will run the tests'"
+      ],
+      "correct": 1,
+      "explanation": "Use imperative voice for skill instructions. Direct commands like 'Run the test suite' are unambiguous, while passive or conditional phrasing introduces uncertainty."
+    },
+    {
+      "id": "q3",
+      "question": "How should a domain-specific skill handle edge cases?",
+      "options": [
+        "Ignore edge cases — Claude will figure it out",
+        "Define explicit instructions for each edge case scenario",
+        "Add a general 'use your best judgment' statement",
+        "Link to an external FAQ page"
+      ],
+      "correct": 1,
+      "explanation": "Edge cases should be explicitly defined in the SKILL.md. For example: 'If no tests exist, skip the test step and warn the user.' This prevents Claude from guessing."
+    },
+    {
+      "id": "q4",
+      "question": "What is the primary advantage of domain-specific skills over traditional documentation?",
+      "options": [
+        "Skills are written in a special programming language",
+        "Skills are actively followed by Claude every time, not just read once",
+        "Skills are stored in the cloud, unlike documentation",
+        "Skills automatically update themselves based on usage"
+      ],
+      "correct": 1,
+      "explanation": "Unlike wiki pages or onboarding docs that are read once and often forgotten, domain-specific skills are actively followed by Claude every time the skill is invoked, ensuring consistent application of best practices."
+    },
+    {
+      "id": "q5",
+      "question": "When building a code review skill, what should the SKILL.md specify?",
+      "options": [
+        "Only the programming language to review",
+        "The exact checks to perform, standards to enforce, and what to flag",
+        "A link to the team's style guide website",
+        "The names of team members who should approve the review"
+      ],
+      "correct": 1,
+      "explanation": "A code review skill should specify the exact checklist: check for hardcoded secrets, verify error handling, ensure test coverage, confirm naming conventions, and look for unused code. Specific checks produce consistent reviews."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "generics-type-safety",
+  "title": "Generics & Type Safety",
+  "icon": "🔧",
+  "description": "Generic classes, methods, wildcards, bounded types, type erasure",
+  "domain": "Domain 3: Core APIs",
+  "lessons": [
+    { "id": "generics", "title": "Generics Fundamentals", "type": "notes" },
+    { "id": "wildcards-bounds", "title": "Wildcards & Bounded Types", "type": "notes" },
+    { "id": "generics-quiz", "title": "Generics Quiz", "type": "quiz" }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "project-oop-refactor",
+  "title": "Project: OOP Refactor + Alerts",
+  "icon": "🔔",
+  "description": "Refactor the news fetcher with OOP and add Telegram/email alerts",
+  "domain": "Project",
+  "lessons": [
+    { "id": "oop-refactor-brief", "title": "Refactor Brief & Requirements", "type": "notes" },
+    { "id": "oop-refactor-guide", "title": "Step-by-Step Guide", "type": "notes" },
+    { "id": "oop-refactor-stretch", "title": "Stretch Goals", "type": "notes" }
+  ]
+}

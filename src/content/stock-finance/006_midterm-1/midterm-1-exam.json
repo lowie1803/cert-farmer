@@ -1,0 +1,124 @@
+{
+  "questions": [
+    {
+      "id": "midterm-1-q1",
+      "question": "What does owning a share of stock represent?",
+      "options": ["A loan to the company", "Partial ownership of the company", "A guaranteed return on investment", "A contract for future services"],
+      "correct": 1,
+      "explanation": "A share of stock represents partial ownership (equity) in a company.",
+      "domain": "Part 1: Foundations"
+    },
+    {
+      "id": "midterm-1-q2",
+      "question": "What is an IPO?",
+      "options": ["A type of stock order", "When a company buys back its shares", "When a private company first sells shares to the public", "A government regulation on trading"],
+      "correct": 2,
+      "explanation": "An Initial Public Offering (IPO) is when a private company offers shares to the public for the first time.",
+      "domain": "Part 1: Foundations"
+    },
+    {
+      "id": "midterm-1-q3",
+      "question": "Institutional investors control approximately what percentage of stock market trading volume?",
+      "options": ["20%", "50%", "80%", "95%"],
+      "correct": 2,
+      "explanation": "Institutional investors (mutual funds, hedge funds, pension funds) control roughly 80% of stock market trading volume.",
+      "domain": "Part 1: Foundations"
+    },
+    {
+      "id": "midterm-1-q4",
+      "question": "Which order type guarantees execution but not the exact price?",
+      "options": ["Limit order", "Stop-limit order", "Market order", "GTC order"],
+      "correct": 2,
+      "explanation": "A market order executes immediately at the best available price, but the exact price may differ from what you see (slippage).",
+      "domain": "Part 1: Foundations"
+    },
+    {
+      "id": "midterm-1-q5",
+      "question": "What are the regular US stock market trading hours (Eastern time)?",
+      "options": ["8:00 AM – 3:00 PM", "9:30 AM – 4:00 PM", "9:00 AM – 5:00 PM", "10:00 AM – 4:30 PM"],
+      "correct": 1,
+      "explanation": "The US stock market regular trading hours are 9:30 AM to 4:00 PM Eastern Time, Monday through Friday.",
+      "domain": "Part 1: Foundations"
+    },
+    {
+      "id": "midterm-1-q6",
+      "question": "Which exchange is known as an electronic-only exchange with no physical trading floor?",
+      "options": ["NYSE", "NASDAQ", "London Stock Exchange", "Tokyo Stock Exchange"],
+      "correct": 1,
+      "explanation": "NASDAQ is a fully electronic exchange — all trading happens through computer networks with no physical trading floor.",
+      "domain": "Part 1: Foundations"
+    },
+    {
+      "id": "midterm-1-q7",
+      "question": "A green candlestick on a stock chart means:",
+      "options": ["The stock hit a new all-time high", "The closing price was higher than the opening price", "Trading volume was above average", "The stock paid a dividend that day"],
+      "correct": 1,
+      "explanation": "A green (bullish) candlestick means the closing price was higher than the opening price for that period.",
+      "domain": "Part 1: Foundations"
+    },
+    {
+      "id": "midterm-1-q8",
+      "question": "A company with a market cap of $250 billion is classified as:",
+      "options": ["Small-cap", "Mid-cap", "Large-cap", "Mega-cap"],
+      "correct": 2,
+      "explanation": "Large-cap companies have market capitalizations of $10B–$200B. At $250B, this company is actually on the border of large-cap/mega-cap, but generally classified as large-cap.",
+      "domain": "Part 1: Foundations"
+    },
+    {
+      "id": "midterm-1-q9",
+      "question": "What does high trading volume during a price increase suggest?",
+      "options": ["The move is likely weak", "The move has strong conviction behind it", "The stock is about to crash", "Volume is irrelevant to price"],
+      "correct": 1,
+      "explanation": "High volume confirms the price move — many participants are supporting the trend, making it more likely to continue.",
+      "domain": "Part 1: Foundations"
+    },
+    {
+      "id": "midterm-1-q10",
+      "question": "When you buy a bond, you are:",
+      "options": ["Buying ownership in a company", "Lending money to the issuer", "Getting voting rights", "Buying a share of profits"],
+      "correct": 1,
+      "explanation": "A bond is a debt instrument — you lend money to the issuer (company or government) in exchange for regular interest payments and return of principal.",
+      "domain": "Part 2: What to Invest In"
+    },
+    {
+      "id": "midterm-1-q11",
+      "question": "What is the main advantage of index funds over actively managed funds?",
+      "options": ["Higher potential returns", "More exciting", "Lower costs and better long-term performance", "Guaranteed profits"],
+      "correct": 2,
+      "explanation": "Over 90% of actively managed funds underperform their benchmark index over 15+ years, largely due to higher fees.",
+      "domain": "Part 2: What to Invest In"
+    },
+    {
+      "id": "midterm-1-q12",
+      "question": "What is the key difference between an ETF and a mutual fund?",
+      "options": ["ETFs only hold bonds", "ETFs trade on exchanges like stocks throughout the day", "Mutual funds are always free", "There is no difference"],
+      "correct": 1,
+      "explanation": "ETFs trade on exchanges throughout the day at market prices, while mutual funds only trade once per day at the closing NAV price.",
+      "domain": "Part 2: What to Invest In"
+    },
+    {
+      "id": "midterm-1-q13",
+      "question": "The P/E ratio is calculated as:",
+      "options": ["Profit ÷ Expenses", "Price ÷ Earnings Per Share", "Price ÷ Equity", "Profit ÷ Earnings"],
+      "correct": 1,
+      "explanation": "P/E = Stock Price ÷ Earnings Per Share. It tells you how much investors are paying for each dollar of earnings.",
+      "domain": "Part 2: What to Invest In"
+    },
+    {
+      "id": "midterm-1-q14",
+      "question": "Which financial statement shows a snapshot of assets, liabilities, and equity?",
+      "options": ["Income statement", "Cash flow statement", "Balance sheet", "Annual report"],
+      "correct": 2,
+      "explanation": "The balance sheet shows what a company owns (assets), owes (liabilities), and the residual (equity) at a specific point in time.",
+      "domain": "Part 2: What to Invest In"
+    },
+    {
+      "id": "midterm-1-q15",
+      "question": "A company with a Debt-to-Equity ratio of 0.3 is considered:",
+      "options": ["Highly leveraged", "Conservatively financed", "About to go bankrupt", "Average for all industries"],
+      "correct": 1,
+      "explanation": "A D/E of 0.3 means the company has much more equity than debt — a conservative financial structure with low leverage.",
+      "domain": "Part 2: What to Invest In"
+    }
+  ]
+}

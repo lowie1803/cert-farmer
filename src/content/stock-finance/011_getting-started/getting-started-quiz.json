@@ -1,0 +1,32 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What is the recommended first investment for most beginners?",
+      "options": ["A hot stock tip from social media", "A broad market index ETF", "Options contracts", "Penny stocks"],
+      "correct": 1,
+      "explanation": "A broad market index ETF (like VOO or VTI) provides instant diversification, low fees, and proven long-term returns — ideal for beginners."
+    },
+    {
+      "id": "q2",
+      "question": "What happens if you miss just the 10 best trading days over 20 years?",
+      "options": ["Almost no impact", "Returns cut nearly in half", "You lose all your money", "Returns double from buying low"],
+      "correct": 1,
+      "explanation": "Missing the 10 best days over a 20-year period can cut your annualized returns from ~9.8% to ~5.6% — nearly half. This is why staying invested matters more than timing."
+    },
+    {
+      "id": "q3",
+      "question": "A Roth IRA's main advantage is:",
+      "options": ["No contribution limits", "Employer matching", "Tax-free withdrawals in retirement", "Higher returns than a regular account"],
+      "correct": 2,
+      "explanation": "Roth IRA contributions are made with after-tax money, but all growth and withdrawals in retirement are completely tax-free."
+    },
+    {
+      "id": "q4",
+      "question": "Before investing, you should have an emergency fund of:",
+      "options": ["1 month of expenses", "3-6 months of expenses", "1 year of income", "No emergency fund needed"],
+      "correct": 1,
+      "explanation": "Financial advisors recommend 3-6 months of living expenses in a savings account before investing, so you never have to sell investments at a bad time to cover emergencies."
+    }
+  ]
+}

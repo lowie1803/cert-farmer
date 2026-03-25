@@ -1,0 +1,324 @@
+{
+  "questions": [
+    {
+      "id": "midterm-1-q1",
+      "question": "What is the correct name for the core operational cycle of Claude Code?",
+      "options": ["Input-Process-Output loop", "Read-Think-Act loop", "Observe-Orient-Decide-Act loop", "Sense-Plan-Act loop"],
+      "correct": 1,
+      "explanation": "Claude Code operates on a continuous Read-Think-Act loop. In the Read phase, Claude receives input (user messages, tool results, system context). In the Think phase, it analyzes information. In the Act phase, it responds with text or invokes a tool. This cycle repeats until the task is complete.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q2",
+      "question": "CLAUDE.md files are loaded from multiple locations. Which location has the HIGHEST priority when instructions conflict?",
+      "options": ["~/.claude/CLAUDE.md (user-global)", "CLAUDE.md in the project root", "CLAUDE.md in a subdirectory", "All CLAUDE.md files have equal priority"],
+      "correct": 2,
+      "explanation": "When instructions conflict, more specific files win. Subdirectory CLAUDE.md files have the highest priority for their scope, followed by project root CLAUDE.md (medium priority), and user-global ~/.claude/CLAUDE.md (lowest priority).",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q3",
+      "question": "When the context window fills up during a long conversation, what happens to older content?",
+      "options": ["The conversation is terminated and must be restarted", "Older messages are automatically compressed into summaries", "Claude stops accepting tool results to save space", "The oldest messages are silently deleted without summary"],
+      "correct": 1,
+      "explanation": "When the conversation grows too long, Claude Code performs automatic compression: older parts are summarized, the summary replaces the original detailed messages, and recent messages remain in full detail. This is transparent to the user but means details from early in a long session may be lost.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q4",
+      "question": "Where is Claude Code's file-based memory system stored?",
+      "options": ["In the project's .git directory", "In ~/.claude/projects/", "In the CLAUDE.md file at the project root", "In localStorage within the terminal"],
+      "correct": 1,
+      "explanation": "Claude Code's file-based memory system is stored at ~/.claude/projects/. This provides persistence across sessions — information saved to memory is available in future conversations, unlike the context window which resets each session.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q5",
+      "question": "Which of the following should NOT be saved to Claude's memory system?",
+      "options": ["A user correction about code style preferences", "A non-obvious setup step that was discovered", "Temporary debugging information for the current session", "An important architectural decision"],
+      "correct": 2,
+      "explanation": "Session-specific debugging information and temporary task context should NOT be saved to memory. Memory is for persistent knowledge: user corrections, project conventions, architectural decisions, and non-obvious setup steps. Temporary information wastes the memory system.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q6",
+      "question": "What is the key difference between CLAUDE.md and the Memory system regarding team collaboration?",
+      "options": ["CLAUDE.md is local-only; Memory is shared via git", "CLAUDE.md is committed to git and shared with the team; Memory is local to the machine", "Both are committed to git and shared", "Neither is shared — both are local to the machine"],
+      "correct": 1,
+      "explanation": "CLAUDE.md lives in the project repo, is committed to git, and is shared with the team. Memory is stored in ~/.claude/ on the local machine and is not shared. CLAUDE.md is created by developers manually for project instructions, while Memory is created by Claude automatically for learned preferences.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q7",
+      "question": "When Claude loads CLAUDE.md content, how does it appear in the conversation?",
+      "options": ["As a user message at the start of the conversation", "As a system-reminder block that persists in every turn", "As a tool result from the Read tool", "As a one-time system prompt that is not repeated"],
+      "correct": 1,
+      "explanation": "CLAUDE.md content appears as a <system-reminder> block. This means the instructions are present in every turn of the conversation, persist even through context compression, and Claude treats them as authoritative project knowledge.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q8",
+      "question": "When a tool call fails in Claude Code, what is the expected behavior?",
+      "options": ["Claude reports the error and stops execution", "Claude asks the user for permission to retry", "Claude treats errors as information and adapts its approach", "Claude automatically reverts all changes and starts over"],
+      "correct": 2,
+      "explanation": "The key principle is graceful recovery — treat errors as information, not stop conditions. For example, if a file is not found, Claude searches for the correct path. If an edit conflicts, Claude re-reads the file and adjusts. If a command fails, Claude reads the error output and tries a different approach.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q9",
+      "question": "What is the default number of lines the Read tool returns when no limit is specified?",
+      "options": ["500 lines", "1000 lines", "2000 lines", "Unlimited — the entire file"],
+      "correct": 2,
+      "explanation": "By default, the Read tool returns up to 2000 lines from the beginning of the file. For files larger than 2000 lines, you should use the offset and limit parameters to read specific sections.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q10",
+      "question": "When reading a PDF file that is 15 pages long, what happens if you do NOT provide the pages parameter?",
+      "options": ["Claude reads all 15 pages successfully", "Claude reads only the first 10 pages", "The Read call fails", "Claude reads a summary of the entire PDF"],
+      "correct": 2,
+      "explanation": "For PDFs longer than 10 pages, the pages parameter is required. Reading a large PDF without specifying pages will fail. The maximum is 20 pages per request, and the format is like \"1-5\", \"3\", or \"10-20\".",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q11",
+      "question": "You need to change a single variable name on line 47 of an existing 200-line file. Which approach is correct?",
+      "options": ["Use Write to rewrite the entire file with the change", "Use Edit with old_string matching the line and new_string with the change", "Use Bash with sed to perform the replacement", "Use Read with offset=47, then Write the modified content"],
+      "correct": 1,
+      "explanation": "Edit is the preferred tool for targeted changes to existing files because it only sends the diff. Write should only be used for new files or complete rewrites. Bash with sed should be avoided when the Edit tool can accomplish the task. The Edit tool performs exact string replacement, making it ideal for single-line changes.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q12",
+      "question": "What happens if the old_string parameter in an Edit call matches multiple locations in the file?",
+      "options": ["Only the first occurrence is replaced", "All occurrences are replaced automatically", "The edit fails with an error", "Claude is prompted to choose which occurrence"],
+      "correct": 2,
+      "explanation": "The Edit tool requires old_string to be unique within the file. If multiple matches exist, the edit fails with an error. To fix this, either include more surrounding context to make the match unique, or use replace_all: true to intentionally replace every occurrence.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q13",
+      "question": "You attempt to use the Write tool to modify an existing file, but you have not called Read on it in this conversation. What happens?",
+      "options": ["Write succeeds but logs a warning", "Write overwrites the file with the new content normally", "Write fails because you must Read a file before writing to it", "Write automatically reads the file first, then applies changes"],
+      "correct": 2,
+      "explanation": "Both Write and Edit require a prior Read call for existing files. The Write tool will fail if you haven't read the file first. This safety mechanism prevents accidentally overwriting file contents you haven't seen. For new files that don't exist yet, no prior Read is needed.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q14",
+      "question": "When reading the output of the Read tool, you see: '     5→    const x = 10;'. If you want to edit this line, what should old_string contain?",
+      "options": ["     5→    const x = 10;", "5→    const x = 10;", "    const x = 10;", "const x = 10;"],
+      "correct": 2,
+      "explanation": "The Read output format is: spaces + line number + tab (→). Everything after the tab is the actual file content. You must preserve the exact indentation as it appears in the file (the four spaces before 'const'), but never include any part of the line number prefix in old_string or new_string.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q15",
+      "question": "You need to rename a variable from 'userData' to 'profileData' everywhere in a file. Which approach is most appropriate?",
+      "options": ["Multiple individual Edit calls, one for each occurrence", "A single Edit call with replace_all: true", "Write the entire file with all occurrences changed", "Use Bash with sed -i to perform the replacement"],
+      "correct": 1,
+      "explanation": "The Edit tool's replace_all parameter is designed exactly for this use case — renaming a variable throughout a file. Setting replace_all: true replaces every occurrence of old_string with new_string in a single operation, which is more efficient than multiple individual edits.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q16",
+      "question": "Which file type does the Read tool NOT support natively?",
+      "options": ["PNG image files", "Jupyter notebook (.ipynb) files", "PDF documents", "Microsoft Word (.docx) files"],
+      "correct": 3,
+      "explanation": "The Read tool natively supports images (PNG, JPG — presented visually since Claude is multimodal), PDF files (with the pages parameter), and Jupyter notebooks (.ipynb — returns all cells with outputs). Microsoft Word .docx files are not mentioned as a supported format.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q17",
+      "question": "What is the default output mode of the Grep tool?",
+      "options": ["content — shows matching lines with context", "files_with_matches — shows only file paths", "count — shows the number of matches per file", "summary — shows a brief overview of matches"],
+      "correct": 1,
+      "explanation": "The Grep tool defaults to files_with_matches mode, which shows only the file paths that contain matches. To see the actual matching lines, you must explicitly set output_mode to 'content'. The 'count' mode shows match counts per file.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q18",
+      "question": "You want to search for a Go interface definition like 'interface{}' using Grep. Which pattern is correct?",
+      "options": ["interface{}", "interface\\{\\}", "interface({})", "interface[{}]"],
+      "correct": 1,
+      "explanation": "Grep uses ripgrep syntax, where literal braces need escaping. To find 'interface{}' in Go code, you must use 'interface\\{\\}'. Without escaping, the braces would be interpreted as regex quantifiers.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q19",
+      "question": "You need to find a struct definition that spans multiple lines. Which Grep parameter enables this?",
+      "options": ["output_mode: 'content' with high context value", "multiline: true", "pattern with .* between lines", "type: 'multiline'"],
+      "correct": 1,
+      "explanation": "By default, Grep patterns match within single lines only. For cross-line patterns like 'struct \\{[\\s\\S]*?field', you must set multiline: true. This enables multiline mode where . matches newlines and patterns can span lines (uses rg -U --multiline-dotall).",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q20",
+      "question": "What is the difference between the Grep 'type' parameter and the 'glob' parameter?",
+      "options": ["They are identical — both filter by file extension", "type filters by language (e.g., 'js', 'py') and is more efficient; glob uses patterns like '*.js'", "type searches file contents; glob searches file names", "glob is for directories only; type is for files only"],
+      "correct": 1,
+      "explanation": "The type parameter filters by recognized file types (e.g., 'js', 'py', 'rust') using ripgrep's built-in type definitions, which is more efficient than glob for standard file types. The glob parameter uses glob patterns like '*.js' or '**/*.tsx' for custom filtering via rg --glob.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q21",
+      "question": "You want to see 3 lines of context before and after each Grep match. Which parameter combination is correct?",
+      "options": ["context: 3 with output_mode: 'files_with_matches'", "context: 3 with output_mode: 'content'", "-C: 3 without specifying output_mode", "-A: 3 and -B: 3 with output_mode: 'files_with_matches'"],
+      "correct": 1,
+      "explanation": "Context lines (-A, -B, -C, or context) require output_mode to be set to 'content'. They are ignored in other output modes. Setting context: 3 with output_mode: 'content' shows 3 lines before and after each match. Alternatively, you could use -C: 3 which is an alias for context.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q22",
+      "question": "You need to find all TypeScript files in a project. Which tool should you use?",
+      "options": ["Bash with 'find . -name \"*.ts\"'", "Grep with pattern '.' and type: 'ts'", "Glob with pattern '**/*.ts'", "Read with a directory path"],
+      "correct": 2,
+      "explanation": "Glob is the fast file pattern matching tool designed for finding files by name patterns. Using the pattern '**/*.ts' finds all TypeScript files recursively. You should avoid using Bash with 'find' when Glob can accomplish the task. Read cannot read directories. Grep searches file contents, not names.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q23",
+      "question": "When should you use the Agent/Explore tool instead of Glob and Grep directly?",
+      "options": ["Whenever searching for anything in the codebase", "Only when the codebase has more than 1000 files", "When doing an open-ended search that may require multiple rounds of globbing and grepping", "When you need to search binary files that Grep cannot handle"],
+      "correct": 2,
+      "explanation": "The Agent/Explore tool should be used when doing an open-ended search that may require multiple rounds of globbing and grepping. For simple, direct searches where you know the pattern or file name, use Glob and Grep directly — they are faster and have less overhead than spawning a subagent.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q24",
+      "question": "Glob returns matching file paths sorted by what criterion?",
+      "options": ["Alphabetical order", "File size (largest first)", "Modification time", "Directory depth (shallowest first)"],
+      "correct": 2,
+      "explanation": "Glob returns matching file paths sorted by modification time. This is useful because recently modified files are often the most relevant when exploring a codebase or looking for recent changes.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q25",
+      "question": "What is the default timeout for a Bash tool command?",
+      "options": ["30 seconds (30,000 ms)", "60 seconds (60,000 ms)", "120 seconds (120,000 ms)", "300 seconds (300,000 ms)"],
+      "correct": 2,
+      "explanation": "The default timeout for Bash commands is 120,000 ms (2 minutes). The maximum configurable timeout is 600,000 ms (10 minutes). For commands that may run longer, consider using run_in_background: true.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q26",
+      "question": "You set an environment variable with 'export MY_VAR=hello' in one Bash tool call. In the next Bash tool call, you reference $MY_VAR. What happens?",
+      "options": ["MY_VAR is available and contains 'hello'", "MY_VAR is undefined because shell state does not persist between calls", "MY_VAR is available but empty", "An error is thrown about undefined variables"],
+      "correct": 1,
+      "explanation": "While the working directory persists between Bash tool calls, shell state (environment variables, aliases) does NOT persist. Each Bash call starts with a fresh shell environment initialized from the user's profile. You cannot export a variable in one call and use it in the next.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q27",
+      "question": "You need to read a file's contents. Which approach should you use?",
+      "options": ["Bash with 'cat file.txt'", "Bash with 'head -100 file.txt'", "The Read tool with the file's absolute path", "Either Bash cat or Read tool — they are equivalent"],
+      "correct": 2,
+      "explanation": "You should always use the Read tool instead of Bash commands like cat, head, or tail for reading files. Dedicated tools provide a better user experience and should be preferred over Bash equivalents. Only use Bash for these operations when explicitly instructed or after verifying the dedicated tool cannot accomplish the task.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q28",
+      "question": "A pre-commit hook fails during a git commit. What should Claude do next?",
+      "options": ["Run git commit --amend after fixing the issue", "Run git commit --no-verify to bypass the hook", "Fix the issue, re-stage the files, and create a NEW commit", "Run git reset --hard and start the commit process over"],
+      "correct": 2,
+      "explanation": "When a pre-commit hook fails, the commit did NOT happen. Using --amend would modify the PREVIOUS commit, potentially destroying work. Using --no-verify bypasses quality checks and is forbidden unless explicitly asked. The correct approach is to fix the issue, re-stage, and create a new commit.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q29",
+      "question": "What is the required format for Git commit messages in Claude Code?",
+      "options": ["A simple string passed with git commit -m 'message'", "A HEREDOC format with a Co-Authored-By trailer line", "A commit message file passed with git commit -F", "Any format is acceptable as long as it includes the ticket number"],
+      "correct": 1,
+      "explanation": "Claude must always use a HEREDOC to pass the commit message for correct formatting, and include a Co-Authored-By line: 'Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>'. The HEREDOC format ensures proper multi-line formatting.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q30",
+      "question": "Which of the following git commands should Claude NEVER run unless the user explicitly requests it?",
+      "options": ["git status", "git diff", "git push --force", "git log --oneline"],
+      "correct": 2,
+      "explanation": "git push --force rewrites remote history and can destroy others' work. Along with git reset --hard, git checkout ., git clean -f, git branch -D, --no-verify, and --no-gpg-sign, force push is on the list of destructive operations that Claude must never execute unless explicitly asked by the user.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q31",
+      "question": "When staging files for a commit, why should Claude prefer 'git add src/auth.js src/middleware.js' over 'git add .'?",
+      "options": ["git add . is slower on large repositories", "git add . can accidentally include secrets (.env, credentials) or large binaries", "git add . does not work in subdirectories", "git add . stages deleted files, which causes errors"],
+      "correct": 1,
+      "explanation": "Using 'git add -A' or 'git add .' can accidentally stage sensitive files like .env or credentials.json, as well as large binary files. Claude should prefer staging specific files by name to ensure only the intended changes are committed.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q32",
+      "question": "When using run_in_background: true for a Bash command, which of the following is correct?",
+      "options": ["You must append '&' to the command and use run_in_background together", "You should not append '&' and should not poll with sleep loops — you will be notified automatically", "You must periodically check the output with a polling command", "Background commands have a shorter timeout of 30 seconds"],
+      "correct": 1,
+      "explanation": "When using run_in_background: true, do not append '&' to the command (the parameter handles backgrounding). Do not poll with sleep loops — you will be notified automatically when the command completes. This is the proper way to handle long-running commands.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q33",
+      "question": "Which Agent subagent_type is specifically designed for understanding codebase architecture and finding patterns?",
+      "options": ["Default (general)", "Explore", "Plan", "claude-code-guide"],
+      "correct": 1,
+      "explanation": "The Explore agent type is designed for fast codebase exploration, making it best for understanding architecture and finding patterns. The default (general) type handles complex multi-step tasks, Plan is for implementation planning, and claude-code-guide answers questions about Claude Code itself.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q34",
+      "question": "When should you run an Agent in the background (run_in_background: true)?",
+      "options": ["Whenever the task involves more than 3 tool calls", "When the agent's result is needed before the next step can proceed", "For independent work streams whose results do not affect subsequent steps", "Always — background is the default mode for agents"],
+      "correct": 2,
+      "explanation": "Background agents should be used for independent work streams — tasks that do not affect subsequent steps, long-running operations, and parallel independent research tasks. If you need the agent's result before proceeding (e.g., exploring code to decide what to modify), use foreground (default) mode.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q35",
+      "question": "Which of the following tasks should NOT use the Agent tool?",
+      "options": ["Exploring an unfamiliar codebase to understand its architecture", "Reading a specific file whose path you already know", "Cross-referencing patterns across multiple files in a large project", "Planning an implementation approach for a complex feature"],
+      "correct": 1,
+      "explanation": "The Agent tool adds overhead and should not be used for simple operations like reading a specific file — use the Read tool directly instead. Agent should also not be used for simple file searches (use Glob/Grep), single-step operations, or tasks requiring fewer than 3 queries.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q36",
+      "question": "What does the isolation parameter do when set to true on the Agent tool?",
+      "options": ["Prevents the agent from accessing the internet", "Runs the agent in a separate git worktree so file changes don't affect the main working tree", "Limits the agent to read-only operations", "Runs the agent with a separate context window from the main conversation"],
+      "correct": 1,
+      "explanation": "Setting isolation: true runs the agent in a separate git worktree. This means the agent can make file changes without affecting the main working tree, which is useful for experimental or risky modifications. Changes can be reviewed before merging back.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q37",
+      "question": "You need to explore unfamiliar code AND immediately use the findings to make an edit. Should the Agent run in foreground or background?",
+      "options": ["Background, because exploration takes time", "Foreground, because the result is needed before the edit can proceed", "Either — it makes no difference", "Background with polling to check when it finishes"],
+      "correct": 1,
+      "explanation": "Foreground (default) mode should be used when you need the result before proceeding. Since the edit depends on the exploration findings, the Agent must run in the foreground so its results are available for the next step. Background mode is for independent work streams whose results don't affect subsequent steps.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q38",
+      "question": "What is the minimum number of sequential queries that generally justifies using the Agent tool over direct tool calls?",
+      "options": ["1 query", "2 queries", "More than 3 queries", "10 or more queries"],
+      "correct": 2,
+      "explanation": "The Agent tool adds overhead, so it should only be used when the task requires more than 3 sequential queries. For fewer queries, calling Glob, Grep, Read, or other tools directly is faster and more efficient.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q39",
+      "question": "Which of the following is a valid subagent_type for the Agent tool?",
+      "options": ["search", "claude-code-guide", "debug", "review"],
+      "correct": 1,
+      "explanation": "The four valid subagent_type values are: default (general-purpose task execution), Explore (fast codebase exploration), Plan (implementation planning), and claude-code-guide (answering questions about Claude Code itself). There is no 'search', 'debug', or 'review' type.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "midterm-1-q40",
+      "question": "You have three independent research tasks to perform across a large codebase. What is the most efficient orchestration approach?",
+      "options": ["Run three Agent calls sequentially in foreground mode", "Run three Agent calls in parallel using run_in_background: true", "Use a single Agent with all three tasks combined in one prompt", "Use Grep for all three tasks directly without Agent"],
+      "correct": 1,
+      "explanation": "For parallel independent research tasks, running multiple Agents in background mode is the most efficient approach. Since the tasks are independent, they can execute simultaneously rather than sequentially. Combining them in a single prompt would force sequential execution within that agent, and direct Grep may not be sufficient for complex multi-step research.",
+      "domain": "Domain 1: Core Tools"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "modern-java-features",
+  "title": "Modern Java Features",
+  "icon": "✨",
+  "description": "Records, sealed classes, pattern matching, virtual threads",
+  "domain": "Domain 4: Modern Java",
+  "lessons": [
+    { "id": "records-sealed", "title": "Records & Sealed Classes", "type": "notes" },
+    { "id": "records-quiz", "title": "Records & Sealed Quiz", "type": "quiz" },
+    { "id": "pattern-matching", "title": "Pattern Matching & Virtual Threads", "type": "notes" },
+    { "id": "pattern-quiz", "title": "Pattern Matching Quiz", "type": "quiz" }
+  ]
+}

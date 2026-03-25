@@ -1,0 +1,34 @@
+{
+  "id": "what-is-the-stock-market",
+  "title": "What is the Stock Market?",
+  "icon": "📈",
+  "description": "Understanding stocks, markets, and why companies go public",
+  "domain": "Part 1: Foundations",
+  "lessons": [
+    {
+      "id": "stocks-and-shares",
+      "title": "Stocks & Shares",
+      "type": "notes"
+    },
+    {
+      "id": "stocks-and-shares-quiz",
+      "title": "Stocks & Shares Quiz",
+      "type": "quiz"
+    },
+    {
+      "id": "why-companies-go-public",
+      "title": "Why Companies Go Public",
+      "type": "notes"
+    },
+    {
+      "id": "market-participants",
+      "title": "Market Participants",
+      "type": "notes"
+    },
+    {
+      "id": "market-participants-quiz",
+      "title": "Market Participants Quiz",
+      "type": "quiz"
+    }
+  ]
+}

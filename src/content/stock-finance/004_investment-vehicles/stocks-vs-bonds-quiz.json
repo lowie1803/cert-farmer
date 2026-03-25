@@ -1,0 +1,32 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "When you buy a bond, you are:",
+      "options": ["Buying ownership in a company", "Lending money to the issuer", "Buying a share of profits", "Getting voting rights"],
+      "correct": 1,
+      "explanation": "A bond is a debt instrument — you are lending money to the issuer (company or government) in exchange for regular interest payments and return of principal."
+    },
+    {
+      "id": "q2",
+      "question": "In a company bankruptcy, who gets paid first?",
+      "options": ["Common stockholders", "Preferred stockholders", "Bondholders", "The CEO"],
+      "correct": 2,
+      "explanation": "Bondholders (creditors) are paid before any stockholders. The order is: bondholders → preferred stockholders → common stockholders."
+    },
+    {
+      "id": "q3",
+      "question": "Which type of bond is considered the safest (risk-free benchmark)?",
+      "options": ["Corporate bonds", "Municipal bonds", "High-yield bonds", "US Treasury bonds"],
+      "correct": 3,
+      "explanation": "US Treasury bonds are backed by the full faith and credit of the US government and are considered the risk-free benchmark."
+    },
+    {
+      "id": "q4",
+      "question": "The historical average annual return of the S&P 500 is approximately:",
+      "options": ["4-6%", "7-8%", "10%", "15%"],
+      "correct": 2,
+      "explanation": "The S&P 500 has historically returned approximately 10% per year on average (before inflation). After inflation, it's roughly 7%."
+    }
+  ]
+}

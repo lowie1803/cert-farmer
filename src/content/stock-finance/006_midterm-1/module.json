@@ -1,0 +1,16 @@
+{
+  "id": "midterm-1",
+  "title": "Midterm 1",
+  "icon": "📋",
+  "description": "Test your knowledge of Parts 1 & 2",
+  "category": "exam",
+  "lessons": [
+    {
+      "id": "midterm-1-exam",
+      "title": "Midterm Exam 1",
+      "type": "exam",
+      "timeLimit": 30,
+      "passingScore": 70
+    }
+  ]
+}

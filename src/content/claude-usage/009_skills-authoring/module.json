@@ -1,0 +1,14 @@
+{
+  "id": "skills-authoring",
+  "title": "Skills Authoring",
+  "icon": "✍️",
+  "description": "Write your first skill, design effective instructions, and build domain-specific skills",
+  "domain": "Domain 2: Skills System",
+  "lessons": [
+    { "id": "writing-first-skill", "title": "Writing Your First Skill", "type": "notes" },
+    { "id": "instruction-design", "title": "Instruction Design", "type": "notes" },
+    { "id": "domain-specific-skills", "title": "Domain-Specific Skills", "type": "notes" },
+    { "id": "authoring-basics-quiz", "title": "Authoring Basics Quiz", "type": "quiz" },
+    { "id": "authoring-advanced-quiz", "title": "Authoring Advanced Quiz", "type": "quiz" }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What is the correct order of JVM execution stages?",
+      "options": [
+        "JIT Compiler → Class Loader → Bytecode Verifier → Interpreter",
+        "Class Loader → Bytecode Verifier → Interpreter/JIT Compiler",
+        "Bytecode Verifier → Class Loader → JIT Compiler → Interpreter",
+        "Interpreter → Class Loader → JIT Compiler → Bytecode Verifier"
+      ],
+      "correct": 1,
+      "explanation": "The JVM first loads classes (Class Loader), verifies bytecode safety (Bytecode Verifier), then executes via the Interpreter and JIT Compiler for hot paths."
+    },
+    {
+      "id": "q2",
+      "question": "Which statement about JRE is correct as of Java 21?",
+      "options": [
+        "JRE must be installed separately from the JDK",
+        "JRE is included in the JDK; standalone JRE was deprecated since Java 11",
+        "JRE has been completely removed and no longer exists",
+        "JRE is required for development but not for running applications"
+      ],
+      "correct": 1,
+      "explanation": "The standalone JRE distribution was deprecated in Java 11. The JDK includes the runtime, so only the JDK needs to be installed."
+    },
+    {
+      "id": "q3",
+      "question": "Which JDK tool creates custom minimal runtime images?",
+      "options": [
+        "jpackage",
+        "jlink",
+        "jar",
+        "jconsole"
+      ],
+      "correct": 1,
+      "explanation": "jlink creates custom, minimal JRE images containing only the modules your application needs, reducing distribution size."
+    },
+    {
+      "id": "q4",
+      "question": "What does the single-file source launch feature (java MyApp.java) require?",
+      "options": [
+        "Java 8+ and a module-info.java file",
+        "Java 11+ and the source must be a single file",
+        "Java 17+ and the --enable-preview flag",
+        "Java 9+ and a configured classpath"
+      ],
+      "correct": 1,
+      "explanation": "Single-file source launch was introduced in Java 11. It compiles and runs a single .java file without an explicit javac step. It cannot reference other source files."
+    },
+    {
+      "id": "q5",
+      "question": "What is the primary advantage of GraalVM's native-image over HotSpot JIT?",
+      "options": [
+        "Higher peak throughput for long-running applications",
+        "Better garbage collection performance",
+        "Faster startup time and lower memory footprint",
+        "Built-in support for JPMS modules"
+      ],
+      "correct": 2,
+      "explanation": "GraalVM native-image performs ahead-of-time (AOT) compilation to produce standalone binaries with near-instant startup and lower memory usage, ideal for CLI tools and serverless functions."
+    }
+  ]
+}

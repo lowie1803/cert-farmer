@@ -17,7 +17,7 @@ export default function App() {
           <Route path="course/:courseId" element={<Dashboard />} />
           <Route path="course/:courseId/module/:moduleId" element={<ModulePage />} />
           <Route path="course/:courseId/module/:moduleId/lesson/:lessonId" element={<LessonPage />} />
-          <Route path="glossary" element={<GlossaryPage />} />
+          <Route path="course/:courseId/glossary" element={<GlossaryPage />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

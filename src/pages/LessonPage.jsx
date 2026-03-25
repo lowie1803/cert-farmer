@@ -87,7 +87,7 @@ export default function LessonPage() {
             </div>
 
             {/* Notes content */}
-            <ContentRenderer content={lesson.content} />
+            <ContentRenderer content={lesson.content} courseId={courseId} />
 
             {/* Resources */}
             {lesson.resources && lesson.resources.length > 0 && (

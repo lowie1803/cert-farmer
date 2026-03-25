@@ -1,0 +1,619 @@
+ ▐▛███▜▌   Claude Code v2.1.79
+▝▜█████▛▘  Sonnet 4.6 · Claude Pro
+  ▘▘ ▝▝    ~/startup/cert-farmer
+
+❯ Design a course for stock and finance. A friend of mine needs some            
+introduction to stock market and how to invest.                                 
+
+● Let me first understand the existing content structure so I can model the new
+  course properly.
+
+  Read 1 file (ctrl+o to expand)
+
+● Skill(content-authoring)
+  ⎿  Successfully loaded skill
+
+  Read 1 file (ctrl+o to expand)
+
+● Let me check how the app handles courses — whether it supports multiple
+  courses or is hardcoded to CCNA.
+
+  Read 3 files (ctrl+o to expand)
+
+● The app already supports multiple courses — I just need to create content
+  under src/content/stock-finance/. Let me check one existing module for
+  reference, then build the course.
+
+  Read 1 file (ctrl+o to expand)
+
+● Good, I have a clear picture. Let me design the course structure and create
+  all the files. Here's the plan:
+
+  Stock & Finance Introduction — 12 modules covering:
+  1. What is the Stock Market
+  2. How Stock Exchanges Work
+  3. Reading Stock Data
+  4. Types of Investment Vehicles
+  5. Fundamental Analysis
+  6. Midterm 1
+  7. Technical Analysis Basics
+  8. Building a Portfolio
+  9. Risk Management
+  10. Investing Strategies
+  11. Practical Guide: Getting Started
+  12. Final Assessment
+
+  Let me create everything now.
+
+● Bash(mkdir -p /home/dto/startup/cert-farmer/src/content/stock-finance/{001_wha
+      t-is-the-stock-market,002_how-exchanges-work,003_reading-stock-data,004_in
+      vestment-vehi…)
+  ⎿  Done
+
+● Write(src/content/stock-finance/course.json)
+  ⎿  Wrote 20 lines to src/content/stock-finance/course.json
+       1 {
+       2   "id": "stock-finance",
+       3   "title": "Stock Market & Finance",
+       4   "description": "Introduction to investing and the stock market
+         ",
+       5   "version": "1.0",
+       6   "modules": [
+       7     "001_what-is-the-stock-market",
+       8     "002_how-exchanges-work",
+       9     "003_reading-stock-data",
+      10     "004_investment-vehicles",
+     … +10 lines (ctrl+o to expand)
+
+● Now let me create all the module.json files, notes, and quizzes in parallel.
+
+● Write(src/content/stock-finance/001_what-is-the-stock-market/module.json)
+  ⎿  Wrote 34 lines to
+     src/content/stock-finance/001_what-is-the-stock-market/module.json
+       1 {
+       2   "id": "what-is-the-stock-market",
+       3   "title": "What is the Stock Market?",
+       4   "icon": "📈",
+       5   "description": "Understanding stocks, markets, and why compani
+         es go public",
+       6   "domain": "Part 1: Foundations",
+       7   "lessons": [
+       8     {
+       9       "id": "stocks-and-shares",
+      10       "title": "Stocks & Shares",
+     … +24 lines (ctrl+o to expand)
+
+● Write(src/content/stock-finance/002_how-exchanges-work/module.json)
+  ⎿  Wrote 29 lines to
+     src/content/stock-finance/002_how-exchanges-work/module.json
+       1 {
+       2   "id": "how-exchanges-work",
+       3   "title": "How Stock Exchanges Work",
+       4   "icon": "🏛️",
+       5   "description": "NYSE, NASDAQ, order types, and how trades exec
+         ute",
+       6   "domain": "Part 1: Foundations",
+       7   "lessons": [
+       8     {
+       9       "id": "major-exchanges",
+      10       "title": "Major Stock Exchanges",
+     … +19 lines (ctrl+o to expand)
+
+● Write(src/content/stock-finance/003_reading-stock-data/module.json)
+  ⎿  Wrote 34 lines to
+     src/content/stock-finance/003_reading-stock-data/module.json
+       1 {
+       2   "id": "reading-stock-data",
+       3   "title": "Reading Stock Data",
+       4   "icon": "📊",
+       5   "description": "Tickers, price charts, volume, and key metrics
+         ",
+       6   "domain": "Part 1: Foundations",
+       7   "lessons": [
+       8     {
+       9       "id": "tickers-and-price-quotes",
+      10       "title": "Tickers & Price Quotes",
+     … +24 lines (ctrl+o to expand)
+
+● Write(src/content/stock-finance/004_investment-vehicles/module.json)
+  ⎿  Wrote 34 lines to
+     src/content/stock-finance/004_investment-vehicles/module.json
+       1 {
+       2   "id": "investment-vehicles",
+       3   "title": "Types of Investment Vehicles",
+       4   "icon": "🧺",
+       5   "description": "Stocks, bonds, ETFs, mutual funds, and index f
+         unds",
+       6   "domain": "Part 2: What to Invest In",
+       7   "lessons": [
+       8     {
+       9       "id": "stocks-vs-bonds",
+      10       "title": "Stocks vs Bonds",
+     … +24 lines (ctrl+o to expand)
+
+● Write(src/content/stock-finance/005_fundamental-analysis/module.json)
+  ⎿  Wrote 34 lines to
+     src/content/stock-finance/005_fundamental-analysis/module.json
+       1 {
+       2   "id": "fundamental-analysis",
+       3   "title": "Fundamental Analysis",
+       4   "icon": "🔍",
+       5   "description": "Evaluating companies through financial stateme
+         nts and ratios",
+       6   "domain": "Part 2: What to Invest In",
+       7   "lessons": [
+       8     {
+       9       "id": "financial-statements",
+      10       "title": "Financial Statements",
+     … +24 lines (ctrl+o to expand)
+
+● Write(src/content/stock-finance/006_midterm-1/module.json)
+  ⎿  Wrote 16 lines to src/content/stock-finance/006_midterm-1/module.json
+       1 {
+       2   "id": "midterm-1",
+       3   "title": "Midterm 1",
+       4   "icon": "📋",
+       5   "description": "Test your knowledge of Parts 1 & 2",
+       6   "category": "exam",
+       7   "lessons": [
+       8     {
+       9       "id": "midterm-1-exam",
+      10       "title": "Midterm Exam 1",
+     … +6 lines (ctrl+o to expand)
+
+● Write(src/content/stock-finance/007_technical-analysis/module.json)
+  ⎿  Wrote 29 lines to
+     src/content/stock-finance/007_technical-analysis/module.json
+       1 {
+       2   "id": "technical-analysis",
+       3   "title": "Technical Analysis Basics",
+       4   "icon": "📉",
+       5   "description": "Trends, support/resistance, moving averages, a
+         nd indicators",
+       6   "domain": "Part 3: How to Analyze",
+       7   "lessons": [
+       8     {
+       9       "id": "trends-and-patterns",
+      10       "title": "Trends & Patterns",
+     … +19 lines (ctrl+o to expand)
+
+● Write(src/content/stock-finance/008_building-a-portfolio/module.json)
+  ⎿  Wrote 24 lines to
+     src/content/stock-finance/008_building-a-portfolio/module.json
+       1 {
+       2   "id": "building-a-portfolio",
+       3   "title": "Building a Portfolio",
+       4   "icon": "🏗️",
+       5   "description": "Asset allocation, diversification, and portfol
+         io construction",
+       6   "domain": "Part 3: How to Analyze",
+       7   "lessons": [
+       8     {
+       9       "id": "asset-allocation",
+      10       "title": "Asset Allocation",
+     … +14 lines (ctrl+o to expand)
+
+● Write(src/content/stock-finance/009_risk-management/module.json)
+  ⎿  Wrote 24 lines to
+     src/content/stock-finance/009_risk-management/module.json
+       1 {
+       2   "id": "risk-management",
+       3   "title": "Risk Management",
+       4   "icon": "🛡️",
+       5   "description": "Understanding and managing investment risk",
+       6   "domain": "Part 4: Strategy & Practice",
+       7   "lessons": [
+       8     {
+       9       "id": "types-of-risk",
+      10       "title": "Types of Risk",
+     … +14 lines (ctrl+o to expand)
+
+● Write(src/content/stock-finance/010_investing-strategies/module.json)
+  ⎿  Wrote 29 lines to
+     src/content/stock-finance/010_investing-strategies/module.json
+       1 {
+       2   "id": "investing-strategies",
+       3   "title": "Investing Strategies",
+       4   "icon": "♟️",
+       5   "description": "Value investing, growth investing, DCA, and pa
+         ssive strategies",
+       6   "domain": "Part 4: Strategy & Practice",
+       7   "lessons": [
+       8     {
+       9       "id": "value-vs-growth",
+      10       "title": "Value vs Growth Investing",
+     … +19 lines (ctrl+o to expand)
+
+● Write(src/content/stock-finance/011_getting-started/module.json)
+  ⎿  Wrote 29 lines to
+     src/content/stock-finance/011_getting-started/module.json
+       1 {
+       2   "id": "getting-started",
+       3   "title": "Getting Started: Practical Guide",
+       4   "icon": "🚀",
+       5   "description": "Opening a brokerage account, your first trade,
+          and common mistakes",
+       6   "domain": "Part 4: Strategy & Practice",
+       7   "lessons": [
+       8     {
+       9       "id": "choosing-a-broker",
+      10       "title": "Choosing a Broker",
+     … +19 lines (ctrl+o to expand)
+
+● Write(src/content/stock-finance/012_final-assessment/module.json)
+  ⎿  Wrote 16 lines to
+     src/content/stock-finance/012_final-assessment/module.json
+       1 {
+       2   "id": "final-assessment",
+       3   "title": "Final Assessment",
+       4   "icon": "🏆",
+       5   "description": "Comprehensive exam covering all course materia
+         l",
+       6   "category": "exam",
+       7   "lessons": [
+       8     {
+       9       "id": "final-exam",
+      10       "title": "Final Exam",
+     … +6 lines (ctrl+o to expand)
+
+● All module.json files done. Now let me create all the notes (markdown) and
+  quizzes. I'll do them in parallel batches.
+
+● Write(src/content/stock-finance/001_what-is-the-stock-market/stocks-and-shares
+       .md)
+  ⎿  Wrote 39 lines to src/content/stock-finance/001_what-is-the-stock-mark
+     et/stocks-and-shares.md
+      1 # Stocks & Shares
+      2 
+      3 ## What is a Stock?
+      4 
+      5 A **stock** (also called a **share** or **equity**) represents a 
+        small piece of ownership in a company. When you buy a stock, you 
+        become a **shareholder** — you literally own a fraction of that b
+        usiness.
+      6 
+      7 If a company has issued 1,000,000 shares and you own 1,000, you o
+        wn **0.1%** of the company.
+      8 
+      9 ## Why Do Stocks Have Value?
+     … +29 lines (ctrl+o to expand)
+
+● Write(src/content/stock-finance/001_what-is-the-stock-market/stocks-and-shares
+       -quiz.json)
+  ⎿  Wrote 32 lines to src/content/stock-finance/001_what-is-the-stock-mark
+     et/stocks-and-shares-quiz.json
+       1 {
+       2   "questions": [
+       3     {
+       4       "id": "q1",
+       5       "question": "What does owning a stock represent?",
+       6       "options": ["A loan to the company", "Partial ownership of
+          the company", "A guarantee of profit", "A bond with the company
+         "],
+       7       "correct": 1,
+       8       "explanation": "A stock represents partial ownership (equi
+         ty) in a company. It is not a loan — that would be a bond."
+       9     },
+      10     {
+     … +22 lines (ctrl+o to expand)
+
+● Write(src/content/stock-finance/001_what-is-the-stock-market/why-companies-go-
+       public.md)
+  ⎿  Wrote 43 lines to src/content/stock-finance/001_what-is-the-stock-mark
+     et/why-companies-go-public.md
+       1 # Why Companies Go Public
+       2 
+       3 ## Private vs Public Companies
+       4 
+       5 - **Private company**: Owned by founders, employees, and private
+          investors. Shares are not available to the general public (e.g.
+         , SpaceX, Valve).
+       6 - **Public company**: Shares are listed on a stock exchange and 
+         anyone can buy them (e.g., Apple, Tesla, Google).
+       7 
+       8 ## The IPO Process
+       9 
+      10 An **Initial Public Offering (IPO)** is when a private company s
+         ells shares to the public for the first time.
+     … +33 lines (ctrl+o to expand)
+
+● Write(src/content/stock-finance/001_what-is-the-stock-market/market-participan
+       ts.md)
+  ⎿  Wrote 47 lines to src/content/stock-finance/001_what-is-the-stock-mark
+     et/market-participants.md
+      1 # Market Participants
+      2 
+      3 ## Who is in the Stock Market?
+      4 
+      5 The stock market is an ecosystem with many types of participants,
+         each with different goals, strategies, and influence.
+      6 
+      7 ## Retail Investors
+      8 
+      9 **You.** Individual investors who buy and sell stocks through bro
+        kerage accounts.
+     … +37 lines (ctrl+o to expand)
+
+● Write(src/content/stock-finance/001_what-is-the-stock-market/market-participan
+       ts-quiz.json)
+  ⎿  Wrote 32 lines to src/content/stock-finance/001_what-is-the-stock-mark
+     et/market-participants-quiz.json
+       1 {
+       2   "questions": [
+       3     {
+       4       "id": "q1",
+       5       "question": "Approximately what percentage of stock market
+          volume do institutional investors control?",
+       6       "options": ["20%", "50%", "80%", "95%"],
+       7       "correct": 2,
+       8       "explanation": "Institutional investors (mutual funds, hed
+         ge funds, pension funds, etc.) control roughly 80% of stock mark
+         et trading volume."
+       9     },
+      10     {
+     … +22 lines (ctrl+o to expand)
+  ⎿  Interrupted · What should Claude do instead?
+
+❯ Let's continue                                                                
+
+● Picking up where we left off — module 001 is done. I'll create modules 002-012
+   content in parallel batches.
+
+● Write(src/content/stock-finance/002_how-exchanges-work/major-exchanges.md)
+  ⎿  Wrote 55 lines to
+     src/content/stock-finance/002_how-exchanges-work/major-exchanges.md
+       1 # Major Stock Exchanges
+       2 
+       3 ## What is a Stock Exchange?
+       4 
+       5 A stock exchange is a regulated marketplace where buyers and sel
+         lers trade stocks. Think of it as a supermarket for securities —
+          it provides the infrastructure, rules, and oversight for fair t
+         rading.
+       6 
+       7 ## The Big Two in the US
+       8 
+       9 ### NYSE (New York Stock Exchange)
+      10 - **Founded**: 1792
+     … +45 lines (ctrl+o to expand)
+
+● Write(src/content/stock-finance/002_how-exchanges-work/order-types.md)
+  ⎿  Wrote 73 lines to
+     src/content/stock-finance/002_how-exchanges-work/order-types.md
+      1 # Order Types
+      2 
+      3 ## Why Order Types Matter
+      4 
+      5 When you buy or sell a stock, you don't just say "buy" — you spec
+        ify **how** you want the trade executed. Different order types gi
+        ve you control over price and timing.
+      6 
+      7 ## Market Order
+      8 
+      9 **"Buy/sell right now at whatever the current price is."**
+     … +63 lines (ctrl+o to expand)
+
+● Write(src/content/stock-finance/002_how-exchanges-work/order-types-quiz.json)
+  ⎿  Wrote 32 lines to
+     src/content/stock-finance/002_how-exchanges-work/order-types-quiz.json
+       1 {
+       2   "questions": [
+       3     {
+       4       "id": "q1",
+       5       "question": "Which order type guarantees immediate executi
+         on but not the exact price?",
+       6       "options": ["Limit order", "Stop-limit order", "Market ord
+         er", "GTC order"],
+       7       "correct": 2,
+       8       "explanation": "A market order executes immediately at the
+          best available price, but the exact price may differ slightly f
+         rom what you see (slippage)."
+       9     },
+      10     {
+     … +22 lines (ctrl+o to expand)
+
+● Write(src/content/stock-finance/002_how-exchanges-work/market-hours-and-sessio
+       ns.md)
+  ⎿  Wrote 50 lines to src/content/stock-finance/002_how-exchanges-work/mar
+     ket-hours-and-sessions.md
+       1 # Market Hours & Sessions
+       2 
+       3 ## Regular Trading Hours (US)
+       4 
+       5 The US stock market is open **Monday through Friday**:
+       6 
+       7 | Session | Time (Eastern) | Notes |
+       8 |---------|---------------|-------|
+       9 | Pre-market | 4:00 AM – 9:30 AM | Lower volume, wider spreads |
+      10 | **Regular hours** | **9:30 AM – 4:00 PM** | Full liquidity, be
+         st prices |
+     … +40 lines (ctrl+o to expand)
+
+● Module 002 done. Continuing with 003-005.
+
+● Write(src/content/stock-finance/003_reading-stock-data/tickers-and-price-quote
+       s.md)
+  ⎿  Wrote 70 lines to src/content/stock-finance/003_reading-stock-data/tic
+     kers-and-price-quotes.md
+       1 # Tickers & Price Quotes
+       2 
+       3 ## What is a Ticker Symbol?
+       4 
+       5 A **ticker** (or stock symbol) is a short abbreviation used to i
+         dentify a publicly traded company:
+       6 
+       7 | Ticker | Company |
+       8 |--------|---------|
+       9 | AAPL | Apple |
+      10 | MSFT | Microsoft |
+     … +60 lines (ctrl+o to expand)
+
+● Write(src/content/stock-finance/003_reading-stock-data/tickers-quiz.json)
+  ⎿  Wrote 32 lines to
+     src/content/stock-finance/003_reading-stock-data/tickers-quiz.json
+       1 {
+       2   "questions": [
+       3     {
+       4       "id": "q1",
+       5       "question": "What is a ticker symbol?",
+       6       "options": ["A company's tax ID", "A short abbreviation id
+         entifying a publicly traded stock", "A secret code for insider t
+         rading", "A type of stock order"],
+       7       "correct": 1,
+       8       "explanation": "A ticker symbol is a unique abbreviation (
+         like AAPL for Apple) used to identify a company's stock on an ex
+         change."
+       9     },
+      10     {
+     … +22 lines (ctrl+o to expand)
+
+● Write(src/content/stock-finance/003_reading-stock-data/candlestick-charts.md)
+  ⎿  Wrote 65 lines to
+     src/content/stock-finance/003_reading-stock-data/candlestick-charts.md
+      1 # Candlestick Charts
+      2 
+      3 ## Why Charts Matter
+      4 
+      5 Price charts are the primary visual tool for understanding stock 
+        behavior. They show you at a glance what happened over time — tre
+        nds, volatility, and momentum.
+      6 
+      7 ## Anatomy of a Candlestick
+      8 
+      9 Each candlestick represents a **time period** (1 day, 1 hour, 1 w
+        eek, etc.) and shows four prices:
+     … +55 lines (ctrl+o to expand)
+
+● Write(src/content/stock-finance/003_reading-stock-data/volume-and-market-cap.m
+       d)
+  ⎿  Wrote 68 lines to src/content/stock-finance/003_reading-stock-data/vol
+     ume-and-market-cap.md
+       1 # Volume & Market Cap
+       2 
+       3 ## Volume
+       4 
+       5 **Volume** is the number of shares traded during a specific time
+          period.
+       6 
+       7 ### Why Volume Matters
+       8 
+       9 - **Confirms trends**: A price move on high volume is more signi
+         ficant than one on low volume
+      10 - **Signals interest**: Surging volume often precedes big price 
+         moves
+     … +58 lines (ctrl+o to expand)
+
+● Write(src/content/stock-finance/003_reading-stock-data/reading-data-quiz.json)
+  ⎿  Wrote 32 lines to src/content/stock-finance/003_reading-stock-data/rea
+     ding-data-quiz.json
+       1 {
+       2   "questions": [
+       3     {
+       4       "id": "q1",
+       5       "question": "A green candlestick means:",
+       6       "options": ["The stock hit a new high", "The close was hig
+         her than the open", "Volume was above average", "The stock paid 
+         a dividend"],
+       7       "correct": 1,
+       8       "explanation": "A green (bullish) candlestick means the cl
+         osing price was higher than the opening price for that period."
+       9     },
+      10     {
+     … +22 lines (ctrl+o to expand)
+
+● Modules 001-003 done. Continuing with 004-005.
+
+● Write(src/content/stock-finance/004_investment-vehicles/stocks-vs-bonds.md)
+  ⎿  Wrote 64 lines to
+     src/content/stock-finance/004_investment-vehicles/stocks-vs-bonds.md
+      1 # Stocks vs Bonds
+      2 
+      3 ## The Two Core Asset Classes
+      4 
+      5 Stocks and bonds are the foundation of most investment portfolios
+        . Understanding the difference is essential.
+      6 
+      7 ## Stocks (Equity)
+      8 
+      9 When you buy stock, you **own** part of the company.
+     … +54 lines (ctrl+o to expand)
+
+● Write(src/content/stock-finance/004_investment-vehicles/stocks-vs-bonds-quiz.j
+       son)
+  ⎿  Wrote 32 lines to src/content/stock-finance/004_investment-vehicles/st
+     ocks-vs-bonds-quiz.json
+       1 {
+       2   "questions": [
+       3     {
+       4       "id": "q1",
+       5       "question": "When you buy a bond, you are:",
+       6       "options": ["Buying ownership in a company", "Lending mone
+         y to the issuer", "Buying a share of profits", "Getting voting r
+         ights"],
+       7       "correct": 1,
+       8       "explanation": "A bond is a debt instrument — you are lend
+         ing money to the issuer (company or government) in exchange for 
+         regular interest payments and return of principal."
+       9     },
+      10     {
+     … +22 lines (ctrl+o to expand)
+
+● Write(src/content/stock-finance/004_investment-vehicles/etfs-and-index-funds.m
+       d)
+  ⎿  Wrote 72 lines to src/content/stock-finance/004_investment-vehicles/et
+     fs-and-index-funds.md
+      1 # ETFs & Index Funds
+      2 
+      3 ## The Problem with Picking Individual Stocks
+      4 
+      5 Picking winning stocks is extremely hard. Even professional fund 
+        managers fail to beat the market most of the time — over a 15-yea
+        r period, **over 90%** of actively managed funds underperform the
+         S&P 500.
+      6 
+      7 This is why **index investing** has become the most popular strat
+        egy for regular investors.
+      8 
+      9 ## What is an Index Fund?
+     … +62 lines (ctrl+o to expand)
+
+● Write(src/content/stock-finance/004_investment-vehicles/mutual-funds.md)
+  ⎿  Wrote 65 lines to
+     src/content/stock-finance/004_investment-vehicles/mutual-funds.md
+      1 # Mutual Funds
+      2 
+      3 ## What is a Mutual Fund?
+      4 
+      5 A **mutual fund** pools money from many investors to buy a divers
+        ified portfolio of stocks, bonds, or other assets. A professional
+         fund manager decides what to buy and sell.
+      6 
+      7 Think of it as hiring someone to invest for you alongside thousan
+        ds of other people.
+      8 
+      9 ## How They Work
+     … +55 lines (ctrl+o to expand)
+
+● Write(src/content/stock-finance/004_investment-vehicles/vehicles-quiz.json)
+  ⎿  Wrote 32 lines to
+     src/content/stock-finance/004_investment-vehicles/vehicles-quiz.json
+       1 {
+       2   "questions": [
+       3     {
+       4       "id": "q1",
+       5       "question": "What is the main advantage of index investing
+          over stock picking?",
+       6       "options": ["Higher potential returns", "Lower cost and be
+         tter long-term performance", "More exciting", "Guaranteed profit
+         s"],
+       7       "correct": 1,
+       8       "explanation": "Over 90% of active fund managers underperf
+         orm index funds over 15+ years, largely due to higher fees. Inde
+         x funds offer broad diversification at minimal cost."
+       9     },
+      10     {
+     … +22 lines (ctrl+o to expand)
+  ⎿  Interrupted · What should Claude do instead?
+
+❯ Let's continue                                                                
+  ⎿  Interrupted · What should Claude do instead?

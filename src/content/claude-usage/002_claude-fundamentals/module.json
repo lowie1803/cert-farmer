@@ -1,0 +1,13 @@
+{
+  "id": "claude-fundamentals",
+  "title": "Claude Fundamentals",
+  "icon": "🤖",
+  "description": "Core concepts of the Claude agentic loop, CLAUDE.md instructions, and context management",
+  "domain": "Domain 1: Core Tools",
+  "lessons": [
+    { "id": "agentic-loop", "title": "The Agentic Loop", "type": "notes" },
+    { "id": "claude-md-instructions", "title": "CLAUDE.md Instructions", "type": "notes" },
+    { "id": "context-and-memory", "title": "Context and Memory", "type": "notes" },
+    { "id": "fundamentals-quiz", "title": "Fundamentals Quiz", "type": "quiz" }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "building-a-portfolio",
+  "title": "Building a Portfolio",
+  "icon": "🏗️",
+  "description": "Asset allocation, diversification, and portfolio construction",
+  "domain": "Part 3: How to Analyze",
+  "lessons": [
+    {
+      "id": "asset-allocation",
+      "title": "Asset Allocation",
+      "type": "notes"
+    },
+    {
+      "id": "diversification",
+      "title": "Diversification",
+      "type": "notes"
+    },
+    {
+      "id": "portfolio-quiz",
+      "title": "Portfolio Building Quiz",
+      "type": "quiz"
+    }
+  ]
+}

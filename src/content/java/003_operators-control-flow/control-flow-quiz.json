@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What happens if you omit `break` in a classic switch statement case?",
+      "options": [
+        "Compilation error",
+        "Only the matched case executes",
+        "Fall-through: execution continues into the next case",
+        "The switch exits immediately"
+      ],
+      "correct": 2,
+      "explanation": "In classic switch statements, omitting break causes fall-through — execution continues into the next case regardless of whether it matches. Arrow syntax (Java 14+) eliminates this problem entirely."
+    },
+    {
+      "id": "q2",
+      "question": "Which is a valid switch expression using arrow syntax?",
+      "options": [
+        "switch (x) { case 1: return \"one\"; }",
+        "String r = switch (x) { case 1 -> \"one\"; default -> \"other\"; };",
+        "switch (x) { case 1 -> { return \"one\" } };",
+        "var r = switch (x) { case 1 => \"one\"; default => \"other\"; };"
+      ],
+      "correct": 1,
+      "explanation": "Switch expressions use -> (arrow) syntax and must be exhaustive (include default or cover all values). They end with a semicolon when used in an assignment statement. The => syntax does not exist in Java."
+    },
+    {
+      "id": "q3",
+      "question": "What does `yield` do in a switch expression?",
+      "options": [
+        "Pauses execution like Thread.yield()",
+        "Returns a value from a multi-line case block in a switch expression",
+        "Exits the switch and returns to the caller method",
+        "Throws a SwitchException if no case matches"
+      ],
+      "correct": 1,
+      "explanation": "In switch expressions, yield returns a value from a multi-line block case. It is only valid inside switch expression blocks and is different from Thread.yield()."
+    },
+    {
+      "id": "q4",
+      "question": "What does `break outer;` do in nested loops where `outer:` labels the outer loop?",
+      "options": [
+        "Breaks the inner loop only",
+        "Breaks out of both the inner and outer loops",
+        "Continues to the next iteration of the outer loop",
+        "Compilation error — labels are not allowed on loops"
+      ],
+      "correct": 1,
+      "explanation": "break with a label exits the labeled loop entirely. When used inside nested loops, `break outer;` exits both loops, jumping past the end of the outer loop."
+    },
+    {
+      "id": "q5",
+      "question": "Which Java 21 feature allows type-based branching in switch?",
+      "options": [
+        "Sealed interfaces",
+        "Pattern matching in switch with instanceof-style case labels",
+        "Virtual threads",
+        "Record patterns"
+      ],
+      "correct": 1,
+      "explanation": "Java 21 finalized pattern matching in switch, allowing cases like `case Integer i ->` and `case String s ->` to match by type and bind variables, combining instanceof checking with switch branching."
+    }
+  ]
+}

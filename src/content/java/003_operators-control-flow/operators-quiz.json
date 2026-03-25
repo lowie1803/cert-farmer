@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What is the result of `10 / 3` in Java?",
+      "options": [
+        "3.333",
+        "3",
+        "3.0",
+        "Compilation error"
+      ],
+      "correct": 1,
+      "explanation": "When both operands are integers, Java performs integer division and truncates the decimal. 10 / 3 = 3. To get 3.333, at least one operand must be a floating-point type (e.g., 10.0 / 3)."
+    },
+    {
+      "id": "q2",
+      "question": "What does `Integer.MAX_VALUE + 1` evaluate to?",
+      "options": [
+        "Throws ArithmeticException",
+        "Integer.MIN_VALUE (wraps around silently)",
+        "Long value 2147483648",
+        "Compilation error"
+      ],
+      "correct": 1,
+      "explanation": "Java integer arithmetic silently overflows. Integer.MAX_VALUE + 1 wraps to Integer.MIN_VALUE (-2147483648). Use Math.addExact() to throw an ArithmeticException on overflow instead."
+    },
+    {
+      "id": "q3",
+      "question": "What is the benefit of `&&` over `&` for boolean expressions?",
+      "options": [
+        "&& works with objects while & only works with primitives",
+        "&& is short-circuit: it skips the right operand if the left is false",
+        "There is no difference for boolean expressions",
+        "&& has higher precedence than &"
+      ],
+      "correct": 1,
+      "explanation": "&& is a short-circuit operator: if the left operand is false, the right operand is never evaluated. This is important for guarding against null: `obj != null && obj.isValid()` is safe, but `obj != null & obj.isValid()` would throw NPE when obj is null."
+    },
+    {
+      "id": "q4",
+      "question": "What does `if (obj instanceof String s)` do in Java 16+?",
+      "options": [
+        "Checks type only — s is not usable",
+        "Checks type AND binds obj to variable s as a String",
+        "Creates a new String copy of obj",
+        "Throws ClassCastException if obj is not a String"
+      ],
+      "correct": 1,
+      "explanation": "Pattern matching with instanceof (Java 16+) checks the type and, if the check succeeds, binds the value to a new variable of the target type. No separate cast is needed."
+    },
+    {
+      "id": "q5",
+      "question": "Why should you avoid string concatenation with + inside a loop?",
+      "options": [
+        "The + operator does not work inside loops",
+        "Each iteration may create a new StringBuilder, causing unnecessary object allocation",
+        "String + is deprecated in modern Java",
+        "It causes ConcurrentModificationException"
+      ],
+      "correct": 1,
+      "explanation": "Using + inside a loop can create a new StringBuilder per iteration (depending on the Java version). Using a single StringBuilder outside the loop and calling append() is more efficient for repeated concatenation."
+    }
+  ]
+}

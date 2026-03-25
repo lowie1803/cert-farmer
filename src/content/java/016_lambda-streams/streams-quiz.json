@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What happens if you call two terminal operations on the same stream?",
+      "options": [
+        "Both execute normally",
+        "The second one returns an empty result",
+        "IllegalStateException — stream has already been operated upon",
+        "The stream resets and runs the pipeline again"
+      ],
+      "correct": 2,
+      "explanation": "Streams are single-use. After a terminal operation consumes the stream, any subsequent operation throws IllegalStateException. Create a new stream from the source if needed."
+    },
+    {
+      "id": "q2",
+      "question": "What does `Stream.of(1,2,3).map(n -> n * 2).peek(System.out::println)` print?",
+      "options": [
+        "2, 4, 6",
+        "1, 2, 3",
+        "Nothing — there is no terminal operation",
+        "Compilation error"
+      ],
+      "correct": 2,
+      "explanation": "Streams are lazy. Without a terminal operation (like collect, forEach, count), intermediate operations (map, peek) are never executed."
+    },
+    {
+      "id": "q3",
+      "question": "Which collector groups elements by a classifier and counts each group?",
+      "options": [
+        "Collectors.groupingBy(classifier, toList())",
+        "Collectors.groupingBy(classifier, counting())",
+        "Collectors.partitioningBy(classifier)",
+        "Collectors.summarizingInt(classifier)"
+      ],
+      "correct": 1,
+      "explanation": "groupingBy with counting() as a downstream collector produces a Map<K, Long> with the count for each group key."
+    },
+    {
+      "id": "q4",
+      "question": "What is the difference between `stream.toList()` and `stream.collect(Collectors.toList())`?",
+      "options": [
+        "No difference — they are aliases",
+        "toList() returns an unmodifiable list; Collectors.toList() returns a mutable ArrayList",
+        "toList() is faster but less type-safe",
+        "Collectors.toList() returns an unmodifiable list; toList() returns mutable"
+      ],
+      "correct": 1,
+      "explanation": "Stream.toList() (Java 16+) returns an unmodifiable list that does not allow null. Collectors.toList() returns a mutable ArrayList. Choose based on whether you need mutability."
+    },
+    {
+      "id": "q5",
+      "question": "When should you use `flatMap` instead of `map`?",
+      "options": [
+        "When you want to filter elements",
+        "When each element maps to multiple elements (the mapping function returns a Stream)",
+        "When you need to sort the results",
+        "When the source is a parallel stream"
+      ],
+      "correct": 1,
+      "explanation": "flatMap flattens nested structures. If map would produce Stream<Stream<T>> or Stream<List<T>>, use flatMap to flatten into Stream<T>. Example: flatMap(list -> list.stream())."
+    }
+  ]
+}

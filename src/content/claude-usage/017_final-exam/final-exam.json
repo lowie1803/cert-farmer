@@ -1,0 +1,784 @@
+{
+  "questions": [
+    {
+      "id": "final-q1",
+      "question": "A developer has a CLAUDE.md in the project root that says 'Always use TypeScript' and a CLAUDE.md in the src/ subdirectory that says 'Use JavaScript for utility scripts.' When Claude Code works on a file inside src/, which instruction takes effect and why?",
+      "options": [
+        "The project root instruction wins because it was loaded first",
+        "Both instructions are ignored due to the conflict",
+        "The subdirectory instruction wins because more specific CLAUDE.md files override more general ones",
+        "Claude Code asks the user to resolve the conflict"
+      ],
+      "correct": 2,
+      "explanation": "CLAUDE.md follows a specificity hierarchy: subdirectory > project root > user-global. When Claude Code operates within src/, the src/CLAUDE.md instructions take precedence for that scope, so 'Use JavaScript for utility scripts' applies.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "final-q2",
+      "question": "During a long session, Claude Code's context window is filling up. The system has compacted previous conversation turns. What happens to tool results from earlier in the conversation after compaction?",
+      "options": [
+        "They are preserved in full so Claude can reference them",
+        "They are summarized — Claude retains the gist but may lose exact details",
+        "They are deleted entirely and Claude has no memory of them",
+        "They are moved to a separate memory file that Claude can read on demand"
+      ],
+      "correct": 1,
+      "explanation": "When the context window fills, Claude Code compacts earlier turns into summaries. Tool results from earlier exchanges are condensed, meaning Claude retains the general understanding but may lose exact line numbers, variable names, or other precise details. This is why re-reading files may be necessary in long sessions.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "final-q3",
+      "question": "A developer wants Claude Code to remember their preferences across all projects (e.g., preferred commit message style). Where should this configuration live?",
+      "options": [
+        "In the project's CLAUDE.md file",
+        "In ~/.claude/CLAUDE.md (user-global)",
+        "In the .claude/settings.json file",
+        "In the system prompt — it cannot be customized"
+      ],
+      "correct": 1,
+      "explanation": "User-global preferences belong in ~/.claude/CLAUDE.md. This file is loaded for every project and provides baseline instructions. Project-specific CLAUDE.md files can override these for individual repos, but cross-project preferences like commit style belong at the user-global level.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "final-q4",
+      "question": "Claude Code's agentic loop consists of Read, Think, and Act phases. In which phase does Claude decide whether to invoke a tool or respond with text?",
+      "options": [
+        "Read — it determines the action plan while parsing input",
+        "Think — it evaluates the current state and chooses the next action",
+        "Act — it randomly selects between tool calls and text responses",
+        "There is no explicit decision phase; the model always tries a tool first"
+      ],
+      "correct": 1,
+      "explanation": "The Think phase is where Claude evaluates all available information (user input, prior tool results, context) and decides the optimal next step. It may choose to call one or more tools, or respond with text if the task is complete. This decision-making is the core of the agentic loop.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "final-q5",
+      "question": "You need to read lines 500-600 of a 10,000-line log file. Which Read tool invocation is most efficient?",
+      "options": [
+        "Read the entire file and mentally skip to line 500",
+        "Use Read with offset: 500 and limit: 100",
+        "Use Bash with 'sed -n 500,600p file.log'",
+        "Use Grep to search for content near line 500"
+      ],
+      "correct": 1,
+      "explanation": "The Read tool supports offset and limit parameters precisely for this use case. Setting offset: 500 and limit: 100 reads exactly lines 500-600 without loading the entire file. While Bash with sed could work, the Read tool is preferred over Bash for file reading as stated in the tool guidelines.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "final-q6",
+      "question": "A developer asks Claude Code to modify a line in a file, but the Edit tool fails with 'old_string is not unique.' What is the correct resolution?",
+      "options": [
+        "Switch to the Write tool to overwrite the entire file",
+        "Use Bash with sed to make the replacement",
+        "Expand old_string to include more surrounding context so it becomes unique in the file",
+        "Use the replace_all parameter to change every occurrence"
+      ],
+      "correct": 2,
+      "explanation": "When old_string is not unique, the correct approach is to include more surrounding lines or context in old_string so that the match becomes unambiguous. Using replace_all would change ALL occurrences (which may not be desired), and rewriting the entire file with Write is wasteful and risky. Bash with sed violates tool usage guidelines.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "final-q7",
+      "question": "You want to rename a variable from 'userData' to 'profileData' throughout a file. Which Edit tool approach is best?",
+      "options": [
+        "Call Edit once for each occurrence of 'userData'",
+        "Use Edit with old_string: 'userData', new_string: 'profileData', and replace_all: true",
+        "Use Write to rewrite the entire file with the new variable name",
+        "Use Bash with sed -i 's/userData/profileData/g'"
+      ],
+      "correct": 1,
+      "explanation": "The replace_all parameter on the Edit tool is designed exactly for this use case — renaming a string across an entire file in a single call. It's more efficient than multiple individual Edit calls, safer than rewriting the whole file, and preferred over Bash sed per tool usage guidelines.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "final-q8",
+      "question": "Claude Code needs to read an image file to analyze a screenshot the user provided. Which tool should be used?",
+      "options": [
+        "Bash with an image-processing CLI tool like ImageMagick",
+        "Read tool — it supports images since Claude is multimodal",
+        "WebFetch to download and render the image",
+        "Images cannot be analyzed by Claude Code"
+      ],
+      "correct": 1,
+      "explanation": "The Read tool can read image files (PNG, JPG, etc.) directly. Since Claude is a multimodal LLM, the image contents are presented visually. There is no need for external image processing tools or workarounds.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "final-q9",
+      "question": "You need to find all TypeScript files that import from a '@utils/' path alias, but only in the src/components/ directory. Which approach is most efficient?",
+      "options": [
+        "Glob for '**/*.ts' then Read each file to check imports",
+        "Grep with pattern '@utils/' and glob '*.{ts,tsx}' scoped to src/components/",
+        "Bash with 'find src/components -name *.ts | xargs grep @utils'",
+        "Use the Agent tool to search broadly"
+      ],
+      "correct": 1,
+      "explanation": "Grep with a glob filter and path scope is the most efficient approach. It combines content search (the import pattern) with file type filtering (*.{ts,tsx}) and directory scoping (src/components/) in a single tool call. Using Bash with find/grep violates tool guidelines, and Glob + Read would require many sequential calls.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "final-q10",
+      "question": "What is the correct way to search for a Go interface definition like 'interface{}' using Grep?",
+      "options": [
+        "Pattern: 'interface{}'",
+        "Pattern: 'interface\\{\\}' — literal braces need escaping in ripgrep",
+        "Pattern: 'interface[{}]'",
+        "Pattern: 'interface.*' with multiline: true"
+      ],
+      "correct": 1,
+      "explanation": "Grep uses ripgrep syntax, where curly braces have special meaning in regex. To search for literal braces (as in Go's interface{}), they must be escaped: 'interface\\{\\}'. This is explicitly called out in the Grep tool documentation.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "final-q11",
+      "question": "You need to find a struct definition that spans multiple lines, where the struct name is on one line and a specific field is several lines below. Which Grep configuration handles this?",
+      "options": [
+        "Use output_mode: 'content' with a large -C context value",
+        "Use multiline: true so the pattern can match across line boundaries",
+        "Run two separate Grep calls and correlate the results manually",
+        "Use Glob to find the file first, then Read the whole file"
+      ],
+      "correct": 1,
+      "explanation": "Grep's multiline parameter enables patterns to span multiple lines. With multiline: true, the dot metacharacter matches newlines and patterns like 'struct \\{[\\s\\S]*?field' can match across line boundaries. A large context value would show surrounding lines but wouldn't allow the pattern itself to cross lines.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "final-q12",
+      "question": "You want to see only the file paths (not the matching content) of files containing 'TODO' comments, limited to the first 10 results. Which Grep configuration achieves this?",
+      "options": [
+        "output_mode: 'content', head_limit: 10",
+        "output_mode: 'files_with_matches', head_limit: 10",
+        "output_mode: 'count', head_limit: 10",
+        "output_mode: 'files_with_matches' — head_limit is not supported for this mode"
+      ],
+      "correct": 1,
+      "explanation": "output_mode: 'files_with_matches' returns only file paths (the default mode), and head_limit works across all output modes. Setting head_limit: 10 caps the results at 10 file paths. The count mode would show match counts per file, not just paths.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "final-q13",
+      "question": "A user asks Claude Code to commit changes. The pre-commit hook fails due to a linting error. Claude fixes the lint issue and re-stages the files. What should Claude do next?",
+      "options": [
+        "Run 'git commit --amend' to retry the previous commit",
+        "Create a NEW commit — the failed commit never happened, so --amend would modify the wrong commit",
+        "Run 'git commit --no-verify' to skip the hook this time",
+        "Run 'git reset --hard' and start over"
+      ],
+      "correct": 1,
+      "explanation": "When a pre-commit hook fails, the commit does NOT happen. Therefore, using --amend would modify the PREVIOUS (unrelated) commit, potentially destroying work. The correct action is to create a new commit. Skipping hooks with --no-verify is prohibited unless the user explicitly requests it.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "final-q14",
+      "question": "Claude Code needs to run a build command that might take 5 minutes. What is the best approach?",
+      "options": [
+        "Run it normally and wait — Bash has no timeout",
+        "Use run_in_background: true and continue working; Claude will be notified when it completes",
+        "Set timeout: 300000 and block until it finishes",
+        "Break the build into smaller commands that each finish quickly"
+      ],
+      "correct": 1,
+      "explanation": "For long-running commands, run_in_background: true is the best approach. Claude Code can continue working on other tasks and will be notified when the background command completes. This avoids blocking the conversation and makes efficient use of time. The default timeout is 2 minutes, so running it normally would time out.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "final-q15",
+      "question": "Which of the following Bash operations does the git safety protocol explicitly PROHIBIT unless the user specifically requests it?",
+      "options": [
+        "git add with specific file names",
+        "git commit with a HEREDOC message",
+        "git push --force to any branch",
+        "git status without flags"
+      ],
+      "correct": 2,
+      "explanation": "The git safety protocol prohibits destructive operations like push --force, reset --hard, checkout ., restore ., clean -f, and branch -D unless the user explicitly requests them. Force pushing is especially dangerous as it rewrites remote history. Adding specific files, committing with HEREDOC, and status checks are all safe operations.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "final-q16",
+      "question": "When creating a git commit, what format must the commit message use to ensure proper formatting?",
+      "options": [
+        "A simple -m flag with the message in quotes",
+        "A HEREDOC passed via -m \"$(cat <<'EOF' ... EOF)\"",
+        "A temporary file written with Write, then referenced with -F",
+        "The --message flag with escaped newlines"
+      ],
+      "correct": 1,
+      "explanation": "The commit protocol specifies using a HEREDOC format: git commit -m \"$(cat <<'EOF' ... EOF)\". This ensures proper formatting of multi-line commit messages, including the required Co-Authored-By trailer. Simple -m flags can have issues with special characters and multi-line content.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "final-q17",
+      "question": "Claude Code needs to perform three independent searches across different parts of a codebase. What is the optimal execution strategy?",
+      "options": [
+        "Run all three Grep calls sequentially, waiting for each to complete",
+        "Make all three Grep calls in a single message so they execute in parallel",
+        "Use a single Grep with a complex regex that covers all three searches",
+        "Delegate to the Agent tool which handles parallelism automatically"
+      ],
+      "correct": 1,
+      "explanation": "When tool calls are independent (no dependencies between them), Claude Code should make multiple calls in a single message for parallel execution. This is explicitly stated in the tool guidelines: 'When multiple independent pieces of information are requested and all commands are likely to succeed, run multiple tool calls in parallel for optimal performance.'",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "final-q18",
+      "question": "A foreground Agent tool is working on a subtask but needs to spawn additional work. What happens if it tries to launch another Agent?",
+      "options": [
+        "The nested Agent runs in the background automatically",
+        "Agents cannot spawn other Agents — it would use tools directly",
+        "The parent Agent pauses while the child Agent runs",
+        "An error occurs because Agent nesting is unlimited but inadvisable"
+      ],
+      "correct": 1,
+      "explanation": "Agent tools do not spawn nested Agents. An Agent performs subtasks by directly using the available tools (Read, Write, Edit, Grep, Glob, Bash). The orchestration pattern is flat: the main Claude instance delegates to Agents, and Agents use tools — there is no Agent-within-Agent recursion.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "final-q19",
+      "question": "When should you use the Agent tool instead of making direct tool calls?",
+      "options": [
+        "Always — the Agent tool is more efficient than direct calls",
+        "Only for tasks that benefit from autonomous multi-step exploration where the exact steps aren't known in advance",
+        "Whenever you need to read more than three files",
+        "Only for tasks involving external APIs"
+      ],
+      "correct": 1,
+      "explanation": "The Agent tool is designed for open-ended, multi-step tasks where the path isn't predetermined — for example, exploring an unfamiliar codebase or investigating a complex bug. For straightforward tasks where you know exactly what to search for or edit, direct tool calls are more efficient and predictable.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "final-q20",
+      "question": "A developer wants to run 'git rebase -i main' to squash commits interactively. Why should Claude Code NOT execute this command?",
+      "options": [
+        "Rebasing is always destructive and prohibited",
+        "The -i flag requires interactive terminal input, which is not supported by the Bash tool",
+        "Claude Code cannot run git commands at all",
+        "The rebase would automatically succeed without -i, so it's unnecessary"
+      ],
+      "correct": 1,
+      "explanation": "The Bash tool explicitly prohibits commands with the -i flag (like git rebase -i or git add -i) because they require interactive input that the tool cannot provide. Claude Code should suggest alternatives like non-interactive rebase approaches or explain what the user should do manually.",
+      "domain": "Domain 1: Core Tools"
+    },
+    {
+      "id": "final-q21",
+      "question": "What is the primary purpose of a skill in the Claude Code ecosystem?",
+      "options": [
+        "To replace tool definitions with custom implementations",
+        "To provide reusable, structured instructions that give Claude specialized domain knowledge and workflows",
+        "To restrict which tools Claude Code can access",
+        "To cache frequently used file contents for faster access"
+      ],
+      "correct": 1,
+      "explanation": "Skills are reusable instruction sets that give Claude Code specialized capabilities and domain knowledge. They are stored as SKILL.md files and loaded when relevant tasks arise. They don't replace tools or restrict access — they augment Claude's behavior with project-specific or domain-specific guidance.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "final-q22",
+      "question": "A user types '/deploy' in their conversation with Claude Code. What mechanism does this trigger?",
+      "options": [
+        "A Bash command named 'deploy' is executed",
+        "Claude searches for a skill named 'deploy' and invokes it via the Skill tool",
+        "A webhook is sent to the deployment service",
+        "The command is ignored because slash commands are not supported"
+      ],
+      "correct": 1,
+      "explanation": "When users type a slash command like '/deploy', they are referencing a skill. Claude Code should use the Skill tool to invoke it. The skill's SKILL.md file contains the instructions Claude needs to perform the deployment workflow. This is a blocking requirement — the skill must be invoked before generating any other response.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "final-q23",
+      "question": "Where should a project-specific skill file be placed so Claude Code discovers it?",
+      "options": [
+        "In the project's node_modules/ directory",
+        "In .claude/skills/ within the project directory",
+        "In the system's /etc/claude/ directory",
+        "Skills cannot be project-specific; they are always global"
+      ],
+      "correct": 1,
+      "explanation": "Project-specific skills live in the .claude/skills/ directory within the project. Claude Code discovers them through the available skills listed in system-reminder messages. The CLAUDE.md file typically references the skills directory so users know what capabilities are available.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "final-q24",
+      "question": "A SKILL.md file contains step-by-step instructions for creating database migrations. When does Claude Code load these instructions?",
+      "options": [
+        "At startup — all skills are preloaded into the context window",
+        "When the user invokes the skill via a slash command or the Skill tool",
+        "Continuously — skills are always active in the background",
+        "Only when the CLAUDE.md explicitly imports the skill"
+      ],
+      "correct": 1,
+      "explanation": "Skills are loaded on-demand when invoked, not preloaded at startup. This keeps the context window clean and focused. The skill's instructions are injected into the conversation when the user triggers it via a slash command or when Claude determines the skill is relevant and invokes it via the Skill tool.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "final-q25",
+      "question": "You are creating a skill for generating API endpoint boilerplate. The skill should accept the endpoint name and HTTP method as parameters. How should you design the invocation?",
+      "options": [
+        "Hard-code the parameters in the SKILL.md file",
+        "Design the skill to accept args via the Skill tool: skill: 'api-endpoint', args: 'POST /users'",
+        "Create separate skills for each HTTP method (GET-endpoint, POST-endpoint, etc.)",
+        "Use environment variables to pass parameters"
+      ],
+      "correct": 1,
+      "explanation": "The Skill tool supports an optional args parameter that passes arguments to the skill. Designing the skill to parse args like 'POST /users' keeps it flexible and reusable. Hard-coding parameters or creating separate skills per method reduces reusability, and environment variables add unnecessary complexity.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "final-q26",
+      "question": "When writing a SKILL.md file, which of the following is the MOST important principle for the instruction design?",
+      "options": [
+        "Include as many edge cases as possible to handle every scenario",
+        "Write clear, imperative instructions that describe the exact steps Claude should follow",
+        "Keep the file under 10 lines to minimize context usage",
+        "Use code blocks exclusively — natural language instructions are unreliable"
+      ],
+      "correct": 1,
+      "explanation": "Effective SKILL.md files contain clear, imperative step-by-step instructions. Claude follows these as a workflow guide. While being concise is good, artificially limiting length sacrifices clarity. Edge cases should be covered where they matter, but the core should be a clear procedural guide. Natural language is Claude's primary instruction format.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "final-q27",
+      "question": "A team has skills for 'content-authoring', 'architecture', and 'project-roadmap'. A new developer asks about the project structure. Which skill is most appropriate?",
+      "options": [
+        "content-authoring — it covers the project's file structure",
+        "architecture — it covers app structure, routing, components, and state management",
+        "project-roadmap — it covers the project's current state",
+        "None — general questions don't require skills"
+      ],
+      "correct": 1,
+      "explanation": "The architecture skill specifically covers 'App structure, routing, components, state management' — exactly what a developer needs to understand the project structure. Content-authoring focuses on adding content, and project-roadmap covers planned work, neither of which addresses the structural question.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "final-q28",
+      "question": "You are authoring a skill that guides Claude through a complex deployment process involving 8 sequential steps. What is the best way to handle step dependencies?",
+      "options": [
+        "List all steps and trust Claude to figure out the order",
+        "Number the steps explicitly and note which steps depend on outputs from previous steps",
+        "Create 8 separate skills, one for each step",
+        "Use conditional logic with if/else pseudocode"
+      ],
+      "correct": 1,
+      "explanation": "Explicit numbering with dependency annotations gives Claude the clearest guidance. Noting which steps depend on previous outputs (e.g., 'Step 5 uses the build ID from Step 3') helps Claude understand the workflow's structure. Splitting into 8 skills fragments the workflow, and relying on implicit ordering is error-prone.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "final-q29",
+      "question": "A SKILL.md instructs Claude to 'always validate the JSON schema before writing quiz files.' This instruction conflicts with the project's CLAUDE.md which says 'skip validation for speed.' Which takes precedence?",
+      "options": [
+        "The SKILL.md always takes precedence over CLAUDE.md",
+        "The CLAUDE.md always takes precedence because it's loaded first",
+        "The most specific instruction wins — if the skill is invoked for quiz authoring, its domain-specific instruction applies",
+        "Claude Code reports the conflict and refuses to proceed"
+      ],
+      "correct": 2,
+      "explanation": "Claude Code follows the principle of specificity. When a skill is invoked for a specific task (quiz authoring), its domain-specific instructions are more relevant than general project-wide shortcuts. The CLAUDE.md's 'skip validation for speed' is a general directive, while the skill's instruction is targeted at the exact task being performed.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "final-q30",
+      "question": "Which of the following is a valid use case for creating a domain-specific skill?",
+      "options": [
+        "Telling Claude to use the Read tool (it already knows how)",
+        "Encoding a company's specific code review checklist and standards",
+        "Replacing the default Grep tool with a custom implementation",
+        "Increasing Claude Code's context window size"
+      ],
+      "correct": 1,
+      "explanation": "Domain-specific skills excel at encoding team-specific knowledge that Claude doesn't have by default — like a company's code review standards, naming conventions, or architectural patterns. Skills don't replace built-in tools, change system capabilities, or tell Claude things it already knows.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "final-q31",
+      "question": "A project has separate skills for 'testing' and 'code-review'. A developer wants a workflow that runs tests AND reviews the code. What is the best approach?",
+      "options": [
+        "Merge both skills into a single SKILL.md file",
+        "Create a new composite skill that invokes both existing skills in sequence using the Skill tool",
+        "Ask the developer to invoke each skill manually one at a time",
+        "Skills cannot be composed; rewrite the workflow from scratch"
+      ],
+      "correct": 1,
+      "explanation": "Skill composition allows creating higher-level workflows by combining existing skills. A composite skill can instruct Claude to invoke the testing skill first, then the code-review skill, creating a seamless pipeline. This preserves the individual skills' reusability while enabling complex workflows.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "final-q32",
+      "question": "A skill for database migrations includes a template with placeholders like '{migration_name}' and '{timestamp}'. How should the skill instruct Claude to handle these?",
+      "options": [
+        "Leave the placeholders as-is in the generated file",
+        "Instruct Claude to derive values from the args parameter or context (e.g., current date for timestamp, arg for name)",
+        "Require the user to manually find-and-replace after generation",
+        "Use environment variable interpolation"
+      ],
+      "correct": 1,
+      "explanation": "Parameterized skills should instruct Claude to derive placeholder values from available context — the args parameter for user-supplied values (migration name), and tools for derived values (Bash for timestamps). This creates a smooth, automated workflow rather than leaving manual steps for the user.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "final-q33",
+      "question": "A team maintains a monorepo with 12 services. They want each service to have its own set of skills for deployment, testing, and documentation. What is the recommended structure?",
+      "options": [
+        "Put all skills in the root .claude/skills/ directory with prefixed names",
+        "Each service has its own .claude/skills/ with service-specific skills, plus shared skills in the root",
+        "Create one massive SKILL.md that covers all services",
+        "Skills don't work in monorepos — use CLAUDE.md instead"
+      ],
+      "correct": 1,
+      "explanation": "The hierarchical nature of Claude Code's configuration supports monorepos. Each service can have its own .claude/skills/ directory with service-specific instructions, while shared workflows live in the root .claude/skills/. This follows the same specificity principle as CLAUDE.md files.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "final-q34",
+      "question": "After creating a new skill, what is the most critical validation step before sharing it with the team?",
+      "options": [
+        "Check that the SKILL.md file has fewer than 100 lines",
+        "Invoke the skill and verify it produces the expected output with correct tool usage",
+        "Run a linter on the SKILL.md markdown",
+        "Ensure the skill name matches a specific naming convention"
+      ],
+      "correct": 1,
+      "explanation": "The most important validation is functional testing — actually invoking the skill and confirming it leads Claude through the correct workflow with proper tool usage and expected outputs. File length, markdown formatting, and naming are secondary concerns compared to verifying the skill works as intended.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "final-q35",
+      "question": "A skill instructs Claude to 'Read the config file, extract the database URL, then create a migration.' If the config file doesn't exist, what should a well-designed skill instruct Claude to do?",
+      "options": [
+        "Nothing — Claude will handle errors automatically",
+        "Include explicit error handling instructions: 'If the config file is not found, inform the user and suggest creating one'",
+        "Silently create a default config file",
+        "Abort the entire skill workflow immediately"
+      ],
+      "correct": 1,
+      "explanation": "Well-designed skills include explicit error handling guidance. While Claude can recover from errors automatically through its agentic loop, skills should provide domain-specific recovery instructions. Telling the user about the missing config and suggesting how to create one is better than silent defaults or hard aborts.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "final-q36",
+      "question": "A developer notices that invoking a skill seems to 'use up' context window space. What is the best practice to minimize this impact?",
+      "options": [
+        "Avoid using skills entirely",
+        "Keep SKILL.md files focused and concise — include only the instructions Claude needs, not background essays",
+        "Compress the SKILL.md using abbreviations and removing whitespace",
+        "Load skills only at the start of the conversation"
+      ],
+      "correct": 1,
+      "explanation": "Skills do consume context window space when loaded. The best practice is to write focused, concise instructions that give Claude exactly what it needs without unnecessary verbosity. This isn't about compression tricks or avoiding skills — it's about good instruction design that balances completeness with brevity.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "final-q37",
+      "question": "A skill references tools that might not be available in all environments (e.g., a custom MCP tool). How should the skill handle this?",
+      "options": [
+        "Assume the tool is always available — errors will surface naturally",
+        "Include a prerequisite check step: 'First, verify the X tool is available via ToolSearch before proceeding'",
+        "List required tools in a comment at the top of the SKILL.md",
+        "Skip the tool-dependent steps silently if the tool isn't found"
+      ],
+      "correct": 1,
+      "explanation": "Robust skills include prerequisite checks, especially for tools that aren't guaranteed to be available. Instructing Claude to verify tool availability via ToolSearch before proceeding gives clear feedback if something is missing, rather than failing mid-workflow. Comments aren't executed, and silent skipping hides problems.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "final-q38",
+      "question": "You are building a skill ecosystem for a large project. The skills include: content-authoring, architecture, testing, deployment, and code-review. A CLAUDE.md references all five under a 'Skills' section. What is the primary benefit of documenting skills in CLAUDE.md?",
+      "options": [
+        "It makes skills load faster",
+        "It enables Claude and users to discover available capabilities and know when to use each skill",
+        "It prevents unauthorized skill execution",
+        "It merges all skill instructions into a single context"
+      ],
+      "correct": 1,
+      "explanation": "Documenting skills in CLAUDE.md serves as a discovery mechanism. It tells both Claude and users what specialized capabilities are available and when each applies. This doesn't affect loading speed, security, or merge skill contents — it's purely about discoverability and appropriate usage guidance.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "final-q39",
+      "question": "What are the two types of hooks in Claude Code's hooks system?",
+      "options": [
+        "Input hooks and output hooks",
+        "PreToolUse and PostToolUse hooks",
+        "Synchronous hooks and asynchronous hooks",
+        "File hooks and command hooks"
+      ],
+      "correct": 1,
+      "explanation": "Claude Code's hooks system provides PreToolUse hooks (which run before a tool is executed and can block or modify the call) and PostToolUse hooks (which run after a tool completes and can process or validate the result). These are distinct from git hooks, which are a separate mechanism.",
+      "domain": "Domain 3: Hooks & Extensibility"
+    },
+    {
+      "id": "final-q40",
+      "question": "A PreToolUse hook is configured to validate that Write tool calls don't create files in the /etc/ directory. The hook script exits with a non-zero status. What happens?",
+      "options": [
+        "The Write tool call proceeds anyway with a warning",
+        "The tool call is blocked — Claude Code does not execute the Write operation",
+        "Claude Code retries the tool call up to three times",
+        "The entire conversation is terminated"
+      ],
+      "correct": 1,
+      "explanation": "PreToolUse hooks act as gatekeepers. When a PreToolUse hook exits with a non-zero status, the tool call is blocked and does not execute. This enables safety guardrails like preventing writes to sensitive directories. Claude receives the hook failure as information and can adapt its approach.",
+      "domain": "Domain 3: Hooks & Extensibility"
+    },
+    {
+      "id": "final-q41",
+      "question": "How do Claude Code hooks differ from git hooks?",
+      "options": [
+        "They are the same mechanism with different names",
+        "Claude Code hooks intercept tool calls within Claude's agentic loop; git hooks intercept git operations at the repository level",
+        "Git hooks are more powerful because they can block operations",
+        "Claude Code hooks are just wrappers around git hooks"
+      ],
+      "correct": 1,
+      "explanation": "Claude Code hooks and git hooks are entirely separate systems. Claude Code hooks (PreToolUse/PostToolUse) intercept tool calls within Claude's agentic loop — they control what Claude can do. Git hooks (pre-commit, pre-push, etc.) are repository-level scripts that intercept git operations. Both can block operations, but they operate at different levels.",
+      "domain": "Domain 3: Hooks & Extensibility"
+    },
+    {
+      "id": "final-q42",
+      "question": "A PostToolUse hook runs after every Bash tool call to log the command and its output for audit purposes. If the hook script itself fails, what happens to the Bash tool result?",
+      "options": [
+        "The Bash result is discarded and an error is returned instead",
+        "The Bash result is still delivered to Claude — PostToolUse hook failures don't retroactively undo completed tool calls",
+        "The Bash command is re-executed",
+        "Claude Code enters a permanent error state"
+      ],
+      "correct": 1,
+      "explanation": "PostToolUse hooks run after the tool has already completed. A failure in a PostToolUse hook cannot undo the tool's execution — the result has already been produced. The hook failure is reported, but the tool's output is still available to Claude. This is a key architectural difference from PreToolUse hooks, which can prevent execution.",
+      "domain": "Domain 3: Hooks & Extensibility"
+    },
+    {
+      "id": "final-q43",
+      "question": "What is the primary communication protocol used by locally-installed MCP servers?",
+      "options": [
+        "HTTP REST API",
+        "stdio (standard input/output)",
+        "WebSocket",
+        "gRPC"
+      ],
+      "correct": 1,
+      "explanation": "Locally-installed MCP servers communicate via stdio (standard input/output). Claude Code launches the MCP server as a subprocess and exchanges JSON messages through stdin/stdout. Remote MCP servers can use SSE (Server-Sent Events) over HTTP, but stdio is the primary protocol for local installations.",
+      "domain": "Domain 3: Hooks & Extensibility"
+    },
+    {
+      "id": "final-q44",
+      "question": "An MCP server provides a 'query_database' tool. Before Claude Code can call this tool, what must happen?",
+      "options": [
+        "The user must copy the tool definition into CLAUDE.md",
+        "The MCP server must be configured in Claude Code's settings, and its tools become available automatically via ToolSearch",
+        "The tool must be registered with Anthropic's tool registry",
+        "Claude Code cannot call MCP tools — it can only call built-in tools"
+      ],
+      "correct": 1,
+      "explanation": "MCP servers are configured in Claude Code's settings (e.g., .claude/settings.json). Once configured and running, the server's tools become available through ToolSearch. Claude can discover and call them like any other tool. No manual definition copying or external registration is needed.",
+      "domain": "Domain 3: Hooks & Extensibility"
+    },
+    {
+      "id": "final-q45",
+      "question": "ToolSearch shows a deferred tool named 'jira:create_ticket' from an MCP server. What must Claude do before calling this tool?",
+      "options": [
+        "Nothing — deferred tools can be called immediately by name",
+        "Use ToolSearch to fetch the tool's full schema definition, then call it with the correct parameters",
+        "Ask the user to provide the tool's parameter schema",
+        "Restart Claude Code to load the tool definition"
+      ],
+      "correct": 1,
+      "explanation": "Deferred tools appear by name only — their parameter schemas are not loaded until needed. Claude must use ToolSearch to fetch the full JSONSchema definition. Once fetched, the tool becomes callable with its proper parameters. This lazy-loading approach saves context window space for tools that may not be needed.",
+      "domain": "Domain 3: Hooks & Extensibility"
+    },
+    {
+      "id": "final-q46",
+      "question": "An MCP server provides sensitive operations like 'delete_production_data'. What is the recommended security pattern?",
+      "options": [
+        "Trust that Claude will never call dangerous tools",
+        "Use PreToolUse hooks to intercept and validate calls to sensitive MCP tools, potentially requiring confirmation",
+        "Disable the entire MCP server and recreate it without dangerous tools",
+        "Add 'never call delete_production_data' to CLAUDE.md"
+      ],
+      "correct": 1,
+      "explanation": "PreToolUse hooks provide a programmatic security layer for sensitive MCP tools. They can intercept calls, validate parameters, require confirmation, or block dangerous operations entirely. While CLAUDE.md instructions help, hooks provide enforceable guardrails that don't rely on instruction-following alone.",
+      "domain": "Domain 3: Hooks & Extensibility"
+    },
+    {
+      "id": "final-q47",
+      "question": "You are building an MCP server that provides tools for querying a proprietary API. Which transport should you use for a team where all developers run the server locally?",
+      "options": [
+        "SSE (Server-Sent Events) with a shared server URL",
+        "stdio — each developer runs the server as a local subprocess",
+        "WebSocket for real-time bidirectional communication",
+        "A shared REST API proxy"
+      ],
+      "correct": 1,
+      "explanation": "For locally-run MCP servers, stdio is the standard transport. Each developer's Claude Code instance launches the MCP server as a subprocess and communicates via stdin/stdout. This avoids shared infrastructure, keeps credentials local, and follows the standard MCP architecture for local tools.",
+      "domain": "Domain 3: Hooks & Extensibility"
+    },
+    {
+      "id": "final-q48",
+      "question": "A team uses a skill for 'deploy' that needs to call MCP tools from a Kubernetes MCP server. How should the skill and MCP integration work together?",
+      "options": [
+        "The skill should contain the MCP tool implementations inline",
+        "The skill instructions should reference MCP tool names (e.g., 'use k8s:get_pods to check pod status'), assuming the MCP server is configured",
+        "Skills and MCP servers cannot interact",
+        "The skill should fetch MCP tool definitions via WebFetch"
+      ],
+      "correct": 1,
+      "explanation": "Skills and MCP tools integrate naturally. The skill's SKILL.md can reference MCP tool names in its instructions (e.g., 'Step 3: Use k8s:get_pods to verify deployment status'). As long as the MCP server is configured, Claude can call those tools when following the skill's workflow. Skills provide the workflow; MCP provides the tools.",
+      "domain": "Domain 3: Hooks & Extensibility"
+    },
+    {
+      "id": "final-q49",
+      "question": "An MCP server intermittently fails to start, causing ToolSearch to not find its tools. A skill that depends on these tools starts executing. What should the skill instruct Claude to do?",
+      "options": [
+        "Proceed without the MCP tools and skip the dependent steps",
+        "Check tool availability early via ToolSearch and report a clear error if the MCP tools are missing, suggesting the user restart the server",
+        "Wait in a sleep loop until the MCP server comes online",
+        "Rewrite the steps to use Bash commands instead"
+      ],
+      "correct": 1,
+      "explanation": "Skills should fail fast and informatively. Checking tool availability via ToolSearch at the beginning of the workflow catches the issue early and gives the user actionable guidance (restart the MCP server). Sleeping loops are prohibited, silently skipping steps hides problems, and rewriting to Bash loses the MCP tool's capabilities.",
+      "domain": "Domain 3: Hooks & Extensibility"
+    },
+    {
+      "id": "final-q50",
+      "question": "A developer wants to build an MCP server that wraps their company's internal CLI tool, exposing its subcommands as individual MCP tools. What is the key architectural consideration?",
+      "options": [
+        "MCP servers can only expose a single tool",
+        "Each CLI subcommand should map to a separate MCP tool with its own typed parameter schema, enabling Claude to call them precisely",
+        "The entire CLI should be wrapped in a single 'run_command' tool with a string parameter",
+        "MCP servers cannot wrap CLI tools — they can only call HTTP APIs"
+      ],
+      "correct": 1,
+      "explanation": "Well-designed MCP servers map each capability to a separate tool with typed parameters. Instead of a generic 'run_command' tool, individual tools like 'deploy_service', 'scale_pods', 'get_logs' give Claude precise type information and enable better tool selection. This follows the principle of granular, well-typed interfaces.",
+      "domain": "Domain 3: Hooks & Extensibility"
+    },
+    {
+      "id": "final-q51",
+      "question": "A project has the following CLAUDE.md files: ~/.claude/CLAUDE.md, project-root/CLAUDE.md, project-root/.claude/CLAUDE.md, and project-root/src/CLAUDE.md. In what order are they applied (first loaded to last loaded)?",
+      "options": [
+        "src/ → .claude/ → project root → user global",
+        "User global → project root → .claude/ → src/",
+        "Project root → user global → .claude/ → src/",
+        "All are merged alphabetically with no precedence order"
+      ],
+      "correct": 1,
+      "explanation": "CLAUDE.md files are applied from least specific to most specific: user global (~/.claude/CLAUDE.md) first, then project root, then .claude/ directory, then subdirectories. Later (more specific) files can override earlier (more general) instructions. This layered approach allows global defaults with project-specific and directory-specific overrides.",
+      "domain": "Domain 4: Configuration & Workflows"
+    },
+    {
+      "id": "final-q52",
+      "question": "A team wants to enforce certain Claude Code behaviors (like requiring tests for all code changes) that individual developers cannot override. Where should these rules be placed?",
+      "options": [
+        "In each developer's ~/.claude/CLAUDE.md",
+        "In the project's CLAUDE.md committed to version control, since it applies to all team members",
+        "In a settings.json file on the CI server",
+        "Team-wide enforcement is not possible with Claude Code"
+      ],
+      "correct": 1,
+      "explanation": "Project-level CLAUDE.md files committed to version control apply to everyone who clones the repository. This is the standard mechanism for team-wide rules. While developers could add overrides in subdirectory CLAUDE.md files, the project-level instructions establish the baseline that the team agrees on.",
+      "domain": "Domain 4: Configuration & Workflows"
+    },
+    {
+      "id": "final-q53",
+      "question": "A project's .claude/settings.json contains tool permissions and MCP server configurations. How does this relate to CLAUDE.md?",
+      "options": [
+        "settings.json replaces CLAUDE.md entirely",
+        "settings.json handles machine-readable configuration (tool permissions, MCP servers) while CLAUDE.md provides natural language instructions — they are complementary",
+        "CLAUDE.md is for development; settings.json is for production",
+        "They must contain identical information for Claude Code to work"
+      ],
+      "correct": 1,
+      "explanation": "settings.json and CLAUDE.md serve complementary roles. settings.json handles structured, machine-readable configuration like tool permissions and MCP server definitions. CLAUDE.md provides natural language instructions, coding standards, and workflow guidance. Together they form the complete configuration for a project.",
+      "domain": "Domain 4: Configuration & Workflows"
+    },
+    {
+      "id": "final-q54",
+      "question": "When Claude Code computes 'effective instructions' for a task in src/components/Button.tsx, which sources contribute?",
+      "options": [
+        "Only the nearest CLAUDE.md file (src/components/CLAUDE.md if it exists)",
+        "All CLAUDE.md files in the hierarchy (user global + project root + .claude/ + any subdirectory files on the path), plus active skill instructions and settings.json",
+        "Only the project root CLAUDE.md and settings.json",
+        "The system prompt only — project files cannot influence instructions"
+      ],
+      "correct": 1,
+      "explanation": "Effective instructions are the composite of ALL applicable sources: the full CLAUDE.md hierarchy (user global through subdirectory), settings.json configurations, and any currently active skill instructions. This layered system allows general rules to coexist with specific overrides, creating a rich instruction context.",
+      "domain": "Domain 4: Configuration & Workflows"
+    },
+    {
+      "id": "final-q55",
+      "question": "A developer asks Claude Code to create a pull request. According to the PR creation protocol, what is the FIRST step?",
+      "options": [
+        "Create the PR immediately with 'gh pr create'",
+        "Run parallel commands to understand the current state: git status, git diff, check remote tracking, and git log with diff against the base branch",
+        "Ask the user for a PR title and description",
+        "Push the current branch to the remote"
+      ],
+      "correct": 1,
+      "explanation": "The PR creation protocol requires first understanding the full state: git status (untracked files), git diff (staged/unstaged changes), remote tracking status, and git log + diff against the base branch. These should run in parallel for efficiency. Only after analyzing ALL commits (not just the latest) should the PR title and description be drafted.",
+      "domain": "Domain 4: Configuration & Workflows"
+    },
+    {
+      "id": "final-q56",
+      "question": "When drafting a PR description, Claude Code should analyze which commits?",
+      "options": [
+        "Only the most recent commit on the branch",
+        "ALL commits on the branch since it diverged from the base branch",
+        "Only commits from the current day",
+        "Only commits that modified more than 5 files"
+      ],
+      "correct": 1,
+      "explanation": "The PR creation protocol explicitly emphasizes analyzing ALL commits that will be included in the PR — 'NOT just the latest commit, but ALL commits.' This ensures the PR description accurately reflects the complete set of changes, not just the most recent work.",
+      "domain": "Domain 4: Configuration & Workflows"
+    },
+    {
+      "id": "final-q57",
+      "question": "Claude Code is asked to debug a test failure. The test passes locally but fails in CI. Which multi-tool strategy is most effective?",
+      "options": [
+        "Read the test file and guess the issue",
+        "Use parallel tool calls: Grep for environment-specific code in the test, Read the CI configuration, and Bash to check for differences in test environment setup",
+        "Rewrite the test to be simpler",
+        "Ask the user to provide the CI logs manually"
+      ],
+      "correct": 1,
+      "explanation": "Debugging CI-only failures requires investigating multiple angles simultaneously: the test itself for environment assumptions, the CI configuration for setup differences, and the environment for version or dependency mismatches. Parallel tool calls maximize efficiency. Simply reading the test or rewriting it won't address environment-specific issues.",
+      "domain": "Domain 4: Configuration & Workflows"
+    },
+    {
+      "id": "final-q58",
+      "question": "A developer asks Claude Code to refactor a function that is used across 15 files. What is the safest approach?",
+      "options": [
+        "Edit all 15 files in a single message with parallel Edit calls",
+        "First use Grep to find all usages, Read key files to understand the call patterns, then Edit systematically — verifying each change doesn't break the interface contract",
+        "Use Bash with sed to do a global find-and-replace",
+        "Rewrite the function and let the compiler catch broken call sites"
+      ],
+      "correct": 1,
+      "explanation": "Safe multi-file refactoring follows a systematic process: first discover all usages (Grep), understand how each call site uses the function (Read), then edit systematically with attention to the interface contract. Blind parallel edits or sed replacements risk breaking subtle variations in usage. Relying on the compiler misses runtime issues.",
+      "domain": "Domain 4: Configuration & Workflows"
+    },
+    {
+      "id": "final-q59",
+      "question": "During a code review workflow, Claude Code finds a potential security issue (SQL injection). Which combination of actions best follows the review protocol?",
+      "options": [
+        "Fix the issue silently without mentioning it",
+        "Flag the issue in the review with a detailed explanation, show the vulnerable code, suggest a parameterized query fix, and check for similar patterns elsewhere using Grep",
+        "Reject the entire PR without explanation",
+        "Add a TODO comment in the code and approve the PR"
+      ],
+      "correct": 1,
+      "explanation": "Effective code review for security issues requires: clear identification of the vulnerability, showing the problematic code, proposing a concrete fix (parameterized queries for SQL injection), and proactively searching for similar patterns elsewhere. This is thorough, educational, and actionable — unlike silent fixes, blanket rejections, or deferred TODOs.",
+      "domain": "Domain 4: Configuration & Workflows"
+    },
+    {
+      "id": "final-q60",
+      "question": "A complex task requires Claude Code to: (1) search the codebase for all API endpoints, (2) generate OpenAPI specs for each, (3) write the specs to files, and (4) create a PR. Which orchestration approach is most effective?",
+      "options": [
+        "Do everything sequentially in the main conversation thread",
+        "Use an Agent for the exploratory search phase (step 1), return to the main thread for generation and writing (steps 2-3), then follow the PR creation protocol (step 4)",
+        "Use the Agent tool for all four steps",
+        "Use Bash to run a script that does everything in one command"
+      ],
+      "correct": 1,
+      "explanation": "This task benefits from mixed orchestration: the Agent tool excels at the open-ended exploration of step 1 (finding all API endpoints across a codebase), while the structured work of generation, file writing, and PR creation is better handled in the main thread with direct tool calls. The Agent tool shouldn't manage the PR protocol, and a monolithic Bash script loses all the benefits of Claude's reasoning.",
+      "domain": "Domain 4: Configuration & Workflows"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "A green candlestick means:",
+      "options": ["The stock hit a new high", "The close was higher than the open", "Volume was above average", "The stock paid a dividend"],
+      "correct": 1,
+      "explanation": "A green (bullish) candlestick means the closing price was higher than the opening price for that period."
+    },
+    {
+      "id": "q2",
+      "question": "Which scenario is the strongest bullish signal?",
+      "options": ["Price up on low volume", "Price down on high volume", "Price up on high volume", "Price flat on high volume"],
+      "correct": 2,
+      "explanation": "Price increasing on high volume confirms strong buying interest, making it the strongest bullish signal."
+    },
+    {
+      "id": "q3",
+      "question": "Company X trades at $300/share with 1 billion shares. Company Y trades at $30/share with 50 billion shares. Which is larger?",
+      "options": ["Company X ($300B market cap)", "Company Y ($1.5T market cap)", "They are the same size", "Cannot be determined"],
+      "correct": 1,
+      "explanation": "Company X: $300 x 1B = $300B. Company Y: $30 x 50B = $1.5T. Company Y is much larger despite a lower share price."
+    },
+    {
+      "id": "q4",
+      "question": "A doji candlestick (tiny body, long wicks) signals:",
+      "options": ["Strong upward momentum", "Strong downward momentum", "Market indecision and potential reversal", "Low trading volume"],
+      "correct": 2,
+      "explanation": "A doji shows that buyers and sellers were roughly equal — the open and close are nearly the same. This indecision often precedes a reversal."
+    }
+  ]
+}

@@ -1,0 +1,524 @@
+{
+  "questions": [
+    {
+      "id": "midterm-2-q1",
+      "question": "What are skills in Claude Code?",
+      "options": [
+        "Built-in CLI commands that ship with Claude Code",
+        "Reusable prompt templates defined in SKILL.md files that extend Claude Code's capabilities",
+        "JavaScript plugins installed via npm",
+        "System-level hooks that modify Claude's behavior"
+      ],
+      "correct": 1,
+      "explanation": "Skills are reusable prompt templates stored in SKILL.md files within .claude/skills/ directories. They encapsulate domain expertise into repeatable instructions that Claude follows when performing specific tasks.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "midterm-2-q2",
+      "question": "How does a user invoke a skill during a Claude Code session?",
+      "options": [
+        "By editing the CLAUDE.md file",
+        "By running a bash command prefixed with 'skill:'",
+        "By referencing it with a slash command like /skill-name",
+        "By adding it to the settings.json file"
+      ],
+      "correct": 2,
+      "explanation": "Users invoke skills by referencing them with slash commands such as /commit, /review-pr 123, or /deploy staging. When Claude sees a slash command reference, it uses the Skill tool to load and execute the corresponding SKILL.md instructions.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "midterm-2-q3",
+      "question": "Where are SKILL.md files stored in a project?",
+      "options": [
+        "In the project root alongside package.json",
+        "In .claude/skills/ directories",
+        "In the src/skills/ directory",
+        "In the .github/skills/ directory"
+      ],
+      "correct": 1,
+      "explanation": "Skills are stored in .claude/skills/ directories. Each subdirectory under skills/ represents one skill and contains a SKILL.md file with the complete instructions Claude follows when that skill is invoked.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "midterm-2-q4",
+      "question": "Which of the following is a built-in CLI command, NOT a user-defined skill?",
+      "options": [
+        "/commit",
+        "/deploy",
+        "/clear",
+        "/review-pr"
+      ],
+      "correct": 2,
+      "explanation": "/clear is a built-in CLI command that is part of Claude Code itself and cannot be modified. Commands like /commit, /deploy, and /review-pr are examples of user-defined skills created via SKILL.md files. The Skill tool should never be used for built-in CLI commands.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "midterm-2-q5",
+      "question": "What are the parameters accepted by the Skill tool?",
+      "options": [
+        "name (required) and options (optional)",
+        "skill (required) and args (optional)",
+        "command (required) and flags (optional)",
+        "path (required) and config (optional)"
+      ],
+      "correct": 1,
+      "explanation": "The Skill tool accepts two parameters: 'skill' (required) which is the skill name (e.g., 'commit', 'review-pr'), and 'args' (optional) which are arguments to pass to the skill (e.g., '-m Fix bug', '123').",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "midterm-2-q6",
+      "question": "How does Claude discover which skills are available in a project?",
+      "options": [
+        "By scanning the package.json for skill dependencies",
+        "By reading the CLAUDE.md file at startup",
+        "Through system-reminder messages that list available skills in the conversation",
+        "By checking the global Claude configuration file"
+      ],
+      "correct": 2,
+      "explanation": "Claude discovers available skills through system-reminder messages in the conversation. When a session starts, Claude Code scans .claude/skills/ for SKILL.md files and lists the available skills in system context, so Claude knows which skills it can invoke.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "midterm-2-q7",
+      "question": "What is the purpose of a fully qualified skill name like 'ms-office-suite:pdf'?",
+      "options": [
+        "To specify which version of the skill to use",
+        "To indicate that the skill requires elevated permissions",
+        "To disambiguate when multiple skill sets exist or names could conflict",
+        "To specify the file format the skill outputs"
+      ],
+      "correct": 2,
+      "explanation": "Fully qualified names follow the namespace:skill-name pattern. They are used to resolve ambiguity when multiple skill sets exist or when skill names could conflict, such as ms-office-suite:pdf or project-tools:deploy.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "midterm-2-q8",
+      "question": "What does the Skill tool do when it is invoked?",
+      "options": [
+        "It compiles and runs the SKILL.md as executable code",
+        "It loads the SKILL.md instructions and Claude follows them within the conversation",
+        "It sends the SKILL.md to an external API for processing",
+        "It converts the SKILL.md into a series of bash commands"
+      ],
+      "correct": 1,
+      "explanation": "When the Skill tool is invoked, it loads the corresponding SKILL.md file and Claude follows its instructions within the current conversation. The SKILL.md acts as a detailed playbook — it is not compiled or executed as code.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "midterm-2-q9",
+      "question": "A project has a skill at .claude/skills/content-authoring/SKILL.md. What is the skill name derived from this path?",
+      "options": [
+        "SKILL",
+        "content-authoring",
+        "claude-skills-content-authoring",
+        "authoring"
+      ],
+      "correct": 1,
+      "explanation": "The skill name is derived from the directory name under .claude/skills/. In this case, the directory is 'content-authoring', so the skill name is 'content-authoring'. The SKILL.md file name is always the same — it is the directory that provides the identity.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "midterm-2-q10",
+      "question": "Why should the Skill tool NOT be used for /help or /init?",
+      "options": [
+        "Because those commands are too simple to need a skill",
+        "Because those are built-in CLI commands that are part of Claude Code itself, not user-defined skills",
+        "Because those commands require admin privileges",
+        "Because those commands are deprecated"
+      ],
+      "correct": 1,
+      "explanation": "/help and /init are built-in CLI commands that are part of Claude Code itself. They cannot be modified or extended by users. The Skill tool should only be used for user-defined skills created via SKILL.md files, not for built-in commands.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "midterm-2-q11",
+      "question": "What is the first step when creating a new skill?",
+      "options": [
+        "Write the SKILL.md file in the project root",
+        "Create a new directory under .claude/skills/ with a descriptive kebab-case name",
+        "Register the skill in settings.json",
+        "Add the skill name to CLAUDE.md"
+      ],
+      "correct": 1,
+      "explanation": "The first step is to create a new directory under .claude/skills/ with a descriptive kebab-case name (e.g., mkdir -p .claude/skills/deploy). The SKILL.md file is then created inside this directory.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "midterm-2-q12",
+      "question": "Which section of a SKILL.md defines the conditions under which the skill should activate?",
+      "options": [
+        "Tools to use",
+        "Process",
+        "When to trigger",
+        "Output format"
+      ],
+      "correct": 2,
+      "explanation": "The 'When to trigger' section defines the conditions under which a skill should activate. For example: 'When the user asks to deploy the application or uses /deploy.' This tells Claude when to recognize that a skill invocation is appropriate.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "midterm-2-q13",
+      "question": "What voice should SKILL.md instructions be written in?",
+      "options": [
+        "Passive voice: 'The build command should be run'",
+        "Suggestive voice: 'You might want to run the build'",
+        "Imperative voice: 'Run the build command'",
+        "Conditional voice: 'If you feel like it, run the build'"
+      ],
+      "correct": 2,
+      "explanation": "SKILL.md instructions should use imperative voice (e.g., 'Run the build command') rather than passive or suggestive language. Claude follows instructions literally, so clear, direct commands produce the most reliable behavior.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "midterm-2-q14",
+      "question": "Why should a SKILL.md include both examples AND anti-examples?",
+      "options": [
+        "To increase the file size so Claude pays more attention to it",
+        "Examples show correct usage and anti-examples specify what NOT to do, eliminating ambiguity",
+        "Anti-examples are required by the SKILL.md schema validation",
+        "Examples are for humans and anti-examples are for Claude"
+      ],
+      "correct": 1,
+      "explanation": "Including both examples and anti-examples eliminates ambiguity. Examples demonstrate correct usage (e.g., '/deploy staging'), while anti-examples define boundaries by specifying what the skill should NOT do (e.g., 'Never deploy if tests fail'). Both are for Claude's benefit.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "midterm-2-q15",
+      "question": "A deploy skill's SKILL.md says 'Never deploy if tests fail.' This instruction belongs in which section?",
+      "options": [
+        "When to trigger",
+        "Tools to use",
+        "What NOT to do / Anti-examples",
+        "Output format"
+      ],
+      "correct": 2,
+      "explanation": "Instructions about what a skill should NOT do belong in the anti-examples or 'What NOT to do' section. This section defines boundaries and prevents mistakes, such as deploying when tests have failed.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "midterm-2-q16",
+      "question": "Which of the following is a domain-specific skill used in the CertFarmer project?",
+      "options": [
+        "git-commit",
+        "content-authoring",
+        "npm-install",
+        "docker-deploy"
+      ],
+      "correct": 1,
+      "explanation": "The CertFarmer project uses three domain-specific skills: content-authoring (for adding/modifying lessons, quizzes, and modules), architecture (app structure, routing, components), and project-roadmap (current state and planned work).",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "midterm-2-q17",
+      "question": "When writing SKILL.md instructions, which approach is preferred?",
+      "options": [
+        "'Create a file somewhere in the project'",
+        "'Create a file at src/content/ccna/001_network-fundamentals/module.json'",
+        "'Create a file in the appropriate location'",
+        "'Create a file where it makes sense'"
+      ],
+      "correct": 1,
+      "explanation": "SKILL.md instructions should be specific, including actual file paths, JSON structures, and command syntax. 'Create a file at src/content/...' is far more precise and useful than vague instructions like 'create a file somewhere.' Claude follows instructions literally.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "midterm-2-q18",
+      "question": "After creating a SKILL.md file, what should you do to test it?",
+      "options": [
+        "Run npm run test to validate the skill",
+        "Start a new Claude Code session, invoke the skill with its slash command, and verify Claude follows the instructions",
+        "Add unit tests in a __tests__ directory next to the SKILL.md",
+        "Run 'claude skill validate' from the command line"
+      ],
+      "correct": 1,
+      "explanation": "To test a skill, start a new Claude Code session (or reload), type the slash command (e.g., /deploy), verify that Claude follows the instructions correctly, and then iterate on the SKILL.md based on the results.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "midterm-2-q19",
+      "question": "A SKILL.md references templates and schemas from other project files. Why is this practice recommended?",
+      "options": [
+        "It reduces the size of the SKILL.md file",
+        "It ensures the skill uses up-to-date patterns and prevents drift from the actual codebase",
+        "It is required by Claude Code's skill validation system",
+        "It makes the skill load faster"
+      ],
+      "correct": 1,
+      "explanation": "Referencing other project files (templates, schemas, existing examples) keeps the skill grounded in the actual codebase. This prevents drift — if the project structure changes, the referenced files serve as the source of truth that the skill can read at execution time.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "midterm-2-q20",
+      "question": "Which core sections should a well-structured SKILL.md typically include?",
+      "options": [
+        "Installation, Configuration, API Reference, Changelog",
+        "When to trigger, Tools to use, Step-by-step process, Output format, Examples, Anti-examples",
+        "Setup, Build, Test, Deploy, Monitor",
+        "Introduction, Prerequisites, Tutorial, FAQ"
+      ],
+      "correct": 1,
+      "explanation": "A well-structured SKILL.md includes: When to trigger (activation conditions), Tools to use (which Claude Code tools are needed), Step-by-step process (ordered instructions), Output format (expected result), Examples (correct usage), and Anti-examples (what NOT to do).",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "midterm-2-q21",
+      "question": "What is skill composition in the context of Claude Code?",
+      "options": [
+        "Writing a SKILL.md in multiple programming languages",
+        "Combining multiple skills together so one skill can reference or build upon others",
+        "Compiling skills into a single executable file",
+        "Creating a skill that only works with other skills installed"
+      ],
+      "correct": 1,
+      "explanation": "Skill composition refers to the practice of layering and combining skills so they can reference or build upon each other. This allows complex workflows to be broken into smaller, focused skills that work together.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "midterm-2-q22",
+      "question": "How are arguments passed to a parameterized skill?",
+      "options": [
+        "Through environment variables set before invocation",
+        "Via the 'args' parameter of the Skill tool (e.g., skill: 'deploy', args: 'staging')",
+        "By editing the SKILL.md to include the arguments",
+        "Through a separate args.json configuration file"
+      ],
+      "correct": 1,
+      "explanation": "Arguments are passed via the optional 'args' parameter of the Skill tool. For example, when a user types '/review-pr 123', Claude invokes the Skill tool with skill: 'review-pr' and args: '123'. The SKILL.md instructions then use these arguments.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "midterm-2-q23",
+      "question": "A project has skills organized into categories: development (deploy, test), operations (monitor, backup), and content (authoring, review). What does this organization represent?",
+      "options": [
+        "A skill dependency tree",
+        "A skill ecosystem design with logical categories",
+        "A mandatory skill hierarchy required by Claude Code",
+        "A skill compilation order"
+      ],
+      "correct": 1,
+      "explanation": "Organizing skills into logical categories (development, operations, content) represents a skill ecosystem design. This approach groups related skills together, making them easier to discover, maintain, and extend as the project grows.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "midterm-2-q24",
+      "question": "Why should skills be version-controlled alongside the rest of the codebase?",
+      "options": [
+        "Because Claude Code requires skills to be in a git repository",
+        "Because skills evolve with the project — version control tracks changes, enables review, and prevents accidental loss",
+        "Because skills won't work unless they are committed to git",
+        "Because version control automatically validates skill syntax"
+      ],
+      "correct": 1,
+      "explanation": "Skills are stored in .claude/skills/ within the project directory, making them part of the codebase. Version controlling them tracks changes over time, enables code review of skill modifications, and prevents accidental loss — just like any other project file.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "midterm-2-q25",
+      "question": "In the CertFarmer project, the content-authoring skill references module.json and existing quiz files. What is the benefit of this approach?",
+      "options": [
+        "It makes the SKILL.md file shorter",
+        "It ensures new content follows the exact patterns already established in the project",
+        "It allows the skill to run without Claude Code",
+        "It speeds up skill execution by caching"
+      ],
+      "correct": 1,
+      "explanation": "By referencing existing files like module.json and quiz files, the content-authoring skill ensures Claude creates new content that follows the exact patterns already established in the project. This maintains consistency and prevents structural errors.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "midterm-2-q26",
+      "question": "When designing a skill ecosystem, why is it important to keep individual skills focused on a single domain?",
+      "options": [
+        "Because Claude Code limits each skill to 100 lines",
+        "Because focused skills are easier to test, maintain, and compose into larger workflows",
+        "Because a skill can only use one tool at a time",
+        "Because Claude can only load one skill per session"
+      ],
+      "correct": 1,
+      "explanation": "Focused, single-domain skills follow the principle of separation of concerns. They are easier to test individually, maintain over time, and compose together into larger workflows. A monolithic skill that handles everything becomes brittle and hard to update.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "midterm-2-q27",
+      "question": "How can a skill ensure consistency across multiple team members using Claude Code?",
+      "options": [
+        "By requiring each team member to memorize the instructions",
+        "By encoding team conventions in the SKILL.md so Claude follows the same process for everyone",
+        "By locking the skill with a password",
+        "By sending notifications to team members when the skill is used"
+      ],
+      "correct": 1,
+      "explanation": "Skills capture team conventions in SKILL.md files so that every developer who invokes the skill gets the same Claude behavior. This ensures consistency — whether it's commit message formatting, deployment procedures, or code review checklists.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "midterm-2-q28",
+      "question": "The CertFarmer project has an architecture skill. What type of knowledge does this skill encode?",
+      "options": [
+        "How to install and configure the development environment",
+        "App structure, routing, components, and state management patterns",
+        "How to purchase and configure cloud hosting",
+        "Database schema design and migration procedures"
+      ],
+      "correct": 1,
+      "explanation": "The CertFarmer architecture skill encodes knowledge about the app's structure, routing, components, and state management. This domain-specific knowledge helps Claude make changes that align with the project's architectural decisions.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "midterm-2-q29",
+      "question": "A user types '/deploy staging' in Claude Code. How does Claude parse this invocation?",
+      "options": [
+        "skill name: 'deploy staging', args: none",
+        "skill name: 'deploy', args: 'staging'",
+        "skill name: 'staging', args: 'deploy'",
+        "skill name: '/deploy', args: 'staging'"
+      ],
+      "correct": 1,
+      "explanation": "When a user types '/deploy staging', Claude parses 'deploy' as the skill name and 'staging' as the args parameter. The Skill tool is then invoked with skill: 'deploy' and args: 'staging'. The slash (/) is not part of the skill name.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "midterm-2-q30",
+      "question": "What is the relationship between the three CertFarmer skills (content-authoring, architecture, project-roadmap)?",
+      "options": [
+        "They must be invoked in a specific order",
+        "They are independent, domain-specific skills that each encode knowledge about a different aspect of the project",
+        "The architecture skill depends on the other two",
+        "They are three versions of the same skill"
+      ],
+      "correct": 1,
+      "explanation": "The three CertFarmer skills are independent and domain-specific: content-authoring handles lessons/quizzes/modules, architecture covers app structure/routing/components, and project-roadmap tracks current state and planned work. Each encodes knowledge about a different project aspect.",
+      "domain": "Domain 2: Skills System"
+    },
+    {
+      "id": "midterm-2-q31",
+      "question": "What are the three types of hooks available in Claude Code?",
+      "options": [
+        "pre-build, post-build, on-error",
+        "pre-tool-call, post-tool-call, notification",
+        "before-commit, after-commit, on-push",
+        "pre-session, post-session, on-timeout"
+      ],
+      "correct": 1,
+      "explanation": "Claude Code supports three hook types: pre-tool-call (runs before a tool executes), post-tool-call (runs after a tool executes), and notification (triggers on specific events). These hooks allow extending Claude Code's behavior at key execution points.",
+      "domain": "Domain 3: Hooks & Extensibility"
+    },
+    {
+      "id": "midterm-2-q32",
+      "question": "Where are hooks configured in a Claude Code project?",
+      "options": [
+        "In the CLAUDE.md file",
+        "In the package.json file",
+        "In settings.json files",
+        "In .claude/hooks/ directories"
+      ],
+      "correct": 2,
+      "explanation": "Hooks are configured in settings.json files, NOT in CLAUDE.md. This is an important distinction — CLAUDE.md is for project instructions and context, while settings.json handles configuration including hooks.",
+      "domain": "Domain 3: Hooks & Extensibility"
+    },
+    {
+      "id": "midterm-2-q33",
+      "question": "When a hook fails, how does Claude Code respond?",
+      "options": [
+        "Claude crashes and the session ends",
+        "Claude ignores the failure and continues normally",
+        "Claude adjusts its behavior based on the failure — it never bypasses the hook",
+        "Claude retries the hook up to three times before giving up"
+      ],
+      "correct": 2,
+      "explanation": "When a hook fails, Claude adjusts its behavior accordingly — it never bypasses the hook. This is a critical safety mechanism: if a pre-tool-call hook rejects an action, Claude must respect that decision and find an alternative approach.",
+      "domain": "Domain 3: Hooks & Extensibility"
+    },
+    {
+      "id": "midterm-2-q34",
+      "question": "How do Claude Code hooks differ from git hooks?",
+      "options": [
+        "They are the same thing with different names",
+        "Claude Code hooks run within the Claude Code agent loop and intercept tool calls; git hooks run during git operations like commit and push",
+        "Git hooks are more powerful than Claude Code hooks",
+        "Claude Code hooks replace git hooks entirely"
+      ],
+      "correct": 1,
+      "explanation": "Claude Code hooks and git hooks serve different purposes. Claude Code hooks run within the agent loop and intercept tool calls (pre-tool-call, post-tool-call). Git hooks run during git operations (pre-commit, post-push). They are complementary, not interchangeable.",
+      "domain": "Domain 3: Hooks & Extensibility"
+    },
+    {
+      "id": "midterm-2-q35",
+      "question": "What are the three levels of settings.json hierarchy in Claude Code?",
+      "options": [
+        "Development, staging, production",
+        "User, workspace, extension",
+        "Global, project, local",
+        "System, admin, user"
+      ],
+      "correct": 2,
+      "explanation": "Claude Code settings.json files follow a three-level hierarchy: global (applies to all projects for the user), project (applies to a specific project, shared with the team), and local (applies to a specific project for the individual user only).",
+      "domain": "Domain 3: Hooks & Extensibility"
+    },
+    {
+      "id": "midterm-2-q36",
+      "question": "What is the user-prompt-submit-hook?",
+      "options": [
+        "A hook that formats the user's prompt before Claude sees it",
+        "A hook that runs when the user submits a prompt, allowing validation or transformation before processing",
+        "A hook that automatically submits prompts on a schedule",
+        "A hook that logs all user prompts to a file"
+      ],
+      "correct": 1,
+      "explanation": "The user-prompt-submit-hook runs when a user submits a prompt, allowing validation or transformation of the input before Claude processes it. This can be used for enforcing input policies or augmenting prompts with additional context.",
+      "domain": "Domain 3: Hooks & Extensibility"
+    },
+    {
+      "id": "midterm-2-q37",
+      "question": "A pre-tool-call hook is configured to block any Bash command containing 'rm -rf /'. What happens when Claude attempts to run such a command?",
+      "options": [
+        "Claude runs the command anyway since hooks are advisory only",
+        "Claude is notified the hook rejected the action and must find an alternative approach without bypassing the hook",
+        "Claude automatically modifies the command to be safe",
+        "The entire Claude Code session terminates"
+      ],
+      "correct": 1,
+      "explanation": "When a pre-tool-call hook rejects an action, Claude is notified and must find an alternative approach. Claude never bypasses a hook — this is a fundamental safety mechanism. Claude will adjust its behavior, perhaps asking the user for guidance.",
+      "domain": "Domain 3: Hooks & Extensibility"
+    },
+    {
+      "id": "midterm-2-q38",
+      "question": "Why are hooks configured in settings.json rather than in CLAUDE.md?",
+      "options": [
+        "Because CLAUDE.md does not support JSON syntax",
+        "Because hooks are configuration/behavior controls with security implications, not project instructions — settings.json provides the appropriate level of control and hierarchy",
+        "Because CLAUDE.md is read-only",
+        "Because settings.json loads faster than CLAUDE.md"
+      ],
+      "correct": 1,
+      "explanation": "Hooks are behavioral controls with security implications (they can block or modify tool calls). Settings.json provides the appropriate mechanism: it supports a hierarchy (global/project/local), separates configuration from instructions, and is the designated place for behavioral controls.",
+      "domain": "Domain 3: Hooks & Extensibility"
+    },
+    {
+      "id": "midterm-2-q39",
+      "question": "A notification hook is configured to send a message when a deployment completes. At which point in the tool execution does this hook fire?",
+      "options": [
+        "Before the deployment tool is called",
+        "During the deployment tool execution",
+        "After a specific event occurs, independent of pre/post tool timing",
+        "Only when the deployment fails"
+      ],
+      "correct": 2,
+      "explanation": "Notification hooks trigger on specific events rather than being strictly tied to pre or post tool execution. They are designed for informing users or external systems when certain conditions or events occur, such as a deployment completion.",
+      "domain": "Domain 3: Hooks & Extensibility"
+    },
+    {
+      "id": "midterm-2-q40",
+      "question": "In the settings.json hierarchy, a global setting sets a hook and a project-level setting also defines the same hook with different behavior. Which takes effect?",
+      "options": [
+        "The global setting always wins",
+        "Both hooks run in sequence",
+        "The more specific level (project) takes precedence over the global setting",
+        "Claude asks the user which one to use"
+      ],
+      "correct": 2,
+      "explanation": "In the settings.json hierarchy (global, project, local), more specific levels take precedence. A project-level hook configuration overrides the global one for that project, and a local-level setting would override the project level. This follows the standard specificity principle.",
+      "domain": "Domain 3: Hooks & Extensibility"
+    }
+  ]
+}

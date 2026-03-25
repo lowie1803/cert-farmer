@@ -1,0 +1,11 @@
+{
+  "id": "midterm-1",
+  "title": "Midterm 1: Core Tools",
+  "icon": "📋",
+  "description": "Comprehensive exam covering all core Claude Code tools",
+  "category": "exam",
+  "domain": "Domain 1: Core Tools",
+  "lessons": [
+    { "id": "midterm-1-exam", "title": "Midterm 1: Core Tools", "type": "exam", "timeLimit": 45, "passingScore": 80 }
+  ]
+}

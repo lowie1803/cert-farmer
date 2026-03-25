@@ -1,0 +1,32 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What is a ticker symbol?",
+      "options": ["A company's tax ID", "A short abbreviation identifying a publicly traded stock", "A secret code for insider trading", "A type of stock order"],
+      "correct": 1,
+      "explanation": "A ticker symbol is a unique abbreviation (like AAPL for Apple) used to identify a company's stock on an exchange."
+    },
+    {
+      "id": "q2",
+      "question": "What does the bid-ask spread indicate?",
+      "options": ["The company's profit margin", "The difference between daily high and low", "The cost of liquidity / how easy it is to trade", "The dividend payout ratio"],
+      "correct": 2,
+      "explanation": "The bid-ask spread represents the cost of trading. A tighter spread means more liquidity and easier trading; a wider spread means less liquidity."
+    },
+    {
+      "id": "q3",
+      "question": "A stock has a market cap of $500 billion and 5 billion shares outstanding. What is the stock price?",
+      "options": ["$10", "$50", "$100", "$500"],
+      "correct": 2,
+      "explanation": "Market cap = price x shares outstanding. $500B / 5B shares = $100 per share."
+    },
+    {
+      "id": "q4",
+      "question": "What does volume measure?",
+      "options": ["The loudness of trading", "The number of shares traded in a period", "The total value of the company", "The number of shareholders"],
+      "correct": 1,
+      "explanation": "Volume is the number of shares traded during a given period (usually one day). High volume indicates active trading interest."
+    }
+  ]
+}

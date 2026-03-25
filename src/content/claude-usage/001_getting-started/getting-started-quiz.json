@@ -1,0 +1,76 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What is the correct command to install Claude Code globally?",
+      "options": [
+        "pip install claude-code",
+        "npm install -g @anthropic-ai/claude-code",
+        "brew install claude",
+        "apt install claude-code"
+      ],
+      "correct": 1,
+      "explanation": "Claude Code is a Node.js package installed globally via npm: npm install -g @anthropic-ai/claude-code."
+    },
+    {
+      "id": "q2",
+      "question": "Which authentication method is recommended for individual developers using Claude Code?",
+      "options": [
+        "SSH key authentication",
+        "API key in a .env file",
+        "First-run OAuth flow via browser",
+        "Username and password prompt"
+      ],
+      "correct": 2,
+      "explanation": "The first-run OAuth flow automatically opens your browser for login and stores the token locally — no manual key management needed."
+    },
+    {
+      "id": "q3",
+      "question": "Where does the global CLAUDE.md file live?",
+      "options": [
+        "/etc/claude/CLAUDE.md",
+        "~/.config/claude/CLAUDE.md",
+        "~/.claude/CLAUDE.md",
+        "~/CLAUDE.md"
+      ],
+      "correct": 2,
+      "explanation": "The user-global CLAUDE.md lives at ~/.claude/CLAUDE.md and applies to all projects."
+    },
+    {
+      "id": "q4",
+      "question": "What does the `/init` slash command do?",
+      "options": [
+        "Initializes a new git repository",
+        "Creates a new project from a template",
+        "Scans the project and generates a CLAUDE.md file",
+        "Resets Claude Code to factory settings"
+      ],
+      "correct": 2,
+      "explanation": "The /init command scans your project's structure, tech stack, and conventions, then generates a CLAUDE.md file to help Claude understand your project."
+    },
+    {
+      "id": "q5",
+      "question": "How do you check which version of Claude Code is installed?",
+      "options": [
+        "claude version",
+        "claude --version",
+        "claude -v",
+        "claude info"
+      ],
+      "correct": 1,
+      "explanation": "Running claude --version displays the installed version of Claude Code."
+    },
+    {
+      "id": "q6",
+      "question": "What happens the first time you run `claude` after installation?",
+      "options": [
+        "It immediately starts a coding session with no setup",
+        "It prompts you to create a CLAUDE.md file",
+        "It opens a browser for OAuth authentication",
+        "It runs a diagnostic test on your system"
+      ],
+      "correct": 2,
+      "explanation": "On first run, Claude Code initiates an OAuth flow that opens your browser so you can sign in with your Anthropic account."
+    }
+  ]
+}

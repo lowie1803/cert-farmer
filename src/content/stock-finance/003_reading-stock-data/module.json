@@ -1,0 +1,34 @@
+{
+  "id": "reading-stock-data",
+  "title": "Reading Stock Data",
+  "icon": "📊",
+  "description": "Tickers, price charts, volume, and key metrics",
+  "domain": "Part 1: Foundations",
+  "lessons": [
+    {
+      "id": "tickers-and-price-quotes",
+      "title": "Tickers & Price Quotes",
+      "type": "notes"
+    },
+    {
+      "id": "tickers-quiz",
+      "title": "Tickers & Quotes Quiz",
+      "type": "quiz"
+    },
+    {
+      "id": "candlestick-charts",
+      "title": "Candlestick Charts",
+      "type": "notes"
+    },
+    {
+      "id": "volume-and-market-cap",
+      "title": "Volume & Market Cap",
+      "type": "notes"
+    },
+    {
+      "id": "reading-data-quiz",
+      "title": "Reading Stock Data Quiz",
+      "type": "quiz"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Which functional interface takes one argument and returns a boolean?",
+      "options": [
+        "Function<T, Boolean>",
+        "Predicate<T>",
+        "Consumer<T>",
+        "Supplier<Boolean>"
+      ],
+      "correct": 1,
+      "explanation": "Predicate<T> has a test(T) method returning boolean. While Function<T, Boolean> technically works, Predicate is the idiomatic choice and avoids boxing to Boolean."
+    },
+    {
+      "id": "q2",
+      "question": "What type of method reference is `String::toUpperCase`?",
+      "options": [
+        "Static method reference",
+        "Bound instance method reference",
+        "Unbound instance method reference",
+        "Constructor reference"
+      ],
+      "correct": 2,
+      "explanation": "String::toUpperCase is an unbound instance reference — it refers to an instance method but without a specific instance. The instance is provided by the stream element: s -> s.toUpperCase()."
+    },
+    {
+      "id": "q3",
+      "question": "Why must variables captured by lambdas be effectively final?",
+      "options": [
+        "For performance optimization",
+        "Because lambdas are syntactic sugar for anonymous inner classes, which require final variables",
+        "To prevent concurrency issues and ensure predictable behavior since lambdas may execute later or in parallel",
+        "It's a Java compiler limitation that will be removed in future versions"
+      ],
+      "correct": 2,
+      "explanation": "Lambda captures get a copy of the variable. If the original could change, the copy would be stale, leading to confusing bugs — especially with parallel streams or deferred execution."
+    },
+    {
+      "id": "q4",
+      "question": "Which creates a Comparator that sorts by last name, then first name?",
+      "options": [
+        "Comparator.comparing(Person::lastName).comparing(Person::firstName)",
+        "Comparator.comparing(Person::lastName).thenComparing(Person::firstName)",
+        "Comparator.comparingBy(Person::lastName, Person::firstName)",
+        "Comparator.of(Person::lastName, Person::firstName)"
+      ],
+      "correct": 1,
+      "explanation": "Comparator.comparing() creates the primary sort. thenComparing() adds secondary sort criteria. This is method chaining on the Comparator interface."
+    },
+    {
+      "id": "q5",
+      "question": "What is the lambda equivalent of `ArrayList::new`?",
+      "options": [
+        "() -> new ArrayList()",
+        "list -> new ArrayList(list)",
+        "Both A and B depending on context",
+        "ArrayList.create()"
+      ],
+      "correct": 2,
+      "explanation": "ArrayList::new can match any constructor depending on the expected functional interface. As a Supplier<List>, it's () -> new ArrayList<>(). As a Function<Collection, List>, it's c -> new ArrayList<>(c)."
+    }
+  ]
+}

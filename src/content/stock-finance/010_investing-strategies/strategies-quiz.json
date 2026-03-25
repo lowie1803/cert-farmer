@@ -1,0 +1,32 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What percentage of actively managed large-cap funds underperform the S&P 500 over 15 years?",
+      "options": ["About 50%", "About 70%", "Over 90%", "Exactly 100%"],
+      "correct": 2,
+      "explanation": "According to the SPIVA scorecard, over 92% of actively managed large-cap funds underperform the S&P 500 over a 15-year period."
+    },
+    {
+      "id": "q2",
+      "question": "Dollar Cost Averaging works by:",
+      "options": ["Investing only when prices are low", "Investing a fixed amount at regular intervals", "Doubling your investment after losses", "Buying only dividend stocks"],
+      "correct": 1,
+      "explanation": "DCA means investing a fixed dollar amount at regular intervals regardless of price. You automatically buy more shares when prices are low and fewer when prices are high."
+    },
+    {
+      "id": "q3",
+      "question": "A value investor would most likely buy a stock with:",
+      "options": ["High P/E ratio and rapid revenue growth", "Low P/E ratio and strong balance sheet", "No earnings but huge market potential", "The highest price in its sector"],
+      "correct": 1,
+      "explanation": "Value investors seek stocks trading below their intrinsic value, typically characterized by low P/E ratios, strong balance sheets, and a margin of safety."
+    },
+    {
+      "id": "q4",
+      "question": "The 'core-satellite' approach combines:",
+      "options": ["Only bonds and cash", "Index funds as a core with some active stock picks", "Active trading with options hedging", "International stocks with domestic bonds"],
+      "correct": 1,
+      "explanation": "Core-satellite puts 80-90% in passive index funds (the core) and 10-20% in individual stocks or active strategies (satellites), combining reliability with potential upside."
+    }
+  ]
+}

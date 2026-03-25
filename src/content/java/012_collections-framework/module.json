@@ -1,0 +1,13 @@
+{
+  "id": "collections-framework",
+  "title": "Collections Framework",
+  "icon": "📚",
+  "description": "List, Set, Map, Queue, Deque, and utility methods",
+  "domain": "Domain 3: Core APIs",
+  "lessons": [
+    { "id": "lists-sets", "title": "Lists & Sets", "type": "notes" },
+    { "id": "lists-sets-quiz", "title": "Lists & Sets Quiz", "type": "quiz" },
+    { "id": "maps-queues", "title": "Maps & Queues", "type": "notes" },
+    { "id": "maps-queues-quiz", "title": "Maps & Queues Quiz", "type": "quiz" }
+  ]
+}

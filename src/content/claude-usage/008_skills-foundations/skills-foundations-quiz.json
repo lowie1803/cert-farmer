@@ -1,0 +1,76 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What are skills in Claude Code?",
+      "options": [
+        "Built-in CLI commands like /help and /clear",
+        "Reusable prompt templates defined in SKILL.md files that extend Claude Code's capabilities",
+        "Python scripts that Claude executes automatically",
+        "Browser extensions that add features to Claude"
+      ],
+      "correct": 1,
+      "explanation": "Skills are reusable prompt templates defined in SKILL.md files. They encapsulate domain expertise into repeatable instructions. They are NOT built-in CLI commands."
+    },
+    {
+      "id": "q2",
+      "question": "How do users invoke a skill in Claude Code?",
+      "options": [
+        "By typing the skill name in ALL CAPS",
+        "By clicking a button in the UI",
+        "By referencing it with a slash command like /<skill-name>",
+        "By editing the settings.json file"
+      ],
+      "correct": 2,
+      "explanation": "Users invoke skills by referencing them with slash commands, such as /commit or /review-pr 123. Claude then uses the Skill tool to load and execute the instructions."
+    },
+    {
+      "id": "q3",
+      "question": "Where do SKILL.md files live in a project?",
+      "options": [
+        "In the project root directory",
+        "In the node_modules folder",
+        "In .claude/skills/ directories",
+        "In the src/ directory"
+      ],
+      "correct": 2,
+      "explanation": "Skills are stored in .claude/skills/ directories. Each subdirectory represents one skill and contains a SKILL.md file with the instructions."
+    },
+    {
+      "id": "q4",
+      "question": "What is the difference between a skill and a built-in CLI command?",
+      "options": [
+        "Skills are faster than built-in commands",
+        "Built-in commands are user-defined, skills are not",
+        "Skills are user-defined and customizable; built-in commands like /help are part of Claude Code itself",
+        "There is no difference — they are the same thing"
+      ],
+      "correct": 2,
+      "explanation": "Skills are user-defined prompt templates created via SKILL.md files and can be customized for any project. Built-in CLI commands (/help, /clear, /init) are part of Claude Code itself and cannot be modified."
+    },
+    {
+      "id": "q5",
+      "question": "What tool does Claude use to execute a skill?",
+      "options": [
+        "The Bash tool",
+        "The Read tool",
+        "The Skill tool",
+        "The Write tool"
+      ],
+      "correct": 2,
+      "explanation": "The Skill tool is the mechanism Claude uses to execute skills. It takes a skill name (required) and optional args, then loads and follows the SKILL.md instructions."
+    },
+    {
+      "id": "q6",
+      "question": "What is the purpose of a fully qualified skill name like 'ms-office-suite:pdf'?",
+      "options": [
+        "To make the skill run faster",
+        "To disambiguate when multiple skill sets exist or names could conflict",
+        "To specify the programming language of the skill",
+        "To indicate the skill requires admin privileges"
+      ],
+      "correct": 1,
+      "explanation": "Fully qualified names use the namespace:skill-name pattern to resolve ambiguity when multiple skill sets exist or skill names could conflict."
+    }
+  ]
+}

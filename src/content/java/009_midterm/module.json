@@ -1,0 +1,16 @@
+{
+  "id": "midterm",
+  "title": "Midterm: Fundamentals & OOP",
+  "icon": "📋",
+  "description": "30 questions covering Domains 1-2",
+  "domain": "Exam",
+  "lessons": [
+    {
+      "id": "midterm-exam",
+      "title": "Midterm Exam",
+      "type": "exam",
+      "timeLimit": 40,
+      "passingScore": 75
+    }
+  ]
+}

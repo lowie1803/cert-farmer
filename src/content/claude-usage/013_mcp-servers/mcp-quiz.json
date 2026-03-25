@@ -1,0 +1,76 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What is the Model Context Protocol (MCP)?",
+      "options": [
+        "An open standard that connects Claude to external tools and services",
+        "A proprietary Anthropic API for database access",
+        "A programming language for writing Claude extensions",
+        "A security protocol for encrypting Claude conversations"
+      ],
+      "correct": 0,
+      "explanation": "MCP is an open standard that extends Claude's capabilities by connecting it to external tools and services through a client-server architecture."
+    },
+    {
+      "id": "q2",
+      "question": "What are the two MCP server transport types?",
+      "options": [
+        "HTTP and WebSocket",
+        "TCP and UDP",
+        "stdio and SSE",
+        "REST and GraphQL"
+      ],
+      "correct": 2,
+      "explanation": "MCP supports stdio (local child process communicating via stdin/stdout) and SSE (remote Server-Sent Events over HTTP) transport types."
+    },
+    {
+      "id": "q3",
+      "question": "Where are MCP servers configured?",
+      "options": [
+        "In CLAUDE.md at the project root",
+        "In settings.json (global or project level)",
+        "In package.json under the 'mcp' key",
+        "In environment variables only"
+      ],
+      "correct": 1,
+      "explanation": "MCP servers are configured in settings.json files, either globally (~/.claude/settings.json) or at the project level (.claude/settings.json)."
+    },
+    {
+      "id": "q4",
+      "question": "How do MCP tools initially appear in a conversation?",
+      "options": [
+        "They are fully loaded with complete schemas from the start",
+        "They appear as deferred tools with only their names visible",
+        "They must be manually imported with a special command",
+        "They are listed in CLAUDE.md and parsed at startup"
+      ],
+      "correct": 1,
+      "explanation": "MCP tools appear as deferred tools in <available-deferred-tools> messages. Only their names are visible until their full schemas are fetched with ToolSearch."
+    },
+    {
+      "id": "q5",
+      "question": "What tool is used to fetch the full schema of an MCP tool before calling it?",
+      "options": [
+        "Glob",
+        "Read",
+        "ToolSearch",
+        "Bash"
+      ],
+      "correct": 2,
+      "explanation": "ToolSearch fetches complete JSON Schema definitions for deferred tools. Use 'select:ToolName' for exact matches or keywords for discovery."
+    },
+    {
+      "id": "q6",
+      "question": "In the MCP architecture, what role does Claude Code play?",
+      "options": [
+        "MCP Server",
+        "External Service",
+        "MCP Client",
+        "MCP Registry"
+      ],
+      "correct": 2,
+      "explanation": "Claude Code acts as the MCP Client, sending requests to MCP servers which in turn communicate with external services."
+    }
+  ]
+}

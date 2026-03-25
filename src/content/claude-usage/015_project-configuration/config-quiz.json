@@ -1,0 +1,76 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "In what order does Claude Code load CLAUDE.md files?",
+      "options": [
+        "Project root first, then global, then subdirectory",
+        "Global (~/.claude/CLAUDE.md) first, then project root, then subdirectory",
+        "Subdirectory first, then project root, then global",
+        "Only the most specific CLAUDE.md is loaded"
+      ],
+      "correct": 1,
+      "explanation": "Claude Code loads CLAUDE.md files from most general to most specific: global (~/.claude/CLAUDE.md), then project root (CLAUDE.md), then subdirectory. More specific files can override more general instructions."
+    },
+    {
+      "id": "q2",
+      "question": "Which settings file should be committed to git for team-shared configuration?",
+      "options": [
+        "~/.claude/settings.json",
+        ".claude/settings.local.json",
+        ".claude/settings.json",
+        "claude.config.js"
+      ],
+      "correct": 2,
+      "explanation": ".claude/settings.json is the project-level settings file designed to be committed to version control so the entire team shares the same permissions and configuration."
+    },
+    {
+      "id": "q3",
+      "question": "Which syntax correctly allows all npm commands in a permissions allow pattern?",
+      "options": [
+        "Bash(npm)",
+        "Bash(npm run *)",
+        "Allow(npm *)",
+        "Shell(npm run *)"
+      ],
+      "correct": 1,
+      "explanation": "Permission patterns use the format ToolName(pattern). Bash(npm run *) allows any npm run command with a wildcard for the script name."
+    },
+    {
+      "id": "q4",
+      "question": "Which of the following is an example of an EFFECTIVE CLAUDE.md instruction?",
+      "options": [
+        "Be a good assistant",
+        "Write clean code",
+        "Always run `npm run lint` after editing .ts files",
+        "Try to help the user"
+      ],
+      "correct": 2,
+      "explanation": "Effective CLAUDE.md instructions are specific and actionable. 'Always run npm run lint after editing .ts files' gives Claude a concrete rule to follow, unlike vague directives."
+    },
+    {
+      "id": "q5",
+      "question": "When a global setting and a project setting conflict, which takes precedence?",
+      "options": [
+        "Global settings always win",
+        "Project settings always win",
+        "The user is prompted to choose",
+        "Project settings override global for that project"
+      ],
+      "correct": 3,
+      "explanation": "Project-level settings override global settings within that project's scope. This allows teams to enforce project-specific conventions while individual developers keep their global preferences."
+    },
+    {
+      "id": "q6",
+      "question": "A CLAUDE.md placed in `src/components/` applies to:",
+      "options": [
+        "All files in the entire project",
+        "Only files within src/components/ and its subdirectories",
+        "Only the src/ directory",
+        "Only when Claude is explicitly told to use it"
+      ],
+      "correct": 1,
+      "explanation": "Subdirectory CLAUDE.md files are scoped — they only apply when Claude is working on files within that directory and its subdirectories."
+    }
+  ]
+}

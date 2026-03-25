@@ -1,0 +1,13 @@
+{
+  "id": "file-tools",
+  "title": "File Tools: Read, Write, Edit",
+  "icon": "📄",
+  "description": "Master the Read, Write, and Edit tools for file manipulation",
+  "domain": "Domain 1: Core Tools",
+  "lessons": [
+    { "id": "read-tool", "title": "The Read Tool", "type": "notes" },
+    { "id": "write-and-edit", "title": "Write and Edit Tools", "type": "notes" },
+    { "id": "file-tool-patterns", "title": "File Tool Patterns", "type": "notes" },
+    { "id": "file-tools-quiz", "title": "File Tools Quiz", "type": "quiz" }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "questions": [
+    {
+      "id": "final-q1",
+      "question": "What are the two main ways investors profit from stocks?",
+      "options": ["Interest and fees", "Capital gains and dividends", "Rent and royalties", "Coupons and premiums"],
+      "correct": 1,
+      "explanation": "Investors profit from stocks through capital gains (selling at a higher price than you bought) and dividends (periodic profit distributions from the company).",
+      "domain": "Part 1: Foundations"
+    },
+    {
+      "id": "final-q2",
+      "question": "A limit order to buy a stock at $50 means:",
+      "options": ["Buy immediately at any price", "Buy only at $50 or less", "Buy only at exactly $50", "Buy at $50 or higher"],
+      "correct": 1,
+      "explanation": "A limit buy order sets the maximum price you're willing to pay. The order will only execute at $50 or below.",
+      "domain": "Part 1: Foundations"
+    },
+    {
+      "id": "final-q3",
+      "question": "The 'wicks' (shadows) on a candlestick chart represent:",
+      "options": ["Trading volume", "The high and low prices during the period", "The number of trades", "After-hours trading activity"],
+      "correct": 1,
+      "explanation": "The upper wick extends to the period's high price and the lower wick extends to the low price, showing the full price range beyond the open/close.",
+      "domain": "Part 1: Foundations"
+    },
+    {
+      "id": "final-q4",
+      "question": "Market capitalization is calculated as:",
+      "options": ["Revenue × profit margin", "Stock price × shares outstanding", "Total assets − total liabilities", "Annual dividend × share price"],
+      "correct": 1,
+      "explanation": "Market cap = current stock price × total number of shares outstanding. It represents the market's total valuation of the company.",
+      "domain": "Part 1: Foundations"
+    },
+    {
+      "id": "final-q5",
+      "question": "Which investment vehicle pools money from many investors and is managed by a professional?",
+      "options": ["Individual stock", "ETF", "Mutual fund", "Government bond"],
+      "correct": 2,
+      "explanation": "A mutual fund pools money from many investors and a professional fund manager decides what to buy and sell on behalf of all investors.",
+      "domain": "Part 2: What to Invest In"
+    },
+    {
+      "id": "final-q6",
+      "question": "ROE (Return on Equity) measures:",
+      "options": ["Stock price performance", "How efficiently a company generates profit from shareholders' equity", "Total revenue growth", "Dividend payout ratio"],
+      "correct": 1,
+      "explanation": "ROE = Net Income ÷ Shareholders' Equity. It shows how effectively management uses the company's equity to generate profits.",
+      "domain": "Part 2: What to Invest In"
+    },
+    {
+      "id": "final-q7",
+      "question": "The three main financial statements are:",
+      "options": ["Budget, forecast, audit", "Income statement, balance sheet, cash flow statement", "Tax return, annual report, proxy statement", "Revenue report, expense report, dividend report"],
+      "correct": 1,
+      "explanation": "The three core financial statements are: income statement (profit/loss), balance sheet (assets/liabilities/equity), and cash flow statement (actual cash movement).",
+      "domain": "Part 2: What to Invest In"
+    },
+    {
+      "id": "final-q8",
+      "question": "In a DCF valuation, the discount rate reflects:",
+      "options": ["The company's dividend yield", "The risk and time value of money", "The current inflation rate only", "The stock's P/E ratio"],
+      "correct": 1,
+      "explanation": "The discount rate in a DCF reflects the time value of money and investment risk — money received in the future is worth less than money today due to inflation, opportunity cost, and uncertainty.",
+      "domain": "Part 2: What to Invest In"
+    },
+    {
+      "id": "final-q9",
+      "question": "A 'death cross' occurs when:",
+      "options": ["A stock drops 50% in value", "The 50-day MA crosses below the 200-day MA", "A company goes bankrupt", "Trading volume drops to zero"],
+      "correct": 1,
+      "explanation": "A death cross is a bearish technical signal where the 50-day moving average crosses below the 200-day moving average, suggesting potential long-term downtrend.",
+      "domain": "Part 3: How to Analyze"
+    },
+    {
+      "id": "final-q10",
+      "question": "An ascending triangle pattern is generally considered:",
+      "options": ["Bearish", "Bullish", "Neutral", "Unpredictable"],
+      "correct": 1,
+      "explanation": "An ascending triangle has a flat top (resistance) and a rising bottom (higher lows), suggesting buyers are getting more aggressive and the price is likely to break upward.",
+      "domain": "Part 3: How to Analyze"
+    },
+    {
+      "id": "final-q11",
+      "question": "The EMA differs from the SMA because the EMA:",
+      "options": ["Uses median instead of mean", "Gives more weight to recent prices", "Only uses closing prices", "Requires at least 200 data points"],
+      "correct": 1,
+      "explanation": "The Exponential Moving Average gives more weight to recent prices through a multiplier, making it react faster to new price movements compared to the Simple Moving Average.",
+      "domain": "Part 3: How to Analyze"
+    },
+    {
+      "id": "final-q12",
+      "question": "Asset allocation accounts for approximately what percentage of portfolio return variation?",
+      "options": ["About 25%", "About 50%", "Over 90%", "Less than 10%"],
+      "correct": 2,
+      "explanation": "Research shows asset allocation (how you split between stocks, bonds, cash) explains over 90% of portfolio return variation — far more than individual security selection.",
+      "domain": "Part 3: How to Analyze"
+    },
+    {
+      "id": "final-q13",
+      "question": "The purpose of rebalancing your portfolio is to:",
+      "options": ["Maximize short-term profits", "Return to your target asset allocation", "Eliminate all losing positions", "Increase your stock allocation over time"],
+      "correct": 1,
+      "explanation": "Rebalancing means adjusting your holdings back to your target allocation after market movements have shifted it. This systematically enforces 'buy low, sell high.'",
+      "domain": "Part 3: How to Analyze"
+    },
+    {
+      "id": "final-q14",
+      "question": "Which type of investment risk can be eliminated through diversification?",
+      "options": ["Market risk", "Inflation risk", "Company-specific risk", "Interest rate risk"],
+      "correct": 2,
+      "explanation": "Company-specific (unsystematic) risk can be virtually eliminated by holding a diversified portfolio of 30+ stocks. Market risk affects all stocks and cannot be diversified away.",
+      "domain": "Part 4: Strategy & Practice"
+    },
+    {
+      "id": "final-q15",
+      "question": "A trailing stop loss of 15% on a stock at $100 that rises to $120 will trigger at:",
+      "options": ["$85", "$100", "$102", "$108"],
+      "correct": 2,
+      "explanation": "The trailing stop follows the highest price. At $120 high, 15% trailing stop = $120 × 0.85 = $102. The original $100 purchase price is irrelevant.",
+      "domain": "Part 4: Strategy & Practice"
+    },
+    {
+      "id": "final-q16",
+      "question": "The '1-2% rule' in position sizing means:",
+      "options": ["Only buy stocks above $1-2", "Expect 1-2% daily returns", "Risk no more than 1-2% of portfolio on a single trade", "Allocate 1-2% to cash reserves"],
+      "correct": 2,
+      "explanation": "The 1-2% rule means you should risk no more than 1-2% of your total portfolio on any single position, ensuring multiple losses won't devastate your portfolio.",
+      "domain": "Part 4: Strategy & Practice"
+    },
+    {
+      "id": "final-q17",
+      "question": "Dollar Cost Averaging is most beneficial when:",
+      "options": ["Markets are only going up", "You have perfect market timing", "Markets are volatile and unpredictable", "You're investing for less than 1 year"],
+      "correct": 2,
+      "explanation": "DCA shines in volatile markets because your fixed investment buys more shares when prices are low and fewer when prices are high, lowering your average cost.",
+      "domain": "Part 4: Strategy & Practice"
+    },
+    {
+      "id": "final-q18",
+      "question": "Over a 15-year period, what percentage of actively managed funds underperform their benchmark?",
+      "options": ["About 30%", "About 50%", "About 70%", "Over 90%"],
+      "correct": 3,
+      "explanation": "According to the SPIVA scorecard, over 90% of actively managed funds underperform their benchmark index over 15 years, primarily due to higher fees.",
+      "domain": "Part 4: Strategy & Practice"
+    },
+    {
+      "id": "final-q19",
+      "question": "SIPC insurance on a brokerage account protects up to:",
+      "options": ["$250,000", "$500,000", "$1,000,000", "Unlimited"],
+      "correct": 1,
+      "explanation": "SIPC (Securities Investor Protection Corporation) protects brokerage accounts up to $500,000 (including $250,000 for cash) if the brokerage firm fails.",
+      "domain": "Part 4: Strategy & Practice"
+    },
+    {
+      "id": "final-q20",
+      "question": "You invest $1,000/month in an ETF. In Month 1 the price is $100, Month 2 it's $80, Month 3 it's $125. Your average cost per share is closest to:",
+      "options": ["$101.67", "$96.77", "$100.00", "$105.00"],
+      "correct": 1,
+      "explanation": "Month 1: 10 shares, Month 2: 12.5 shares, Month 3: 8 shares = 30.5 shares total. $3,000 ÷ 30.5 = $98.36. The closest answer is $96.77 considering DCA's effect of buying more at lower prices.",
+      "domain": "Applied Knowledge"
+    },
+    {
+      "id": "final-q21",
+      "question": "A company has a P/E of 10, EPS of $5, and the industry average P/E is 20. A value investor would likely conclude:",
+      "options": ["The stock is overvalued", "The stock may be undervalued relative to peers", "The P/E is too low to invest", "The stock should be avoided"],
+      "correct": 1,
+      "explanation": "A P/E of 10 vs industry average of 20 suggests the stock is trading at a discount to peers. A value investor would investigate further as this could be an undervalued opportunity.",
+      "domain": "Applied Knowledge"
+    },
+    {
+      "id": "final-q22",
+      "question": "A 30-year-old with a high risk tolerance and 35 years until retirement should most likely have an allocation closest to:",
+      "options": ["90% bonds, 10% stocks", "50% stocks, 50% bonds", "80% stocks, 20% bonds", "100% cash"],
+      "correct": 2,
+      "explanation": "With a long time horizon (35 years) and high risk tolerance, a heavy stock allocation (~80/20) is appropriate. The long horizon allows recovery from market downturns.",
+      "domain": "Applied Knowledge"
+    },
+    {
+      "id": "final-q23",
+      "question": "A stock breaks above resistance at $75 on double the average volume. This most likely signals:",
+      "options": ["A fakeout — the stock will reverse", "A genuine breakout with strong buying conviction", "The stock is overvalued", "Trading should be halted"],
+      "correct": 1,
+      "explanation": "Breaking above resistance with significantly higher than normal volume is a strong bullish signal — it suggests genuine buying conviction behind the breakout, not a fakeout.",
+      "domain": "Applied Knowledge"
+    },
+    {
+      "id": "final-q24",
+      "question": "Your friend says 'I'm waiting for the market to crash before I start investing.' What's the best response?",
+      "options": ["Good idea — timing the market is proven to work", "Time in the market beats timing the market — start now with DCA", "Wait for a 50% drop then go all in", "Only invest if a financial advisor tells you to"],
+      "correct": 1,
+      "explanation": "Waiting for a crash is market timing, which studies show reduces returns. Missing even the 10 best trading days cuts returns nearly in half. Starting DCA immediately is statistically better.",
+      "domain": "Applied Knowledge"
+    },
+    {
+      "id": "final-q25",
+      "question": "Which combination represents the best starting portfolio for a beginner investor?",
+      "options": ["5 individual stocks picked from Reddit", "A broad market index ETF with automatic monthly contributions", "50% in crypto, 50% in options", "All money in a savings account earning 0.5%"],
+      "correct": 1,
+      "explanation": "A broad market index ETF with automatic monthly contributions (DCA) combines diversification, low fees, proven returns, and disciplined investing — the ideal foundation for any beginner.",
+      "domain": "Applied Knowledge"
+    }
+  ]
+}

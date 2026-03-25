@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What does `if (obj instanceof String s)` do that the old pattern doesn't?",
+      "options": [
+        "Throws a ClassCastException if obj is not a String",
+        "Checks the type AND binds obj to variable s with the correct type in one step",
+        "Creates a new String copy of obj",
+        "Checks if obj is exactly String, not subclasses"
+      ],
+      "correct": 1,
+      "explanation": "Pattern matching for instanceof combines the type check and the cast into a single expression. If obj is a String, it's bound to the variable s with type String — no separate cast needed."
+    },
+    {
+      "id": "q2",
+      "question": "In a switch with pattern matching, what does the `when` keyword do?",
+      "options": [
+        "Specifies the order of pattern evaluation",
+        "Adds a guard condition that must be true for the pattern to match",
+        "Defines a timeout for the pattern match",
+        "Marks a pattern as optional"
+      ],
+      "correct": 1,
+      "explanation": "The 'when' keyword adds a guard/condition to a pattern. For example, 'case Integer i when i > 0' only matches positive integers. The pattern type check happens first, then the guard is evaluated."
+    },
+    {
+      "id": "q3",
+      "question": "What is the advantage of using switch pattern matching with sealed types?",
+      "options": [
+        "Better runtime performance",
+        "The compiler can verify exhaustiveness — no default case needed",
+        "Sealed types run faster in switch statements",
+        "They allow mutable pattern variables"
+      ],
+      "correct": 1,
+      "explanation": "When switching over a sealed type, the compiler knows all permitted subtypes. If all cases are covered, no default is needed. If a new subtype is added, the compiler flags the incomplete switch."
+    },
+    {
+      "id": "q4",
+      "question": "Which statement about virtual threads (Java 21) is correct?",
+      "options": [
+        "Virtual threads replace platform threads entirely",
+        "Virtual threads are best for CPU-bound computation",
+        "Virtual threads are lightweight and ideal for I/O-bound tasks with high concurrency",
+        "Virtual threads require the reactive programming model"
+      ],
+      "correct": 2,
+      "explanation": "Virtual threads are lightweight (JVM-managed) threads designed for I/O-bound workloads. They automatically yield during blocking I/O, allowing millions to run concurrently without the complexity of reactive programming."
+    },
+    {
+      "id": "q5",
+      "question": "What does record deconstruction in a switch pattern look like?",
+      "options": [
+        "case Point p -> p.x() + p.y()",
+        "case Point(int x, int y) -> x + y",
+        "case Point{x, y} -> x + y",
+        "case (int x, int y) : Point -> x + y"
+      ],
+      "correct": 1,
+      "explanation": "Record patterns use the record's constructor syntax to deconstruct: case Point(int x, int y) extracts the x and y components directly into variables, avoiding the need to call accessor methods."
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "A `protected` field is accessible from where?",
+      "options": [
+        "Only within the same class",
+        "Within the same class and package only",
+        "Within the same class, package, and subclasses (even in other packages)",
+        "Everywhere (same as public)"
+      ],
+      "correct": 2,
+      "explanation": "Protected access allows: same class, same package, and subclasses in any package. It does NOT allow access from unrelated classes in other packages."
+    },
+    {
+      "id": "q2",
+      "question": "What is the access level when no modifier is specified (default access)?",
+      "options": [
+        "Private",
+        "Package-private — accessible within the same package only",
+        "Protected",
+        "Public"
+      ],
+      "correct": 1,
+      "explanation": "Default (package-private) access means visible to all classes in the same package but invisible outside it. There is no keyword for this — you simply omit the modifier."
+    },
+    {
+      "id": "q3",
+      "question": "Which is NOT a requirement for making a class immutable?",
+      "options": [
+        "All fields are private and final",
+        "No setter methods",
+        "The class must implement Serializable",
+        "Defensive copies for mutable field types"
+      ],
+      "correct": 2,
+      "explanation": "Immutability requires private final fields, no setters, and defensive copies. Serializable is unrelated — it's for object serialization, not immutability."
+    },
+    {
+      "id": "q4",
+      "question": "In JavaBeans convention, what is the getter name for a `boolean active` field?",
+      "options": [
+        "getActive()",
+        "isActive()",
+        "active()",
+        "hasActive()"
+      ],
+      "correct": 1,
+      "explanation": "JavaBeans convention uses isX() for primitive boolean fields and getX() for Boolean wrapper type and all other types."
+    },
+    {
+      "id": "q5",
+      "question": "Why is encapsulation beneficial even within a single-developer project?",
+      "options": [
+        "It makes the code run faster",
+        "It forces you to write more classes",
+        "It lets you change internal implementation without breaking dependent code",
+        "It is required by the Java compiler"
+      ],
+      "correct": 2,
+      "explanation": "Encapsulation decouples the public API from internal details. You can refactor field types, add validation, or change storage without modifying callers."
+    }
+  ]
+}

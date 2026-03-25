@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What is the result of `Arrays.binarySearch(new int[]{3, 1, 4, 1, 5}, 4)`?",
+      "options": [
+        "2",
+        "A negative value (undefined behavior)",
+        "ArrayIndexOutOfBoundsException",
+        "0"
+      ],
+      "correct": 1,
+      "explanation": "Arrays.binarySearch requires a sorted array. Using it on an unsorted array produces undefined results — the return value is meaningless."
+    },
+    {
+      "id": "q2",
+      "question": "Which statement about `Arrays.asList(new int[]{1, 2, 3})` is correct?",
+      "options": [
+        "Returns List<Integer> with 3 elements",
+        "Returns List<int[]> with 1 element (the array itself)",
+        "Compilation error — cannot use primitives",
+        "Returns an empty list"
+      ],
+      "correct": 1,
+      "explanation": "Arrays.asList treats a primitive array as a single object (int[] cannot be auto-boxed to Integer[]). It returns a List<int[]> containing one element. Use Arrays.stream(arr).boxed().toList() for List<Integer>."
+    },
+    {
+      "id": "q3",
+      "question": "What is `new int[3].length`?",
+      "options": [
+        "0",
+        "3",
+        "Compilation error — length is a method, needs parentheses",
+        "NullPointerException"
+      ],
+      "correct": 1,
+      "explanation": "Array length is a final field (not a method), accessed without parentheses. new int[3] creates an array of size 3 initialized with zeros."
+    },
+    {
+      "id": "q4",
+      "question": "Which creates a mutable List from an array?",
+      "options": [
+        "List.of(array)",
+        "Arrays.asList(array)",
+        "new ArrayList<>(Arrays.asList(array))",
+        "Collections.unmodifiableList(Arrays.asList(array))"
+      ],
+      "correct": 2,
+      "explanation": "List.of() returns an immutable list. Arrays.asList() returns a fixed-size list (can set elements but not add/remove). Wrapping in new ArrayList<>() creates a fully mutable copy."
+    },
+    {
+      "id": "q5",
+      "question": "What does `int[][] m = new int[3][];` create?",
+      "options": [
+        "A 3x0 matrix filled with empty arrays",
+        "An array of 3 null references (ragged array declaration)",
+        "Compilation error — second dimension is required",
+        "A 3x3 matrix with default values"
+      ],
+      "correct": 1,
+      "explanation": "Only the first dimension is required. This creates an array of 3 elements, each initialized to null. Each row must be assigned separately, allowing different lengths (ragged/jagged array)."
+    }
+  ]
+}

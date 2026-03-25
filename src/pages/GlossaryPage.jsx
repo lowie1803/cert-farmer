@@ -1,11 +1,20 @@
 import React, { useState, useMemo } from 'react';
-import { Link } from 'react-router-dom';
-import glossary, { glossaryCategories } from '@data/glossary';
+import { Link, useParams } from 'react-router-dom';
+import { getGlossary, getGlossaryCategories } from '@data/glossaries';
+
+const courseTitles = {
+  ccna: 'Từ điển thuật ngữ mạng',
+  'stock-finance': 'Từ điển thuật ngữ tài chính',
+};
 
 export default function GlossaryPage() {
+  const { courseId } = useParams();
   const [search, setSearch] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
-  
+
+  const glossary = getGlossary(courseId);
+  const glossaryCategories = getGlossaryCategories(courseId);
+
   // Filter and sort terms
   const filteredTerms = useMemo(() => {
     return Object.entries(glossary)
@@ -18,8 +27,8 @@ export default function GlossaryPage() {
         return matchesSearch && matchesCategory;
       })
       .sort((a, b) => a[0].localeCompare(b[0]));
-  }, [search, selectedCategory]);
-  
+  }, [search, selectedCategory, glossary]);
+
   // Group terms by first letter for quick navigation
   const groupedTerms = useMemo(() => {
     const groups = {};
@@ -30,29 +39,29 @@ export default function GlossaryPage() {
     });
     return groups;
   }, [filteredTerms]);
-  
+
   return (
     <div className="p-4 md:p-8">
       <div className="max-w-4xl mx-auto">
         {/* Back button */}
         <Link
-          to="/"
+          to={courseId ? `/course/${courseId}` : '/'}
           className="inline-flex items-center gap-2 text-slate-400 hover:text-white mb-6 transition-colors"
         >
           <span>←</span> Back to Dashboard
         </Link>
-        
+
         {/* Header */}
         <div className="flex items-center gap-4 mb-6">
           <span className="text-4xl">📖</span>
           <div>
             <h1 className="text-2xl font-bold text-white">Technical Glossary</h1>
             <p className="text-slate-400">
-              Từ điển thuật ngữ mạng • {Object.keys(glossary).length} terms
+              {courseTitles[courseId] || 'Từ điển thuật ngữ'} • {Object.keys(glossary).length} terms
             </p>
           </div>
         </div>
-        
+
         {/* Search and filter */}
         <div className="flex flex-col sm:flex-row gap-3 mb-6">
           <div className="relative flex-1">
@@ -67,7 +76,7 @@ export default function GlossaryPage() {
               🔍
             </span>
           </div>
-          
+
           <select
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
@@ -80,12 +89,12 @@ export default function GlossaryPage() {
             ))}
           </select>
         </div>
-        
+
         {/* Results count */}
         <p className="text-sm text-slate-500 mb-4">
           Showing {filteredTerms.length} of {Object.keys(glossary).length} terms
         </p>
-        
+
         {/* Terms list */}
         {filteredTerms.length > 0 ? (
           <div className="space-y-2">
@@ -126,7 +135,7 @@ export default function GlossaryPage() {
             </button>
           </div>
         )}
-        
+
         {/* Quick navigation by letter */}
         {!search && selectedCategory === 'All' && (
           <div className="mt-8 pt-6 border-t border-slate-700">

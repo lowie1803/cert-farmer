@@ -1,0 +1,32 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Which financial statement shows a company's revenue and expenses over a period?",
+      "options": ["Balance sheet", "Income statement", "Cash flow statement", "Shareholders' report"],
+      "correct": 1,
+      "explanation": "The income statement (also called P&L) shows revenue, expenses, and profit/loss over a specific time period."
+    },
+    {
+      "id": "q2",
+      "question": "The fundamental equation of a balance sheet is:",
+      "options": ["Revenue = Costs + Profit", "Assets = Liabilities + Equity", "Cash In = Cash Out", "Income = Expenses + Tax"],
+      "correct": 1,
+      "explanation": "The balance sheet is built on: Assets = Liabilities + Shareholders' Equity. This must always balance."
+    },
+    {
+      "id": "q3",
+      "question": "Why is the cash flow statement important even if a company shows profit?",
+      "options": ["It's required by law", "A company can show profit on paper but still run out of cash", "It replaces the income statement", "It's only important for banks"],
+      "correct": 1,
+      "explanation": "Accounting profit and actual cash are different. A company can be 'profitable' using accrual accounting but still have negative cash flow, which can lead to bankruptcy."
+    },
+    {
+      "id": "q4",
+      "question": "What is 'Net Income'?",
+      "options": ["Revenue before any expenses", "Total cash in the bank", "Final profit after all expenses, interest, and taxes", "Gross profit minus COGS"],
+      "correct": 2,
+      "explanation": "Net income is the 'bottom line' — what remains after subtracting all costs, interest, and taxes from revenue."
+    }
+  ]
+}

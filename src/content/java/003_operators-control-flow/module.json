@@ -1,0 +1,13 @@
+{
+  "id": "operators-control-flow",
+  "title": "Operators & Control Flow",
+  "icon": "🔀",
+  "description": "Arithmetic, logical, comparison operators; if/switch/loops",
+  "domain": "Domain 1: Language Fundamentals",
+  "lessons": [
+    { "id": "operators", "title": "Operators", "type": "notes" },
+    { "id": "operators-quiz", "title": "Operators Quiz", "type": "quiz" },
+    { "id": "control-flow", "title": "Control Flow", "type": "notes" },
+    { "id": "control-flow-quiz", "title": "Control Flow Quiz", "type": "quiz" }
+  ]
+}

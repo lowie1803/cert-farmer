@@ -1,0 +1,26 @@
+{
+  "id": "java",
+  "title": "Java Programming Refresher (2026)",
+  "description": "Java language fundamentals and OOP paradigm — updated for Java 21+",
+  "version": "1.0",
+  "modules": [
+    "001_java-platform-setup",
+    "002_data-types-variables",
+    "003_operators-control-flow",
+    "004_project-news-fetcher",
+    "005_classes-objects",
+    "006_inheritance-polymorphism",
+    "007_abstraction-interfaces",
+    "008_encapsulation-design",
+    "009_midterm",
+    "010_project-oop-refactor",
+    "011_strings-arrays",
+    "012_collections-framework",
+    "013_exception-handling",
+    "014_generics-type-safety",
+    "015_project-data-pipeline",
+    "016_lambda-streams",
+    "017_modern-java-features",
+    "018_final-exam"
+  ]
+}

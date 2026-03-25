@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What is the first step when creating a new skill?",
+      "options": [
+        "Edit the settings.json file",
+        "Create a directory under .claude/skills/ with a descriptive name",
+        "Install a skill plugin from npm",
+        "Add the skill name to CLAUDE.md"
+      ],
+      "correct": 1,
+      "explanation": "The first step is to create a directory under .claude/skills/ with a descriptive kebab-case name. Then you create a SKILL.md file inside it."
+    },
+    {
+      "id": "q2",
+      "question": "What file contains the instructions for a skill?",
+      "options": [
+        "skill.json",
+        "config.yaml",
+        "SKILL.md",
+        "instructions.txt"
+      ],
+      "correct": 2,
+      "explanation": "Skills are defined in SKILL.md files within their respective directories under .claude/skills/."
+    },
+    {
+      "id": "q3",
+      "question": "Which of the following should a SKILL.md file include?",
+      "options": [
+        "Only the skill name and a one-line description",
+        "A list of npm packages to install",
+        "Trigger conditions, tools to use, step-by-step process, and examples",
+        "The complete source code of the project"
+      ],
+      "correct": 2,
+      "explanation": "A well-structured SKILL.md includes when to trigger, what tools to use, the step-by-step process, output format, and examples of correct usage."
+    },
+    {
+      "id": "q4",
+      "question": "How do you test a newly created skill?",
+      "options": [
+        "Run a special test command: claude-test skill",
+        "Invoke the skill in a Claude Code session and verify the output matches expectations",
+        "Submit it to the Claude Skills marketplace for validation",
+        "Skills are automatically tested when SKILL.md is saved"
+      ],
+      "correct": 1,
+      "explanation": "Test a skill by invoking it in a Claude Code session, checking if the output matches expectations, identifying gaps, and iterating on the SKILL.md instructions."
+    },
+    {
+      "id": "q5",
+      "question": "What happens when a SKILL.md file contains vague instructions like 'be careful with the code'?",
+      "options": [
+        "Claude interprets it correctly using common sense",
+        "Claude produces inconsistent results because the instruction is ambiguous",
+        "Claude ignores vague instructions entirely",
+        "Claude asks the user for clarification every time"
+      ],
+      "correct": 1,
+      "explanation": "Vague instructions produce inconsistent results. Claude follows skill instructions literally, so specific instructions like 'run npm run lint before committing' produce reliable, repeatable behavior."
+    }
+  ]
+}

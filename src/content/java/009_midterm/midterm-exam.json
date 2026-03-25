@@ -1,0 +1,344 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Which component compiles `.java` files into `.class` bytecode?",
+      "options": ["java", "javac", "jshell", "jlink"],
+      "correct": 1,
+      "explanation": "javac is the Java compiler that translates source code (.java) into bytecode (.class) for the JVM.",
+      "domain": "Domain 1: Language Fundamentals"
+    },
+    {
+      "id": "q2",
+      "question": "What is the size of a `long` primitive in Java?",
+      "options": ["16 bits", "32 bits", "64 bits", "128 bits"],
+      "correct": 2,
+      "explanation": "A long is always 64 bits (8 bytes) in Java, regardless of platform. It stores integer values from -2^63 to 2^63-1.",
+      "domain": "Domain 1: Language Fundamentals"
+    },
+    {
+      "id": "q3",
+      "question": "What is the output?\n```java\nint x = 5;\nSystem.out.println(x++ + ++x);\n```",
+      "options": ["10", "11", "12", "13"],
+      "correct": 2,
+      "explanation": "x++ uses 5 then increments to 6. ++x increments 6 to 7 then uses 7. Result: 5 + 7 = 12.",
+      "domain": "Domain 1: Language Fundamentals"
+    },
+    {
+      "id": "q4",
+      "question": "Which keyword exits only the current iteration of a loop and continues to the next?",
+      "options": ["break", "return", "continue", "yield"],
+      "correct": 2,
+      "explanation": "continue skips the remaining body of the current iteration and jumps to the next loop cycle. break exits the loop entirely.",
+      "domain": "Domain 1: Language Fundamentals"
+    },
+    {
+      "id": "q5",
+      "question": "What is `var` in Java?",
+      "options": [
+        "A new primitive type",
+        "Local variable type inference — compiler deduces the type",
+        "A way to declare mutable variables",
+        "An alternative to final"
+      ],
+      "correct": 1,
+      "explanation": "var (Java 10+) enables local variable type inference. The compiler infers the type from the initializer. It's only for local variables, not fields or parameters.",
+      "domain": "Domain 1: Language Fundamentals"
+    },
+    {
+      "id": "q6",
+      "question": "What is autoboxing in Java?",
+      "options": [
+        "Converting a String to a primitive",
+        "Automatic conversion between primitives and their wrapper classes",
+        "Wrapping objects in containers",
+        "Boxing exceptions for later handling"
+      ],
+      "correct": 1,
+      "explanation": "Autoboxing automatically converts primitives to wrapper objects (int -> Integer) and vice versa (unboxing). Introduced in Java 5.",
+      "domain": "Domain 1: Language Fundamentals"
+    },
+    {
+      "id": "q7",
+      "question": "Which switch expression feature was introduced in Java 14?",
+      "options": [
+        "Fall-through behavior",
+        "Arrow labels (case X ->) and switch as an expression returning a value",
+        "String matching in switch",
+        "Nested switch statements"
+      ],
+      "correct": 1,
+      "explanation": "Java 14 finalized switch expressions with arrow labels (no fall-through) and the ability to return values, making switch more concise and less error-prone.",
+      "domain": "Domain 1: Language Fundamentals"
+    },
+    {
+      "id": "q8",
+      "question": "What does `import static java.lang.Math.PI;` allow?",
+      "options": [
+        "Importing the Math class",
+        "Using PI directly without the Math. prefix",
+        "Creating a local copy of PI",
+        "Overriding the value of PI"
+      ],
+      "correct": 1,
+      "explanation": "Static imports let you use static members directly by name. After this import, you write PI instead of Math.PI.",
+      "domain": "Domain 1: Language Fundamentals"
+    },
+    {
+      "id": "q9",
+      "question": "What is the default value of an `int` instance field?",
+      "options": ["null", "undefined", "0", "-1"],
+      "correct": 2,
+      "explanation": "Numeric primitives default to 0 (or 0.0 for floating-point), booleans to false, and object references to null. Local variables have no default — they must be initialized.",
+      "domain": "Domain 1: Language Fundamentals"
+    },
+    {
+      "id": "q10",
+      "question": "Which loop is guaranteed to execute its body at least once?",
+      "options": ["for loop", "while loop", "do-while loop", "enhanced for loop"],
+      "correct": 2,
+      "explanation": "A do-while loop checks the condition after executing the body, guaranteeing at least one execution.",
+      "domain": "Domain 1: Language Fundamentals"
+    },
+    {
+      "id": "q11",
+      "question": "What does `this()` do inside a constructor?",
+      "options": [
+        "Calls the parent class constructor",
+        "Calls another constructor in the same class",
+        "Creates a new instance of the current class",
+        "Returns the current object"
+      ],
+      "correct": 1,
+      "explanation": "this() invokes another constructor in the same class (constructor chaining). It must be the first statement. Use super() to call the parent constructor.",
+      "domain": "Domain 2: OOP"
+    },
+    {
+      "id": "q12",
+      "question": "What is the output?\n```java\nclass Animal { String speak() { return \"...\"; } }\nclass Dog extends Animal { String speak() { return \"Woof\"; } }\nAnimal a = new Dog();\nSystem.out.println(a.speak());\n```",
+      "options": ["...", "Woof", "Compile error", "null"],
+      "correct": 1,
+      "explanation": "Runtime polymorphism: the JVM calls Dog.speak() because the actual object is a Dog, even though the reference type is Animal.",
+      "domain": "Domain 2: OOP"
+    },
+    {
+      "id": "q13",
+      "question": "How many classes can a Java class extend?",
+      "options": ["Zero", "Exactly one", "Up to two", "Unlimited"],
+      "correct": 1,
+      "explanation": "Java supports single class inheritance only. A class can extend exactly one parent class (Object by default). Multiple inheritance is achieved through interfaces.",
+      "domain": "Domain 2: OOP"
+    },
+    {
+      "id": "q14",
+      "question": "Which access modifier makes a field visible only within the same package?",
+      "options": ["private", "default (no modifier)", "protected", "public"],
+      "correct": 1,
+      "explanation": "Default (package-private) access — when no modifier is specified — restricts visibility to classes within the same package.",
+      "domain": "Domain 2: OOP"
+    },
+    {
+      "id": "q15",
+      "question": "What makes a class immutable?",
+      "options": [
+        "Declaring it abstract",
+        "Using only static fields",
+        "Private final fields, no setters, defensive copies of mutable fields",
+        "Implementing Serializable"
+      ],
+      "correct": 2,
+      "explanation": "Immutability requires: all fields private and final, no setter methods, and defensive copies when storing or returning mutable objects.",
+      "domain": "Domain 2: OOP"
+    },
+    {
+      "id": "q16",
+      "question": "What is wrong with this code?\n```java\npublic abstract class Shape {\n    private abstract double area();\n}\n```",
+      "options": [
+        "Abstract classes can't have methods",
+        "Abstract methods cannot be private — subclasses must be able to override them",
+        "The return type must be void",
+        "Nothing — this compiles correctly"
+      ],
+      "correct": 1,
+      "explanation": "Abstract methods cannot be private because subclasses need to see and override them. They must be public, protected, or default access.",
+      "domain": "Domain 2: OOP"
+    },
+    {
+      "id": "q17",
+      "question": "A `@FunctionalInterface` must have:",
+      "options": [
+        "No methods at all",
+        "Exactly one abstract method",
+        "Exactly one default method",
+        "Only static methods"
+      ],
+      "correct": 1,
+      "explanation": "A functional interface has exactly one abstract method (SAM). It may also have default, static, and private methods without affecting its functional status.",
+      "domain": "Domain 2: OOP"
+    },
+    {
+      "id": "q18",
+      "question": "What is the result of `\"hello\" == \"hello\"` in Java?",
+      "options": [
+        "false — always use .equals() for strings",
+        "true — string literals are interned and share the same reference",
+        "Compile error",
+        "Undefined behavior"
+      ],
+      "correct": 1,
+      "explanation": "String literals are interned by the JVM — identical literals share the same object in the string pool. However, new String(\"hello\") == \"hello\" would be false.",
+      "domain": "Domain 1: Language Fundamentals"
+    },
+    {
+      "id": "q19",
+      "question": "Which SOLID principle says 'depend on abstractions, not concretions'?",
+      "options": [
+        "Single Responsibility",
+        "Open/Closed",
+        "Liskov Substitution",
+        "Dependency Inversion"
+      ],
+      "correct": 3,
+      "explanation": "Dependency Inversion Principle: high-level modules should depend on abstractions (interfaces), not on low-level concrete implementations.",
+      "domain": "Domain 2: OOP"
+    },
+    {
+      "id": "q20",
+      "question": "What happens when you cast `(int) 3.9`?",
+      "options": ["4 (rounds up)", "3 (truncates toward zero)", "Compile error", "3.0"],
+      "correct": 1,
+      "explanation": "Casting a floating-point to int truncates the decimal part (rounds toward zero). 3.9 becomes 3, -3.9 becomes -3.",
+      "domain": "Domain 1: Language Fundamentals"
+    },
+    {
+      "id": "q21",
+      "question": "What does the `final` keyword mean on a method?",
+      "options": [
+        "The method can only be called once",
+        "The method cannot be overridden by subclasses",
+        "The method must be the last method in the class",
+        "The method runs at program shutdown"
+      ],
+      "correct": 1,
+      "explanation": "A final method cannot be overridden in subclasses. This is used to prevent altering critical behavior (e.g., template method pattern).",
+      "domain": "Domain 2: OOP"
+    },
+    {
+      "id": "q22",
+      "question": "What is the output?\n```java\nString a = new String(\"test\");\nString b = new String(\"test\");\nSystem.out.println(a == b);\nSystem.out.println(a.equals(b));\n```",
+      "options": [
+        "true, true",
+        "false, true",
+        "true, false",
+        "false, false"
+      ],
+      "correct": 1,
+      "explanation": "== compares references: two new String objects are different references (false). equals() compares content: both contain \"test\" (true).",
+      "domain": "Domain 1: Language Fundamentals"
+    },
+    {
+      "id": "q23",
+      "question": "Which statement about interfaces in Java is FALSE?",
+      "options": [
+        "A class can implement multiple interfaces",
+        "Interfaces can have default methods since Java 8",
+        "Interfaces can have instance fields",
+        "Interfaces can have static methods"
+      ],
+      "correct": 2,
+      "explanation": "Interface fields are implicitly public static final (constants). Interfaces cannot have instance fields — that capability belongs to abstract classes.",
+      "domain": "Domain 2: OOP"
+    },
+    {
+      "id": "q24",
+      "question": "What is the JIT compiler's role?",
+      "options": [
+        "Compiles .java to .class files",
+        "Compiles frequently-executed bytecode to native machine code at runtime",
+        "Checks syntax before compilation",
+        "Links external libraries"
+      ],
+      "correct": 1,
+      "explanation": "The JIT (Just-In-Time) compiler identifies hot code paths during execution and compiles them from bytecode to native machine code for better performance.",
+      "domain": "Domain 1: Language Fundamentals"
+    },
+    {
+      "id": "q25",
+      "question": "What does 'composition over inheritance' mean in practice?",
+      "options": [
+        "Never use extends in Java",
+        "Prefer holding object references (has-a) over extending classes (is-a) for reuse",
+        "Always compose interfaces instead of classes",
+        "Use only static methods"
+      ],
+      "correct": 1,
+      "explanation": "Composition over inheritance means favoring 'has-a' relationships (delegating to contained objects) over 'is-a' relationships (extending), reducing tight coupling.",
+      "domain": "Domain 2: OOP"
+    },
+    {
+      "id": "q26",
+      "question": "Which is a valid method overloading?\n```java\nvoid process(int x) { }\n```",
+      "options": [
+        "int process(int x) { return x; }",
+        "void process(int x, int y) { }",
+        "void process(int y) { }",
+        "private void process(int x) { }"
+      ],
+      "correct": 1,
+      "explanation": "Overloading requires a different parameter list (type, count, or order). Option B has different parameter count. Options A, C, D have the same parameter list as the original.",
+      "domain": "Domain 2: OOP"
+    },
+    {
+      "id": "q27",
+      "question": "What is the scope of a variable declared inside a for loop?\n```java\nfor (int i = 0; i < 10; i++) { }\nSystem.out.println(i);\n```",
+      "options": [
+        "The variable is accessible after the loop",
+        "Compile error — i is not in scope outside the loop",
+        "i prints 10",
+        "i prints 9"
+      ],
+      "correct": 1,
+      "explanation": "A variable declared in a for loop header is scoped to the loop block. Accessing it outside causes a compile error.",
+      "domain": "Domain 1: Language Fundamentals"
+    },
+    {
+      "id": "q28",
+      "question": "When must you override `hashCode()`?",
+      "options": [
+        "Always — every class needs a custom hashCode",
+        "Whenever you override toString()",
+        "Whenever you override equals()",
+        "Only when using the class as a Map value"
+      ],
+      "correct": 2,
+      "explanation": "The contract: if a.equals(b) then a.hashCode() == b.hashCode(). Failing to maintain this breaks HashMap, HashSet, and similar collections.",
+      "domain": "Domain 2: OOP"
+    },
+    {
+      "id": "q29",
+      "question": "What does a `sealed` class (Java 17+) do?",
+      "options": [
+        "Prevents the class from being instantiated",
+        "Makes all fields final",
+        "Restricts which classes can extend it",
+        "Prevents the class from being imported"
+      ],
+      "correct": 2,
+      "explanation": "A sealed class uses 'permits' to declare exactly which classes can extend it, giving more control than final (no subclasses) or open (any subclass).",
+      "domain": "Domain 2: OOP"
+    },
+    {
+      "id": "q30",
+      "question": "What type of polymorphism is demonstrated here?\n```java\nShape s = new Circle();\ns.draw();\n```",
+      "options": [
+        "Compile-time polymorphism (overloading)",
+        "Runtime polymorphism (dynamic dispatch)",
+        "Parametric polymorphism (generics)",
+        "Ad-hoc polymorphism"
+      ],
+      "correct": 1,
+      "explanation": "The reference type is Shape but the actual object is Circle. The JVM determines which draw() to call at runtime based on the actual object type — this is dynamic dispatch.",
+      "domain": "Domain 2: OOP"
+    }
+  ]
+}

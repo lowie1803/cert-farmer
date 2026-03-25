@@ -1,0 +1,13 @@
+{
+  "id": "classes-objects",
+  "title": "Classes & Objects",
+  "icon": "🏗️",
+  "description": "Class declarations, fields, methods, constructors, this keyword",
+  "domain": "Domain 2: OOP",
+  "lessons": [
+    { "id": "classes-basics", "title": "Classes & Fields", "type": "notes" },
+    { "id": "classes-quiz", "title": "Classes Quiz", "type": "quiz" },
+    { "id": "constructors-methods", "title": "Constructors & Methods", "type": "notes" },
+    { "id": "methods-quiz", "title": "Methods Quiz", "type": "quiz" }
+  ]
+}

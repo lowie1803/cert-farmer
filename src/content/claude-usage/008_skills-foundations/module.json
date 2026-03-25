@@ -1,0 +1,13 @@
+{
+  "id": "skills-foundations",
+  "title": "Skills Foundations",
+  "icon": "🎯",
+  "description": "Understand what skills are, how they are discovered, and SKILL.md structure",
+  "domain": "Domain 2: Skills System",
+  "lessons": [
+    { "id": "what-are-skills", "title": "What Are Skills", "type": "notes" },
+    { "id": "skill-discovery", "title": "Skill Discovery", "type": "notes" },
+    { "id": "skill-md-structure", "title": "SKILL.md Structure", "type": "notes" },
+    { "id": "skills-foundations-quiz", "title": "Skills Foundations Quiz", "type": "quiz" }
+  ]
+}

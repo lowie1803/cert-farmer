@@ -1,0 +1,13 @@
+{
+  "id": "data-types-variables",
+  "title": "Data Types & Variables",
+  "icon": "📦",
+  "description": "Primitive types, reference types, var keyword, type inference",
+  "domain": "Domain 1: Language Fundamentals",
+  "lessons": [
+    { "id": "primitive-types", "title": "Primitive Types", "type": "notes" },
+    { "id": "primitives-quiz", "title": "Primitives Quiz", "type": "quiz" },
+    { "id": "reference-types", "title": "Reference Types & var", "type": "notes" },
+    { "id": "references-quiz", "title": "References Quiz", "type": "quiz" }
+  ]
+}

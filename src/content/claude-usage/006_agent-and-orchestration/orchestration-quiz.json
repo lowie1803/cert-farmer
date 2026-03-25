@@ -1,0 +1,76 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Which agent type should you use to understand an unfamiliar codebase area before making changes?",
+      "options": [
+        "Default (general-purpose)",
+        "Explore",
+        "Plan",
+        "claude-code-guide"
+      ],
+      "correct": 1,
+      "explanation": "The Explore agent type is designed for fast codebase exploration. It is the best choice when you need to understand code architecture or find patterns before making modifications."
+    },
+    {
+      "id": "q2",
+      "question": "When should an Agent be run in the foreground (not background)?",
+      "options": [
+        "When the task is long-running",
+        "When you need the result before proceeding to the next step",
+        "When multiple agents need to run at the same time",
+        "When the task is independent of other work"
+      ],
+      "correct": 1,
+      "explanation": "Foreground agents block until complete and should be used when you need their results before proceeding. Background agents are for independent work streams that don't affect subsequent steps."
+    },
+    {
+      "id": "q3",
+      "question": "You need to run `git status`, `git diff`, and `git log` to check repository state. What is the optimal approach?",
+      "options": [
+        "Run them sequentially with `&&` in a single Bash call",
+        "Run each in a separate sequential Bash call",
+        "Make three parallel Bash tool calls in one message",
+        "Use a single Agent to run all three commands"
+      ],
+      "correct": 2,
+      "explanation": "Since these three commands are independent (no result depends on another), they should be run as parallel Bash tool calls in a single message. This reduces three round trips to one."
+    },
+    {
+      "id": "q4",
+      "question": "In the Search-Read-Modify pattern, why must the steps be sequential?",
+      "options": [
+        "Sequential is always faster than parallel",
+        "Each step depends on the result of the previous step",
+        "The Edit tool requires all files to be closed first",
+        "Glob and Read cannot run in the same message"
+      ],
+      "correct": 1,
+      "explanation": "In Search-Read-Modify, you first Glob to find files (need result to know what to Read), then Read to understand the code (need content to know what to Edit). Each step depends on the previous result."
+    },
+    {
+      "id": "q5",
+      "question": "A task requires understanding three unrelated areas of a codebase. What is the best orchestration pattern?",
+      "options": [
+        "Read each area sequentially using the Read tool",
+        "Launch one Explore agent to examine all three areas",
+        "Launch three parallel Explore agents, one per area",
+        "Use Grep to search all three areas at once"
+      ],
+      "correct": 2,
+      "explanation": "Parallel Research pattern: launch multiple Explore agents for independent research areas. Since the three areas are unrelated, they can be explored simultaneously for maximum efficiency."
+    },
+    {
+      "id": "q6",
+      "question": "When should you use direct tools (Glob, Grep, Read) instead of an Agent?",
+      "options": [
+        "When the task involves more than 3 queries",
+        "When you need to cross-reference multiple files",
+        "When you need a simple directed search with 1-2 queries",
+        "When exploring unfamiliar code"
+      ],
+      "correct": 2,
+      "explanation": "Direct tools are more efficient for simple, directed operations (1-2 queries). The Agent tool adds overhead and should be reserved for complex tasks requiring more than 3 sequential queries or cross-referencing."
+    }
+  ]
+}

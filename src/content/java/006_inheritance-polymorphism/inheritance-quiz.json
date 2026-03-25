@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What happens if a subclass constructor does not explicitly call `super()`?",
+      "options": [
+        "Compile error in all cases",
+        "The compiler inserts a call to the parent's no-arg constructor",
+        "The parent constructor is skipped entirely",
+        "The subclass inherits the parent's constructor"
+      ],
+      "correct": 1,
+      "explanation": "If no explicit super() call is made, the compiler inserts super() (no-arg). This fails to compile only if the parent doesn't have an accessible no-arg constructor."
+    },
+    {
+      "id": "q2",
+      "question": "Which `Object` method must you override whenever you override `equals()`?",
+      "options": [
+        "toString()",
+        "clone()",
+        "hashCode()",
+        "finalize()"
+      ],
+      "correct": 2,
+      "explanation": "The contract states: if a.equals(b) is true, then a.hashCode() must equal b.hashCode(). Violating this breaks hash-based collections like HashMap and HashSet."
+    },
+    {
+      "id": "q3",
+      "question": "What does `final` on a class declaration mean?",
+      "options": [
+        "The class cannot have any methods",
+        "The class cannot be instantiated",
+        "The class cannot be extended (subclassed)",
+        "The class fields are all immutable"
+      ],
+      "correct": 2,
+      "explanation": "A final class cannot be subclassed. Examples include String and Integer. This is different from abstract (can't instantiate) or final fields (immutable)."
+    },
+    {
+      "id": "q4",
+      "question": "In which order are constructors executed when creating a subclass instance?",
+      "options": [
+        "Subclass constructor first, then parent",
+        "Parent constructor first, then subclass",
+        "Only the subclass constructor runs",
+        "The order is undefined by the JLS"
+      ],
+      "correct": 1,
+      "explanation": "Constructor execution always starts from the top of the hierarchy: Object -> Parent -> Subclass. The parent constructor completes before the subclass constructor body runs."
+    },
+    {
+      "id": "q5",
+      "question": "What is the result of declaring a field in a subclass with the same name as a parent field?",
+      "options": [
+        "The parent field is overridden",
+        "Compile error — duplicate field",
+        "The parent field is hidden (field hiding, not overriding)",
+        "The subclass field is ignored"
+      ],
+      "correct": 2,
+      "explanation": "Fields are never overridden in Java — they are hidden. The field accessed depends on the reference type, not the object type. This is different from method overriding."
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "id": "final-exam",
+  "title": "Final Exam",
+  "icon": "📋",
+  "description": "Comprehensive final exam covering all domains",
+  "category": "exam",
+  "domain": "Domain 4: Configuration & Workflows",
+  "lessons": [
+    { "id": "final-exam", "title": "Final Exam", "type": "exam", "timeLimit": 90, "passingScore": 80 }
+  ]
+}

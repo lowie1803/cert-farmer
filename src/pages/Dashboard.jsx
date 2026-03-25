@@ -2,11 +2,63 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useProgress } from '@hooks/useProgress';
 import { getCourse, getAllCourses } from '@data/courses';
-import glossary from '@data/glossary';
+import { getGlossary, hasGlossary } from '@data/glossaries';
 import ProgressRing from '@components/ProgressRing';
 
+function CourseSelector() {
+  const allCourses = getAllCourses();
+  const { calculateCourseProgress } = useProgress();
+
+  return (
+    <div className="p-4 md:p-8">
+      <div className="max-w-4xl mx-auto">
+        <div className="mb-8">
+          <h1 className="text-2xl md:text-3xl font-bold text-white mb-1">
+            Choose a Course
+          </h1>
+          <p className="text-slate-400">Select a certification track to start studying</p>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2">
+          {allCourses.map((course) => {
+            const progress = calculateCourseProgress(course);
+            return (
+              <Link
+                key={course.id}
+                to={`/course/${course.id}`}
+                className="card p-6 group hover:bg-slate-700 hover:border-amber-500/50 transition-all"
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex-1 min-w-0">
+                    <h2 className="text-xl font-bold text-white group-hover:text-amber-400 transition-colors">
+                      {course.title}
+                    </h2>
+                    <p className="text-sm text-slate-400 mt-1">{course.description}</p>
+                  </div>
+                  <ProgressRing progress={progress} size={56} />
+                </div>
+
+                <div className="flex items-center gap-4 text-sm text-slate-400">
+                  <span>{course.modules.length} modules</span>
+                  <span>{course.modules.reduce((sum, m) => sum + m.lessons.length, 0)} lessons</span>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Dashboard() {
-  const { courseId = 'ccna' } = useParams();
+  const { courseId } = useParams();
+
+  // No courseId → show course selector
+  if (!courseId) {
+    return <CourseSelector />;
+  }
+
   const { calculateCourseProgress, calculateModuleProgress, getCompletedCount, progress } = useProgress();
 
   const course = getCourse(courseId);
@@ -38,6 +90,8 @@ export default function Dashboard() {
   const progressColor = (pct) =>
     pct === 0 ? 'bg-slate-600' : pct < 100 ? 'bg-amber-500' : 'bg-green-500';
 
+  const showGlossary = hasGlossary(courseId);
+
   return (
     <div className="p-4 md:p-8">
       <div className="max-w-4xl mx-auto">
@@ -53,7 +107,7 @@ export default function Dashboard() {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
+        <div className={`grid ${showGlossary ? 'grid-cols-2 md:grid-cols-4' : 'grid-cols-3'} gap-3 mb-8`}>
           <div className="card p-4 text-center">
             <span className="text-2xl mb-1 block">📁</span>
             <div className="text-2xl font-bold text-white">{course.modules.length}</div>
@@ -72,16 +126,18 @@ export default function Dashboard() {
             <div className="text-xs text-slate-400">Completed</div>
           </div>
 
-          <Link
-            to="/glossary"
-            className="card p-4 text-center hover:border-amber-500/50 transition-all"
-          >
-            <span className="text-2xl mb-1 block">🇻🇳</span>
-            <div className="text-2xl font-bold text-white">
-              {Object.keys(glossary).length}
-            </div>
-            <div className="text-xs text-slate-400">Glossary</div>
-          </Link>
+          {showGlossary && (
+            <Link
+              to={`/course/${courseId}/glossary`}
+              className="card p-4 text-center hover:border-amber-500/50 transition-all"
+            >
+              <span className="text-2xl mb-1 block">🇻🇳</span>
+              <div className="text-2xl font-bold text-white">
+                {Object.keys(getGlossary(courseId)).length}
+              </div>
+              <div className="text-xs text-slate-400">Glossary</div>
+            </Link>
+          )}
         </div>
 
         {/* Continue Studying */}

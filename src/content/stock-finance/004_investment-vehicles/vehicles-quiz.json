@@ -1,0 +1,32 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What is the main advantage of index investing over stock picking?",
+      "options": ["Higher potential returns", "Lower cost and better long-term performance", "More exciting", "Guaranteed profits"],
+      "correct": 1,
+      "explanation": "Over 90% of active fund managers underperform index funds over 15+ years, largely due to higher fees. Index funds offer broad diversification at minimal cost."
+    },
+    {
+      "id": "q2",
+      "question": "What is an expense ratio?",
+      "options": ["The cost to open a brokerage account", "The annual fee charged by a fund as a % of assets", "The commission on each trade", "The tax rate on fund gains"],
+      "correct": 1,
+      "explanation": "The expense ratio is the annual fee a fund charges, expressed as a percentage of your investment. Lower is better — 0.03% vs 1.00% saves thousands over decades."
+    },
+    {
+      "id": "q3",
+      "question": "How does an ETF differ from a mutual fund?",
+      "options": ["ETFs are always riskier", "ETFs trade on exchanges in real-time; mutual funds trade at end-of-day NAV", "Mutual funds always have lower fees", "ETFs cannot hold bonds"],
+      "correct": 1,
+      "explanation": "ETFs trade throughout the day on exchanges like stocks, while mutual fund shares are bought/sold at the end-of-day NAV price."
+    },
+    {
+      "id": "q4",
+      "question": "What is the 'three-fund portfolio'?",
+      "options": ["Three individual stocks", "US stocks + international stocks + bonds (using index funds)", "Three actively managed mutual funds", "Three cryptocurrency tokens"],
+      "correct": 1,
+      "explanation": "The three-fund portfolio consists of a US stock index fund, an international stock index fund, and a bond index fund — simple, diversified, and low-cost."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "agent-and-orchestration",
+  "title": "Agent & Orchestration",
+  "icon": "🔄",
+  "description": "Use the Agent tool and parallel tool calling for complex orchestration",
+  "domain": "Domain 1: Core Tools",
+  "lessons": [
+    { "id": "agent-tool", "title": "The Agent Tool", "type": "notes" },
+    { "id": "parallel-tool-calling", "title": "Parallel Tool Calling", "type": "notes" },
+    { "id": "orchestration-patterns", "title": "Orchestration Patterns", "type": "notes" },
+    { "id": "orchestration-quiz", "title": "Orchestration Quiz", "type": "quiz" }
+  ]
+}

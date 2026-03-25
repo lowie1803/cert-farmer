@@ -1,0 +1,13 @@
+{
+  "id": "lambda-streams",
+  "title": "Lambda & Streams",
+  "icon": "🌊",
+  "description": "Lambda expressions, method references, Stream API, collectors",
+  "domain": "Domain 4: Modern Java",
+  "lessons": [
+    { "id": "lambda-expressions", "title": "Lambda Expressions", "type": "notes" },
+    { "id": "lambda-quiz", "title": "Lambda Quiz", "type": "quiz" },
+    { "id": "streams-api", "title": "Streams API", "type": "notes" },
+    { "id": "streams-quiz", "title": "Streams Quiz", "type": "quiz" }
+  ]
+}

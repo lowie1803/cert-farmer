@@ -1,0 +1,14 @@
+{
+  "id": "getting-started",
+  "title": "Getting Started with Claude Code",
+  "icon": "🚀",
+  "description": "Install, authenticate, and configure Claude Code for your first coding session",
+  "domain": "Domain 1: Core Tools",
+  "lessons": [
+    { "id": "installation", "title": "Installation", "type": "notes" },
+    { "id": "authentication", "title": "Authentication", "type": "notes" },
+    { "id": "initial-configuration", "title": "Initial Configuration", "type": "notes" },
+    { "id": "first-session", "title": "Your First Session", "type": "notes" },
+    { "id": "getting-started-quiz", "title": "Getting Started Quiz", "type": "quiz" }
+  ]
+}

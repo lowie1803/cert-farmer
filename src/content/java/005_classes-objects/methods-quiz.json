@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What is the output?\n```java\npublic class Demo {\n    static void print(int x) { System.out.print(\"int\"); }\n    static void print(long x) { System.out.print(\"long\"); }\n    public static void main(String[] args) { print(5); }\n}\n```",
+      "options": [
+        "long",
+        "int",
+        "Compile error — ambiguous call",
+        "Runtime error"
+      ],
+      "correct": 1,
+      "explanation": "The literal 5 is an int, so the compiler picks the exact match print(int). Widening to long would only happen if no int overload existed."
+    },
+    {
+      "id": "q2",
+      "question": "Which statement about constructor chaining with `this()` is correct?",
+      "options": [
+        "this() can appear anywhere in the constructor body",
+        "this() must be the first statement in the constructor",
+        "this() can be combined with super() in the same constructor",
+        "this() is optional — the compiler always inserts it"
+      ],
+      "correct": 1,
+      "explanation": "A call to this() must be the first statement in a constructor. You cannot have both this() and super() in the same constructor."
+    },
+    {
+      "id": "q3",
+      "question": "What is wrong with this method?\n```java\npublic void process(String... names, int count) { }\n```",
+      "options": [
+        "Varargs cannot be used with other parameters",
+        "Varargs parameter must be the last parameter",
+        "String... is not valid syntax",
+        "Nothing — this compiles fine"
+      ],
+      "correct": 1,
+      "explanation": "A varargs parameter must be the last parameter in the method signature. The correct form would be process(int count, String... names)."
+    },
+    {
+      "id": "q4",
+      "question": "Can a static method access an instance field directly?",
+      "options": [
+        "Yes — all methods can access all fields",
+        "Yes — but only if the field is public",
+        "No — static methods have no `this` reference to resolve instance fields",
+        "No — static methods can only call other static methods"
+      ],
+      "correct": 2,
+      "explanation": "Static methods belong to the class and have no `this` reference. They can only access instance fields through an explicit object reference."
+    },
+    {
+      "id": "q5",
+      "question": "What does the compiler generate if you write NO constructor in a class?",
+      "options": [
+        "A private no-arg constructor",
+        "A public no-arg constructor that calls super()",
+        "Nothing — the class cannot be instantiated",
+        "A constructor matching the parent class constructors"
+      ],
+      "correct": 1,
+      "explanation": "The compiler generates a default no-arg constructor with the same access as the class. It calls super() to invoke the parent's no-arg constructor."
+    }
+  ]
+}

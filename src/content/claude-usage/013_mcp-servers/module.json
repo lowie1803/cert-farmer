@@ -1,0 +1,13 @@
+{
+  "id": "mcp-servers",
+  "title": "MCP Servers",
+  "icon": "🔌",
+  "description": "Understand, configure, and use MCP servers and their tools",
+  "domain": "Domain 3: Hooks & Extensibility",
+  "lessons": [
+    { "id": "mcp-overview", "title": "MCP Overview", "type": "notes" },
+    { "id": "configuring-mcp", "title": "Configuring MCP", "type": "notes" },
+    { "id": "using-mcp-tools", "title": "Using MCP Tools", "type": "notes" },
+    { "id": "mcp-quiz", "title": "MCP Quiz", "type": "quiz" }
+  ]
+}

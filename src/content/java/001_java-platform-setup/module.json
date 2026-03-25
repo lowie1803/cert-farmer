@@ -1,0 +1,12 @@
+{
+  "id": "java-platform-setup",
+  "title": "Java Platform & Setup",
+  "icon": "☕",
+  "description": "JDK 21+, JVM architecture, compilation and execution flow",
+  "domain": "Domain 1: Language Fundamentals",
+  "lessons": [
+    { "id": "jvm-jdk-jre", "title": "JVM, JDK & JRE", "type": "notes" },
+    { "id": "java-compilation", "title": "Compilation & Execution", "type": "notes" },
+    { "id": "setup-quiz", "title": "Platform & Setup Quiz", "type": "quiz" }
+  ]
+}

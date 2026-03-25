@@ -1,0 +1,76 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Which CLI tool does Claude Code use under the hood to create GitHub pull requests?",
+      "options": [
+        "git pr create",
+        "hub pull-request",
+        "gh pr create",
+        "github-cli create-pr"
+      ],
+      "correct": 2,
+      "explanation": "Claude Code uses the GitHub CLI (gh) to interact with GitHub. The command gh pr create handles pushing and opening pull requests."
+    },
+    {
+      "id": "q2",
+      "question": "When reviewing a PR, which command does Claude use to see the code changes?",
+      "options": [
+        "git show PR#42",
+        "gh pr diff 42",
+        "git diff --pr 42",
+        "gh pr read 42"
+      ],
+      "correct": 1,
+      "explanation": "gh pr diff <number> fetches the full diff of a pull request, which Claude then analyzes for issues."
+    },
+    {
+      "id": "q3",
+      "question": "What is the FIRST thing you should do when reporting a bug to Claude Code?",
+      "options": [
+        "Ask Claude to fix it immediately",
+        "Clear the conversation history",
+        "Provide a clear description with expected vs actual behavior",
+        "Run git bisect to find the breaking commit"
+      ],
+      "correct": 2,
+      "explanation": "Starting with a clear description of expected vs actual behavior, reproduction steps, and error messages gives Claude the context needed to investigate efficiently."
+    },
+    {
+      "id": "q4",
+      "question": "Before starting a multi-file refactor, what should you ask Claude to do first?",
+      "options": [
+        "Create a new branch and commit",
+        "List all files that would be affected by the change",
+        "Run the test suite",
+        "Update the CLAUDE.md with refactoring instructions"
+      ],
+      "correct": 1,
+      "explanation": "Planning before executing is critical for refactors. Ask Claude to identify all affected files so you can review the scope before any changes are made."
+    },
+    {
+      "id": "q5",
+      "question": "After a codebase-wide rename, which verification steps should you run?",
+      "options": [
+        "Only git diff to see the changes",
+        "Build, lint, and test suite",
+        "Only the test suite",
+        "Only the linter"
+      ],
+      "correct": 1,
+      "explanation": "After a refactor, run the full verification pipeline: build (catches broken imports), lint (catches unused variables), and tests (catches behavioral regressions)."
+    },
+    {
+      "id": "q6",
+      "question": "What does Claude examine when you paste a stack trace?",
+      "options": [
+        "Only the last line of the trace",
+        "Only the first file mentioned",
+        "The files at the top of the stack, tracing from error origin through propagation",
+        "The package.json for dependency issues"
+      ],
+      "correct": 2,
+      "explanation": "Claude reads the files referenced in the stack trace starting from the top (error origin), traces the propagation path, and identifies where the root cause is versus where the error surfaces."
+    }
+  ]
+}

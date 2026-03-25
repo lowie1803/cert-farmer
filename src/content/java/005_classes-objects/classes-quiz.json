@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What happens if you declare a field as `static final` in a class?",
+      "options": [
+        "It becomes an instance constant unique to each object",
+        "It becomes a class-level constant shared by all instances",
+        "It can only be accessed inside the class",
+        "It must be initialized in a constructor"
+      ],
+      "correct": 1,
+      "explanation": "A static final field is a class-level constant — one copy shared across all instances. By convention, it's named in UPPER_SNAKE_CASE."
+    },
+    {
+      "id": "q2",
+      "question": "Which statement about the `this` keyword is FALSE?",
+      "options": [
+        "It can be used to call another constructor in the same class",
+        "It refers to the current object instance",
+        "It can be used in a static method",
+        "It can disambiguate field names from parameter names"
+      ],
+      "correct": 2,
+      "explanation": "The `this` keyword cannot be used in static methods because static methods belong to the class, not to any instance."
+    },
+    {
+      "id": "q3",
+      "question": "What is the result of `new Account() == new Account()` where Account has a no-arg constructor?",
+      "options": [
+        "true — both are Account objects",
+        "false — == compares references, and each `new` creates a different object",
+        "Compile error — cannot use == with objects",
+        "Depends on the equals() implementation"
+      ],
+      "correct": 1,
+      "explanation": "The == operator compares object references. Each `new` creates a distinct object on the heap, so two different references are never ==."
+    },
+    {
+      "id": "q4",
+      "question": "Which nested class type has an implicit reference to its enclosing instance?",
+      "options": [
+        "Static nested class",
+        "Inner class (non-static member class)",
+        "Neither — nested classes never reference enclosing instances",
+        "Both — all nested classes hold a reference"
+      ],
+      "correct": 1,
+      "explanation": "A non-static inner class holds an implicit reference to the enclosing object (Outer.this), while a static nested class does not."
+    },
+    {
+      "id": "q5",
+      "question": "What happens if you don't initialize a `final` instance field?",
+      "options": [
+        "It gets a default value (0, null, false)",
+        "Compile error — final fields must be initialized in declaration or constructor",
+        "It throws a NullPointerException at runtime",
+        "The JVM initializes it automatically"
+      ],
+      "correct": 1,
+      "explanation": "A final instance field must be definitely assigned by the end of every constructor. If not, the compiler reports an error."
+    }
+  ]
+}

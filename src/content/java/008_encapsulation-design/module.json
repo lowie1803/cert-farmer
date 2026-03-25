@@ -1,0 +1,13 @@
+{
+  "id": "encapsulation-design",
+  "title": "Encapsulation & Design Principles",
+  "icon": "🔒",
+  "description": "Access modifiers, getters/setters, SOLID basics, composition vs inheritance",
+  "domain": "Domain 2: OOP",
+  "lessons": [
+    { "id": "encapsulation", "title": "Encapsulation", "type": "notes" },
+    { "id": "encapsulation-quiz", "title": "Encapsulation Quiz", "type": "quiz" },
+    { "id": "design-principles", "title": "Design Principles", "type": "notes" },
+    { "id": "design-quiz", "title": "Design Principles Quiz", "type": "quiz" }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What does the Single Responsibility Principle state?",
+      "options": [
+        "A class should have only one method",
+        "A class should have only one reason to change",
+        "A class should only be used by one other class",
+        "A class should implement only one interface"
+      ],
+      "correct": 1,
+      "explanation": "SRP means a class should have only one reason to change — one responsibility. If a class handles both persistence and email sending, it has two reasons to change."
+    },
+    {
+      "id": "q2",
+      "question": "What does 'composition over inheritance' mean?",
+      "options": [
+        "Never use inheritance in Java",
+        "Prefer holding references to objects (has-a) over extending classes (is-a) for code reuse",
+        "Compose methods from smaller methods",
+        "Use multiple inheritance via interfaces"
+      ],
+      "correct": 1,
+      "explanation": "Composition over inheritance means preferring 'has-a' relationships (holding object references) over 'is-a' (extends). This reduces coupling and increases flexibility."
+    },
+    {
+      "id": "q3",
+      "question": "Which SOLID principle is violated?\n```java\ninterface Worker {\n    void code();\n    void testCode();\n    void attendMeeting();\n    void serveCoffee();\n}\n```",
+      "options": [
+        "Single Responsibility",
+        "Open/Closed",
+        "Interface Segregation",
+        "Dependency Inversion"
+      ],
+      "correct": 2,
+      "explanation": "Interface Segregation Principle: clients shouldn't depend on methods they don't use. A Developer doesn't need serveCoffee(). Split into smaller focused interfaces."
+    },
+    {
+      "id": "q4",
+      "question": "What does the Law of Demeter discourage?",
+      "options": [
+        "Using inheritance",
+        "Chaining method calls on returned objects (train wrecks like a.getB().getC().doX())",
+        "Having too many classes",
+        "Using static methods"
+      ],
+      "correct": 1,
+      "explanation": "The Law of Demeter (principle of least knowledge) says don't reach through objects to access their internals. Method chains like a.getB().getC() create tight coupling."
+    },
+    {
+      "id": "q5",
+      "question": "High cohesion means:",
+      "options": [
+        "A class depends on many other classes",
+        "A class has many public methods",
+        "All methods and fields in a class relate to a single, focused purpose",
+        "A class is inherited by many subclasses"
+      ],
+      "correct": 2,
+      "explanation": "High cohesion means a class's methods and fields are closely related and focused on a single responsibility. Low cohesion means a class does many unrelated things."
+    }
+  ]
+}

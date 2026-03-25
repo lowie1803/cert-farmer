@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What is the output?\n```java\nclass A { String name() { return \"A\"; } }\nclass B extends A { String name() { return \"B\"; } }\nA obj = new B();\nSystem.out.println(obj.name());\n```",
+      "options": [
+        "A",
+        "B",
+        "Compile error",
+        "Runtime error"
+      ],
+      "correct": 1,
+      "explanation": "Dynamic method dispatch calls the overridden method based on the actual object type (B), not the reference type (A). This is runtime polymorphism."
+    },
+    {
+      "id": "q2",
+      "question": "Which is an example of compile-time polymorphism?",
+      "options": [
+        "Method overriding with @Override",
+        "Method overloading with different parameter types",
+        "Upcasting a subclass to its parent type",
+        "Dynamic method dispatch"
+      ],
+      "correct": 1,
+      "explanation": "Method overloading is resolved at compile time based on the method signature. The compiler determines which overloaded version to call."
+    },
+    {
+      "id": "q3",
+      "question": "What happens when you downcast incorrectly at runtime?\n```java\nShape s = new Circle();\nRectangle r = (Rectangle) s;\n```",
+      "options": [
+        "Compile error",
+        "r becomes null",
+        "ClassCastException at runtime",
+        "The cast succeeds with default values"
+      ],
+      "correct": 2,
+      "explanation": "The compiler allows the cast (both are Shape subtypes), but at runtime the JVM sees the actual object is a Circle, not a Rectangle, and throws ClassCastException."
+    },
+    {
+      "id": "q4",
+      "question": "An overriding method can have which return type compared to the parent method?",
+      "options": [
+        "Only the exact same type",
+        "The same type or a subtype (covariant return)",
+        "Any type — return types don't matter for overriding",
+        "The same type or a supertype"
+      ],
+      "correct": 1,
+      "explanation": "Java supports covariant return types: an overriding method can return a subtype of the declared return type. For example, overriding a method returning Animal can return Dog."
+    },
+    {
+      "id": "q5",
+      "question": "What does the `@Override` annotation do?",
+      "options": [
+        "Makes the method run faster at runtime",
+        "Causes a compile error if the method doesn't actually override a superclass method",
+        "Prevents the method from being overridden further",
+        "Automatically calls super.method() before executing"
+      ],
+      "correct": 1,
+      "explanation": "@Override is a compile-time check. If the annotated method doesn't actually override (e.g., wrong signature), the compiler reports an error, catching subtle bugs."
+    }
+  ]
+}

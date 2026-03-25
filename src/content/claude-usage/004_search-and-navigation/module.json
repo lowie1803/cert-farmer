@@ -1,0 +1,13 @@
+{
+  "id": "search-and-navigation",
+  "title": "Search & Navigation: Glob and Grep",
+  "icon": "🔍",
+  "description": "Find files and content efficiently with Glob and Grep tools",
+  "domain": "Domain 1: Core Tools",
+  "lessons": [
+    { "id": "glob-tool", "title": "The Glob Tool", "type": "notes" },
+    { "id": "grep-tool", "title": "The Grep Tool", "type": "notes" },
+    { "id": "search-strategies", "title": "Search Strategies", "type": "notes" },
+    { "id": "search-quiz", "title": "Search & Navigation Quiz", "type": "quiz" }
+  ]
+}

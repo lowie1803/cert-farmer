@@ -1,0 +1,76 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Which SDKs are officially available for building MCP servers?",
+      "options": [
+        "Java and C#",
+        "TypeScript and Python",
+        "Rust and Go",
+        "Ruby and PHP"
+      ],
+      "correct": 1,
+      "explanation": "Official MCP server SDKs are available in TypeScript (@modelcontextprotocol/sdk) and Python (mcp package)."
+    },
+    {
+      "id": "q2",
+      "question": "How should MCP tool parameters be defined?",
+      "options": [
+        "Using XML Schema definitions",
+        "Using plain text descriptions",
+        "Using JSON Schema with types and descriptions",
+        "Using TypeScript interfaces only"
+      ],
+      "correct": 2,
+      "explanation": "MCP tools define their parameters using JSON Schema, specifying types, descriptions, enums, and constraints for each parameter."
+    },
+    {
+      "id": "q3",
+      "question": "How do skills and MCP servers work together?",
+      "options": [
+        "Skills replace MCP servers entirely",
+        "Skills provide instructions (what to do), MCP provides tools (how to do it)",
+        "MCP servers generate skills automatically",
+        "They cannot be used together"
+      ],
+      "correct": 1,
+      "explanation": "Skills and MCP complement each other: skills provide instructions and context via SKILL.md, while MCP servers provide the actual tools to execute operations."
+    },
+    {
+      "id": "q4",
+      "question": "In a stdio MCP server, where should log messages be written?",
+      "options": [
+        "To stdout using console.log",
+        "To stderr using console.error",
+        "To a log file only",
+        "Logging is not supported in stdio servers"
+      ],
+      "correct": 1,
+      "explanation": "In stdio MCP servers, stdout is reserved for MCP protocol messages. All logging must go to stderr (console.error in Node.js) to avoid corrupting the protocol stream."
+    },
+    {
+      "id": "q5",
+      "question": "What is an anti-pattern when using MCP servers?",
+      "options": [
+        "Using multiple focused servers for different domains",
+        "Implementing input validation in tool handlers",
+        "Using MCP for operations that Bash can handle directly",
+        "Storing authentication tokens in environment variables"
+      ],
+      "correct": 2,
+      "explanation": "Using MCP for simple operations that built-in tools like Bash can handle directly adds unnecessary complexity and latency. MCP should be used for integrations that built-in tools cannot achieve."
+    },
+    {
+      "id": "q6",
+      "question": "How should shared MCP servers be configured for a team?",
+      "options": [
+        "Each developer configures servers in their global settings",
+        "In .claude/settings.json committed to the repository",
+        "In CLAUDE.md as text instructions",
+        "In a separate mcp.config.js file"
+      ],
+      "correct": 1,
+      "explanation": "Shared MCP servers should be configured in .claude/settings.json at the project level and committed to the repository, so every team member gets the same tools automatically."
+    }
+  ]
+}

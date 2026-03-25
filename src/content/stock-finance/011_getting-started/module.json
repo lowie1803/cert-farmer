@@ -1,0 +1,29 @@
+{
+  "id": "getting-started",
+  "title": "Getting Started: Practical Guide",
+  "icon": "🚀",
+  "description": "Opening a brokerage account, your first trade, and common mistakes",
+  "domain": "Part 4: Strategy & Practice",
+  "lessons": [
+    {
+      "id": "choosing-a-broker",
+      "title": "Choosing a Broker",
+      "type": "notes"
+    },
+    {
+      "id": "your-first-trade",
+      "title": "Your First Trade",
+      "type": "notes"
+    },
+    {
+      "id": "common-mistakes",
+      "title": "Common Beginner Mistakes",
+      "type": "notes"
+    },
+    {
+      "id": "getting-started-quiz",
+      "title": "Getting Started Quiz",
+      "type": "quiz"
+    }
+  ]
+}

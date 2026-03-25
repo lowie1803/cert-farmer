@@ -1,0 +1,32 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "A stock trades at $200 with EPS of $10. What is its P/E ratio?",
+      "options": ["10", "20", "2000", "0.05"],
+      "correct": 1,
+      "explanation": "P/E = Price ÷ EPS = $200 ÷ $10 = 20. This means investors pay $20 for every $1 of earnings."
+    },
+    {
+      "id": "q2",
+      "question": "A company with a P/B ratio below 1 is:",
+      "options": ["Always a great buy", "Trading below its net asset value", "About to go bankrupt", "Overvalued by the market"],
+      "correct": 1,
+      "explanation": "P/B < 1 means the stock price is below the company's book value (assets minus liabilities). It could indicate undervaluation, but may also signal underlying problems."
+    },
+    {
+      "id": "q3",
+      "question": "Which ratio measures how efficiently a company uses shareholders' money to generate profit?",
+      "options": ["P/E ratio", "Debt-to-Equity", "Return on Equity (ROE)", "Dividend Yield"],
+      "correct": 2,
+      "explanation": "ROE = Net Income ÷ Shareholders' Equity. It shows how much profit the company generates for each dollar of equity — a measure of management efficiency."
+    },
+    {
+      "id": "q4",
+      "question": "Why should you compare financial ratios within the same industry?",
+      "options": ["It's required by the SEC", "Different industries have very different normal ranges", "All industries have the same ratios", "It makes the math easier"],
+      "correct": 1,
+      "explanation": "Industries have vastly different typical ratios. A P/E of 30 is normal for tech but high for utilities. Comparing across industries gives misleading results."
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Where does a String object created with `new String(\"hello\")` reside?",
+      "options": [
+        "String pool only",
+        "Stack only",
+        "Heap (new object), plus \"hello\" in the string pool",
+        "Metaspace"
+      ],
+      "correct": 2,
+      "explanation": "Using `new String()` always creates a new object on the heap. The literal \"hello\" also exists in the string pool. The two are separate objects, which is why == comparison between them returns false."
+    },
+    {
+      "id": "q2",
+      "question": "Which `var` declaration is INVALID?",
+      "options": [
+        "var list = new ArrayList<String>();",
+        "var count = 0;",
+        "var x;",
+        "var name = \"Alice\";"
+      ],
+      "correct": 2,
+      "explanation": "`var x;` is invalid because var requires an initializer on the right-hand side so the compiler can infer the type. Without initialization, type inference is impossible."
+    },
+    {
+      "id": "q3",
+      "question": "What does `\"hello\".concat(\" world\")` do to the original String?",
+      "options": [
+        "Modifies it in place to \"hello world\"",
+        "Nothing — it returns a new String; the original is unchanged",
+        "Throws UnsupportedOperationException",
+        "Appends to the string pool entry"
+      ],
+      "correct": 1,
+      "explanation": "Strings are immutable in Java. All String methods that appear to modify content actually return a new String object. The original remains unchanged."
+    },
+    {
+      "id": "q4",
+      "question": "How does Java pass object references to methods?",
+      "options": [
+        "Pass by reference — the method can reassign the caller's variable",
+        "Pass by value of the reference — the method gets a copy of the pointer",
+        "Pass by copy — the entire object is cloned",
+        "It depends on whether the object is mutable or immutable"
+      ],
+      "correct": 1,
+      "explanation": "Java is always pass-by-value. For objects, the value being passed is a copy of the reference (pointer). The method can modify the object through the reference, but cannot make the caller's variable point to a different object."
+    },
+    {
+      "id": "q5",
+      "question": "Which is the recommended way to handle a method that might return no value?",
+      "options": [
+        "Return null and check with if (result != null)",
+        "Return Optional<T> and use orElse() or ifPresent()",
+        "Throw an exception when no value is found",
+        "Return a default value of the type"
+      ],
+      "correct": 1,
+      "explanation": "Optional<T> (Java 8+) explicitly signals that a value may be absent, making the code self-documenting and reducing NullPointerException risks. It provides methods like orElse(), map(), and ifPresent() for safe handling."
+    }
+  ]
+}

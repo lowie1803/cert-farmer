@@ -1,0 +1,20 @@
+{
+  "id": "stock-finance",
+  "title": "Stock Market & Finance",
+  "description": "Introduction to investing and the stock market",
+  "version": "1.0",
+  "modules": [
+    "001_what-is-the-stock-market",
+    "002_how-exchanges-work",
+    "003_reading-stock-data",
+    "004_investment-vehicles",
+    "005_fundamental-analysis",
+    "006_midterm-1",
+    "007_technical-analysis",
+    "008_building-a-portfolio",
+    "009_risk-management",
+    "010_investing-strategies",
+    "011_getting-started",
+    "012_final-assessment"
+  ]
+}

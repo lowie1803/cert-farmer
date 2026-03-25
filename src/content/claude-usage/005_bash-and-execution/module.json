@@ -1,0 +1,13 @@
+{
+  "id": "bash-and-execution",
+  "title": "Bash & Command Execution",
+  "icon": "⚡",
+  "description": "Execute commands safely with the Bash tool, including git operations",
+  "domain": "Domain 1: Core Tools",
+  "lessons": [
+    { "id": "bash-fundamentals", "title": "Bash Fundamentals", "type": "notes" },
+    { "id": "bash-safety", "title": "Bash Safety", "type": "notes" },
+    { "id": "git-operations", "title": "Git Operations", "type": "notes" },
+    { "id": "bash-quiz", "title": "Bash & Execution Quiz", "type": "quiz" }
+  ]
+}

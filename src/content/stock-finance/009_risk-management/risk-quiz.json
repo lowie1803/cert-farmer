@@ -1,0 +1,32 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Which type of risk CANNOT be eliminated through diversification?",
+      "options": ["Company risk", "Market risk (systematic)", "Sector risk", "Concentration risk"],
+      "correct": 1,
+      "explanation": "Market (systematic) risk affects the entire market and cannot be diversified away. You can only manage it through asset allocation and time horizon."
+    },
+    {
+      "id": "q2",
+      "question": "A trailing stop loss of 10% on a stock that rises from $50 to $80 will trigger a sell at:",
+      "options": ["$45", "$50", "$70", "$72"],
+      "correct": 3,
+      "explanation": "The trailing stop follows the highest price. At $80, a 10% trailing stop = $80 × 0.90 = $72. It would trigger if the stock drops from $80 to $72."
+    },
+    {
+      "id": "q3",
+      "question": "Inflation risk is most dangerous for:",
+      "options": ["Growth stocks", "Cash and low-yield bonds", "Real estate", "Commodities"],
+      "correct": 1,
+      "explanation": "Cash and low-yield bonds are most vulnerable to inflation risk because their returns may not keep up with rising prices, causing a loss of purchasing power."
+    },
+    {
+      "id": "q4",
+      "question": "The '1-2% rule' in position sizing means:",
+      "options": ["Only invest 1-2% of your income", "Risk no more than 1-2% of your total portfolio on one trade", "Keep 1-2% in cash", "Expect 1-2% returns per month"],
+      "correct": 1,
+      "explanation": "The 1-2% rule means risking no more than 1-2% of your total portfolio value on any single position, so multiple losses won't devastate your portfolio."
+    }
+  ]
+}

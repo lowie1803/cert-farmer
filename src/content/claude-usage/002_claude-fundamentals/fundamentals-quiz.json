@@ -1,0 +1,76 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What are the three phases of Claude Code's agentic loop?",
+      "options": [
+        "Read, Think, Act",
+        "Input, Process, Output",
+        "Parse, Compile, Execute",
+        "Fetch, Decode, Store"
+      ],
+      "correct": 0,
+      "explanation": "Claude Code operates on a continuous Read-Think-Act loop: it reads input or tool results, thinks about what to do next, and either responds with text or invokes a tool."
+    },
+    {
+      "id": "q2",
+      "question": "When a tool call fails (e.g., file not found), what does Claude Code do?",
+      "options": [
+        "Immediately stops and reports the error to the user",
+        "Retries the exact same tool call up to three times",
+        "Treats the error as information and tries a different approach",
+        "Asks the user for the correct file path"
+      ],
+      "correct": 2,
+      "explanation": "Claude Code practices graceful recovery — errors are treated as information, not stop conditions. It adapts its approach based on the error details."
+    },
+    {
+      "id": "q3",
+      "question": "Which CLAUDE.md location has the HIGHEST priority when instructions conflict?",
+      "options": [
+        "~/.claude/CLAUDE.md (user-global)",
+        "CLAUDE.md in the project root",
+        ".claude/CLAUDE.md in the project",
+        "CLAUDE.md in a subdirectory"
+      ],
+      "correct": 3,
+      "explanation": "More specific CLAUDE.md files override more general ones. Subdirectory files have the highest priority for their scope, followed by project root, then user-global."
+    },
+    {
+      "id": "q4",
+      "question": "What happens when Claude Code's context window fills up during a long conversation?",
+      "options": [
+        "The conversation ends and must be restarted",
+        "Older messages are automatically compressed into summaries",
+        "Claude stops using tools to save space",
+        "The user is prompted to clear the history"
+      ],
+      "correct": 1,
+      "explanation": "Automatic context compression summarizes older parts of the conversation, replacing detailed messages with summaries while keeping recent messages in full detail."
+    },
+    {
+      "id": "q5",
+      "question": "Where is Claude Code's file-based memory system stored?",
+      "options": [
+        "In the project's .git/ directory",
+        "In the project's node_modules/",
+        "In ~/.claude/projects/",
+        "In the project's CLAUDE.md file"
+      ],
+      "correct": 2,
+      "explanation": "The memory system stores persistent, per-project knowledge in ~/.claude/projects/. This is separate from CLAUDE.md, which lives in the project repository itself."
+    },
+    {
+      "id": "q6",
+      "question": "Which of the following should NOT be put in a CLAUDE.md file?",
+      "options": [
+        "Build and test commands",
+        "Tech stack and framework versions",
+        "API keys and secret credentials",
+        "Code style rules and naming conventions"
+      ],
+      "correct": 2,
+      "explanation": "CLAUDE.md files are often committed to version control and shared with the team. Secrets and credentials must never be stored in them."
+    }
+  ]
+}

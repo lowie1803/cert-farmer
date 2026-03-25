@@ -1,30 +1,34 @@
 import React from 'react';
-import glossary from '@data/glossary';
+import { getGlossary } from '@data/glossaries';
 
 /**
- * Sorted terms by length (longest first) for accurate matching
+ * Per-course cache: { courseId: { sortedTerms, regex, glossary } }
  */
-const sortedTerms = Object.keys(glossary).sort((a, b) => b.length - a.length);
+const cache = {};
 
-/**
- * Create regex pattern for all glossary terms
- */
-const createTermPattern = () => {
-  if (sortedTerms.length === 0) return null;
-  
-  const pattern = sortedTerms
-    .map(term => term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
-    .join('|');
-  
-  return new RegExp(`\\b(${pattern})\\b`, 'gi');
-};
+function getCache(courseId) {
+  if (cache[courseId]) return cache[courseId];
 
-const termRegex = createTermPattern();
+  const glossary = getGlossary(courseId);
+  const sortedTerms = Object.keys(glossary).sort((a, b) => b.length - a.length);
+
+  let regex = null;
+  if (sortedTerms.length > 0) {
+    const pattern = sortedTerms
+      .map(term => term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+      .join('|');
+    regex = new RegExp(`\\b(${pattern})\\b`, 'gi');
+  }
+
+  cache[courseId] = { sortedTerms, regex, glossary };
+  return cache[courseId];
+}
 
 /**
  * Find glossary entry case-insensitively
  */
-export const findGlossaryEntry = (term) => {
+export const findGlossaryEntry = (courseId, term) => {
+  const { glossary } = getCache(courseId);
   const key = Object.keys(glossary).find(
     k => k.toLowerCase() === term.toLowerCase()
   );
@@ -34,7 +38,8 @@ export const findGlossaryEntry = (term) => {
 /**
  * Check if a term exists in the glossary
  */
-export const isGlossaryTerm = (term) => {
+export const isGlossaryTerm = (courseId, term) => {
+  const { glossary } = getCache(courseId);
   return Object.keys(glossary).some(
     k => k.toLowerCase() === term.toLowerCase()
   );
@@ -43,7 +48,8 @@ export const isGlossaryTerm = (term) => {
 /**
  * Get all terms for a specific category
  */
-export const getTermsByCategory = (category) => {
+export const getTermsByCategory = (courseId, category) => {
+  const { glossary } = getCache(courseId);
   return Object.entries(glossary)
     .filter(([_, data]) => data.category === category)
     .map(([term, data]) => ({ term, ...data }));
@@ -52,10 +58,11 @@ export const getTermsByCategory = (category) => {
 /**
  * Search glossary by term or definition
  */
-export const searchGlossary = (query) => {
+export const searchGlossary = (courseId, query) => {
+  const { glossary } = getCache(courseId);
   const lowerQuery = query.toLowerCase();
   return Object.entries(glossary)
-    .filter(([term, data]) => 
+    .filter(([term, data]) =>
       term.toLowerCase().includes(lowerQuery) ||
       data.vi.toLowerCase().includes(lowerQuery)
     )
@@ -64,30 +71,31 @@ export const searchGlossary = (query) => {
 
 /**
  * Wrap glossary terms with a component
+ * @param {string} courseId - Course identifier
  * @param {string} text - Text to process
  * @param {string} keyPrefix - Unique key prefix for React elements
  * @param {Function} WrapperComponent - Component to wrap terms with
  */
-export const wrapGlossaryTerms = (text, keyPrefix, WrapperComponent) => {
-  if (!text || !termRegex) return text;
-  
+export const wrapGlossaryTerms = (courseId, text, keyPrefix, WrapperComponent) => {
+  const { regex } = getCache(courseId);
+  if (!text || !regex) return text;
+
   const parts = [];
   let lastIndex = 0;
   let match;
   let partIndex = 0;
-  
+
   // Reset regex state
-  const regex = new RegExp(termRegex.source, 'gi');
-  
-  while ((match = regex.exec(text)) !== null) {
-    // Add text before the match
+  const re = new RegExp(regex.source, 'gi');
+
+  while ((match = re.exec(text)) !== null) {
     if (match.index > lastIndex) {
       parts.push(text.slice(lastIndex, match.index));
     }
-    
+
     const matchedTerm = match[0];
-    const entry = findGlossaryEntry(matchedTerm);
-    
+    const entry = findGlossaryEntry(courseId, matchedTerm);
+
     if (entry) {
       parts.push(
         <WrapperComponent
@@ -101,16 +109,13 @@ export const wrapGlossaryTerms = (text, keyPrefix, WrapperComponent) => {
     } else {
       parts.push(matchedTerm);
     }
-    
-    lastIndex = regex.lastIndex;
+
+    lastIndex = re.lastIndex;
   }
-  
-  // Add remaining text
+
   if (lastIndex < text.length) {
     parts.push(text.slice(lastIndex));
   }
-  
+
   return parts.length > 0 ? parts : text;
 };
-
-export default glossary;

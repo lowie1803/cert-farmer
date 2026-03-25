@@ -1,0 +1,32 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "According to research, asset allocation accounts for what percentage of portfolio return variation?",
+      "options": ["About 30%", "About 50%", "Over 90%", "Exactly 100%"],
+      "correct": 2,
+      "explanation": "Studies show asset allocation (the split between stocks, bonds, cash) accounts for over 90% of the variation in portfolio returns — far more impactful than individual stock selection."
+    },
+    {
+      "id": "q2",
+      "question": "What does 'rebalancing' a portfolio mean?",
+      "options": ["Selling all investments and starting over", "Adjusting holdings back to your target allocation", "Switching from stocks to bonds permanently", "Only buying new stocks"],
+      "correct": 1,
+      "explanation": "Rebalancing means buying/selling assets to return to your target allocation (e.g., back to 60/40 stocks/bonds) after market movements have shifted the balance."
+    },
+    {
+      "id": "q3",
+      "question": "The best diversification benefit comes from holding assets with:",
+      "options": ["High positive correlation", "Low or negative correlation", "The same sector", "The highest returns"],
+      "correct": 1,
+      "explanation": "Assets with low or negative correlation tend to move independently or in opposite directions, which smooths out portfolio volatility and reduces overall risk."
+    },
+    {
+      "id": "q4",
+      "question": "Approximately how many individual stocks are needed to eliminate most company-specific risk?",
+      "options": ["3-5", "10-15", "30+", "500+"],
+      "correct": 2,
+      "explanation": "Research shows that holding 30+ stocks eliminates nearly all company-specific (unsystematic) risk, though an index fund provides this instantly."
+    }
+  ]
+}

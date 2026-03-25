@@ -1,0 +1,12 @@
+{
+  "id": "project-news-fetcher",
+  "title": "Project: News Fetcher",
+  "icon": "🛠️",
+  "description": "Build a console app that fetches and parses news headlines",
+  "domain": "Project",
+  "lessons": [
+    { "id": "news-fetcher-brief", "title": "Project Brief & Requirements", "type": "notes" },
+    { "id": "news-fetcher-guide", "title": "Step-by-Step Guide", "type": "notes" },
+    { "id": "news-fetcher-stretch", "title": "Stretch Goals", "type": "notes" }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What are hooks in Claude Code?",
+      "options": [
+        "Git pre-commit and post-commit scripts",
+        "React lifecycle methods",
+        "Shell commands that execute in response to Claude Code events",
+        "JavaScript event listeners in the browser"
+      ],
+      "correct": 2,
+      "explanation": "Hooks are shell commands that execute in response to Claude Code events (tool calls, notifications). They are NOT git hooks — they are a separate system configured in settings.json."
+    },
+    {
+      "id": "q2",
+      "question": "Where are Claude Code hooks configured?",
+      "options": [
+        "In CLAUDE.md files",
+        "In .git/hooks/ directory",
+        "In settings.json files (global, project, or local)",
+        "In package.json under the 'hooks' key"
+      ],
+      "correct": 2,
+      "explanation": "Hooks are configured in settings.json files: global (~/.claude/settings.json), project (.claude/settings.json), or local (.claude/settings.local.json). They are NOT configured in CLAUDE.md."
+    },
+    {
+      "id": "q3",
+      "question": "What does Claude do when a pre-tool-call hook fails?",
+      "options": [
+        "Skips the hook and proceeds with the action",
+        "Uses --no-verify to bypass the hook",
+        "Reads the error output, investigates the cause, and adjusts its approach",
+        "Disables the hook in settings.json"
+      ],
+      "correct": 2,
+      "explanation": "Claude never bypasses hooks. When a hook fails, Claude reads the error output, investigates the cause, and adjusts its approach — for example, fixing lint errors before attempting a commit again."
+    },
+    {
+      "id": "q4",
+      "question": "Which of the following is a valid hook type in Claude Code?",
+      "options": [
+        "pre-build",
+        "on-error",
+        "post-tool-call",
+        "after-response"
+      ],
+      "correct": 2,
+      "explanation": "Claude Code supports these hook types: pre-tool-call, post-tool-call, notification, and user-prompt-submit. post-tool-call runs after a tool completes execution."
+    },
+    {
+      "id": "q5",
+      "question": "What is the difference between .claude/settings.json and .claude/settings.local.json?",
+      "options": [
+        "There is no difference — they are aliases for the same file",
+        ".claude/settings.json is shared (checked into git); .claude/settings.local.json is personal (git-ignored)",
+        ".claude/settings.local.json is for global settings; .claude/settings.json is for project settings",
+        ".claude/settings.json is read-only; .claude/settings.local.json is writable"
+      ],
+      "correct": 1,
+      "explanation": ".claude/settings.json is project-wide and typically checked into git for team sharing. .claude/settings.local.json is for personal project hooks and is git-ignored. Local settings override project settings."
+    },
+    {
+      "id": "q6",
+      "question": "How does Claude treat the output of a hook command?",
+      "options": [
+        "It ignores hook output entirely",
+        "It logs output to a file but doesn't read it",
+        "It treats hook output as feedback coming from the user",
+        "It sends hook output to the project's CI/CD pipeline"
+      ],
+      "correct": 2,
+      "explanation": "Claude treats hook output as if it came from the user. This means clear error messages in hook output help Claude understand and fix issues faster."
+    }
+  ]
+}

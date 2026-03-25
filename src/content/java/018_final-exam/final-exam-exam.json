@@ -1,0 +1,569 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What is the output of this code?\n```java\nint x = 5;\nSystem.out.println(x++ + ++x);\n```",
+      "options": ["11", "12", "10", "13"],
+      "correct": 1,
+      "explanation": "x++ evaluates to 5 (then x becomes 6). ++x increments first (x becomes 7) then evaluates to 7. So 5 + 7 = 12.",
+      "domain": "Domain 1: Language Fundamentals"
+    },
+    {
+      "id": "q2",
+      "question": "Which statement about `var` (Java 10+) is correct?",
+      "options": [
+        "var makes the variable dynamically typed",
+        "var can be used for method parameters",
+        "var infers the type at compile time — the variable is still statically typed",
+        "var can be used for class fields"
+      ],
+      "correct": 2,
+      "explanation": "var is local variable type inference. The compiler infers the type at compile time. The variable is fully statically typed — it just saves you from writing the type explicitly. It cannot be used for fields, method parameters, or return types.",
+      "domain": "Domain 1: Language Fundamentals"
+    },
+    {
+      "id": "q3",
+      "question": "What is the result of `10 / 3` in Java?",
+      "options": ["3.33", "3", "3.0", "Compilation error"],
+      "correct": 1,
+      "explanation": "Integer division in Java truncates the decimal part. Both operands are int, so the result is int 3. To get 3.33, cast one operand: (double) 10 / 3.",
+      "domain": "Domain 1: Language Fundamentals"
+    },
+    {
+      "id": "q4",
+      "question": "Which control flow statement exits the current iteration of a loop and starts the next?",
+      "options": ["break", "continue", "return", "yield"],
+      "correct": 1,
+      "explanation": "continue skips the rest of the current loop iteration and jumps to the next. break exits the loop entirely. return exits the method. yield is used in switch expressions.",
+      "domain": "Domain 1: Language Fundamentals"
+    },
+    {
+      "id": "q5",
+      "question": "What happens when a `switch` expression in Java 21 doesn't cover all possible values?",
+      "options": [
+        "It returns null for unmatched values",
+        "It falls through to the next case",
+        "Compilation error — switch expressions must be exhaustive",
+        "It throws a RuntimeException"
+      ],
+      "correct": 2,
+      "explanation": "Switch expressions (with ->) must be exhaustive — they must cover all possible input values. The compiler enforces this at compile time, requiring either all cases or a default branch.",
+      "domain": "Domain 1: Language Fundamentals"
+    },
+    {
+      "id": "q6",
+      "question": "What does `byte b = 127; b++;` result in?",
+      "options": ["128", "-128", "Compilation error", "ArithmeticException"],
+      "correct": 1,
+      "explanation": "byte ranges from -128 to 127. Incrementing 127 causes overflow, wrapping to -128. Java does not throw exceptions for integer overflow — it wraps silently.",
+      "domain": "Domain 1: Language Fundamentals"
+    },
+    {
+      "id": "q7",
+      "question": "Which is true about Java's `String[] args` in the main method?",
+      "options": [
+        "args is null if no arguments are passed",
+        "args is an empty array if no arguments are passed",
+        "args contains the program name as the first element",
+        "args must be named 'args' — other names cause compilation errors"
+      ],
+      "correct": 1,
+      "explanation": "When no command-line arguments are passed, args is an empty String array (length 0), not null. The parameter name can be anything — 'args' is just convention. Unlike C, the program name is not included.",
+      "domain": "Domain 1: Language Fundamentals"
+    },
+    {
+      "id": "q8",
+      "question": "What is the scope of a variable declared inside a for loop's initialization?",
+      "options": [
+        "The entire method",
+        "The entire class",
+        "Only the for loop (header and body)",
+        "Only the for loop body, not the header"
+      ],
+      "correct": 2,
+      "explanation": "A variable declared in the for loop initialization (e.g., `for (int i = 0; ...)`) is scoped to the entire for statement — both the loop header (condition, update) and the body.",
+      "domain": "Domain 1: Language Fundamentals"
+    },
+    {
+      "id": "q9",
+      "question": "What does `System.out.println(1 + 2 + \"3\" + 4 + 5)` print?",
+      "options": ["\"12345\"", "\"3345\"", "\"339\"", "15"],
+      "correct": 1,
+      "explanation": "Left to right: 1+2=3 (int addition), 3+\"3\"=\"33\" (string concat), \"33\"+4=\"334\" (string concat), \"334\"+5=\"3345\" (string concat). Once a String is encountered, + becomes concatenation.",
+      "domain": "Domain 1: Language Fundamentals"
+    },
+    {
+      "id": "q10",
+      "question": "Which is a valid way to create a multi-line string in Java 21?",
+      "options": [
+        "\"line1\" + \\n + \"line2\"",
+        "\"line1\\nline2\"",
+        "A text block: \"\"\"\n    line1\n    line2\n    \"\"\"",
+        "Both B and C"
+      ],
+      "correct": 3,
+      "explanation": "Both escape sequences in regular strings (\"line1\\nline2\") and text blocks (triple-quoted strings with actual newlines) produce multi-line strings. Text blocks are cleaner for longer multi-line content.",
+      "domain": "Domain 1: Language Fundamentals"
+    },
+    {
+      "id": "q11",
+      "question": "What is the relationship between a subclass constructor and the superclass constructor?",
+      "options": [
+        "The subclass constructor automatically calls super() unless you explicitly call another constructor",
+        "The superclass constructor is never called automatically",
+        "You must always explicitly call super() in every constructor",
+        "super() can be called anywhere in the constructor body"
+      ],
+      "correct": 0,
+      "explanation": "If a constructor doesn't explicitly call super(...) or this(...) as its first statement, the compiler inserts super() (no-arg) automatically. This fails if the superclass has no no-arg constructor.",
+      "domain": "Domain 2: OOP"
+    },
+    {
+      "id": "q12",
+      "question": "Which access modifier allows access from subclasses in other packages?",
+      "options": ["private", "default (package-private)", "protected", "Only public"],
+      "correct": 2,
+      "explanation": "protected allows access from the same package AND from subclasses in other packages. Package-private (no modifier) only allows same-package access. private is class-only.",
+      "domain": "Domain 2: OOP"
+    },
+    {
+      "id": "q13",
+      "question": "What is the output?\n```java\nclass A { void greet() { System.out.print(\"A\"); } }\nclass B extends A { void greet() { System.out.print(\"B\"); } }\nA obj = new B();\nobj.greet();\n```",
+      "options": ["A", "B", "AB", "Compilation error"],
+      "correct": 1,
+      "explanation": "This is runtime polymorphism. The reference type is A, but the actual object is B. Method calls are dispatched based on the actual object type (dynamic dispatch), so B's greet() is called.",
+      "domain": "Domain 2: OOP"
+    },
+    {
+      "id": "q14",
+      "question": "Can an abstract class have a constructor?",
+      "options": [
+        "No — abstract classes cannot be instantiated, so constructors are meaningless",
+        "Yes — it's called by subclass constructors to initialize shared state",
+        "Only if all methods are abstract",
+        "Only a private constructor"
+      ],
+      "correct": 1,
+      "explanation": "Abstract classes can and often do have constructors. They're invoked via super() from subclass constructors to initialize fields defined in the abstract class. You just can't call new AbstractClass() directly.",
+      "domain": "Domain 2: OOP"
+    },
+    {
+      "id": "q15",
+      "question": "What happens when you override a method but change only the return type to a subtype?",
+      "options": [
+        "Compilation error — return types must match exactly",
+        "It compiles — this is called a covariant return type",
+        "It compiles but throws ClassCastException at runtime",
+        "It's only allowed for void methods"
+      ],
+      "correct": 1,
+      "explanation": "Java supports covariant return types since Java 5. An overriding method can return a more specific type. For example, if the parent returns Object, the child can return String.",
+      "domain": "Domain 2: OOP"
+    },
+    {
+      "id": "q16",
+      "question": "Which is true about interfaces in Java 21?",
+      "options": [
+        "Interfaces can have instance fields",
+        "Interfaces can have default methods, static methods, and private methods",
+        "All interface methods must be abstract",
+        "A class can implement only one interface"
+      ],
+      "correct": 1,
+      "explanation": "Since Java 8, interfaces support default and static methods. Java 9 added private methods. Interfaces still cannot have instance fields (only public static final constants). A class can implement multiple interfaces.",
+      "domain": "Domain 2: OOP"
+    },
+    {
+      "id": "q17",
+      "question": "What is the diamond problem and how does Java handle it?",
+      "options": [
+        "Two interfaces with the same default method — resolved by the implementing class overriding it",
+        "Two classes with the same method — Java uses multiple inheritance to resolve",
+        "A class extending itself recursively — prevented by the compiler",
+        "An interface inheriting from two classes — not possible in Java"
+      ],
+      "correct": 0,
+      "explanation": "If a class implements two interfaces with the same default method signature, it must override the method to resolve the ambiguity. Java avoids the diamond problem for classes by disallowing multiple class inheritance.",
+      "domain": "Domain 2: OOP"
+    },
+    {
+      "id": "q18",
+      "question": "Which design principle does \"favor composition over inheritance\" promote?",
+      "options": [
+        "Use 'extends' for all code reuse",
+        "Delegate to contained objects via 'has-a' relationships instead of inheriting behavior",
+        "Make all classes final to prevent inheritance",
+        "Use only interfaces, never abstract classes"
+      ],
+      "correct": 1,
+      "explanation": "Composition (has-a) is more flexible than inheritance (is-a). A class contains references to other objects and delegates behavior to them, allowing runtime flexibility and avoiding tight coupling.",
+      "domain": "Domain 2: OOP"
+    },
+    {
+      "id": "q19",
+      "question": "What does `final` mean when applied to a method?",
+      "options": [
+        "The method can only be called once",
+        "The method cannot be overridden by subclasses",
+        "The method must return a constant value",
+        "The method is automatically static"
+      ],
+      "correct": 1,
+      "explanation": "A final method cannot be overridden. This is used to prevent subclasses from changing critical behavior. For classes, final prevents inheritance entirely.",
+      "domain": "Domain 2: OOP"
+    },
+    {
+      "id": "q20",
+      "question": "What is the output?\n```java\ninterface Greeting {\n    default String hello() { return \"Hello\"; }\n}\nclass Greeter implements Greeting {\n    public String hello() { return \"Hi\"; }\n}\nSystem.out.println(new Greeter().hello());\n```",
+      "options": ["Hello", "Hi", "Compilation error", "null"],
+      "correct": 1,
+      "explanation": "The class overrides the default method. When called on an instance of Greeter, the overridden version (\"Hi\") is used, not the default interface method.",
+      "domain": "Domain 2: OOP"
+    },
+    {
+      "id": "q21",
+      "question": "What is the purpose of the `static` keyword on a nested class?",
+      "options": [
+        "Makes the nested class a singleton",
+        "The nested class can be instantiated without an instance of the enclosing class",
+        "The nested class can only contain static methods",
+        "The nested class cannot access any members of the enclosing class"
+      ],
+      "correct": 1,
+      "explanation": "A static nested class does not require an instance of the outer class: new Outer.Inner(). A non-static inner class requires: new Outer().new Inner(). Static nested classes can still access static members of the outer class.",
+      "domain": "Domain 2: OOP"
+    },
+    {
+      "id": "q22",
+      "question": "Which correctly describes method hiding vs overriding?",
+      "options": [
+        "Static methods are overridden; instance methods are hidden",
+        "Static methods are hidden (resolved at compile time); instance methods are overridden (resolved at runtime)",
+        "Both static and instance methods are overridden in the same way",
+        "Method hiding only applies to private methods"
+      ],
+      "correct": 1,
+      "explanation": "When a subclass defines a static method with the same signature as the parent, it hides (not overrides) it. The version called depends on the reference type (compile time), not the object type. Instance methods use dynamic dispatch.",
+      "domain": "Domain 2: OOP"
+    },
+    {
+      "id": "q23",
+      "question": "What is the output?\n```java\nString s1 = \"Hello\";\nString s2 = s1.replace('l', 'L');\nSystem.out.println(s1);\n```",
+      "options": ["HeLLo", "Hello", "HeLlo", "Compilation error"],
+      "correct": 1,
+      "explanation": "Strings are immutable. replace() returns a new String — it does not modify s1. Since we never reassign s1, it still holds the original \"Hello\".",
+      "domain": "Domain 3: Core APIs"
+    },
+    {
+      "id": "q24",
+      "question": "What does `Arrays.asList(1, 2, 3).add(4)` throw?",
+      "options": [
+        "Nothing — it adds 4 successfully",
+        "UnsupportedOperationException",
+        "IndexOutOfBoundsException",
+        "ClassCastException"
+      ],
+      "correct": 1,
+      "explanation": "Arrays.asList returns a fixed-size list backed by the array. You can set() existing elements but cannot add() or remove() — these throw UnsupportedOperationException.",
+      "domain": "Domain 3: Core APIs"
+    },
+    {
+      "id": "q25",
+      "question": "Which collection should you use to maintain elements in sorted order with no duplicates?",
+      "options": ["ArrayList", "LinkedHashSet", "TreeSet", "HashMap"],
+      "correct": 2,
+      "explanation": "TreeSet implements SortedSet/NavigableSet, maintaining elements in sorted order (natural or by Comparator) with no duplicates. LinkedHashSet preserves insertion order, not sorted order.",
+      "domain": "Domain 3: Core APIs"
+    },
+    {
+      "id": "q26",
+      "question": "What is the time complexity of HashMap.get()?",
+      "options": ["O(n)", "O(log n)", "O(1) average case", "O(n log n)"],
+      "correct": 2,
+      "explanation": "HashMap provides O(1) average-case time for get(), put(), and remove() operations. Worst case is O(log n) per bucket due to tree bins (Java 8+), or O(n) with pathological hash collisions.",
+      "domain": "Domain 3: Core APIs"
+    },
+    {
+      "id": "q27",
+      "question": "What does `map.computeIfAbsent(\"key\", k -> new ArrayList<>())` do?",
+      "options": [
+        "Always creates a new ArrayList and replaces the existing value",
+        "Creates a new ArrayList only if \"key\" is not already mapped, then returns the value",
+        "Throws NullPointerException if the key doesn't exist",
+        "Returns null if the key is absent"
+      ],
+      "correct": 1,
+      "explanation": "computeIfAbsent checks if the key exists. If absent, it applies the function to create a value, stores it, and returns it. If present, it returns the existing value without calling the function.",
+      "domain": "Domain 3: Core APIs"
+    },
+    {
+      "id": "q28",
+      "question": "Which is a checked exception?",
+      "options": [
+        "NullPointerException",
+        "ArithmeticException",
+        "FileNotFoundException",
+        "IllegalStateException"
+      ],
+      "correct": 2,
+      "explanation": "FileNotFoundException extends IOException extends Exception. It's checked because it does not extend RuntimeException. The compiler requires you to either catch it or declare it in a throws clause.",
+      "domain": "Domain 3: Core APIs"
+    },
+    {
+      "id": "q29",
+      "question": "In try-with-resources, when are resources closed relative to catch blocks?",
+      "options": [
+        "After the catch and finally blocks",
+        "Before the catch block executes",
+        "At the same time as the catch block",
+        "Only if no exception occurred"
+      ],
+      "correct": 1,
+      "explanation": "Resources are closed after the try block completes but before any catch or finally blocks execute. This means the resource is already closed when you handle the exception in catch.",
+      "domain": "Domain 3: Core APIs"
+    },
+    {
+      "id": "q30",
+      "question": "Why can't you write `List<int>`?",
+      "options": [
+        "int is too small to be a type parameter",
+        "Generics use type erasure — primitives have no Object supertype for erasure",
+        "List only works with String and Integer",
+        "You need to use int[] instead"
+      ],
+      "correct": 1,
+      "explanation": "Due to type erasure, type parameters are replaced with Object at runtime. Primitives (int, double, etc.) don't extend Object, so they can't be used as type parameters. Use wrapper classes: List<Integer>.",
+      "domain": "Domain 3: Core APIs"
+    },
+    {
+      "id": "q31",
+      "question": "What does PECS stand for in the context of generics?",
+      "options": [
+        "Parameter Extends Class Super",
+        "Producer Extends, Consumer Super",
+        "Primitive Erasure Creates Subtypes",
+        "Polymorphic Extension, Covariant Super"
+      ],
+      "correct": 1,
+      "explanation": "PECS = Producer Extends, Consumer Super. Use ? extends T when reading (producing) values from a structure, and ? super T when writing (consuming) values into a structure.",
+      "domain": "Domain 3: Core APIs"
+    },
+    {
+      "id": "q32",
+      "question": "What does `new int[5].clone()` return?",
+      "options": [
+        "A reference to the same array",
+        "A shallow copy — a new int[] with the same values",
+        "A deep copy of all nested arrays",
+        "null"
+      ],
+      "correct": 1,
+      "explanation": "Array.clone() creates a new array with the same length and copies element values. For primitive arrays, this is effectively a full copy. For object arrays, it's a shallow copy (references are copied).",
+      "domain": "Domain 3: Core APIs"
+    },
+    {
+      "id": "q33",
+      "question": "What is the output?\n```java\nvar list = new ArrayList<>(List.of(\"c\", \"a\", \"b\"));\nCollections.sort(list);\nSystem.out.println(list.getFirst());\n```",
+      "options": ["c", "a", "b", "Compilation error"],
+      "correct": 1,
+      "explanation": "Collections.sort() sorts in natural order (alphabetical for strings). After sorting, the list is [\"a\", \"b\", \"c\"]. getFirst() (Java 21 SequencedCollection) returns \"a\".",
+      "domain": "Domain 3: Core APIs"
+    },
+    {
+      "id": "q34",
+      "question": "Which exception is thrown when you modify a collection while iterating with a for-each loop?",
+      "options": [
+        "IllegalStateException",
+        "UnsupportedOperationException",
+        "ConcurrentModificationException",
+        "IndexOutOfBoundsException"
+      ],
+      "correct": 2,
+      "explanation": "Modifying a collection (add/remove) during for-each or forEach iteration triggers ConcurrentModificationException (fail-fast behavior). Use Iterator.remove() or removeIf() instead.",
+      "domain": "Domain 3: Core APIs"
+    },
+    {
+      "id": "q35",
+      "question": "Can you add an element to `List<? extends Number>`?",
+      "options": [
+        "Yes — any Number subtype can be added",
+        "Yes — but only Integer",
+        "No — only null can be added; the specific subtype is unknown",
+        "No — the list is read-only and throws UnsupportedOperationException"
+      ],
+      "correct": 2,
+      "explanation": "List<? extends Number> could be List<Integer>, List<Double>, etc. The compiler can't know which, so it prevents adding anything except null. You can safely read elements as Number.",
+      "domain": "Domain 3: Core APIs"
+    },
+    {
+      "id": "q36",
+      "question": "What does `\"hello world\".split(\" \", 2)` return?",
+      "options": [
+        "[\"hello\", \"world\"]",
+        "[\"hello\", \"world\", \"\"]",
+        "[\"he\", \"llo world\"]",
+        "[\"hello world\"]"
+      ],
+      "correct": 0,
+      "explanation": "split(regex, limit) with limit 2 splits into at most 2 parts. The first space is used as the split point: [\"hello\", \"world\"]. If the string were \"hello big world\", it would return [\"hello\", \"big world\"].",
+      "domain": "Domain 3: Core APIs"
+    },
+    {
+      "id": "q37",
+      "question": "What is the output?\n```java\nSet<String> set = new LinkedHashSet<>();\nset.add(\"B\"); set.add(\"A\"); set.add(\"C\"); set.add(\"A\");\nSystem.out.println(set);\n```",
+      "options": ["[A, B, C]", "[B, A, C]", "[B, A, C, A]", "[C, B, A]"],
+      "correct": 1,
+      "explanation": "LinkedHashSet maintains insertion order and ignores duplicates. \"A\" is added at position 2 and the second add(\"A\") is ignored. Result: [B, A, C].",
+      "domain": "Domain 3: Core APIs"
+    },
+    {
+      "id": "q38",
+      "question": "Which functional interface represents `T -> boolean`?",
+      "options": ["Function<T, Boolean>", "Predicate<T>", "Consumer<T>", "Supplier<Boolean>"],
+      "correct": 1,
+      "explanation": "Predicate<T> has a test(T) method returning primitive boolean. While Function<T, Boolean> works, Predicate is the idiomatic choice, avoids autoboxing, and provides useful default methods like and(), or(), negate().",
+      "domain": "Domain 4: Modern Java"
+    },
+    {
+      "id": "q39",
+      "question": "What happens if you call a terminal operation twice on the same stream?",
+      "options": [
+        "The stream processes again from the source",
+        "IllegalStateException — stream has already been operated upon",
+        "The second call returns an empty result",
+        "It works fine — streams are reusable"
+      ],
+      "correct": 1,
+      "explanation": "Streams are single-use. After a terminal operation, the stream is consumed. Any subsequent operation throws IllegalStateException. Create a new stream from the source collection.",
+      "domain": "Domain 4: Modern Java"
+    },
+    {
+      "id": "q40",
+      "question": "What does `stream.toList()` (Java 16+) return compared to `stream.collect(Collectors.toList())`?",
+      "options": [
+        "Both return mutable lists",
+        "toList() returns an unmodifiable list; Collectors.toList() returns a mutable list",
+        "Both return unmodifiable lists",
+        "toList() returns a mutable list; Collectors.toList() returns unmodifiable"
+      ],
+      "correct": 1,
+      "explanation": "Stream.toList() returns an unmodifiable list. Collectors.toList() returns a mutable ArrayList. Choose toList() when you don't need to modify the result.",
+      "domain": "Domain 4: Modern Java"
+    },
+    {
+      "id": "q41",
+      "question": "What type of method reference is `System.out::println`?",
+      "options": [
+        "Static method reference",
+        "Bound instance method reference",
+        "Unbound instance method reference",
+        "Constructor reference"
+      ],
+      "correct": 1,
+      "explanation": "System.out is a specific object instance, and println is called on that instance. This makes it a bound instance method reference — the instance (System.out) is already known.",
+      "domain": "Domain 4: Modern Java"
+    },
+    {
+      "id": "q42",
+      "question": "Which stream operation would you use to flatten a `Stream<List<String>>` into a `Stream<String>`?",
+      "options": ["map()", "flatMap()", "reduce()", "filter()"],
+      "correct": 1,
+      "explanation": "flatMap() maps each element to a stream and then flattens all streams into one. Example: stream.flatMap(List::stream) converts Stream<List<String>> to Stream<String>.",
+      "domain": "Domain 4: Modern Java"
+    },
+    {
+      "id": "q43",
+      "question": "What does a Java record automatically provide that a regular class does not?",
+      "options": [
+        "Setters for all fields",
+        "equals(), hashCode(), toString() based on all components, plus a canonical constructor",
+        "Serialization support",
+        "Builder pattern methods"
+      ],
+      "correct": 1,
+      "explanation": "Records auto-generate: canonical constructor, accessor methods (named after components), equals() and hashCode() based on all components, and toString(). No setters — records are immutable.",
+      "domain": "Domain 4: Modern Java"
+    },
+    {
+      "id": "q44",
+      "question": "Which is valid in a record's compact constructor?",
+      "options": [
+        "Assigning this.field = value explicitly",
+        "Validating and normalizing parameters (field assignment happens implicitly after)",
+        "Calling another constructor with this()",
+        "Declaring additional instance fields"
+      ],
+      "correct": 1,
+      "explanation": "In a compact constructor, you can validate inputs and modify parameters. The actual field assignments (this.x = x) happen implicitly after the constructor body. You cannot use this.field or this() in a compact constructor.",
+      "domain": "Domain 4: Modern Java"
+    },
+    {
+      "id": "q45",
+      "question": "What modifier must every permitted subclass of a sealed class declare?",
+      "options": [
+        "abstract or final",
+        "final, sealed, or non-sealed",
+        "public or protected",
+        "static or transient"
+      ],
+      "correct": 1,
+      "explanation": "Permitted subclasses must be exactly one of: final (stops hierarchy), sealed (restricts further), or non-sealed (opens up). This ensures every level of the hierarchy explicitly states its extension policy.",
+      "domain": "Domain 4: Modern Java"
+    },
+    {
+      "id": "q46",
+      "question": "What is the output?\n```java\nObject obj = \"Hello\";\nString result = switch (obj) {\n    case Integer i -> \"int: \" + i;\n    case String s when s.length() > 3 -> \"long string\";\n    case String s -> \"short string\";\n    default -> \"other\";\n};\nSystem.out.println(result);\n```",
+      "options": ["int: Hello", "long string", "short string", "other"],
+      "correct": 1,
+      "explanation": "obj is a String with length 5, which is > 3. The guarded pattern 'case String s when s.length() > 3' matches first. Pattern order matters — more specific (guarded) patterns must come before general ones.",
+      "domain": "Domain 4: Modern Java"
+    },
+    {
+      "id": "q47",
+      "question": "Which is true about virtual threads in Java 21?",
+      "options": [
+        "They replace platform threads entirely",
+        "They are ideal for CPU-intensive computation",
+        "They are JVM-managed, lightweight, and automatically yield during blocking I/O",
+        "They require the reactive programming model"
+      ],
+      "correct": 2,
+      "explanation": "Virtual threads are managed by the JVM, not the OS. They're extremely lightweight (millions can coexist) and automatically unmount from carrier threads during blocking I/O. Best for I/O-bound work, not CPU-bound.",
+      "domain": "Domain 4: Modern Java"
+    },
+    {
+      "id": "q48",
+      "question": "What does record deconstruction in a switch look like?\n```java\nrecord Point(int x, int y) {}\n```",
+      "options": [
+        "case Point p -> p.x + p.y",
+        "case Point(int x, int y) -> x + y",
+        "case {int x, int y} -> x + y",
+        "case Point.deconstruct(x, y) -> x + y"
+      ],
+      "correct": 1,
+      "explanation": "Record patterns use constructor-like syntax to deconstruct: case Point(int x, int y) extracts components directly into variables. This eliminates the need for accessor method calls.",
+      "domain": "Domain 4: Modern Java"
+    },
+    {
+      "id": "q49",
+      "question": "What is the result of this stream pipeline?\n```java\nList.of(1, 2, 3, 4, 5).stream()\n    .filter(n -> n % 2 == 0)\n    .map(n -> n * 10)\n    .reduce(0, Integer::sum);\n```",
+      "options": ["15", "60", "150", "30"],
+      "correct": 1,
+      "explanation": "Filter keeps even numbers: [2, 4]. Map multiplies by 10: [20, 40]. Reduce sums with identity 0: 0 + 20 + 40 = 60.",
+      "domain": "Domain 4: Modern Java"
+    },
+    {
+      "id": "q50",
+      "question": "Which collector groups articles by source and counts them?\n```java\narticles.stream().collect(???)\n```",
+      "options": [
+        "Collectors.groupingBy(Article::source)",
+        "Collectors.groupingBy(Article::source, Collectors.counting())",
+        "Collectors.partitioningBy(Article::source)",
+        "Collectors.toMap(Article::source, 1)"
+      ],
+      "correct": 1,
+      "explanation": "groupingBy with a downstream counting() collector produces Map<String, Long> — each source mapped to its article count. Without the downstream collector, groupingBy defaults to toList().",
+      "domain": "Domain 4: Modern Java"
+    }
+  ]
+}

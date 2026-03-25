@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What does a Java record automatically generate?",
+      "options": [
+        "Constructor, getters with 'get' prefix, equals, hashCode, toString",
+        "Constructor, accessor methods (no prefix), equals, hashCode, toString",
+        "Constructor, getters, setters, equals, hashCode, toString",
+        "Only a constructor and toString"
+      ],
+      "correct": 1,
+      "explanation": "Records generate a canonical constructor, accessor methods named after the components (no 'get' prefix), and equals(), hashCode(), toString() based on all components."
+    },
+    {
+      "id": "q2",
+      "question": "Which is true about a compact constructor in a record?",
+      "options": [
+        "It must explicitly assign all fields",
+        "It cannot modify parameters",
+        "Field assignments happen automatically after the compact constructor body",
+        "It replaces the canonical constructor entirely"
+      ],
+      "correct": 2,
+      "explanation": "In a compact constructor, you can validate and normalize parameters. The actual field assignments (this.x = x) happen implicitly after the compact constructor body executes."
+    },
+    {
+      "id": "q3",
+      "question": "Can a record implement an interface?",
+      "options": [
+        "No — records cannot have any additional methods",
+        "Yes — records can implement interfaces and add methods",
+        "Only marker interfaces (no methods)",
+        "Only sealed interfaces"
+      ],
+      "correct": 1,
+      "explanation": "Records can implement interfaces, including ones with methods. They can also define additional instance methods, static methods, and static fields. They just cannot extend classes or add instance fields."
+    },
+    {
+      "id": "q4",
+      "question": "What modifier must every permitted subclass of a sealed class have?",
+      "options": [
+        "abstract",
+        "final, sealed, or non-sealed",
+        "public",
+        "static"
+      ],
+      "correct": 1,
+      "explanation": "Every permitted subclass must be declared as final (no further subclassing), sealed (restricts its own subclasses), or non-sealed (opens the hierarchy). This ensures the sealed contract is explicit."
+    },
+    {
+      "id": "q5",
+      "question": "Why are records ideal as implementations of sealed interfaces?",
+      "options": [
+        "Records are mutable, which sealed interfaces require",
+        "Records are implicitly final, satisfying the sealed contract without extra modifiers",
+        "Records can extend other classes within the sealed hierarchy",
+        "Records have better performance than regular classes"
+      ],
+      "correct": 1,
+      "explanation": "Records are implicitly final, so they naturally satisfy the requirement that permitted subtypes must be final, sealed, or non-sealed. Combined with auto-generated equals/hashCode, they're perfect for algebraic data types."
+    }
+  ]
+}

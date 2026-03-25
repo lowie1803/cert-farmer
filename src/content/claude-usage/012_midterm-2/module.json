@@ -1,0 +1,11 @@
+{
+  "id": "midterm-2",
+  "title": "Midterm 2: Skills & Hooks",
+  "icon": "📋",
+  "description": "Comprehensive exam covering skills system and hooks",
+  "category": "exam",
+  "domain": "Domain 2: Skills System",
+  "lessons": [
+    { "id": "midterm-2-exam", "title": "Midterm 2: Skills & Hooks", "type": "exam", "timeLimit": 45, "passingScore": 80 }
+  ]
+}

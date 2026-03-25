@@ -1,0 +1,76 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "A user wants Claude to read the contents of a file. Which approach is correct?",
+      "options": [
+        "Use Bash to run `cat file.txt`",
+        "Use Bash to run `head -n 50 file.txt`",
+        "Use the Read tool with the file path",
+        "Use Bash to run `less file.txt`"
+      ],
+      "correct": 2,
+      "explanation": "The Read tool should be used instead of Bash commands like cat, head, or tail. Dedicated tools provide a better user experience and proper permission handling."
+    },
+    {
+      "id": "q2",
+      "question": "What is the maximum timeout value for a Bash tool call?",
+      "options": [
+        "60,000 ms (1 minute)",
+        "120,000 ms (2 minutes)",
+        "300,000 ms (5 minutes)",
+        "600,000 ms (10 minutes)"
+      ],
+      "correct": 3,
+      "explanation": "The maximum timeout is 600,000 ms (10 minutes). The default timeout is 120,000 ms (2 minutes), but it can be extended up to the maximum when needed."
+    },
+    {
+      "id": "q3",
+      "question": "When using `run_in_background: true`, how should you check the command's output?",
+      "options": [
+        "Poll with a sleep loop until the output appears",
+        "Immediately run another Bash command to check the result",
+        "Wait to be notified when the command completes",
+        "Use the `&` operator at the end of the command"
+      ],
+      "correct": 2,
+      "explanation": "When running a command in the background, you will be notified when it completes. There is no need to poll with sleep loops or check immediately. Also, do not append '&' when using run_in_background."
+    },
+    {
+      "id": "q4",
+      "question": "A pre-commit hook fails during a git commit. What should Claude do next?",
+      "options": [
+        "Run `git commit --amend` to retry the commit",
+        "Run `git commit --no-verify` to skip the hook",
+        "Fix the issue, re-stage files, and create a new commit",
+        "Run `git reset --hard` and start over"
+      ],
+      "correct": 2,
+      "explanation": "After a hook failure, the commit did NOT happen. Using --amend would modify the previous commit (destroying work). Using --no-verify skips quality checks. The correct approach is to fix the issue and create a NEW commit."
+    },
+    {
+      "id": "q5",
+      "question": "Which commit message format is correct for Claude?",
+      "options": [
+        "git commit -m 'Fix bug'",
+        "git commit -m \"Fix bug\" with a separate Co-Authored-By flag",
+        "git commit using a HEREDOC with message and Co-Authored-By line",
+        "git commit --amend -m 'Fix bug' to update the last commit"
+      ],
+      "correct": 2,
+      "explanation": "Claude should always use a HEREDOC to pass the commit message for correct formatting, and include a Co-Authored-By line. Amending should never be done unless explicitly requested."
+    },
+    {
+      "id": "q6",
+      "question": "You need to run `git status` and `npm test` which are independent of each other. What is the best approach?",
+      "options": [
+        "Chain them with `&&`: `git status && npm test`",
+        "Make two separate parallel Bash tool calls in one message",
+        "Chain them with `;`: `git status; npm test`",
+        "Run them in a sleep loop to avoid conflicts"
+      ],
+      "correct": 1,
+      "explanation": "When commands are independent and can run in parallel, the best approach is to make multiple Bash tool calls in a single message. This is more efficient than sequential chaining."
+    }
+  ]
+}

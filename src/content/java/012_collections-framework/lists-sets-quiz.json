@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What happens when you call `List.of(\"a\", \"b\").add(\"c\")`?",
+      "options": [
+        "Returns a new list with 3 elements",
+        "Throws UnsupportedOperationException at runtime",
+        "Compilation error — List.of() returns an immutable type",
+        "Adds \"c\" and returns true"
+      ],
+      "correct": 1,
+      "explanation": "List.of() returns an unmodifiable list. The add() method compiles because the return type is List<String>, but throws UnsupportedOperationException at runtime."
+    },
+    {
+      "id": "q2",
+      "question": "Which Set implementation maintains insertion order?",
+      "options": [
+        "HashSet",
+        "TreeSet",
+        "LinkedHashSet",
+        "EnumSet"
+      ],
+      "correct": 2,
+      "explanation": "LinkedHashSet maintains a doubly-linked list through its entries, preserving the order in which elements were inserted. HashSet has no ordering, TreeSet sorts elements."
+    },
+    {
+      "id": "q3",
+      "question": "What is the time complexity of `ArrayList.get(int index)`?",
+      "options": [
+        "O(n)",
+        "O(log n)",
+        "O(1)",
+        "O(n log n)"
+      ],
+      "correct": 2,
+      "explanation": "ArrayList is backed by an array, so random access by index is O(1). This is its primary advantage over LinkedList, which requires O(n) traversal."
+    },
+    {
+      "id": "q4",
+      "question": "Which method is new in Java 21's SequencedCollection?",
+      "options": [
+        "get(0)",
+        "getFirst()",
+        "first()",
+        "head()"
+      ],
+      "correct": 1,
+      "explanation": "Java 21 added SequencedCollection with getFirst(), getLast(), addFirst(), addLast(), removeFirst(), removeLast(), and reversed() methods."
+    },
+    {
+      "id": "q5",
+      "question": "What does `Set.of(\"a\", \"a\")` do?",
+      "options": [
+        "Creates a set with one element \"a\"",
+        "Creates a set with two elements",
+        "Throws IllegalArgumentException at runtime",
+        "Compilation error"
+      ],
+      "correct": 2,
+      "explanation": "Unlike HashSet.add() which silently ignores duplicates, Set.of() throws IllegalArgumentException if duplicate elements are provided. This is a fail-fast design to catch mistakes early."
+    }
+  ]
+}

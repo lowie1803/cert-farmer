@@ -1,0 +1,13 @@
+{
+  "id": "strings-arrays",
+  "title": "Strings & Arrays",
+  "icon": "📝",
+  "description": "String API, text blocks, arrays, multi-dimensional arrays",
+  "domain": "Domain 3: Core APIs",
+  "lessons": [
+    { "id": "strings", "title": "Strings & Text Blocks", "type": "notes" },
+    { "id": "strings-quiz", "title": "Strings Quiz", "type": "quiz" },
+    { "id": "arrays", "title": "Arrays", "type": "notes" },
+    { "id": "arrays-quiz", "title": "Arrays Quiz", "type": "quiz" }
+  ]
+}

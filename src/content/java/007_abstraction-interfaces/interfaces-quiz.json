@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What is the minimum requirement for a `@FunctionalInterface`?",
+      "options": [
+        "Exactly one method of any kind",
+        "Exactly one abstract method (can have default/static methods too)",
+        "No abstract methods — only default methods",
+        "At least two abstract methods"
+      ],
+      "correct": 1,
+      "explanation": "A functional interface must have exactly one abstract method (SAM — Single Abstract Method). It can have any number of default, static, and private methods."
+    },
+    {
+      "id": "q2",
+      "question": "What happens when two interfaces provide the same default method and a class implements both?",
+      "options": [
+        "The first interface's method wins",
+        "Compile error — the class must override the method",
+        "Runtime error — ambiguous method call",
+        "Both methods are available via different syntax"
+      ],
+      "correct": 1,
+      "explanation": "The diamond problem: the compiler forces the implementing class to override the conflicting default method and explicitly choose using InterfaceName.super.method()."
+    },
+    {
+      "id": "q3",
+      "question": "Which feature was added to interfaces in Java 9?",
+      "options": [
+        "Default methods",
+        "Static methods",
+        "Private methods",
+        "Sealed interfaces"
+      ],
+      "correct": 2,
+      "explanation": "Java 9 added private methods to interfaces, allowing default methods to share common logic without exposing it in the public API."
+    },
+    {
+      "id": "q4",
+      "question": "Which built-in functional interface represents a function that takes a value and returns a boolean?",
+      "options": [
+        "Function<T, Boolean>",
+        "Consumer<T>",
+        "Predicate<T>",
+        "Supplier<Boolean>"
+      ],
+      "correct": 2,
+      "explanation": "Predicate<T> has a test(T) method returning boolean. While Function<T, Boolean> technically works, Predicate is the idiomatic choice and avoids autoboxing."
+    },
+    {
+      "id": "q5",
+      "question": "Can an interface have instance fields?",
+      "options": [
+        "Yes — any field declaration works",
+        "Yes — but only private fields",
+        "No — interface fields are implicitly public static final (constants)",
+        "No — interfaces cannot have any fields"
+      ],
+      "correct": 2,
+      "explanation": "All fields in an interface are implicitly public, static, and final — making them constants. Interfaces cannot hold instance state."
+    }
+  ]
+}

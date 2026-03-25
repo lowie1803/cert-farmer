@@ -1,0 +1,12 @@
+{
+  "id": "mcp-advanced",
+  "title": "Advanced MCP Patterns",
+  "icon": "🏗️",
+  "description": "Build custom MCP servers and integrate advanced patterns",
+  "domain": "Domain 3: Hooks & Extensibility",
+  "lessons": [
+    { "id": "building-mcp-servers", "title": "Building MCP Servers", "type": "notes" },
+    { "id": "mcp-integration-patterns", "title": "MCP Integration Patterns", "type": "notes" },
+    { "id": "mcp-advanced-quiz", "title": "Advanced MCP Quiz", "type": "quiz" }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "inheritance-polymorphism",
+  "title": "Inheritance & Polymorphism",
+  "icon": "🌳",
+  "description": "extends, super, overriding, upcasting, dynamic dispatch",
+  "domain": "Domain 2: OOP",
+  "lessons": [
+    { "id": "inheritance", "title": "Inheritance", "type": "notes" },
+    { "id": "inheritance-quiz", "title": "Inheritance Quiz", "type": "quiz" },
+    { "id": "polymorphism", "title": "Polymorphism", "type": "notes" },
+    { "id": "polymorphism-quiz", "title": "Polymorphism Quiz", "type": "quiz" }
+  ]
+}

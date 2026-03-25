@@ -1,0 +1,14 @@
+{
+  "id": "advanced-workflows",
+  "title": "Advanced Workflows",
+  "icon": "🚀",
+  "description": "Apply Claude Code to PR workflows, code review, debugging, and multi-file refactoring",
+  "domain": "Domain 4: Configuration & Workflows",
+  "lessons": [
+    { "id": "pr-workflow", "title": "PR Workflow", "type": "notes" },
+    { "id": "code-review-workflow", "title": "Code Review Workflow", "type": "notes" },
+    { "id": "debugging-workflow", "title": "Debugging Workflow", "type": "notes" },
+    { "id": "multi-file-refactoring", "title": "Multi-File Refactoring", "type": "notes" },
+    { "id": "workflows-quiz", "title": "Workflows Quiz", "type": "quiz" }
+  ]
+}

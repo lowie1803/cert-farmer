@@ -1,0 +1,13 @@
+{
+  "id": "hooks-system",
+  "title": "Hooks System",
+  "icon": "🪝",
+  "description": "Configure and manage hooks for extending Claude Code behavior",
+  "domain": "Domain 3: Hooks & Extensibility",
+  "lessons": [
+    { "id": "hooks-overview", "title": "Hooks Overview", "type": "notes" },
+    { "id": "hook-configuration", "title": "Hook Configuration", "type": "notes" },
+    { "id": "hook-failure-handling", "title": "Hook Failure Handling", "type": "notes" },
+    { "id": "hooks-quiz", "title": "Hooks Quiz", "type": "quiz" }
+  ]
+}

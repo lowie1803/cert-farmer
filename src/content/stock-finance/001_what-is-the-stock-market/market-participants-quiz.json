@@ -1,0 +1,32 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Approximately what percentage of stock market volume do institutional investors control?",
+      "options": ["20%", "50%", "80%", "95%"],
+      "correct": 2,
+      "explanation": "Institutional investors (mutual funds, hedge funds, pension funds, etc.) control roughly 80% of stock market trading volume."
+    },
+    {
+      "id": "q2",
+      "question": "What do market makers profit from?",
+      "options": ["Dividends", "Capital gains", "The bid-ask spread", "Commission fees"],
+      "correct": 2,
+      "explanation": "Market makers profit from the spread — the difference between the price they'll buy at (bid) and the price they'll sell at (ask)."
+    },
+    {
+      "id": "q3",
+      "question": "Which US regulator is primarily responsible for protecting stock market investors?",
+      "options": ["Federal Reserve", "FINRA", "SEC", "FDIC"],
+      "correct": 2,
+      "explanation": "The SEC (Securities and Exchange Commission) is the primary regulator responsible for protecting investors and maintaining fair markets."
+    },
+    {
+      "id": "q4",
+      "question": "What is a retail investor?",
+      "options": ["A store that sells stocks", "An individual who invests personal funds", "A bank that trades stocks", "A government investment agency"],
+      "correct": 1,
+      "explanation": "A retail investor is an individual (non-professional) investor who buys and sells securities through a brokerage account."
+    }
+  ]
+}

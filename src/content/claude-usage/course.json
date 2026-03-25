@@ -1,0 +1,25 @@
+{
+  "id": "claude-usage",
+  "title": "Claude for Coding",
+  "description": "Master Claude Code CLI — setup, tools, skills, hooks, MCP, and real-world coding workflows",
+  "version": "2.0",
+  "modules": [
+    "001_getting-started",
+    "002_claude-fundamentals",
+    "003_file-tools",
+    "004_search-and-navigation",
+    "005_bash-and-execution",
+    "006_agent-and-orchestration",
+    "007_midterm-1",
+    "008_skills-foundations",
+    "009_skills-authoring",
+    "010_skills-advanced-patterns",
+    "011_hooks-system",
+    "012_midterm-2",
+    "013_mcp-servers",
+    "014_mcp-advanced",
+    "015_project-configuration",
+    "016_advanced-workflows",
+    "017_final-exam"
+  ]
+}

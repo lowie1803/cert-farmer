@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Can an abstract class have a constructor?",
+      "options": [
+        "No — abstract classes cannot be instantiated so constructors are useless",
+        "Yes — subclasses call it via super() during their construction",
+        "Yes — but only a no-arg constructor",
+        "No — constructors are only for concrete classes"
+      ],
+      "correct": 1,
+      "explanation": "Abstract classes can and often do have constructors. Subclasses call them via super() to initialize inherited state. The abstract class itself cannot be instantiated directly."
+    },
+    {
+      "id": "q2",
+      "question": "What happens if a concrete subclass does NOT implement all abstract methods from its abstract parent?",
+      "options": [
+        "The unimplemented methods return null by default",
+        "Runtime error when the methods are called",
+        "Compile error — the subclass must also be declared abstract",
+        "The parent's implementation is used"
+      ],
+      "correct": 2,
+      "explanation": "If a subclass doesn't implement all abstract methods, it must itself be declared abstract. Otherwise the compiler reports an error."
+    },
+    {
+      "id": "q3",
+      "question": "In the Template Method pattern, why is the template method typically declared `final`?",
+      "options": [
+        "To improve performance",
+        "To prevent subclasses from changing the algorithm's structure",
+        "Because abstract classes require final methods",
+        "To allow multiple inheritance"
+      ],
+      "correct": 1,
+      "explanation": "Making the template method final ensures subclasses can customize individual steps (abstract methods) but cannot change the overall algorithm flow."
+    },
+    {
+      "id": "q4",
+      "question": "Which statement about abstract methods is correct?",
+      "options": [
+        "Abstract methods can have a method body",
+        "Abstract methods can be private",
+        "Abstract methods have no body and end with a semicolon",
+        "Abstract methods are optional in abstract classes"
+      ],
+      "correct": 2,
+      "explanation": "Abstract methods declare only the signature — no body, terminated with a semicolon. They cannot be private because subclasses need to see and override them."
+    },
+    {
+      "id": "q5",
+      "question": "When should you prefer an abstract class over an interface?",
+      "options": [
+        "When you need multiple inheritance",
+        "When subclasses need to share state (fields) and partial implementation",
+        "When you want to define a functional interface",
+        "When you need static utility methods"
+      ],
+      "correct": 1,
+      "explanation": "Abstract classes are preferred when subclasses share instance fields and concrete methods. Interfaces cannot hold instance state — only constants."
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What is the default value of an int instance field?",
+      "options": [
+        "null",
+        "undefined",
+        "0",
+        "Compiler error — must be initialized"
+      ],
+      "correct": 2,
+      "explanation": "Primitive instance fields are default-initialized: numeric types to 0, boolean to false, char to '\\u0000'. Local variables, however, must be explicitly initialized."
+    },
+    {
+      "id": "q2",
+      "question": "Which numeric literal is INVALID in Java?",
+      "options": [
+        "0b1010_1100",
+        "1_000_000",
+        "0xCAFE",
+        "1_000_.50"
+      ],
+      "correct": 3,
+      "explanation": "Underscores cannot be placed adjacent to a decimal point, at the start or end of a literal, or next to a prefix (0x, 0b). '1_000_.50' is invalid because the underscore is adjacent to the decimal point."
+    },
+    {
+      "id": "q3",
+      "question": "What happens when you unbox a null Integer?",
+      "options": [
+        "Returns 0",
+        "Returns null",
+        "Throws NullPointerException",
+        "Compilation error"
+      ],
+      "correct": 2,
+      "explanation": "Unboxing a null wrapper object throws a NullPointerException at runtime. The compiler cannot catch this because the null value is only known at runtime."
+    },
+    {
+      "id": "q4",
+      "question": "Which widening conversion may lose precision?",
+      "options": [
+        "int → long",
+        "int → float",
+        "byte → int",
+        "short → long"
+      ],
+      "correct": 1,
+      "explanation": "int → float is a widening conversion that can lose precision because float has only ~7 significant decimal digits, while int can have up to 10. For example, 123_456_789 becomes 1.23456792E8 as a float."
+    },
+    {
+      "id": "q5",
+      "question": "Why should Integer values be compared with .equals() instead of ==?",
+      "options": [
+        "== is not valid syntax for Integer objects",
+        "Integer caches only values -128 to 127; == fails for values outside that range",
+        "== compares the numeric value while .equals() compares references",
+        ".equals() is faster than == for Integer"
+      ],
+      "correct": 1,
+      "explanation": "Integer.valueOf() caches instances for values -128 to 127. Within this range, == appears to work because both references point to the same cached object. Outside this range, new objects are created and == compares references, not values."
+    }
+  ]
+}

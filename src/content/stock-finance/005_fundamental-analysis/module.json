@@ -1,0 +1,34 @@
+{
+  "id": "fundamental-analysis",
+  "title": "Fundamental Analysis",
+  "icon": "🔍",
+  "description": "Evaluating companies through financial statements and ratios",
+  "domain": "Part 2: What to Invest In",
+  "lessons": [
+    {
+      "id": "financial-statements",
+      "title": "Financial Statements",
+      "type": "notes"
+    },
+    {
+      "id": "financial-statements-quiz",
+      "title": "Financial Statements Quiz",
+      "type": "quiz"
+    },
+    {
+      "id": "key-ratios",
+      "title": "Key Financial Ratios",
+      "type": "notes"
+    },
+    {
+      "id": "key-ratios-quiz",
+      "title": "Key Ratios Quiz",
+      "type": "quiz"
+    },
+    {
+      "id": "valuation-basics",
+      "title": "Valuation Basics",
+      "type": "notes"
+    }
+  ]
+}

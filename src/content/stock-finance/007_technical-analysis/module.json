@@ -1,0 +1,29 @@
+{
+  "id": "technical-analysis",
+  "title": "Technical Analysis Basics",
+  "icon": "📉",
+  "description": "Trends, support/resistance, moving averages, and indicators",
+  "domain": "Part 3: How to Analyze",
+  "lessons": [
+    {
+      "id": "trends-and-patterns",
+      "title": "Trends & Patterns",
+      "type": "notes"
+    },
+    {
+      "id": "support-and-resistance",
+      "title": "Support & Resistance",
+      "type": "notes"
+    },
+    {
+      "id": "moving-averages",
+      "title": "Moving Averages",
+      "type": "notes"
+    },
+    {
+      "id": "technical-analysis-quiz",
+      "title": "Technical Analysis Quiz",
+      "type": "quiz"
+    }
+  ]
+}

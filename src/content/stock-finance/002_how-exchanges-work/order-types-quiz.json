@@ -1,0 +1,32 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Which order type guarantees immediate execution but not the exact price?",
+      "options": ["Limit order", "Stop-limit order", "Market order", "GTC order"],
+      "correct": 2,
+      "explanation": "A market order executes immediately at the best available price, but the exact price may differ slightly from what you see (slippage)."
+    },
+    {
+      "id": "q2",
+      "question": "You want to buy a stock only if it drops to $50 or below. Which order type should you use?",
+      "options": ["Market order", "Buy limit order at $50", "Stop order at $50", "Sell limit order at $50"],
+      "correct": 1,
+      "explanation": "A buy limit order at $50 will only execute if the price reaches $50 or lower, ensuring you don't pay more than your target."
+    },
+    {
+      "id": "q3",
+      "question": "What happens when a stop-loss order is triggered?",
+      "options": ["It becomes a limit order", "It becomes a market order", "It cancels automatically", "It waits until end of day"],
+      "correct": 1,
+      "explanation": "A stop (stop-loss) order becomes a market order once the stop price is reached, executing at the next available price."
+    },
+    {
+      "id": "q4",
+      "question": "What does GTC stand for?",
+      "options": ["Guaranteed Trade Confirmation", "Good Till Cancelled", "General Trading Conditions", "Gross Trade Cost"],
+      "correct": 1,
+      "explanation": "GTC (Good Till Cancelled) means the order stays open until it is either filled or you manually cancel it."
+    }
+  ]
+}

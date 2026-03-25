@@ -1,0 +1,24 @@
+{
+  "id": "risk-management",
+  "title": "Risk Management",
+  "icon": "🛡️",
+  "description": "Understanding and managing investment risk",
+  "domain": "Part 4: Strategy & Practice",
+  "lessons": [
+    {
+      "id": "types-of-risk",
+      "title": "Types of Risk",
+      "type": "notes"
+    },
+    {
+      "id": "risk-quiz",
+      "title": "Risk Management Quiz",
+      "type": "quiz"
+    },
+    {
+      "id": "stop-losses-and-hedging",
+      "title": "Stop Losses & Hedging",
+      "type": "notes"
+    }
+  ]
+}

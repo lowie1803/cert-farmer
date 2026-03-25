@@ -1,0 +1,12 @@
+{
+  "id": "project-data-pipeline",
+  "title": "Project: Data Pipeline",
+  "icon": "📊",
+  "description": "Add collections, error handling, and data storage to the news crawler",
+  "domain": "Project",
+  "lessons": [
+    { "id": "data-pipeline-brief", "title": "Pipeline Brief & Requirements", "type": "notes" },
+    { "id": "data-pipeline-guide", "title": "Step-by-Step Guide", "type": "notes" },
+    { "id": "data-pipeline-stretch", "title": "Stretch Goals", "type": "notes" }
+  ]
+}

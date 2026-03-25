@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What is the output of `\"hello\" == \"hel\" + \"lo\"`?",
+      "options": [
+        "false — different objects",
+        "true — compile-time constant folding puts both in the String pool",
+        "Compilation error — cannot use == with Strings",
+        "true — all String concatenations are interned"
+      ],
+      "correct": 1,
+      "explanation": "The compiler performs constant folding for compile-time string concatenation. Both \"hello\" and \"hel\" + \"lo\" resolve to the same pool reference at compile time."
+    },
+    {
+      "id": "q2",
+      "question": "Which method should you prefer for trimming whitespace in modern Java?",
+      "options": [
+        "trim() — it handles all whitespace types",
+        "strip() — it is Unicode-aware and handles all whitespace characters",
+        "replaceAll(\"\\\\s\", \"\") — most thorough approach",
+        "substring() with manual index calculation"
+      ],
+      "correct": 1,
+      "explanation": "strip() (Java 11+) uses Character.isWhitespace() which is Unicode-aware, handling characters like \\u2003 (em space) that trim() misses."
+    },
+    {
+      "id": "q3",
+      "question": "What happens when you call `new StringBuilder(\"abc\").insert(1, \"XY\").toString()`?",
+      "options": [
+        "\"abcXY\"",
+        "\"aXYbc\"",
+        "\"XYabc\"",
+        "StringIndexOutOfBoundsException"
+      ],
+      "correct": 1,
+      "explanation": "insert(1, \"XY\") inserts the string at index 1, pushing existing characters to the right: 'a' + 'XY' + 'bc' = \"aXYbc\"."
+    },
+    {
+      "id": "q4",
+      "question": "Which is a valid text block in Java 21?",
+      "options": [
+        "String s = \"\"\"Hello\"\"\";",
+        "String s = \"\"\"\nHello\n\"\"\";",
+        "String s = \"\"\" Hello\n\"\"\";",
+        "String s = '''Hello''';"
+      ],
+      "correct": 1,
+      "explanation": "The opening \"\"\" must be followed by a newline — no content on the same line. Option C has text after the opening \"\"\", which is a compile error. Option D uses single quotes which is not valid Java."
+    },
+    {
+      "id": "q5",
+      "question": "What does `\"Java 21\".formatted()` do if called with no arguments?",
+      "options": [
+        "Returns \"Java 21\" unchanged",
+        "Throws IllegalFormatException",
+        "Returns an empty string",
+        "Compilation error — formatted() requires at least one argument"
+      ],
+      "correct": 0,
+      "explanation": "formatted() with no arguments works like String.format() with no arguments — it returns the original string unchanged since there are no format specifiers to process."
+    }
+  ]
+}

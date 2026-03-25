@@ -1,0 +1,13 @@
+{
+  "id": "abstraction-interfaces",
+  "title": "Abstraction & Interfaces",
+  "icon": "🔲",
+  "description": "Abstract classes, interfaces, default methods, functional interfaces",
+  "domain": "Domain 2: OOP",
+  "lessons": [
+    { "id": "abstract-classes", "title": "Abstract Classes", "type": "notes" },
+    { "id": "abstract-quiz", "title": "Abstract Classes Quiz", "type": "quiz" },
+    { "id": "interfaces", "title": "Interfaces", "type": "notes" },
+    { "id": "interfaces-quiz", "title": "Interfaces Quiz", "type": "quiz" }
+  ]
+}

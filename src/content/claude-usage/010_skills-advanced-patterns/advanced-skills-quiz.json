@@ -1,0 +1,76 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What is skill composition?",
+      "options": [
+        "Writing skills in multiple programming languages",
+        "Combining multiple skills through layering, chaining, or referencing to build complex workflows",
+        "Compressing skills into a single file for performance",
+        "Automatically generating skills from code analysis"
+      ],
+      "correct": 1,
+      "explanation": "Skill composition means combining multiple skills through layering (base + specialized), chaining (output feeds into next skill), or referencing (one skill invokes another) to build complex workflows."
+    },
+    {
+      "id": "q2",
+      "question": "How does the Skill tool support parameterized skills?",
+      "options": [
+        "Through a special parameter config file",
+        "By requiring all parameters to be defined in settings.json",
+        "Through the optional 'args' parameter that passes arguments to the skill",
+        "Parameters are not supported — skills always behave the same way"
+      ],
+      "correct": 2,
+      "explanation": "The Skill tool accepts an optional 'args' parameter. When a user types '/deploy staging', Claude passes 'staging' as the args value, allowing the skill to adapt its behavior."
+    },
+    {
+      "id": "q3",
+      "question": "What should you do when two skills have overlapping instructions?",
+      "options": [
+        "Keep both — Claude will figure out which one to follow",
+        "Delete one of the skills entirely",
+        "Consolidate the overlap into one authoritative skill or extract shared logic into a base skill",
+        "Add a priority number to each skill"
+      ],
+      "correct": 2,
+      "explanation": "Overlapping instructions cause conflicts. The solution is to consolidate into one authoritative skill or extract the shared logic into a base skill that both can build upon."
+    },
+    {
+      "id": "q4",
+      "question": "When designing a skill ecosystem, what is the recommended approach?",
+      "options": [
+        "Create one large skill that handles everything",
+        "Map team workflows to skills systematically, organized by category",
+        "Only create skills for tasks that take more than an hour",
+        "Copy skills from other projects without modification"
+      ],
+      "correct": 1,
+      "explanation": "A well-designed skill ecosystem maps team workflows to skills systematically, organizing them into categories like development, operations, content, and project management."
+    },
+    {
+      "id": "q5",
+      "question": "Why should parameterized skills always define default behavior?",
+      "options": [
+        "Because the Skill tool crashes without defaults",
+        "So the skill works predictably when no arguments are provided",
+        "Because defaults are required by the SKILL.md schema",
+        "To make the SKILL.md file longer"
+      ],
+      "correct": 1,
+      "explanation": "Default behavior ensures the skill works predictably when users invoke it without arguments. For example, a deploy skill might default to production if no environment is specified."
+    },
+    {
+      "id": "q6",
+      "question": "In the CertFarmer case study, why does the project use three separate skills instead of one?",
+      "options": [
+        "Because Claude can only load one skill at a time",
+        "To keep each skill focused on one domain — content, architecture, and roadmap",
+        "Because the project is too large for a single skill",
+        "Because each skill is written by a different team member"
+      ],
+      "correct": 1,
+      "explanation": "CertFarmer uses three focused skills (content-authoring, architecture, project-roadmap) rather than one mega-skill. Each handles its domain, and keeping them separate makes them easier to maintain and update."
+    }
+  ]
+}

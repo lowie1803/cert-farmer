@@ -1,0 +1,32 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What does owning a stock represent?",
+      "options": ["A loan to the company", "Partial ownership of the company", "A guarantee of profit", "A bond with the company"],
+      "correct": 1,
+      "explanation": "A stock represents partial ownership (equity) in a company. It is not a loan — that would be a bond."
+    },
+    {
+      "id": "q2",
+      "question": "Which type of stock typically has voting rights?",
+      "options": ["Preferred stock", "Common stock", "Both types", "Neither type"],
+      "correct": 1,
+      "explanation": "Common stock usually carries voting rights (1 share = 1 vote), while preferred stock typically does not."
+    },
+    {
+      "id": "q3",
+      "question": "What are the two main ways to profit from stocks?",
+      "options": ["Interest and fees", "Capital gains and dividends", "Rent and royalties", "Coupons and premiums"],
+      "correct": 1,
+      "explanation": "Investors profit from stocks through capital gains (selling at a higher price) and dividends (profit distributions)."
+    },
+    {
+      "id": "q4",
+      "question": "You buy 500 shares of a company that has 1,000,000 total shares. What percentage of the company do you own?",
+      "options": ["0.5%", "0.05%", "5%", "0.005%"],
+      "correct": 1,
+      "explanation": "500 / 1,000,000 = 0.0005 = 0.05% ownership."
+    }
+  ]
+}

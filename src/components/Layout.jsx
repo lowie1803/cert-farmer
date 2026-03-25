@@ -2,13 +2,17 @@ import React from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import { useProgress } from '@hooks/useProgress';
 import { getCourse } from '@data/courses';
+import { hasGlossary } from '@data/glossaries';
 
 export default function Layout() {
   const location = useLocation();
   const { calculateCourseProgress } = useProgress();
 
-  // Get current course progress (default to CCNA)
-  const courseProgress = calculateCourseProgress(getCourse('ccna'));
+  // Extract courseId from URL path
+  const courseMatch = location.pathname.match(/\/course\/([^/]+)/);
+  const courseId = courseMatch ? courseMatch[1] : null;
+  const course = courseId ? getCourse(courseId) : null;
+  const courseProgress = course ? calculateCourseProgress(course) : 0;
 
   const progressColor =
     courseProgress === 0
@@ -34,34 +38,40 @@ export default function Layout() {
 
           {/* Right side */}
           <div className="flex items-center gap-4">
-            {/* Glossary link */}
-            <Link
-              to="/glossary"
-              className={`flex items-center gap-2 text-sm transition-colors ${
-                location.pathname === '/glossary'
-                  ? 'text-amber-400'
-                  : 'text-slate-400 hover:text-amber-400'
-              }`}
-            >
-              <span>🇻🇳</span>
-              <span className="hidden sm:inline">Glossary</span>
-            </Link>
+            {/* Glossary link — courses with a glossary */}
+            {courseId && hasGlossary(courseId) && (
+              <Link
+                to={`/course/${courseId}/glossary`}
+                className={`flex items-center gap-2 text-sm transition-colors ${
+                  location.pathname === `/course/${courseId}/glossary`
+                    ? 'text-amber-400'
+                    : 'text-slate-400 hover:text-amber-400'
+                }`}
+              >
+                <span>🇻🇳</span>
+                <span className="hidden sm:inline">Glossary</span>
+              </Link>
+            )}
 
-            {/* Progress indicator */}
-            <div className="text-sm text-slate-400">
-              <span className="text-amber-400 font-semibold">{courseProgress}%</span>
-              <span className="hidden sm:inline"> complete</span>
-            </div>
+            {/* Progress indicator — shown when viewing a course */}
+            {course && (
+              <div className="text-sm text-slate-400">
+                <span className="text-amber-400 font-semibold">{courseProgress}%</span>
+                <span className="hidden sm:inline"> complete</span>
+              </div>
+            )}
           </div>
         </div>
 
         {/* Thin progress bar along bottom of navbar */}
-        <div className="h-0.5 bg-slate-800">
-          <div
-            className={`h-full ${progressColor} transition-all duration-500`}
-            style={{ width: `${courseProgress}%` }}
-          />
-        </div>
+        {course && (
+          <div className="h-0.5 bg-slate-800">
+            <div
+              className={`h-full ${progressColor} transition-all duration-500`}
+              style={{ width: `${courseProgress}%` }}
+            />
+          </div>
+        )}
       </nav>
 
       {/* Main content */}

@@ -1,0 +1,76 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "When should you use the Write tool instead of the Edit tool?",
+      "options": [
+        "When changing a single line in an existing file",
+        "When renaming a variable throughout a file",
+        "When creating a brand-new file or doing a complete rewrite",
+        "When fixing a typo in a comment"
+      ],
+      "correct": 2,
+      "explanation": "Write is for creating new files or completely overwriting existing ones. For targeted modifications, Edit is preferred because it only sends the diff."
+    },
+    {
+      "id": "q2",
+      "question": "What happens if the Edit tool's old_string matches multiple locations in the file?",
+      "options": [
+        "It replaces the first occurrence only",
+        "It replaces all occurrences automatically",
+        "The edit fails with an error",
+        "It prompts the user to choose which occurrence"
+      ],
+      "correct": 2,
+      "explanation": "The Edit tool requires old_string to be unique in the file. If multiple matches exist, the edit fails. You must either add more context to make it unique or use replace_all: true."
+    },
+    {
+      "id": "q3",
+      "question": "What is the default line limit when using the Read tool without specifying offset or limit?",
+      "options": [
+        "500 lines",
+        "1000 lines",
+        "2000 lines",
+        "Unlimited"
+      ],
+      "correct": 2,
+      "explanation": "By default, the Read tool returns up to 2000 lines from the beginning of the file. Use offset and limit parameters for larger files."
+    },
+    {
+      "id": "q4",
+      "question": "What is required when reading a PDF file longer than 10 pages?",
+      "options": [
+        "Use the Bash tool with a PDF reader instead",
+        "Specify the pages parameter (max 20 pages per request)",
+        "Convert it to text first using a separate tool",
+        "Nothing special — Read handles all PDFs automatically"
+      ],
+      "correct": 1,
+      "explanation": "For PDFs longer than 10 pages, the pages parameter is required (e.g., pages: '1-5'). Maximum 20 pages per request. Reading a large PDF without specifying pages will fail."
+    },
+    {
+      "id": "q5",
+      "question": "Why must you read a file before editing it?",
+      "options": [
+        "To check file permissions",
+        "To ensure the file is not locked by another process",
+        "Because Edit and Write will fail without a prior Read in the conversation",
+        "To count the total number of lines"
+      ],
+      "correct": 2,
+      "explanation": "Both Edit and Write tools require that you have Read the file in the current conversation. This ensures you know the exact contents and can provide accurate old_string values for edits."
+    },
+    {
+      "id": "q6",
+      "question": "What is the correct way to read the contents of a directory?",
+      "options": [
+        "Use Read with the directory path",
+        "Use Glob with pattern '*'",
+        "Use ls via the Bash tool",
+        "Use the Edit tool in read-only mode"
+      ],
+      "correct": 2,
+      "explanation": "The Read tool can only read files, not directories. To list directory contents, use the ls command via the Bash tool."
+    }
+  ]
+}

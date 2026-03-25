@@ -1,0 +1,13 @@
+{
+  "id": "project-configuration",
+  "title": "Project Configuration",
+  "icon": "⚙️",
+  "description": "Master CLAUDE.md hierarchy, project settings, and effective instructions",
+  "domain": "Domain 4: Configuration & Workflows",
+  "lessons": [
+    { "id": "claude-md-hierarchy", "title": "CLAUDE.md Hierarchy", "type": "notes" },
+    { "id": "project-settings", "title": "Project Settings", "type": "notes" },
+    { "id": "effective-instructions", "title": "Effective Instructions", "type": "notes" },
+    { "id": "config-quiz", "title": "Configuration Quiz", "type": "quiz" }
+  ]
+}

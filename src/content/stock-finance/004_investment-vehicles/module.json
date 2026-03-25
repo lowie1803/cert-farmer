@@ -1,0 +1,34 @@
+{
+  "id": "investment-vehicles",
+  "title": "Types of Investment Vehicles",
+  "icon": "🧺",
+  "description": "Stocks, bonds, ETFs, mutual funds, and index funds",
+  "domain": "Part 2: What to Invest In",
+  "lessons": [
+    {
+      "id": "stocks-vs-bonds",
+      "title": "Stocks vs Bonds",
+      "type": "notes"
+    },
+    {
+      "id": "stocks-vs-bonds-quiz",
+      "title": "Stocks vs Bonds Quiz",
+      "type": "quiz"
+    },
+    {
+      "id": "etfs-and-index-funds",
+      "title": "ETFs & Index Funds",
+      "type": "notes"
+    },
+    {
+      "id": "mutual-funds",
+      "title": "Mutual Funds",
+      "type": "notes"
+    },
+    {
+      "id": "vehicles-quiz",
+      "title": "Investment Vehicles Quiz",
+      "type": "quiz"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "exception-handling",
+  "title": "Exception Handling",
+  "icon": "⚠️",
+  "description": "try-catch-finally, checked vs unchecked, custom exceptions, try-with-resources",
+  "domain": "Domain 3: Core APIs",
+  "lessons": [
+    { "id": "exceptions", "title": "Exception Handling Basics", "type": "notes" },
+    { "id": "custom-exceptions", "title": "Custom Exceptions & Best Practices", "type": "notes" },
+    { "id": "exceptions-quiz", "title": "Exceptions Quiz", "type": "quiz" }
+  ]
+}

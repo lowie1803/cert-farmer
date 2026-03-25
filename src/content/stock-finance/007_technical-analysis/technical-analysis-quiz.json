@@ -1,0 +1,32 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "A 'Golden Cross' occurs when:",
+      "options": ["The 200-day MA crosses above the 50-day MA", "The 50-day MA crosses above the 200-day MA", "The stock price hits an all-time high", "Volume exceeds the 200-day average"],
+      "correct": 1,
+      "explanation": "A Golden Cross is a bullish signal where the 50-day moving average crosses above the 200-day moving average, suggesting a potential long-term uptrend."
+    },
+    {
+      "id": "q2",
+      "question": "In a head & shoulders pattern, a bearish reversal is confirmed when:",
+      "options": ["The right shoulder is higher than the left", "The head reaches a new high", "Price breaks below the neckline", "Volume increases at the head"],
+      "correct": 2,
+      "explanation": "The head & shoulders reversal is confirmed when price breaks below the neckline (the line connecting the lows between the shoulders and head)."
+    },
+    {
+      "id": "q3",
+      "question": "When a support level is broken, it often:",
+      "options": ["Disappears permanently", "Becomes a new resistance level", "Doubles in strength", "Has no further significance"],
+      "correct": 1,
+      "explanation": "This is called 'role reversal' — when support is broken, that price level often becomes resistance, and vice versa."
+    },
+    {
+      "id": "q4",
+      "question": "Which moving average gives more weight to recent prices?",
+      "options": ["Simple Moving Average (SMA)", "Exponential Moving Average (EMA)", "Both weight prices equally", "Neither — they use median prices"],
+      "correct": 1,
+      "explanation": "The EMA applies a multiplier that gives more weight to recent prices, making it react faster to new price movements compared to the SMA."
+    }
+  ]
+}

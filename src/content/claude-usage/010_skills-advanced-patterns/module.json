@@ -1,0 +1,14 @@
+{
+  "id": "skills-advanced-patterns",
+  "title": "Advanced Skills Patterns",
+  "icon": "🧩",
+  "description": "Compose skills, parameterize them, and explore the skill ecosystem",
+  "domain": "Domain 2: Skills System",
+  "lessons": [
+    { "id": "skill-composition", "title": "Skill Composition", "type": "notes" },
+    { "id": "parameterized-skills", "title": "Parameterized Skills", "type": "notes" },
+    { "id": "skill-ecosystem", "title": "Skill Ecosystem", "type": "notes" },
+    { "id": "skill-case-study", "title": "Skill Case Study", "type": "notes" },
+    { "id": "advanced-skills-quiz", "title": "Advanced Skills Quiz", "type": "quiz" }
+  ]
+}
