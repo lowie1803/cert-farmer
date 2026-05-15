@@ -1,0 +1,46 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What are the solutions of x² − 5x + 6 = 0?",
+      "options": ["2 and 3", "-2 and -3", "1 and 6", "-1 and -6"],
+      "correct": 0,
+      "explanation": "Factor: (x−2)(x−3)=0. Find two numbers that multiply to 6 and add to −5: −2 and −3. So x=2 or x=3."
+    },
+    {
+      "id": "q2",
+      "question": "If f(x) = 2x² − 3x + 1, what is f(2)?",
+      "options": ["3", "5", "7", "9"],
+      "correct": 0,
+      "explanation": "f(2) = 2(4) − 3(2) + 1 = 8 − 6 + 1 = 3."
+    },
+    {
+      "id": "q3",
+      "question": "What is the sum of the roots of 3x² − 12x + 9 = 0?",
+      "options": ["4", "3", "2", "1"],
+      "correct": 0,
+      "explanation": "By Vieta's formula, sum of roots = −b/a = −(−12)/3 = 4. No need to solve the equation."
+    },
+    {
+      "id": "q4",
+      "question": "Factor: x² − 16",
+      "options": ["(x − 4)(x + 4)", "(x − 8)(x − 2)", "(x − 4)²", "x(x − 16)"],
+      "correct": 0,
+      "explanation": "Difference of squares: a² − b² = (a−b)(a+b). x² − 16 = x² − 4² = (x−4)(x+4)."
+    },
+    {
+      "id": "q5",
+      "question": "If f(x) = x + 1 and g(x) = x², what is g(f(3))?",
+      "options": ["16", "9", "15", "25"],
+      "correct": 0,
+      "explanation": "Composition: first f, then g. f(3) = 3+1 = 4. g(4) = 4² = 16."
+    },
+    {
+      "id": "q6",
+      "question": "What is the product of the roots of x² − 7x + 12 = 0?",
+      "options": ["12", "-12", "7", "-7"],
+      "correct": 0,
+      "explanation": "By Vieta's formula, product of roots = c/a = 12/1 = 12."
+    }
+  ]
+}

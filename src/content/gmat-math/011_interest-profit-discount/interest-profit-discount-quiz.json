@@ -1,0 +1,46 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "$1,000 at 5% simple interest for 3 years. What is the total interest earned?",
+      "options": ["$100", "$150", "$200", "$250"],
+      "correct": 1,
+      "explanation": "I = P × r × t = 1000 × 0.05 × 3 = $150."
+    },
+    {
+      "id": "q2",
+      "question": "An item bought for $80 is sold for $100. What is the profit percent?",
+      "options": ["20%", "25%", "30%", "15%"],
+      "correct": 1,
+      "explanation": "Profit = $20. Profit % = 20/80 × 100 = 25%. The base is the cost price ($80), not the selling price."
+    },
+    {
+      "id": "q3",
+      "question": "A coat is discounted 30% from $200. What is the sale price?",
+      "options": ["$120", "$140", "$150", "$160"],
+      "correct": 1,
+      "explanation": "Sale price = 200 × (1 − 0.30) = 200 × 0.70 = $140."
+    },
+    {
+      "id": "q4",
+      "question": "$500 at 10% compounded annually for 2 years. What is the final amount?",
+      "options": ["$600", "$605", "$610", "$615"],
+      "correct": 1,
+      "explanation": "A = 500 × (1.10)² = 500 × 1.21 = $605. Simple interest would give $600."
+    },
+    {
+      "id": "q5",
+      "question": "An item costs $60 to produce and is sold at a 40% markup. What is the selling price?",
+      "options": ["$84", "$86", "$88", "$90"],
+      "correct": 0,
+      "explanation": "Selling price = Cost × (1 + markup) = 60 × 1.40 = $84."
+    },
+    {
+      "id": "q6",
+      "question": "A store reduces a price by 20%, then increases the new price by 20%. What is the net change?",
+      "options": ["-4%", "0%", "+4%", "-2%"],
+      "correct": 0,
+      "explanation": "0.80 × 1.20 = 0.96 — a 4% net decrease. Successive percent changes multiply, never add."
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "How many ways can 5 people stand in a line?",
+      "options": ["20", "60", "100", "120"],
+      "correct": 3,
+      "explanation": "5! = 5 × 4 × 3 × 2 × 1 = 120."
+    },
+    {
+      "id": "q2",
+      "question": "How many ways can a president and VP be chosen from 8 candidates (different roles)?",
+      "options": ["8", "28", "56", "64"],
+      "correct": 2,
+      "explanation": "Order matters (different roles). P(8,2) = 8 × 7 = 56."
+    },
+    {
+      "id": "q3",
+      "question": "How many ways to choose 3 people from a group of 7 (order doesn't matter)?",
+      "options": ["21", "35", "42", "210"],
+      "correct": 1,
+      "explanation": "C(7,3) = 7!/(3!×4!) = (7×6×5)/(3×2×1) = 35."
+    },
+    {
+      "id": "q4",
+      "question": "A menu has 3 appetizers, 4 entrees, and 2 desserts. How many different meals (one of each) can be ordered?",
+      "options": ["9", "18", "24", "36"],
+      "correct": 2,
+      "explanation": "Fundamental counting principle: 3 × 4 × 2 = 24."
+    },
+    {
+      "id": "q5",
+      "question": "A committee of 2 men and 3 women is formed from 5 men and 6 women. How many committees are possible?",
+      "options": ["150", "200", "250", "300"],
+      "correct": 1,
+      "explanation": "C(5,2) × C(6,3) = 10 × 20 = 200."
+    },
+    {
+      "id": "q6",
+      "question": "A class elects a president, secretary, and treasurer from 10 students. How many different outcomes are there?",
+      "options": ["120", "360", "720", "1000"],
+      "correct": 2,
+      "explanation": "Order matters (different roles). P(10,3) = 10 × 9 × 8 = 720."
+    }
+  ]
+}

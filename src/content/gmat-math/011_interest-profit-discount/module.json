@@ -1,0 +1,19 @@
+{
+  "id": "interest-profit-discount",
+  "title": "Interest, Profit & Discount",
+  "icon": "💰",
+  "description": "Simple and compound interest, profit/loss percent, markup, and discount chains",
+  "domain": "Word Problems",
+  "lessons": [
+    {
+      "id": "interest-profit-discount",
+      "title": "Interest, Profit & Discount",
+      "type": "notes"
+    },
+    {
+      "id": "interest-profit-discount-quiz",
+      "title": "Interest, Profit & Discount Quiz",
+      "type": "quiz"
+    }
+  ]
+}

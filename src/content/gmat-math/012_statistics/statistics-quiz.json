@@ -1,0 +1,46 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Data set: 3, 7, 7, 9, 11, 13. What is the median?",
+      "options": ["7", "8", "9", "10"],
+      "correct": 1,
+      "explanation": "Sorted: 3, 7, 7, 9, 11, 13. Even count — average the two middle values: (7+9)/2 = 8."
+    },
+    {
+      "id": "q2",
+      "question": "Data set: 4, 8, 8, 10, 15. What is the mode?",
+      "options": ["4", "8", "10", "15"],
+      "correct": 1,
+      "explanation": "The mode is the value that appears most often. 8 appears twice; all others appear once."
+    },
+    {
+      "id": "q3",
+      "question": "Which measure of central tendency is most resistant to outliers?",
+      "options": ["Mean", "Median", "Mode", "Range"],
+      "correct": 1,
+      "explanation": "The median is the middle value and is unaffected by extreme values at the tails. The mean is pulled significantly by outliers."
+    },
+    {
+      "id": "q4",
+      "question": "A data set has mean = 50. If each value is increased by 10, what is the new mean?",
+      "options": ["50", "55", "60", "65"],
+      "correct": 2,
+      "explanation": "Adding a constant to all values shifts the mean by that constant. New mean = 50 + 10 = 60. Standard deviation is unchanged."
+    },
+    {
+      "id": "q5",
+      "question": "The mean of 5 numbers is 12. A 6th number of 18 is added. What is the new mean?",
+      "options": ["13", "14", "15", "12"],
+      "correct": 0,
+      "explanation": "Total = 5×12 = 60. New total = 60+18 = 78. New mean = 78/6 = 13."
+    },
+    {
+      "id": "q6",
+      "question": "Data: 60, 70, 80, 90, 100. A new score of 50 is added. What is the new mean?",
+      "options": ["75", "76", "78", "80"],
+      "correct": 0,
+      "explanation": "Original sum = 400. New sum = 450. New mean = 450/6 = 75."
+    }
+  ]
+}

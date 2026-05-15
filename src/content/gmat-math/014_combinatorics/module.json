@@ -1,0 +1,19 @@
+{
+  "id": "combinatorics",
+  "title": "Combinatorics",
+  "icon": "🎯",
+  "description": "Fundamental counting principle, permutations, and combinations",
+  "domain": "Word Problems",
+  "lessons": [
+    {
+      "id": "combinatorics",
+      "title": "Combinatorics",
+      "type": "notes"
+    },
+    {
+      "id": "combinatorics-quiz",
+      "title": "Combinatorics Quiz",
+      "type": "quiz"
+    }
+  ]
+}

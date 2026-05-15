@@ -1,0 +1,16 @@
+{
+  "id": "midterm-1",
+  "title": "Midterm 1: Arithmetic & Algebra",
+  "icon": "📝",
+  "description": "Timed exam covering modules 2–8: arithmetic, fractions, ratios, exponents, algebra, quadratics, and inequalities",
+  "domain": "Assessment",
+  "lessons": [
+    {
+      "id": "midterm-1-exam",
+      "title": "Midterm 1 Exam",
+      "type": "exam",
+      "timeLimit": 32,
+      "passingScore": 70
+    }
+  ]
+}

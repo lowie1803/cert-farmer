@@ -1,0 +1,46 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "A car travels 240 miles at 60 mph. How long does it take?",
+      "options": ["3 hours", "4 hours", "5 hours", "6 hours"],
+      "correct": 1,
+      "explanation": "T = D/R = 240/60 = 4 hours."
+    },
+    {
+      "id": "q2",
+      "question": "Working alone, A finishes a job in 6 hours and B in 4 hours. Working together, how long does it take?",
+      "options": ["2.4 hours", "2 hours", "3 hours", "3.6 hours"],
+      "correct": 0,
+      "explanation": "Combined rate = 1/6 + 1/4 = 5/12 job/hour. Time = 12/5 = 2.4 hours."
+    },
+    {
+      "id": "q3",
+      "question": "Two trains 300 miles apart approach each other — one at 60 mph, the other at 90 mph. How long until they meet?",
+      "options": ["2 hours", "2.5 hours", "3 hours", "3.5 hours"],
+      "correct": 0,
+      "explanation": "Moving toward each other, add speeds: 60+90=150 mph. Time = 300/150 = 2 hours."
+    },
+    {
+      "id": "q4",
+      "question": "A 40-liter solution is 30% alcohol. How many liters of alcohol does it contain?",
+      "options": ["10", "12", "14", "16"],
+      "correct": 1,
+      "explanation": "0.30 × 40 = 12 liters of alcohol."
+    },
+    {
+      "id": "q5",
+      "question": "You mix 10 lbs at $4/lb with x lbs at $6/lb to get an average of $5/lb. What is x?",
+      "options": ["10", "12", "15", "8"],
+      "correct": 0,
+      "explanation": "10×4 + 6x = 5(10+x) → 40+6x = 50+5x → x = 10 lbs."
+    },
+    {
+      "id": "q6",
+      "question": "A river current flows at 3 mph. A boat's still-water speed is 12 mph. How long to travel 45 miles downstream?",
+      "options": ["3 hours", "3.5 hours", "4 hours", "4.5 hours"],
+      "correct": 0,
+      "explanation": "Downstream speed = 12+3 = 15 mph. Time = 45/15 = 3 hours."
+    }
+  ]
+}

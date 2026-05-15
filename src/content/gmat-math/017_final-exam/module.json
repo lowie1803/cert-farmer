@@ -1,0 +1,16 @@
+{
+  "id": "final-exam",
+  "title": "Final Exam",
+  "icon": "🏆",
+  "description": "Comprehensive timed exam covering all GMAT Focus Quant topics",
+  "domain": "Assessment",
+  "lessons": [
+    {
+      "id": "final-exam",
+      "title": "GMAT Focus Quant — Final Exam",
+      "type": "exam",
+      "timeLimit": 53,
+      "passingScore": 75
+    }
+  ]
+}

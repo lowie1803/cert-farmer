@@ -1,0 +1,46 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Solve for x: 3x − 7 = 14",
+      "options": ["x = 5", "x = 6", "x = 7", "x = 8"],
+      "correct": 2,
+      "explanation": "3x = 14 + 7 = 21. x = 21/3 = 7."
+    },
+    {
+      "id": "q2",
+      "question": "If 2x + y = 10 and x − y = 2, what is x?",
+      "options": ["3", "4", "5", "6"],
+      "correct": 1,
+      "explanation": "Add the equations: 3x = 12, so x = 4. Then y = x − 2 = 2."
+    },
+    {
+      "id": "q3",
+      "question": "Solve for x: (x − 3)/2 = (x + 1)/4",
+      "options": ["7", "9", "11", "13"],
+      "correct": 0,
+      "explanation": "Multiply by 4: 2(x−3) = x+1 → 2x−6 = x+1 → x = 7."
+    },
+    {
+      "id": "q4",
+      "question": "If 3(x − 2) = 2(x + 4), what is x?",
+      "options": ["14", "12", "10", "8"],
+      "correct": 0,
+      "explanation": "3x − 6 = 2x + 8 → x = 14."
+    },
+    {
+      "id": "q5",
+      "question": "Two numbers sum to 45 and differ by 9. What is the larger number?",
+      "options": ["27", "28", "29", "30"],
+      "correct": 0,
+      "explanation": "x + y = 45 and x − y = 9. Adding: 2x = 54, x = 27, y = 18."
+    },
+    {
+      "id": "q6",
+      "question": "If x/3 + x/6 = 5, what is x?",
+      "options": ["10", "12", "15", "20"],
+      "correct": 0,
+      "explanation": "Multiply through by LCD=6: 2x + x = 30 → 3x = 30 → x = 10."
+    }
+  ]
+}

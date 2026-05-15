@@ -1,0 +1,19 @@
+{
+  "id": "exponents-roots",
+  "title": "Exponents & Roots",
+  "icon": "📈",
+  "description": "Exponent rules, fractional and negative exponents, and radical simplification",
+  "domain": "Arithmetic",
+  "lessons": [
+    {
+      "id": "exponents-roots",
+      "title": "Exponents & Roots",
+      "type": "notes"
+    },
+    {
+      "id": "exponents-roots-quiz",
+      "title": "Exponents & Roots Quiz",
+      "type": "quiz"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "rates-work-mixtures",
+  "title": "Rates, Work & Mixtures",
+  "icon": "🚂",
+  "description": "Distance-rate-time problems, combined work rates, and weighted average mixtures",
+  "domain": "Word Problems",
+  "lessons": [
+    {
+      "id": "rates-work-mixtures",
+      "title": "Rates, Work & Mixtures",
+      "type": "notes",
+      "resources": [
+        { "type": "link", "title": "GMAT Club: Rate Problems", "url": "https://gmatclub.com/forum/gmat-speed-distance-problems-collection-106516.html" }
+      ]
+    },
+    {
+      "id": "rates-work-mixtures-quiz",
+      "title": "Rates, Work & Mixtures Quiz",
+      "type": "quiz"
+    }
+  ]
+}

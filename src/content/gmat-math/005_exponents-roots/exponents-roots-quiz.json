@@ -1,0 +1,53 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Simplify: 2³ × 2⁴",
+      "options": ["2⁷", "2¹²", "4⁷", "2⁸"],
+      "correct": 0,
+      "explanation": "When multiplying same-base powers, add exponents: 2³ × 2⁴ = 2^(3+4) = 2⁷ = 128."
+    },
+    {
+      "id": "q2",
+      "question": "What is (3²)³?",
+      "options": ["3⁵", "3⁶", "9⁶", "3⁸"],
+      "correct": 1,
+      "explanation": "Power of a power: multiply exponents. (3²)³ = 3^(2×3) = 3⁶ = 729."
+    },
+    {
+      "id": "q3",
+      "question": "What is 16^(3/4)?",
+      "options": ["8", "12", "4", "6"],
+      "correct": 0,
+      "explanation": "16^(3/4) = (16^(1/4))³ = 2³ = 8. Take the root first (∜16 = 2), then cube the result."
+    },
+    {
+      "id": "q4",
+      "question": "Simplify √48.",
+      "options": ["4√3", "2√12", "3√4", "6√2"],
+      "correct": 0,
+      "explanation": "√48 = √(16×3) = 4√3. Factor out the largest perfect square (16)."
+    },
+    {
+      "id": "q5",
+      "question": "What is 2⁻³?",
+      "options": ["1/8", "-8", "-1/8", "1/6"],
+      "correct": 0,
+      "explanation": "Negative exponent: 2⁻³ = 1/2³ = 1/8."
+    },
+    {
+      "id": "q6",
+      "question": "Simplify: (x³ × x⁻¹) ÷ x²",
+      "options": ["1", "x²", "x⁻²", "x"],
+      "correct": 0,
+      "explanation": "Add/subtract exponents: x^(3 + (−1) − 2) = x⁰ = 1."
+    },
+    {
+      "id": "q7",
+      "question": "√12 × √3 = ?",
+      "options": ["6", "4√3", "3√4", "9"],
+      "correct": 0,
+      "explanation": "√12 × √3 = √(12×3) = √36 = 6."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "probability",
+  "title": "Probability",
+  "icon": "🎲",
+  "description": "Basic probability, independent and dependent events, complement, and 'at least one' problems",
+  "domain": "Word Problems",
+  "lessons": [
+    {
+      "id": "probability",
+      "title": "Probability",
+      "type": "notes"
+    },
+    {
+      "id": "probability-quiz",
+      "title": "Probability Quiz",
+      "type": "quiz"
+    }
+  ]
+}

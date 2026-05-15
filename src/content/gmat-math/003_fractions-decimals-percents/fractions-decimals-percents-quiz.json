@@ -1,0 +1,53 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What is 3/4 expressed as a percentage?",
+      "options": ["70%", "75%", "80%", "85%"],
+      "correct": 1,
+      "explanation": "3 ÷ 4 = 0.75 = 75%."
+    },
+    {
+      "id": "q2",
+      "question": "A price increases from $80 to $100. What is the percent increase?",
+      "options": ["20%", "25%", "30%", "15%"],
+      "correct": 1,
+      "explanation": "Percent change = (100−80)/80 × 100 = 20/80 × 100 = 25%. Note: the base is the original $80, not $100."
+    },
+    {
+      "id": "q3",
+      "question": "What is 0.625 as a fraction in lowest terms?",
+      "options": ["5/8", "3/5", "7/11", "5/7"],
+      "correct": 0,
+      "explanation": "0.625 = 625/1000. Dividing both by 125 gives 5/8. Alternatively, memorize 5/8 = 0.625."
+    },
+    {
+      "id": "q4",
+      "question": "15 is 30% of what number?",
+      "options": ["50", "45", "40", "55"],
+      "correct": 0,
+      "explanation": "Reverse percent: 15 / 0.30 = 50."
+    },
+    {
+      "id": "q5",
+      "question": "What is 2/3 ÷ 4/9?",
+      "options": ["3/2", "2/3", "8/27", "3/4"],
+      "correct": 0,
+      "explanation": "Division by a fraction = multiply by its reciprocal. 2/3 × 9/4 = 18/12 = 3/2."
+    },
+    {
+      "id": "q6",
+      "question": "A jacket costs $120 after a 20% discount. What was the original price?",
+      "options": ["$140", "$144", "$150", "$160"],
+      "correct": 2,
+      "explanation": "After a 20% discount, you pay 80% of the original. Original × 0.80 = $120, so Original = 120 / 0.80 = $150. Adding 20% back ($120 × 1.20 = $144) is a common wrong approach."
+    },
+    {
+      "id": "q7",
+      "question": "A price is increased by 25% and then decreased by 25%. What is the net change?",
+      "options": ["-6.25%", "0%", "+6.25%", "-3%"],
+      "correct": 0,
+      "explanation": "1.25 × 0.75 = 0.9375, so the net change is −6.25%. Successive percent changes multiply, and the result is almost always not zero."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "ratios-proportions",
+  "title": "Ratios & Proportions",
+  "icon": "⚖️",
+  "description": "Part-to-part, part-to-whole, combined ratios, and direct/inverse variation",
+  "domain": "Arithmetic",
+  "lessons": [
+    {
+      "id": "ratios-proportions",
+      "title": "Ratios & Proportions",
+      "type": "notes"
+    },
+    {
+      "id": "ratios-proportions-quiz",
+      "title": "Ratios & Proportions Quiz",
+      "type": "quiz"
+    }
+  ]
+}

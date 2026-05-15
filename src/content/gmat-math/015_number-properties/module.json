@@ -1,0 +1,19 @@
+{
+  "id": "number-properties",
+  "title": "Number Properties",
+  "icon": "🔍",
+  "description": "Odd/even rules, positive/negative, remainders, and units digits patterns",
+  "domain": "Arithmetic",
+  "lessons": [
+    {
+      "id": "number-properties",
+      "title": "Number Properties",
+      "type": "notes"
+    },
+    {
+      "id": "number-properties-quiz",
+      "title": "Number Properties Quiz",
+      "type": "quiz"
+    }
+  ]
+}

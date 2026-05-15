@@ -1,0 +1,19 @@
+{
+  "id": "algebra-equations",
+  "title": "Algebra & Linear Equations",
+  "icon": "🔣",
+  "description": "Linear equations, systems of equations, substitution, and elimination",
+  "domain": "Algebra",
+  "lessons": [
+    {
+      "id": "algebra-equations",
+      "title": "Algebra & Linear Equations",
+      "type": "notes"
+    },
+    {
+      "id": "algebra-equations-quiz",
+      "title": "Algebra & Linear Equations Quiz",
+      "type": "quiz"
+    }
+  ]
+}

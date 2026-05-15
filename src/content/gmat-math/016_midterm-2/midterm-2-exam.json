@@ -1,0 +1,124 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "A car averages 50 mph for 2 hours and 70 mph for 3 hours. What is the average speed for the entire trip?",
+      "options": ["62 mph", "60 mph", "58 mph", "64 mph"],
+      "correct": 0,
+      "explanation": "Total distance = 50×2 + 70×3 = 100+210 = 310 miles. Total time = 5 hours. Average speed = 310/5 = 62 mph.",
+      "domain": "Rates"
+    },
+    {
+      "id": "q2",
+      "question": "Pump A fills a tank in 6 hours, Pump B in 12 hours. Both working together, how long to fill the tank?",
+      "options": ["3 hours", "4 hours", "4.5 hours", "5 hours"],
+      "correct": 1,
+      "explanation": "Combined rate = 1/6 + 1/12 = 2/12 + 1/12 = 3/12 = 1/4 tank/hour. Time = 4 hours.",
+      "domain": "Work"
+    },
+    {
+      "id": "q3",
+      "question": "A solution is 20% acid. How many liters of pure acid must be added to 30 liters to make it 40% acid?",
+      "options": ["5", "8", "10", "12"],
+      "correct": 2,
+      "explanation": "0.20×30 + x = 0.40(30+x) → 6+x = 12+0.4x → 0.6x = 6 → x = 10 liters.",
+      "domain": "Mixtures"
+    },
+    {
+      "id": "q4",
+      "question": "$2,000 at 8% simple interest for 18 months. What is the total interest earned?",
+      "options": ["$240", "$280", "$320", "$360"],
+      "correct": 0,
+      "explanation": "I = P×r×t = 2000 × 0.08 × 1.5 = $240. Convert 18 months to 1.5 years.",
+      "domain": "Interest"
+    },
+    {
+      "id": "q5",
+      "question": "A merchant buys goods at $480 and sells at $600. What is the profit percent?",
+      "options": ["20%", "25%", "15%", "30%"],
+      "correct": 1,
+      "explanation": "Profit = $120. Profit % = 120/480 × 100 = 25%. Base is the cost price.",
+      "domain": "Profit"
+    },
+    {
+      "id": "q6",
+      "question": "After a 15% discount and then 5% tax, what is the final price of a $200 item?",
+      "options": ["$178.50", "$180.00", "$175.50", "$179.00"],
+      "correct": 0,
+      "explanation": "After discount: 200 × 0.85 = $170. After tax: 170 × 1.05 = $178.50.",
+      "domain": "Discount"
+    },
+    {
+      "id": "q7",
+      "question": "Data: 2, 4, 4, 4, 5, 5, 7, 9. What is the mean?",
+      "options": ["5", "5.5", "4.5", "6"],
+      "correct": 0,
+      "explanation": "Sum = 2+4+4+4+5+5+7+9 = 40. Mean = 40/8 = 5.",
+      "domain": "Statistics"
+    },
+    {
+      "id": "q8",
+      "question": "The mean of 5 numbers is 12 and a 6th number of 18 is added. What is the new mean?",
+      "options": ["13", "14", "15", "12"],
+      "correct": 0,
+      "explanation": "Total = 5×12 = 60. New total = 60+18 = 78. New mean = 78/6 = 13.",
+      "domain": "Statistics"
+    },
+    {
+      "id": "q9",
+      "question": "A bag has 3 red, 4 blue, and 5 green balls. What is P(not green)?",
+      "options": ["7/12", "5/12", "1/2", "2/3"],
+      "correct": 0,
+      "explanation": "Not green = red + blue = 3+4 = 7 balls. P(not green) = 7/12.",
+      "domain": "Probability"
+    },
+    {
+      "id": "q10",
+      "question": "P(A) = 0.4 and P(B) = 0.3. If A and B are mutually exclusive, what is P(A or B)?",
+      "options": ["0.70", "0.58", "0.12", "0.82"],
+      "correct": 0,
+      "explanation": "Mutually exclusive events: P(A or B) = P(A) + P(B) = 0.4 + 0.3 = 0.70.",
+      "domain": "Probability"
+    },
+    {
+      "id": "q11",
+      "question": "How many 3-digit numbers can be formed from {1, 2, 3, 4, 5} without repetition?",
+      "options": ["60", "80", "100", "120"],
+      "correct": 0,
+      "explanation": "Order matters. P(5,3) = 5 × 4 × 3 = 60.",
+      "domain": "Combinatorics"
+    },
+    {
+      "id": "q12",
+      "question": "A team of 4 is chosen from 9 people. How many different teams are possible?",
+      "options": ["126", "252", "504", "3024"],
+      "correct": 0,
+      "explanation": "C(9,4) = 9!/(4!×5!) = (9×8×7×6)/(4×3×2×1) = 3024/24 = 126.",
+      "domain": "Combinatorics"
+    },
+    {
+      "id": "q13",
+      "question": "What is the units digit of 3¹⁵?",
+      "options": ["1", "3", "7", "9"],
+      "correct": 2,
+      "explanation": "Cycle for 3: 3,9,7,1 (period 4). 15 mod 4 = 3 → 3rd in cycle = 7.",
+      "domain": "Number Properties"
+    },
+    {
+      "id": "q14",
+      "question": "If n = 2^a × 3^b, how many positive factors does n have?",
+      "options": ["(a+1)(b+1)", "ab", "2ab", "a+b"],
+      "correct": 0,
+      "explanation": "Number of factors = product of (exponent+1) for each prime: (a+1)(b+1).",
+      "domain": "Number Properties"
+    },
+    {
+      "id": "q15",
+      "question": "Two hikers start at the same point. One walks north at 3 mph, the other east at 4 mph. After 2 hours, how far apart are they?",
+      "options": ["10 miles", "12 miles", "14 miles", "16 miles"],
+      "correct": 0,
+      "explanation": "After 2 hours: north 6 miles, east 8 miles. Pythagorean theorem: √(6²+8²) = √(36+64) = √100 = 10 miles.",
+      "domain": "Rates"
+    }
+  ]
+}

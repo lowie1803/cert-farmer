@@ -1,0 +1,16 @@
+{
+  "id": "midterm-2",
+  "title": "Midterm 2: Word Problems",
+  "icon": "📝",
+  "description": "Timed exam covering modules 10–15: rates, interest, statistics, probability, combinatorics, and number properties",
+  "domain": "Assessment",
+  "lessons": [
+    {
+      "id": "midterm-2-exam",
+      "title": "Midterm 2 Exam",
+      "type": "exam",
+      "timeLimit": 32,
+      "passingScore": 70
+    }
+  ]
+}

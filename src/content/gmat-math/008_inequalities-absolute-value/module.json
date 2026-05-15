@@ -1,0 +1,19 @@
+{
+  "id": "inequalities-absolute-value",
+  "title": "Inequalities & Absolute Value",
+  "icon": "↔️",
+  "description": "Solving inequalities, sign-flip rule, compound inequalities, and absolute value cases",
+  "domain": "Algebra",
+  "lessons": [
+    {
+      "id": "inequalities-absolute-value",
+      "title": "Inequalities & Absolute Value",
+      "type": "notes"
+    },
+    {
+      "id": "inequalities-absolute-value-quiz",
+      "title": "Inequalities & Absolute Value Quiz",
+      "type": "quiz"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "The product of any odd integer and any even integer is always:",
+      "options": ["Odd", "Even", "Prime", "Positive"],
+      "correct": 1,
+      "explanation": "Any product with at least one even factor is even. Odd × Even = Even."
+    },
+    {
+      "id": "q2",
+      "question": "What is the units digit of 7⁴?",
+      "options": ["1", "3", "7", "9"],
+      "correct": 0,
+      "explanation": "Units digit cycle for 7: 7,9,3,1 (period 4). 7⁴ is at position 4 in the cycle → units digit is 1."
+    },
+    {
+      "id": "q3",
+      "question": "When positive integer n is divided by 5, the remainder is 3. What is the remainder when 2n is divided by 5?",
+      "options": ["1", "2", "3", "4"],
+      "correct": 0,
+      "explanation": "n = 5q+3, so 2n = 10q+6 = 10q+5+1. The 10q+5 is divisible by 5, leaving remainder 1."
+    },
+    {
+      "id": "q4",
+      "question": "If x is an even integer, which of the following must be odd?",
+      "options": ["x + 1", "x + 2", "2x", "x²"],
+      "correct": 0,
+      "explanation": "x is even, so x+1 is always odd (even+odd=odd). x+2, 2x, and x² are all even when x is even."
+    },
+    {
+      "id": "q5",
+      "question": "What is the sum of all odd integers from 1 to 19?",
+      "options": ["81", "90", "100", "109"],
+      "correct": 2,
+      "explanation": "There are 10 odd integers (1,3,5,...,19). Sum of first k odd integers = k². 10² = 100."
+    },
+    {
+      "id": "q6",
+      "question": "What is the remainder when 2¹⁰ is divided by 7?",
+      "options": ["1", "2", "3", "4"],
+      "correct": 1,
+      "explanation": "2¹≡2, 2²≡4, 2³≡1 (mod 7) — cycle of length 3. 10 mod 3 = 1, so 2¹⁰ ≡ 2¹ ≡ 2 (mod 7)."
+    }
+  ]
+}

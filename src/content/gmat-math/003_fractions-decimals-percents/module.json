@@ -1,0 +1,22 @@
+{
+  "id": "fractions-decimals-percents",
+  "title": "Fractions, Decimals & Percents",
+  "icon": "🧮",
+  "description": "Conversions, operations, percent change, and reverse percent problems",
+  "domain": "Arithmetic",
+  "lessons": [
+    {
+      "id": "fractions-decimals-percents",
+      "title": "Fractions, Decimals & Percents",
+      "type": "notes",
+      "resources": [
+        { "type": "link", "title": "GMAT Club: Fractions & Percents", "url": "https://gmatclub.com/forum/gmat-math-book-87021.html" }
+      ]
+    },
+    {
+      "id": "fractions-decimals-percents-quiz",
+      "title": "Fractions, Decimals & Percents Quiz",
+      "type": "quiz"
+    }
+  ]
+}

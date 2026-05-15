@@ -1,0 +1,25 @@
+{
+  "id": "quant-overview",
+  "title": "GMAT Quant Overview",
+  "icon": "📐",
+  "description": "Section format, strategy, and curated mock-test sources",
+  "domain": "Foundations",
+  "lessons": [
+    {
+      "id": "mock-tests",
+      "title": "Mock Exams & Practice Test Sources",
+      "type": "notes",
+      "resources": [
+        { "type": "link", "title": "GMAC Official Practice Exams", "url": "https://www.mba.com/exams/gmat-exam/prepare/gmat-official-practice-exams" },
+        { "type": "link", "title": "GMAT Club Tests", "url": "https://gmatclub.com/tests/" },
+        { "type": "link", "title": "Manhattan Prep CATs", "url": "https://www.manhattanprep.com/gmat/store/" },
+        { "type": "link", "title": "Target Test Prep", "url": "https://www.targettestprep.com/gmat" },
+        { "type": "link", "title": "Kaplan Free GMAT Practice Test", "url": "https://www.kaptest.com/gmat/free/gmat-free-practice-test" },
+        { "type": "link", "title": "Veritas Prep Free Practice Test", "url": "https://www.veritasprep.com/gmat/free-gmat-practice-test/" },
+        { "type": "link", "title": "Princeton Review Free Practice Test", "url": "https://www.princetonreview.com/grad/free-gmat-practice-test" },
+        { "type": "link", "title": "Magoosh GMAT", "url": "https://gmat.magoosh.com/" },
+        { "type": "link", "title": "Experts' Global GMAT Mocks", "url": "https://gmat.expertsglobal.com/" }
+      ]
+    }
+  ]
+}

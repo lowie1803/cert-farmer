@@ -1,0 +1,60 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Which of the following is a prime number?",
+      "options": ["51", "57", "59", "63"],
+      "correct": 2,
+      "explanation": "59 is prime. 51=3×17, 57=3×19, 63=9×7. Always check divisibility by primes up to √n."
+    },
+    {
+      "id": "q2",
+      "question": "What is the GCD of 36 and 48?",
+      "options": ["6", "12", "18", "24"],
+      "correct": 1,
+      "explanation": "36=2²×3², 48=2⁴×3. GCD = 2²×3 = 12."
+    },
+    {
+      "id": "q3",
+      "question": "What is the LCM of 8 and 12?",
+      "options": ["24", "48", "96", "16"],
+      "correct": 0,
+      "explanation": "8=2³, 12=2²×3. LCM = 2³×3 = 24."
+    },
+    {
+      "id": "q4",
+      "question": "How many positive factors does 36 have?",
+      "options": ["6", "7", "8", "9"],
+      "correct": 3,
+      "explanation": "36 = 2²×3². Number of factors = (2+1)(2+1) = 9. They are: 1, 2, 3, 4, 6, 9, 12, 18, 36."
+    },
+    {
+      "id": "q5",
+      "question": "What is the remainder when 100 is divided by 7?",
+      "options": ["1", "2", "3", "4"],
+      "correct": 1,
+      "explanation": "7 × 14 = 98. 100 − 98 = 2. So the remainder is 2."
+    },
+    {
+      "id": "q6",
+      "question": "Which of the following is NOT a factor of 84?",
+      "options": ["6", "7", "8", "12"],
+      "correct": 2,
+      "explanation": "84 = 2²×3×7. Since 8=2³ requires three factors of 2, and 84 has only two, 8 is not a factor of 84."
+    },
+    {
+      "id": "q7",
+      "question": "The product of two consecutive even integers is 120. What is the larger integer?",
+      "options": ["10", "12", "14", "16"],
+      "correct": 1,
+      "explanation": "Let n and n+2 be the integers. n(n+2)=120. Try n=10: 10×12=120. The larger is 12."
+    },
+    {
+      "id": "q8",
+      "question": "If n is divisible by both 4 and 6, which of the following must n also be divisible by?",
+      "options": ["8", "12", "24", "3"],
+      "correct": 1,
+      "explanation": "LCM(4, 6) = 12. Any number divisible by both 4 and 6 must be divisible by their LCM, which is 12. 8 and 24 are not guaranteed."
+    }
+  ]
+}

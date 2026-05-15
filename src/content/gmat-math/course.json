@@ -1,0 +1,25 @@
+{
+  "id": "gmat-math",
+  "title": "GMAT Focus: Quantitative Reasoning",
+  "description": "Problem Solving prep for the GMAT Focus Edition — arithmetic, algebra, and word problems",
+  "version": "1.0",
+  "modules": [
+    "001_quant-overview",
+    "002_arithmetic-foundations",
+    "003_fractions-decimals-percents",
+    "004_ratios-proportions",
+    "005_exponents-roots",
+    "006_algebra-equations",
+    "007_quadratics-functions",
+    "008_inequalities-absolute-value",
+    "009_midterm-1",
+    "010_rates-work-mixtures",
+    "011_interest-profit-discount",
+    "012_statistics",
+    "013_probability",
+    "014_combinatorics",
+    "015_number-properties",
+    "016_midterm-2",
+    "017_final-exam"
+  ]
+}

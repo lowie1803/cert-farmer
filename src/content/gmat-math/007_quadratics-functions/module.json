@@ -1,0 +1,19 @@
+{
+  "id": "quadratics-functions",
+  "title": "Quadratics & Functions",
+  "icon": "📉",
+  "description": "Factoring, quadratic formula, function notation, and composition",
+  "domain": "Algebra",
+  "lessons": [
+    {
+      "id": "quadratics-functions",
+      "title": "Quadratics & Functions",
+      "type": "notes"
+    },
+    {
+      "id": "quadratics-functions-quiz",
+      "title": "Quadratics & Functions Quiz",
+      "type": "quiz"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "arithmetic-foundations",
+  "title": "Arithmetic Foundations",
+  "icon": "🔢",
+  "description": "Integers, primes, factors, multiples, divisibility, GCD, and LCM",
+  "domain": "Arithmetic",
+  "lessons": [
+    {
+      "id": "arithmetic-foundations",
+      "title": "Arithmetic Foundations",
+      "type": "notes",
+      "resources": [
+        { "type": "link", "title": "Manhattan Prep: Number Properties Guide", "url": "https://www.manhattanprep.com/gmat/store/" },
+        { "type": "link", "title": "GMAT Club: Arithmetic Forum", "url": "https://gmatclub.com/forum/gmat-quantitative-section-7/" }
+      ]
+    },
+    {
+      "id": "arithmetic-foundations-quiz",
+      "title": "Arithmetic Foundations Quiz",
+      "type": "quiz"
+    }
+  ]
+}
