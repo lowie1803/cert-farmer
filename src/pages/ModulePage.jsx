@@ -12,8 +12,8 @@ export default function ModulePage() {
   if (!module) {
     return (
       <div className="p-8 text-center">
-        <h1 className="text-2xl font-bold text-white mb-4">Module not found</h1>
-        <Link to="/" className="text-amber-400 hover:underline">
+        <h1 className="text-2xl font-display font-medium text-ink mb-4">Module not found</h1>
+        <Link to="/" className="text-accent hover:underline">
           Go to dashboard
         </Link>
       </div>
@@ -24,10 +24,10 @@ export default function ModulePage() {
   const completedCount = module.lessons.filter(l => isLessonCompleted(l.id)).length;
   const progressColor =
     moduleProgress === 0
-      ? 'bg-slate-600'
+      ? 'bg-line'
       : moduleProgress < 100
-        ? 'bg-amber-500'
-        : 'bg-green-500';
+        ? 'bg-accent'
+        : 'bg-accent';
 
   return (
     <div className="p-4 md:p-8">
@@ -35,7 +35,7 @@ export default function ModulePage() {
         {/* Back button */}
         <Link
           to={`/course/${courseId}`}
-          className="inline-flex items-center gap-2 text-slate-400 hover:text-white mb-6 transition-colors"
+          className="inline-flex items-center gap-2 text-soft hover:text-ink mb-6 transition-colors"
         >
           <span>←</span> Back to Dashboard
         </Link>
@@ -44,20 +44,20 @@ export default function ModulePage() {
         <div className="flex items-center gap-4 mb-4">
           <div className="text-4xl">{module.icon}</div>
           <div>
-            <h1 className="text-2xl font-bold text-white">{module.title}</h1>
-            <p className="text-slate-400">{completedCount}/{module.lessons.length} lessons completed</p>
+            <h1 className="text-2xl font-display font-medium text-ink">{module.title}</h1>
+            <p className="text-soft">{completedCount}/{module.lessons.length} lessons completed</p>
           </div>
         </div>
 
         {/* Module progress bar */}
         <div className="mb-8">
-          <div className="h-2 bg-slate-700 rounded-full overflow-hidden">
+          <div className="h-2 bg-line rounded-full overflow-hidden">
             <div
               className={`h-full ${progressColor} transition-all duration-500`}
               style={{ width: `${moduleProgress}%` }}
             />
           </div>
-          <p className="text-xs text-slate-500 mt-1 text-right">{moduleProgress}%</p>
+          <p className="text-xs text-soft/70 mt-1 text-right">{moduleProgress}%</p>
         </div>
 
         {/* Lessons list */}
@@ -70,20 +70,20 @@ export default function ModulePage() {
               <Link
                 key={lesson.id}
                 to={`/course/${courseId}/module/${moduleId}/lesson/${lesson.id}`}
-                className="card block p-4 group hover:bg-slate-700"
+                className="card block p-4 group"
               >
                 <div className="flex items-center gap-4">
                   {/* Lesson number / completion indicator */}
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-mono shrink-0 ${
                     completed
-                      ? 'bg-green-500/20 text-green-400 border border-green-500'
-                      : 'bg-slate-700 text-slate-400'
+                      ? 'bg-accent-soft text-accent border border-accent'
+                      : 'bg-line text-soft'
                   }`}>
                     {completed ? '✓' : index + 1}
                   </div>
 
                   <div className="flex-1 min-w-0">
-                    <h3 className="font-medium text-white group-hover:text-amber-400 transition-colors">
+                    <h3 className="font-medium text-ink group-hover:text-accent transition-colors">
                       {lesson.title}
                     </h3>
 
@@ -97,12 +97,12 @@ export default function ModulePage() {
 
                   {/* Quiz score if available */}
                   {progress?.quizScore !== undefined && (
-                    <span className="text-sm text-amber-400">
+                    <span className="text-sm text-accent">
                       {progress.quizScore}/{progress.quizTotal}
                     </span>
                   )}
 
-                  <span className="text-slate-500 group-hover:text-amber-400 transition-colors">
+                  <span className="text-soft group-hover:text-accent transition-colors">
                     →
                   </span>
                 </div>

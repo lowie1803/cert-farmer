@@ -1,0 +1,31 @@
+/* ─────────────────────────────────────────────────────────────
+   vocab-ladder · Tailwind v4 theme mapping (optional)
+
+   Tailwind v4 is CSS-first. Import this AFTER `@import "tailwindcss";`
+   in your CMS's main stylesheet to expose the palette + fonts as
+   utilities (bg-paper, text-ink, font-display, etc.).
+
+   You do NOT need this to run the feature — the component ships with
+   its own scoped CSS (styles.css) that reads tokens.css directly.
+   Add this only if you want to build adjacent UI with the same kit.
+   ───────────────────────────────────────────────────────────── */
+
+@theme {
+  --color-paper: #f4f1ea;
+  --color-paper-2: #ebe6da;
+  --color-line: #d8d2c4;
+  --color-ink: #1a1916;
+  --color-soft: #7d7768;
+  --color-accent: #3d5a3d;
+  --color-accent-soft: #e3ebe1;
+  --color-miss: #9a4d3f;
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Newsreader", Georgia, serif;
+}
+
+/* Example resulting utilities:
+   bg-paper  bg-paper-2  border-line
+   text-ink  text-soft   text-accent  bg-accent-soft  text-miss
+   font-display  font-body
+*/

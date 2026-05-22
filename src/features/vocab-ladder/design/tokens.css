@@ -1,0 +1,38 @@
+/* ─────────────────────────────────────────────────────────────
+   vocab-ladder · design tokens
+   "Warm paper & ink" — editorial, calm, forest-green accent.
+   These are the source of truth. The TS object and the Tailwind
+   @theme block are generated to match these values.
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+  /* Surfaces */
+  --vl-paper: #f4f1ea;        /* page background — warm cream      */
+  --vl-paper-2: #ebe6da;      /* raised surfaces (cards)           */
+  --vl-line: #d8d2c4;         /* hairline borders / dividers       */
+
+  /* Ink */
+  --vl-ink: #1a1916;          /* primary text — warm near-black    */
+  --vl-soft: #7d7768;         /* secondary / muted text            */
+
+  /* Accent — forest green */
+  --vl-accent: #3d5a3d;       /* primary accent, focus, "owned"    */
+  --vl-accent-soft: #e3ebe1;  /* accent tint backgrounds           */
+
+  /* Signal */
+  --vl-miss: #9a4d3f;         /* terracotta — "missed" / destructive */
+
+  /* Type */
+  --vl-font-display: "Fraunces", Georgia, serif;  /* headings, words */
+  --vl-font-body: "Newsreader", Georgia, serif;   /* prose, UI       */
+
+  /* Radii */
+  --vl-radius-sm: 10px;
+  --vl-radius: 12px;
+  --vl-radius-lg: 16px;
+  --vl-radius-pill: 999px;
+
+  /* Spacing rhythm (optional helpers) */
+  --vl-gap: 10px;
+  --vl-pad: 18px;
+}

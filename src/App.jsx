@@ -7,6 +7,7 @@ import ModulePage from '@pages/ModulePage';
 import LessonPage from '@pages/LessonPage';
 import GlossaryPage from '@pages/GlossaryPage';
 import NotFound from '@pages/NotFound';
+import VocabPage from '@pages/VocabPage';
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Dashboard />} />
+          <Route path="vocab" element={<VocabPage />} />
           <Route path="course/:courseId" element={<Dashboard />} />
           <Route path="course/:courseId/module/:moduleId" element={<ModulePage />} />
           <Route path="course/:courseId/module/:moduleId/lesson/:lessonId" element={<LessonPage />} />

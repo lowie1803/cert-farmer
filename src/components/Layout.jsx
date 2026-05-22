@@ -8,44 +8,55 @@ export default function Layout() {
   const location = useLocation();
   const { calculateCourseProgress } = useProgress();
 
-  // Extract courseId from URL path
   const courseMatch = location.pathname.match(/\/course\/([^/]+)/);
   const courseId = courseMatch ? courseMatch[1] : null;
   const course = courseId ? getCourse(courseId) : null;
   const courseProgress = course ? calculateCourseProgress(course) : 0;
 
+  const onVocabPage = location.pathname.startsWith('/vocab');
+
   const progressColor =
     courseProgress === 0
-      ? 'bg-slate-600'
+      ? 'bg-line'
       : courseProgress < 100
-        ? 'bg-amber-500'
-        : 'bg-green-500';
+        ? 'bg-accent'
+        : 'bg-accent';
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800 text-slate-100">
+    <div className="min-h-screen bg-paper text-ink">
       {/* Navigation */}
-      <nav className="bg-slate-900/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
+      <nav className="bg-paper/90 backdrop-blur-md border-b border-line sticky top-0 z-50">
         <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-8 h-8 bg-amber-500 rounded-lg flex items-center justify-center font-bold text-slate-900 group-hover:bg-amber-400 transition-colors">
-              C
-            </div>
-            <span className="font-semibold text-white hidden sm:block">
+            <div className="w-2.5 h-2.5 rounded-full bg-accent group-hover:bg-accent/70 transition-colors" />
+            <span className="font-display font-medium text-ink hidden sm:block">
               CertFarmer
             </span>
           </Link>
 
           {/* Right side */}
           <div className="flex items-center gap-4">
-            {/* Glossary link — courses with a glossary */}
+            {/* Vocab link — always visible */}
+            <Link
+              to="/vocab"
+              className={`text-sm transition-colors ${
+                onVocabPage
+                  ? 'text-ink font-medium'
+                  : 'text-soft hover:text-ink'
+              }`}
+            >
+              Vocab
+            </Link>
+
+            {/* Glossary link — course-scoped */}
             {courseId && hasGlossary(courseId) && (
               <Link
                 to={`/course/${courseId}/glossary`}
                 className={`flex items-center gap-2 text-sm transition-colors ${
                   location.pathname === `/course/${courseId}/glossary`
-                    ? 'text-amber-400'
-                    : 'text-slate-400 hover:text-amber-400'
+                    ? 'text-ink font-medium'
+                    : 'text-soft hover:text-ink'
                 }`}
               >
                 <span>🇻🇳</span>
@@ -54,18 +65,18 @@ export default function Layout() {
             )}
 
             {/* Progress indicator — shown when viewing a course */}
-            {course && (
-              <div className="text-sm text-slate-400">
-                <span className="text-amber-400 font-semibold">{courseProgress}%</span>
+            {course && !onVocabPage && (
+              <div className="text-sm text-soft">
+                <span className="font-display font-medium text-accent">{courseProgress}%</span>
                 <span className="hidden sm:inline"> complete</span>
               </div>
             )}
           </div>
         </div>
 
-        {/* Thin progress bar along bottom of navbar */}
-        {course && (
-          <div className="h-0.5 bg-slate-800">
+        {/* Thin progress bar — only when viewing a course */}
+        {course && !onVocabPage && (
+          <div className="h-0.5 bg-line">
             <div
               className={`h-full ${progressColor} transition-all duration-500`}
               style={{ width: `${courseProgress}%` }}
@@ -80,8 +91,8 @@ export default function Layout() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-slate-800 py-6 mt-12">
-        <div className="max-w-5xl mx-auto px-4 text-center text-sm text-slate-500">
+      <footer className="border-t border-line py-6 mt-12">
+        <div className="max-w-5xl mx-auto px-4 text-center text-sm text-soft">
           <p>CertFarmer — Software Engineering Certification Platform</p>
           <p className="mt-1">
             Copyright by lowie1803 &copy; 2026. All rights reserved.

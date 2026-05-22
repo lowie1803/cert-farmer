@@ -26,7 +26,7 @@ export default function ProgressRing({
           fill="none"
           stroke="currentColor"
           strokeWidth={strokeWidth}
-          className="text-slate-700"
+          className="text-line"
         />
         {/* Progress circle */}
         <circle
@@ -39,12 +39,12 @@ export default function ProgressRing({
           strokeDasharray={circumference}
           strokeDashoffset={offset}
           strokeLinecap="round"
-          className="text-amber-500 transition-all duration-500"
+          className="text-accent transition-all duration-500"
         />
       </svg>
       
       {showLabel && (
-        <span className="absolute text-sm font-semibold text-white">
+        <span className="absolute text-sm font-semibold text-ink">
           {progress}%
         </span>
       )}

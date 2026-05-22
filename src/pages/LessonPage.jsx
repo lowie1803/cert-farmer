@@ -23,8 +23,8 @@ export default function LessonPage() {
   if (!lesson || !module) {
     return (
       <div className="p-8 text-center">
-        <h1 className="text-2xl font-bold text-white mb-4">Lesson not found</h1>
-        <Link to="/" className="text-amber-400 hover:underline">
+        <h1 className="text-2xl font-display font-medium text-ink mb-4">Lesson not found</h1>
+        <Link to="/" className="text-accent hover:underline">
           Go to dashboard
         </Link>
       </div>
@@ -46,20 +46,20 @@ export default function LessonPage() {
         {/* Back button */}
         <Link
           to={`/course/${courseId}/module/${moduleId}`}
-          className="inline-flex items-center gap-2 text-slate-400 hover:text-white mb-6 transition-colors"
+          className="inline-flex items-center gap-2 text-soft hover:text-ink mb-6 transition-colors"
         >
           <span>←</span> Back to {module.title}
         </Link>
 
         {/* Lesson header */}
-        <div className="mb-6 pb-6 border-b border-slate-700">
+        <div className="mb-6 pb-6 border-b border-line">
           <span className={
             lesson.type === 'exam' ? 'tag-exam' :
             lesson.type === 'quiz' ? 'tag-quiz' : 'tag-notes'
           }>
             {lesson.type === 'exam' ? '📋 Exam' : lesson.type === 'quiz' ? '📝 Quiz' : '📖 Notes'}
           </span>
-          <h1 className="text-2xl font-bold text-white mt-2">{lesson.title}</h1>
+          <h1 className="text-2xl font-display font-medium text-ink mt-2">{lesson.title}</h1>
         </div>
 
         {/* Lesson content */}
@@ -78,9 +78,9 @@ export default function LessonPage() {
         ) : (
           <>
             {/* Glossary hint */}
-            <div className="mb-6 p-3 bg-slate-800/50 rounded-lg border border-slate-700 flex items-center gap-3">
+            <div className="mb-6 p-3 bg-paper-2 rounded-lg border border-line flex items-center gap-3">
               <span className="text-xl">🇻🇳</span>
-              <p className="text-sm text-slate-400">
+              <p className="text-sm text-soft">
                 <span className="glossary-term cursor-default">Highlighted terms</span>
                 {' '}have Vietnamese explanations. Hover or tap to view.
               </p>
@@ -91,8 +91,8 @@ export default function LessonPage() {
 
             {/* Resources */}
             {lesson.resources && lesson.resources.length > 0 && (
-              <div className="mt-8 pt-6 border-t border-slate-700">
-                <h3 className="text-lg font-semibold text-amber-400 mb-4 flex items-center gap-2">
+              <div className="mt-8 pt-6 border-t border-line">
+                <h3 className="text-lg font-display font-medium text-accent mb-4 flex items-center gap-2">
                   <span>📚</span> Additional Resources
                 </h3>
                 <div className="space-y-3">
@@ -102,15 +102,15 @@ export default function LessonPage() {
                       href={resource.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-3 p-3 bg-slate-800 rounded-lg hover:bg-slate-700 transition-colors group"
+                      className="flex items-center gap-3 p-3 bg-paper-2 rounded-lg border border-line hover:border-soft transition-colors group"
                     >
                       <span className="text-xl">
                         {resource.type === 'video' ? '🎬' : '🔗'}
                       </span>
-                      <span className="text-slate-200 group-hover:text-amber-400 transition-colors">
+                      <span className="text-ink group-hover:text-accent transition-colors">
                         {resource.title}
                       </span>
-                      <span className="ml-auto text-slate-500 group-hover:text-slate-400">
+                      <span className="ml-auto text-soft group-hover:text-ink/70">
                         →
                       </span>
                     </a>
@@ -122,11 +122,11 @@ export default function LessonPage() {
         )}
 
         {/* Prev / Next navigation (hidden for exams) */}
-        {lesson.type !== 'exam' && <div className="mt-10 pt-6 border-t border-slate-700 flex items-center justify-between">
+        {lesson.type !== 'exam' && <div className="mt-10 pt-6 border-t border-line flex items-center justify-between">
           {prevLesson ? (
             <Link
               to={`/course/${courseId}/module/${moduleId}/lesson/${prevLesson.id}`}
-              className="flex items-center gap-2 text-slate-400 hover:text-amber-400 transition-colors"
+              className="flex items-center gap-2 text-soft hover:text-accent transition-colors"
             >
               <span>←</span>
               <span className="text-sm">{prevLesson.title}</span>
@@ -137,7 +137,7 @@ export default function LessonPage() {
           {nextLesson ? (
             <Link
               to={`/course/${courseId}/module/${moduleId}/lesson/${nextLesson.id}`}
-              className="flex items-center gap-2 text-slate-400 hover:text-amber-400 transition-colors"
+              className="flex items-center gap-2 text-soft hover:text-accent transition-colors"
             >
               <span className="text-sm">{nextLesson.title}</span>
               <span>→</span>
@@ -145,7 +145,7 @@ export default function LessonPage() {
           ) : (
             <Link
               to={`/course/${courseId}/module/${moduleId}`}
-              className="flex items-center gap-2 text-slate-400 hover:text-amber-400 transition-colors"
+              className="flex items-center gap-2 text-soft hover:text-accent transition-colors"
             >
               <span className="text-sm">Back to module</span>
               <span>→</span>

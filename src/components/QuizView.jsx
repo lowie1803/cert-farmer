@@ -48,25 +48,25 @@ export default function QuizView({ questions, onComplete }) {
     return (
       <div className="text-center py-12 animate-slide-up">
         <div className={`inline-flex items-center justify-center w-32 h-32 rounded-full mb-6 ${
-          isPassing ? 'bg-green-500/20' : 'bg-amber-500/20'
+          isPassing ? 'bg-accent-soft' : 'bg-miss/10'
         }`}>
           <span className={`text-4xl font-bold ${
-            isPassing ? 'text-green-400' : 'text-amber-400'
+            isPassing ? 'text-accent' : 'text-miss'
           }`}>
             {percentage}%
           </span>
         </div>
         
-        <h3 className="text-2xl font-bold text-white mb-2">
+        <h3 className="text-2xl font-display font-medium text-ink mb-2">
           {isPassing ? '🎉 Great job!' : 'Quiz Complete!'}
         </h3>
         
-        <p className="text-slate-400 mb-2">
+        <p className="text-soft mb-2">
           You got {score} out of {questions.length} correct
         </p>
-        
+
         {!isPassing && (
-          <p className="text-amber-400 text-sm mb-6">
+          <p className="text-accent text-sm mb-6">
             Tip: Review the material and try again to improve your score
           </p>
         )}
@@ -82,7 +82,7 @@ export default function QuizView({ questions, onComplete }) {
     <div>
       {/* Progress indicator */}
       <div className="flex items-center justify-between mb-6">
-        <span className="text-sm text-slate-400">
+        <span className="text-sm text-soft">
           Question {currentQ + 1} of {questions.length}
         </span>
         <div className="flex gap-1">
@@ -91,10 +91,10 @@ export default function QuizView({ questions, onComplete }) {
               key={i}
               className={`w-2 h-2 rounded-full transition-colors ${
                 i < currentQ
-                  ? 'bg-amber-500'
+                  ? 'bg-accent'
                   : i === currentQ
-                  ? 'bg-amber-400'
-                  : 'bg-slate-700'
+                  ? 'bg-accent'
+                  : 'bg-line'
               }`}
             />
           ))}
@@ -102,7 +102,7 @@ export default function QuizView({ questions, onComplete }) {
       </div>
       
       {/* Question */}
-      <h3 className="text-xl font-semibold text-white mb-6">
+      <h3 className="text-xl font-display font-medium text-ink mb-6">
         {question.question}
       </h3>
       
@@ -113,16 +113,16 @@ export default function QuizView({ questions, onComplete }) {
           
           if (showResult) {
             if (i === question.correct) {
-              classes += 'bg-green-900/30 border-green-500 text-green-300';
+              classes += 'bg-accent-soft border-accent text-accent';
             } else if (i === selected && i !== question.correct) {
-              classes += 'bg-red-900/30 border-red-500 text-red-300';
+              classes += 'bg-miss/10 border-miss text-miss';
             } else {
-              classes += 'bg-slate-800 border-slate-700 text-slate-400';
+              classes += 'bg-paper-2 border-line text-soft';
             }
           } else {
             classes += selected === i
-              ? 'bg-amber-500/20 border-amber-500 text-white'
-              : 'bg-slate-800 border-slate-700 text-slate-300 hover:border-slate-500 cursor-pointer';
+              ? 'bg-accent-soft border-accent text-ink'
+              : 'bg-paper-2 border-line text-ink/80 hover:border-soft cursor-pointer';
           }
           
           return (
@@ -135,12 +135,12 @@ export default function QuizView({ questions, onComplete }) {
               <span className="flex items-center gap-3">
                 <span className={`w-6 h-6 rounded-full border-2 flex items-center justify-center text-xs font-mono shrink-0 ${
                   showResult && i === question.correct
-                    ? 'border-green-500 text-green-400'
+                    ? 'border-accent text-accent'
                     : showResult && i === selected
-                    ? 'border-red-500 text-red-400'
+                    ? 'border-miss text-miss'
                     : selected === i
-                    ? 'border-amber-500 text-amber-400'
-                    : 'border-slate-600 text-slate-500'
+                    ? 'border-accent text-accent'
+                    : 'border-line text-soft'
                 }`}>
                   {String.fromCharCode(65 + i)}
                 </span>
@@ -155,15 +155,15 @@ export default function QuizView({ questions, onComplete }) {
       {showResult && (
         <div className={`p-4 rounded-lg mb-6 animate-slide-up ${
           selected === question.correct
-            ? 'bg-green-900/20 border border-green-800'
-            : 'bg-amber-900/20 border border-amber-800'
+            ? 'bg-accent-soft border border-accent/40'
+            : 'bg-miss/10 border border-miss/30'
         }`}>
           <p className={`font-medium mb-1 ${
-            selected === question.correct ? 'text-green-400' : 'text-amber-400'
+            selected === question.correct ? 'text-accent' : 'text-miss'
           }`}>
             {selected === question.correct ? '✓ Correct!' : '✗ Not quite'}
           </p>
-          <p className="text-slate-300 text-sm">{question.explanation}</p>
+          <p className="text-ink/80 text-sm">{question.explanation}</p>
         </div>
       )}
       

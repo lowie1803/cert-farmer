@@ -26,27 +26,27 @@ function buildComponents(courseId) {
 
   return {
     h1: ({ children }) => (
-      <h1 className="text-2xl font-bold text-white mt-6 mb-4">
+      <h1 className="text-2xl font-display font-medium text-ink mt-6 mb-4">
         {processChildren(children, 'h1')}
       </h1>
     ),
     h2: ({ children }) => (
-      <h2 className="text-xl font-semibold text-amber-400 mt-6 mb-3">
+      <h2 className="text-xl font-display font-medium text-accent mt-6 mb-3">
         {processChildren(children, 'h2')}
       </h2>
     ),
     h3: ({ children }) => (
-      <h3 className="text-lg font-medium text-slate-200 mt-4 mb-2">
+      <h3 className="text-lg font-display font-medium text-ink/80 mt-4 mb-2">
         {processChildren(children, 'h3')}
       </h3>
     ),
     p: ({ children }) => (
-      <p className="text-slate-300 mb-3 leading-relaxed">
+      <p className="text-ink/80 mb-3 leading-relaxed">
         {processChildren(children, 'p')}
       </p>
     ),
     strong: ({ children }) => (
-      <strong className="text-white font-semibold">{children}</strong>
+      <strong className="text-ink font-semibold">{children}</strong>
     ),
     code: ({ className, children, ...props }) => {
       const isBlock = className?.startsWith('language-');
@@ -58,21 +58,21 @@ function buildComponents(courseId) {
         );
       }
       return (
-        <code className="bg-slate-800 text-amber-300 px-1.5 py-0.5 rounded text-sm font-mono">
+        <code className="bg-paper-2 text-accent border border-line px-1.5 py-0.5 rounded text-sm font-mono">
           {children}
         </code>
       );
     },
     pre: ({ children }) => (
-      <pre className="bg-slate-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm my-4 font-mono">
+      <pre className="bg-ink text-accent-soft p-4 rounded-lg overflow-x-auto text-sm my-4 font-mono">
         {children}
       </pre>
     ),
     ul: ({ children }) => <ul className="mb-3">{children}</ul>,
     ol: ({ children }) => <ol className="mb-3">{children}</ol>,
     li: ({ children, ordered, index }) => (
-      <li className="ml-4 text-slate-300 mb-1 flex items-start">
-        <span className="text-amber-500 mr-2 shrink-0">
+      <li className="ml-4 text-ink/80 mb-1 flex items-start">
+        <span className="text-accent mr-2 shrink-0">
           {ordered ? `${(index ?? 0) + 1}.` : '\u2022'}
         </span>
         <span>{processChildren(children, 'li')}</span>
@@ -84,24 +84,24 @@ function buildComponents(courseId) {
       </div>
     ),
     thead: ({ children }) => (
-      <thead className="bg-slate-800">{children}</thead>
+      <thead className="bg-paper-2">{children}</thead>
     ),
     th: ({ children }) => (
-      <th className="border border-slate-600 px-3 py-2 text-left text-amber-400 font-semibold">
+      <th className="border border-line px-3 py-2 text-left text-accent font-display font-medium">
         {processChildren(children, 'th')}
       </th>
     ),
     tr: ({ children, isHeader }) => (
-      <tr className={isHeader ? '' : 'hover:bg-slate-800/50'}>{children}</tr>
+      <tr className={isHeader ? '' : 'hover:bg-paper-2/50'}>{children}</tr>
     ),
     td: ({ children }) => (
-      <td className="border border-slate-700 px-3 py-2">
+      <td className="border border-line px-3 py-2 text-ink/80">
         {processChildren(children, 'td')}
       </td>
     ),
-    hr: () => <hr className="my-6 border-slate-700" />,
+    hr: () => <hr className="my-6 border-line" />,
     a: ({ href, children }) => (
-      <a href={href} target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:underline">
+      <a href={href} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
         {children}
       </a>
     ),

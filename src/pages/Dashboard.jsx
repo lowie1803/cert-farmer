@@ -13,10 +13,10 @@ function CourseSelector() {
     <div className="p-4 md:p-8">
       <div className="max-w-4xl mx-auto">
         <div className="mb-8">
-          <h1 className="text-2xl md:text-3xl font-bold text-white mb-1">
+          <h1 className="text-2xl md:text-3xl font-display font-medium text-ink mb-1">
             Choose a Course
           </h1>
-          <p className="text-slate-400">Select a certification track to start studying</p>
+          <p className="text-soft">Select a certification track to start studying</p>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2">
@@ -26,19 +26,19 @@ function CourseSelector() {
               <Link
                 key={course.id}
                 to={`/course/${course.id}`}
-                className="card p-6 group hover:bg-slate-700 hover:border-amber-500/50 transition-all"
+                className="card p-6 group hover:border-accent/50 transition-all"
               >
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex-1 min-w-0">
-                    <h2 className="text-xl font-bold text-white group-hover:text-amber-400 transition-colors">
+                    <h2 className="text-xl font-display font-medium text-ink group-hover:text-accent transition-colors">
                       {course.title}
                     </h2>
-                    <p className="text-sm text-slate-400 mt-1">{course.description}</p>
+                    <p className="text-sm text-soft mt-1">{course.description}</p>
                   </div>
                   <ProgressRing progress={progress} size={56} />
                 </div>
 
-                <div className="flex items-center gap-4 text-sm text-slate-400">
+                <div className="flex items-center gap-4 text-sm text-soft">
                   <span>{course.modules.length} modules</span>
                   <span>{course.modules.reduce((sum, m) => sum + m.lessons.length, 0)} lessons</span>
                 </div>
@@ -54,7 +54,6 @@ function CourseSelector() {
 export default function Dashboard() {
   const { courseId } = useParams();
 
-  // No courseId → show course selector
   if (!courseId) {
     return <CourseSelector />;
   }
@@ -66,8 +65,8 @@ export default function Dashboard() {
   if (!course) {
     return (
       <div className="p-8 text-center">
-        <h1 className="text-2xl font-bold text-white mb-4">Course not found</h1>
-        <Link to="/" className="text-amber-400 hover:underline">
+        <h1 className="text-2xl font-display font-medium text-ink mb-4">Course not found</h1>
+        <Link to="/" className="text-accent hover:underline">
           Go to homepage
         </Link>
       </div>
@@ -81,14 +80,13 @@ export default function Dashboard() {
   const totalLessons = allLessons.length;
   const completedCount = getCompletedCount();
 
-  // "Continue Studying" — 3 most recently accessed lessons
   const recentLessons = allLessons
     .filter(l => progress[l.id]?.lastAccessed)
     .sort((a, b) => (progress[b.id].lastAccessed || 0) - (progress[a.id].lastAccessed || 0))
     .slice(0, 3);
 
   const progressColor = (pct) =>
-    pct === 0 ? 'bg-slate-600' : pct < 100 ? 'bg-amber-500' : 'bg-green-500';
+    pct === 0 ? 'bg-line' : pct < 100 ? 'bg-accent' : 'bg-accent';
 
   const showGlossary = hasGlossary(courseId);
 
@@ -98,10 +96,10 @@ export default function Dashboard() {
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h1 className="text-2xl md:text-3xl font-bold text-white mb-1">
+            <h1 className="text-2xl md:text-3xl font-display font-medium text-ink mb-1">
               {course.title}
             </h1>
-            <p className="text-slate-400">{course.description}</p>
+            <p className="text-soft">{course.description}</p>
           </div>
           <ProgressRing progress={courseProgress} size={70} />
         </div>
@@ -110,32 +108,32 @@ export default function Dashboard() {
         <div className={`grid ${showGlossary ? 'grid-cols-2 md:grid-cols-4' : 'grid-cols-3'} gap-3 mb-8`}>
           <div className="card p-4 text-center">
             <span className="text-2xl mb-1 block">📁</span>
-            <div className="text-2xl font-bold text-white">{course.modules.length}</div>
-            <div className="text-xs text-slate-400">Modules</div>
+            <div className="text-2xl font-display font-medium text-ink">{course.modules.length}</div>
+            <div className="text-xs text-soft">Modules</div>
           </div>
 
           <div className="card p-4 text-center">
             <span className="text-2xl mb-1 block">📖</span>
-            <div className="text-2xl font-bold text-white">{totalLessons}</div>
-            <div className="text-xs text-slate-400">Lessons</div>
+            <div className="text-2xl font-display font-medium text-ink">{totalLessons}</div>
+            <div className="text-xs text-soft">Lessons</div>
           </div>
 
           <div className="card p-4 text-center">
             <span className="text-2xl mb-1 block">✓</span>
-            <div className="text-2xl font-bold text-white">{completedCount}</div>
-            <div className="text-xs text-slate-400">Completed</div>
+            <div className="text-2xl font-display font-medium text-ink">{completedCount}</div>
+            <div className="text-xs text-soft">Completed</div>
           </div>
 
           {showGlossary && (
             <Link
               to={`/course/${courseId}/glossary`}
-              className="card p-4 text-center hover:border-amber-500/50 transition-all"
+              className="card p-4 text-center hover:border-accent/50 transition-all"
             >
               <span className="text-2xl mb-1 block">🇻🇳</span>
-              <div className="text-2xl font-bold text-white">
+              <div className="text-2xl font-display font-medium text-ink">
                 {Object.keys(getGlossary(courseId)).length}
               </div>
-              <div className="text-xs text-slate-400">Glossary</div>
+              <div className="text-xs text-soft">Glossary</div>
             </Link>
           )}
         </div>
@@ -143,7 +141,7 @@ export default function Dashboard() {
         {/* Continue Studying */}
         {recentLessons.length > 0 && (
           <div className="mb-8">
-            <h2 className="text-lg font-semibold text-slate-200 mb-4">
+            <h2 className="text-lg font-display font-medium text-ink mb-4">
               Continue Studying
             </h2>
             <div className="grid gap-2 sm:grid-cols-3">
@@ -151,7 +149,7 @@ export default function Dashboard() {
                 <Link
                   key={lesson.id}
                   to={`/course/${courseId}/module/${lesson.moduleId}/lesson/${lesson.id}`}
-                  className="card p-3 group hover:bg-slate-700"
+                  className="card p-3 group"
                 >
                   <span className={
                     lesson.type === 'exam' ? 'tag-exam' :
@@ -159,10 +157,10 @@ export default function Dashboard() {
                   }>
                     {lesson.type === 'exam' ? '📋 Exam' : lesson.type === 'quiz' ? '📝 Quiz' : '📖 Notes'}
                   </span>
-                  <h4 className="font-medium text-white mt-1 truncate group-hover:text-amber-400 transition-colors">
+                  <h4 className="font-medium text-ink mt-1 truncate group-hover:text-accent transition-colors">
                     {lesson.title}
                   </h4>
-                  <p className="text-xs text-slate-500 truncate">{lesson.moduleTitle}</p>
+                  <p className="text-xs text-soft/70 truncate">{lesson.moduleTitle}</p>
                 </Link>
               ))}
             </div>
@@ -170,7 +168,7 @@ export default function Dashboard() {
         )}
 
         {/* Modules list */}
-        <h2 className="text-lg font-semibold text-slate-200 mb-4">
+        <h2 className="text-lg font-display font-medium text-ink mb-4">
           Course Modules
         </h2>
 
@@ -180,54 +178,52 @@ export default function Dashboard() {
             const completed = module.lessons.filter(l => progress[l.id]?.completed).length;
             const isExam = module.category === 'exam';
 
-            // Domain headers
             const prevModule = idx > 0 ? course.modules[idx - 1] : null;
             const showDomainHeader = module.domain && (!prevModule || prevModule.domain !== module.domain);
 
             return (
               <React.Fragment key={module.id}>
                 {showDomainHeader && (
-                  <h3 className="text-sm font-semibold text-amber-400 uppercase tracking-wider pt-4 first:pt-0">
+                  <h3 className="text-sm font-display font-medium text-accent uppercase tracking-wider pt-4 first:pt-0">
                     {module.domain}
                   </h3>
                 )}
                 <Link
                   to={`/course/${courseId}/module/${module.id}`}
-                  className={`card block p-4 md:p-5 group hover:bg-slate-700 ${
-                    isExam ? 'border-amber-500/50 bg-amber-500/5' : ''
+                  className={`card block p-4 md:p-5 group ${
+                    isExam ? 'border-miss/50 bg-miss/5' : ''
                   }`}
                 >
-                <div className="flex items-center gap-4">
-                  <div className="text-3xl">{module.icon}</div>
+                  <div className="flex items-center gap-4">
+                    <div className="text-3xl">{module.icon}</div>
 
-                  <div className="flex-1 min-w-0">
-                    <h3 className="font-semibold text-white group-hover:text-amber-400 transition-colors truncate">
-                      {module.title}
-                    </h3>
-                    <p className="text-sm text-slate-400">
-                      {completed}/{module.lessons.length} lessons
-                    </p>
-                  </div>
-
-                  <div className="flex items-center gap-3">
-                    {/* Progress bar (visible on all sizes) */}
-                    <div className="w-20 md:w-24 h-2 bg-slate-700 rounded-full overflow-hidden">
-                      <div
-                        className={`h-full ${progressColor(moduleProgress)} transition-all duration-500`}
-                        style={{ width: `${moduleProgress}%` }}
-                      />
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-medium text-ink group-hover:text-accent transition-colors truncate">
+                        {module.title}
+                      </h3>
+                      <p className="text-sm text-soft">
+                        {completed}/{module.lessons.length} lessons
+                      </p>
                     </div>
 
-                    <span className="text-sm text-slate-400 w-12 text-right">
-                      {moduleProgress}%
-                    </span>
+                    <div className="flex items-center gap-3">
+                      <div className="w-20 md:w-24 h-2 bg-line rounded-full overflow-hidden">
+                        <div
+                          className={`h-full ${progressColor(moduleProgress)} transition-all duration-500`}
+                          style={{ width: `${moduleProgress}%` }}
+                        />
+                      </div>
 
-                    <span className="text-slate-500 group-hover:text-amber-400 transition-colors">
-                      →
-                    </span>
+                      <span className="text-sm text-soft w-12 text-right">
+                        {moduleProgress}%
+                      </span>
+
+                      <span className="text-soft group-hover:text-accent transition-colors">
+                        →
+                      </span>
+                    </div>
                   </div>
-                </div>
-              </Link>
+                </Link>
               </React.Fragment>
             );
           })}

@@ -79,29 +79,29 @@ export default function ExamView({ questions, timeLimit = 45, passingScore = 80,
   if (phase === 'intro') {
     return (
       <div className="text-center py-12 animate-slide-up">
-        <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-amber-500/20 mb-6">
+        <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-miss/10 mb-6">
           <span className="text-4xl">📋</span>
         </div>
-        <h2 className="text-2xl font-bold text-white mb-4">Ready to begin?</h2>
+        <h2 className="text-2xl font-display font-medium text-ink mb-4">Ready to begin?</h2>
         <div className="max-w-md mx-auto text-left space-y-3 mb-8">
-          <div className="flex items-center gap-3 text-slate-300">
-            <span className="text-amber-400">•</span>
+          <div className="flex items-center gap-3 text-ink/80">
+            <span className="text-accent">•</span>
             <span>{questions.length} questions</span>
           </div>
-          <div className="flex items-center gap-3 text-slate-300">
-            <span className="text-amber-400">•</span>
+          <div className="flex items-center gap-3 text-ink/80">
+            <span className="text-accent">•</span>
             <span>{timeLimit} minute time limit</span>
           </div>
-          <div className="flex items-center gap-3 text-slate-300">
-            <span className="text-amber-400">•</span>
+          <div className="flex items-center gap-3 text-ink/80">
+            <span className="text-accent">•</span>
             <span>{passingScore}% required to pass</span>
           </div>
-          <div className="flex items-center gap-3 text-slate-300">
-            <span className="text-amber-400">•</span>
+          <div className="flex items-center gap-3 text-ink/80">
+            <span className="text-accent">•</span>
             <span>You can flag questions for review</span>
           </div>
-          <div className="flex items-center gap-3 text-slate-300">
-            <span className="text-amber-400">•</span>
+          <div className="flex items-center gap-3 text-ink/80">
+            <span className="text-accent">•</span>
             <span>No feedback until the end</span>
           </div>
         </div>
@@ -116,26 +116,26 @@ export default function ExamView({ questions, timeLimit = 45, passingScore = 80,
   if (phase === 'review') {
     return (
       <div className="py-8 animate-slide-up">
-        <h2 className="text-2xl font-bold text-white mb-6 text-center">Review & Submit</h2>
+        <h2 className="text-2xl font-display font-medium text-ink mb-6 text-center">Review & Submit</h2>
 
         <div className="grid grid-cols-3 gap-4 max-w-md mx-auto mb-8">
           <div className="card p-4 text-center">
-            <div className="text-2xl font-bold text-green-400">{answeredCount}</div>
-            <div className="text-xs text-slate-400">Answered</div>
+            <div className="text-2xl font-display font-medium text-accent">{answeredCount}</div>
+            <div className="text-xs text-soft">Answered</div>
           </div>
           <div className="card p-4 text-center">
-            <div className="text-2xl font-bold text-red-400">{unansweredCount}</div>
-            <div className="text-xs text-slate-400">Unanswered</div>
+            <div className="text-2xl font-display font-medium text-miss">{unansweredCount}</div>
+            <div className="text-xs text-soft">Unanswered</div>
           </div>
           <div className="card p-4 text-center">
-            <div className="text-2xl font-bold text-amber-400">{flaggedCount}</div>
-            <div className="text-xs text-slate-400">Flagged</div>
+            <div className="text-2xl font-display font-medium text-soft">{flaggedCount}</div>
+            <div className="text-xs text-soft">Flagged</div>
           </div>
         </div>
 
         {/* Question grid for jumping back */}
         <div className="max-w-lg mx-auto mb-8">
-          <h3 className="text-sm font-medium text-slate-400 mb-3">Click a question to go back:</h3>
+          <h3 className="text-sm font-medium text-soft mb-3">Click a question to go back:</h3>
           <div className="flex flex-wrap gap-2">
             {shuffled.map((_, i) => {
               const isAnswered = answers[i] !== undefined;
@@ -146,10 +146,10 @@ export default function ExamView({ questions, timeLimit = 45, passingScore = 80,
                   onClick={() => { setCurrentQ(i); setPhase('active'); }}
                   className={`w-9 h-9 rounded text-xs font-mono flex items-center justify-center border transition-colors ${
                     isFlagged
-                      ? 'bg-amber-500/20 border-amber-500 text-amber-300'
+                      ? 'bg-miss/20 border-miss text-miss'
                       : isAnswered
-                        ? 'bg-green-900/30 border-green-700 text-green-300'
-                        : 'bg-slate-800 border-slate-600 text-slate-400'
+                        ? 'bg-accent-soft border-accent text-accent'
+                        : 'bg-paper-2 border-line text-soft'
                   }`}
                 >
                   {i + 1}
@@ -187,16 +187,16 @@ export default function ExamView({ questions, timeLimit = 45, passingScore = 80,
         {/* Score circle */}
         <div className="text-center mb-8">
           <div className={`inline-flex items-center justify-center w-36 h-36 rounded-full mb-4 ${
-            isPassing ? 'bg-green-500/20' : 'bg-red-500/20'
+            isPassing ? 'bg-accent-soft' : 'bg-miss/10'
           }`}>
-            <span className={`text-5xl font-bold ${isPassing ? 'text-green-400' : 'text-red-400'}`}>
+            <span className={`text-5xl font-bold ${isPassing ? 'text-accent' : 'text-miss'}`}>
               {score.percentage}%
             </span>
           </div>
-          <h2 className={`text-3xl font-bold mb-2 ${isPassing ? 'text-green-400' : 'text-red-400'}`}>
+          <h2 className={`text-3xl font-display font-medium mb-2 ${isPassing ? 'text-accent' : 'text-miss'}`}>
             {isPassing ? 'PASS' : 'NOT YET'}
           </h2>
-          <p className="text-slate-400">
+          <p className="text-soft">
             {score.correct} / {score.total} correct — {passingScore}% required
           </p>
         </div>
@@ -204,20 +204,20 @@ export default function ExamView({ questions, timeLimit = 45, passingScore = 80,
         {/* Domain breakdown */}
         {Object.keys(domainScores).length > 1 && (
           <div className="max-w-md mx-auto mb-8">
-            <h3 className="text-lg font-semibold text-slate-200 mb-3">Score by Domain</h3>
+            <h3 className="text-lg font-display font-medium text-ink mb-3">Score by Domain</h3>
             <div className="space-y-2">
               {Object.entries(domainScores).map(([domain, ds]) => {
                 const pct = Math.round((ds.correct / ds.total) * 100);
                 return (
                   <div key={domain} className="flex items-center gap-3">
-                    <span className="text-sm text-slate-400 w-32 truncate">{domain}</span>
-                    <div className="flex-1 h-2 bg-slate-700 rounded-full overflow-hidden">
+                    <span className="text-sm text-soft w-32 truncate">{domain}</span>
+                    <div className="flex-1 h-2 bg-line rounded-full overflow-hidden">
                       <div
-                        className={`h-full rounded-full ${pct >= passingScore ? 'bg-green-500' : 'bg-red-500'}`}
+                        className={`h-full rounded-full ${pct >= passingScore ? 'bg-accent' : 'bg-miss'}`}
                         style={{ width: `${pct}%` }}
                       />
                     </div>
-                    <span className="text-sm text-slate-300 w-12 text-right">{pct}%</span>
+                    <span className="text-sm text-ink/80 w-12 text-right">{pct}%</span>
                   </div>
                 );
               })}
@@ -227,7 +227,7 @@ export default function ExamView({ questions, timeLimit = 45, passingScore = 80,
 
         {/* Review explanations */}
         <div className="max-w-2xl mx-auto mb-8">
-          <h3 className="text-lg font-semibold text-slate-200 mb-4">Review Answers</h3>
+          <h3 className="text-lg font-display font-medium text-ink mb-4">Review Answers</h3>
           <div className="space-y-4">
             {shuffled.map((q, i) => {
               const userAnswer = answers[i];
@@ -235,27 +235,27 @@ export default function ExamView({ questions, timeLimit = 45, passingScore = 80,
               return (
                 <div key={i} className={`p-4 rounded-lg border ${
                   isCorrect
-                    ? 'bg-green-900/10 border-green-800/50'
-                    : 'bg-red-900/10 border-red-800/50'
+                    ? 'bg-accent-soft/50 border-accent/30'
+                    : 'bg-miss/5 border-miss/20'
                 }`}>
                   <div className="flex items-start gap-2 mb-2">
-                    <span className={`text-sm font-mono ${isCorrect ? 'text-green-400' : 'text-red-400'}`}>
+                    <span className={`text-sm font-mono ${isCorrect ? 'text-accent' : 'text-miss'}`}>
                       Q{i + 1}
                     </span>
-                    <span className="text-white text-sm">{q.question}</span>
+                    <span className="text-ink text-sm">{q.question}</span>
                   </div>
                   {!isCorrect && (
                     <div className="ml-8 text-sm">
-                      <p className="text-red-400">
+                      <p className="text-miss">
                         Your answer: {userAnswer !== undefined ? q.options[userAnswer] : '(unanswered)'}
                       </p>
-                      <p className="text-green-400">
+                      <p className="text-accent">
                         Correct: {q.options[q.correct]}
                       </p>
                     </div>
                   )}
                   {q.explanation && (
-                    <p className="ml-8 text-xs text-slate-400 mt-1">{q.explanation}</p>
+                    <p className="ml-8 text-xs text-soft mt-1">{q.explanation}</p>
                   )}
                 </div>
               );
@@ -278,16 +278,16 @@ export default function ExamView({ questions, timeLimit = 45, passingScore = 80,
   return (
     <div>
       {/* Top bar: timer + progress */}
-      <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-700">
-        <span className="text-sm text-slate-400">
+      <div className="flex items-center justify-between mb-6 pb-4 border-b border-line">
+        <span className="text-sm text-soft">
           Question {currentQ + 1} of {shuffled.length}
         </span>
         <div className="flex items-center gap-4">
-          <span className="text-sm text-slate-400">
+          <span className="text-sm text-soft">
             {answeredCount}/{shuffled.length} answered
           </span>
           <span className={`font-mono text-lg font-bold ${
-            timeLeft <= 300 ? 'text-red-400' : timeLeft <= 600 ? 'text-amber-400' : 'text-white'
+            timeLeft <= 300 ? 'text-miss' : timeLeft <= 600 ? 'text-accent' : 'text-ink'
           }`}>
             {formatTime(timeLeft)}
           </span>
@@ -295,7 +295,7 @@ export default function ExamView({ questions, timeLimit = 45, passingScore = 80,
       </div>
 
       {/* Question */}
-      <h3 className="text-xl font-semibold text-white mb-6">{question.question}</h3>
+      <h3 className="text-xl font-display font-medium text-ink mb-6">{question.question}</h3>
 
       {/* Options */}
       <div className="space-y-3 mb-6">
@@ -307,13 +307,13 @@ export default function ExamView({ questions, timeLimit = 45, passingScore = 80,
               onClick={() => setAnswers(prev => ({ ...prev, [currentQ]: i }))}
               className={`w-full p-4 rounded-lg text-left transition-all border-2 ${
                 isSelected
-                  ? 'bg-amber-500/20 border-amber-500 text-white'
-                  : 'bg-slate-800 border-slate-700 text-slate-300 hover:border-slate-500 cursor-pointer'
+                  ? 'bg-accent-soft border-accent text-ink'
+                  : 'bg-paper-2 border-line text-ink/80 hover:border-soft cursor-pointer'
               }`}
             >
               <span className="flex items-center gap-3">
                 <span className={`w-6 h-6 rounded-full border-2 flex items-center justify-center text-xs font-mono shrink-0 ${
-                  isSelected ? 'border-amber-500 text-amber-400' : 'border-slate-600 text-slate-500'
+                  isSelected ? 'border-accent text-accent' : 'border-line text-soft'
                 }`}>
                   {String.fromCharCode(65 + i)}
                 </span>
@@ -335,7 +335,7 @@ export default function ExamView({ questions, timeLimit = 45, passingScore = 80,
             });
           }}
           className={`btn-secondary flex items-center gap-2 ${
-            flagged.has(currentQ) ? 'text-amber-400 border-amber-500' : ''
+            flagged.has(currentQ) ? 'text-miss border-miss' : ''
           }`}
         >
           {flagged.has(currentQ) ? '⚑ Flagged' : '⚐ Flag'}
@@ -362,7 +362,7 @@ export default function ExamView({ questions, timeLimit = 45, passingScore = 80,
       </div>
 
       {/* Question palette */}
-      <div className="border-t border-slate-700 pt-4">
+      <div className="border-t border-line pt-4">
         <div className="flex flex-wrap gap-1.5">
           {shuffled.map((_, i) => {
             const isAnswered = answers[i] !== undefined;
@@ -374,12 +374,12 @@ export default function ExamView({ questions, timeLimit = 45, passingScore = 80,
                 onClick={() => setCurrentQ(i)}
                 className={`w-8 h-8 rounded text-xs font-mono flex items-center justify-center border transition-colors ${
                   isCurrent
-                    ? 'bg-amber-500 border-amber-400 text-slate-900 font-bold'
+                    ? 'bg-accent border-accent text-paper font-bold'
                     : isFlagged
-                      ? 'bg-amber-500/20 border-amber-600 text-amber-300'
+                      ? 'bg-miss/20 border-miss text-miss'
                       : isAnswered
-                        ? 'bg-green-900/30 border-green-700 text-green-300'
-                        : 'bg-slate-800 border-slate-700 text-slate-500 hover:border-slate-500'
+                        ? 'bg-accent-soft border-accent text-accent'
+                        : 'bg-paper-2 border-line text-soft hover:border-soft'
                 }`}
               >
                 {i + 1}

@@ -2,90 +2,105 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Base styles */
+/* ── Design tokens (mirrors vocab-ladder design/tokens.css) ──────────
+   Both this host and the VocabLadder component read from --vl-* vars.
+   Declaring them here means only one source of truth in the DOM.      */
+:root {
+  --vl-paper:        #f4f1ea;
+  --vl-paper-2:      #ebe6da;
+  --vl-line:         #d8d2c4;
+  --vl-ink:          #1a1916;
+  --vl-soft:         #7d7768;
+  --vl-accent:       #3d5a3d;
+  --vl-accent-soft:  #e3ebe1;
+  --vl-miss:         #9a4d3f;
+  --vl-font-display: "Fraunces", Georgia, serif;
+  --vl-font-body:    "Newsreader", Georgia, serif;
+  --vl-radius-sm:    10px;
+  --vl-radius:       12px;
+  --vl-radius-lg:    16px;
+  --vl-radius-pill:  999px;
+}
+
+/* ── Base styles ──────────────────────────────────────────────────── */
 @layer base {
   html {
     @apply scroll-smooth;
   }
-  
+
   body {
-    @apply bg-slate-900 text-slate-100 antialiased;
-    font-family: 'Inter', system-ui, sans-serif;
+    @apply bg-paper text-ink antialiased;
+    font-family: var(--vl-font-body);
   }
-  
-  /* Custom scrollbar */
-  ::-webkit-scrollbar {
-    @apply w-2;
+
+  h1, h2, h3, h4 {
+    font-family: var(--vl-font-display);
   }
-  
-  ::-webkit-scrollbar-track {
-    @apply bg-slate-800;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    @apply bg-slate-600 rounded-full;
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    @apply bg-slate-500;
-  }
+
+  ::-webkit-scrollbar       { @apply w-2; }
+  ::-webkit-scrollbar-track { background: var(--vl-paper-2); }
+  ::-webkit-scrollbar-thumb { background: var(--vl-line); border-radius: 999px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--vl-soft); }
 }
 
-/* Component styles */
+/* ── Component styles ─────────────────────────────────────────────── */
 @layer components {
   .btn-primary {
-    @apply px-6 py-3 bg-amber-500 text-slate-900 font-semibold rounded-lg 
-           hover:bg-amber-400 transition-colors disabled:opacity-50 
+    @apply px-6 py-3 bg-accent text-paper font-semibold rounded-lg
+           hover:bg-accent/80 transition-colors disabled:opacity-50
            disabled:cursor-not-allowed;
+    font-family: var(--vl-font-display);
   }
-  
+
   .btn-secondary {
-    @apply px-4 py-2 bg-slate-700 text-slate-200 rounded-lg 
-           hover:bg-slate-600 transition-colors;
+    @apply px-4 py-2 bg-paper-2 text-ink rounded-lg border border-line
+           hover:border-soft transition-colors;
+    font-family: var(--vl-font-body);
   }
-  
+
   .card {
-    @apply bg-slate-800 rounded-xl border border-slate-700 
-           hover:border-slate-600 transition-all;
+    @apply bg-paper-2 rounded-xl border border-line
+           hover:border-soft transition-all;
   }
-  
+
   .input {
-    @apply w-full bg-slate-800 border border-slate-700 rounded-lg 
-           px-4 py-3 text-white placeholder-slate-500 
-           focus:outline-none focus:border-amber-500 transition-colors;
+    @apply w-full bg-paper border border-line rounded-lg
+           px-4 py-3 text-ink placeholder-soft
+           focus:outline-none focus:border-accent transition-colors;
+    font-family: var(--vl-font-body);
   }
-  
+
   .glossary-term {
-    @apply border-b-2 border-dotted border-amber-500/60 text-amber-300 
-           cursor-help transition-colors hover:text-amber-200 
-           hover:border-amber-400;
+    @apply border-b-2 border-dotted border-accent/60 text-accent
+           cursor-help transition-colors hover:text-accent/80
+           hover:border-accent;
   }
-  
+
   .tag-quiz {
-    @apply text-xs px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300;
+    @apply text-xs px-2 py-0.5 rounded-full bg-accent-soft text-accent;
   }
-  
+
   .tag-notes {
-    @apply text-xs px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-300;
+    @apply text-xs px-2 py-0.5 rounded-full bg-line/50 text-soft;
   }
 
   .tag-exam {
-    @apply text-xs px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300;
+    @apply text-xs px-2 py-0.5 rounded-full bg-miss/10 text-miss;
   }
 }
 
-/* Utility styles */
+/* ── Utility styles ───────────────────────────────────────────────── */
 @layer utilities {
   .animate-fade-in {
     animation: fadeIn 0.15s ease-out forwards;
   }
-  
+
   .animate-slide-up {
     animation: slideUp 0.2s ease-out forwards;
   }
 }
 
-/* Keyframes */
+/* ── Keyframes ────────────────────────────────────────────────────── */
 @keyframes fadeIn {
   from {
     opacity: 0;

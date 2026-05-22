@@ -46,7 +46,7 @@ export default function GlossaryPage() {
         {/* Back button */}
         <Link
           to={courseId ? `/course/${courseId}` : '/'}
-          className="inline-flex items-center gap-2 text-slate-400 hover:text-white mb-6 transition-colors"
+          className="inline-flex items-center gap-2 text-soft hover:text-ink mb-6 transition-colors"
         >
           <span>←</span> Back to Dashboard
         </Link>
@@ -55,8 +55,8 @@ export default function GlossaryPage() {
         <div className="flex items-center gap-4 mb-6">
           <span className="text-4xl">📖</span>
           <div>
-            <h1 className="text-2xl font-bold text-white">Technical Glossary</h1>
-            <p className="text-slate-400">
+            <h1 className="text-2xl font-display font-medium text-ink">Technical Glossary</h1>
+            <p className="text-soft">
               {courseTitles[courseId] || 'Từ điển thuật ngữ'} • {Object.keys(glossary).length} terms
             </p>
           </div>
@@ -72,7 +72,7 @@ export default function GlossaryPage() {
               onChange={(e) => setSearch(e.target.value)}
               className="input pl-10"
             />
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500">
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-soft">
               🔍
             </span>
           </div>
@@ -91,7 +91,7 @@ export default function GlossaryPage() {
         </div>
 
         {/* Results count */}
-        <p className="text-sm text-slate-500 mb-4">
+        <p className="text-sm text-soft/70 mb-4">
           Showing {filteredTerms.length} of {Object.keys(glossary).length} terms
         </p>
 
@@ -101,19 +101,19 @@ export default function GlossaryPage() {
             {filteredTerms.map(([term, data]) => (
               <div
                 key={term}
-                className="card p-4 hover:bg-slate-700/50"
+                className="card p-4"
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-1 flex-wrap">
-                      <span className="font-semibold text-amber-400">{term}</span>
+                      <span className="font-display font-medium text-accent">{term}</span>
                       {data.category && (
-                        <span className="text-xs px-2 py-0.5 bg-slate-700 text-slate-400 rounded-full">
+                        <span className="text-xs px-2 py-0.5 bg-line text-soft rounded-full">
                           {data.category}
                         </span>
                       )}
                     </div>
-                    <p className="text-slate-300 text-sm">{data.vi}</p>
+                    <p className="text-ink/80 text-sm">{data.vi}</p>
                   </div>
                   <span className="text-xl shrink-0">🇻🇳</span>
                 </div>
@@ -121,7 +121,7 @@ export default function GlossaryPage() {
             ))}
           </div>
         ) : (
-          <div className="text-center py-12 text-slate-500">
+          <div className="text-center py-12 text-soft">
             <p className="text-4xl mb-4">🔍</p>
             <p>No terms found matching "{search}"</p>
             <button
@@ -129,7 +129,7 @@ export default function GlossaryPage() {
                 setSearch('');
                 setSelectedCategory('All');
               }}
-              className="text-amber-400 hover:underline mt-2"
+              className="text-accent hover:underline mt-2"
             >
               Clear filters
             </button>
@@ -138,8 +138,8 @@ export default function GlossaryPage() {
 
         {/* Quick navigation by letter */}
         {!search && selectedCategory === 'All' && (
-          <div className="mt-8 pt-6 border-t border-slate-700">
-            <h3 className="text-sm font-medium text-slate-400 mb-3">
+          <div className="mt-8 pt-6 border-t border-line">
+            <h3 className="text-sm font-medium text-soft mb-3">
               Quick Navigation
             </h3>
             <div className="flex flex-wrap gap-2">
@@ -151,7 +151,7 @@ export default function GlossaryPage() {
                       .getElementById(`letter-${letter}`)
                       ?.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="w-8 h-8 rounded bg-slate-800 text-slate-300 hover:bg-amber-500 hover:text-slate-900 transition-colors text-sm font-mono"
+                  className="w-8 h-8 rounded bg-paper-2 border border-line text-soft hover:bg-accent hover:text-paper hover:border-accent transition-colors text-sm font-mono"
                 >
                   {letter}
                 </button>
