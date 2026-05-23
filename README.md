@@ -1,205 +1,126 @@
-# NetStudy - CCNA Preparation Platform
+# CertFarmer — CCNA 200-301 Study Platform
 
-A responsive web application for CCNA exam preparation with Vietnamese glossary support.
+A responsive web app for CCNA 200-301 exam preparation with a Vietnamese networking glossary, practice quizzes, and full-length exams.
 
 ## Features
 
-- 📖 **Interactive Study Notes** - Markdown-formatted content with automatic term highlighting
-- 📝 **Practice Quizzes** - Multiple choice questions with instant feedback
-- 🇻🇳 **Vietnamese Glossary** - 100+ networking terms with Vietnamese explanations
-- 📊 **Progress Tracking** - Automatic progress saving via localStorage
-- 📱 **Fully Responsive** - Works on desktop, tablet, and mobile
+- **Interactive Study Notes** — Markdown lessons with automatic glossary term highlighting
+- **Practice Quizzes** — Multiple-choice questions with instant feedback and explanations
+- **Full-length Exams** — Midterms and final exam with timer and per-domain scoring (ExamView)
+- **Vietnamese Glossary** — 145 networking terms with Vietnamese explanations
+- **Progress Tracking** — Per-lesson/quiz progress saved to localStorage
+- **Fully Responsive** — Desktop, tablet, and mobile
 
 ## Quick Start
 
 ```bash
-# Install dependencies
 npm install
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
+npm run dev       # start dev server
+npm run build     # production build
+npm run preview   # preview production build
+npm run lint      # ESLint
 ```
 
 ## Project Structure
 
 ```
-netstudy/
+cert-farmer/
 ├── public/
-│   └── favicon.svg
+├── scripts/                    # Content tooling
+│   ├── generate-content.js     # Claude API content generator
+│   ├── validate-content.js     # Schema validator
+│   ├── extract-content.js
+│   └── syllabus-outline.json
 ├── src/
-│   ├── components/          # Reusable UI components
-│   │   ├── Layout.jsx       # Main layout with navigation
-│   │   ├── ProgressRing.jsx # Circular progress indicator
-│   │   ├── TermTooltip.jsx  # Glossary term tooltip
-│   │   ├── ContentRenderer.jsx  # Markdown-like content renderer
-│   │   └── QuizView.jsx     # Quiz component
-│   ├── pages/               # Route pages
-│   │   ├── Dashboard.jsx    # Course overview
-│   │   ├── ModulePage.jsx   # Module lesson list
-│   │   ├── LessonPage.jsx   # Individual lesson view
-│   │   ├── GlossaryPage.jsx # Searchable glossary
-│   │   └── NotFound.jsx     # 404 page
-│   ├── data/                # Course content and glossary
-│   │   ├── courses.js       # Course/module/lesson structure
-│   │   └── glossary.js      # Vietnamese term definitions
-│   ├── hooks/               # React hooks
-│   │   └── useProgress.jsx  # Progress tracking context
-│   ├── utils/               # Utility functions
-│   │   └── glossaryHelper.js # Glossary term matching
-│   ├── styles/
-│   │   └── index.css        # Tailwind CSS + custom styles
-│   ├── App.jsx              # Main app with routing
-│   └── main.jsx             # Entry point
+│   ├── content/ccna/           # Course content (data-driven)
+│   │   ├── course.json         # Master module list
+│   │   └── NNN_kebab-name/     # Module dirs (001–020)
+│   │       ├── module.json     # Module metadata + lesson list
+│   │       ├── *.md            # Lesson notes (markdown)
+│   │       ├── *-quiz.json     # Quizzes
+│   │       └── *-exam.json     # Exams
+│   ├── components/             # Layout, ContentRenderer, QuizView,
+│   │                           # ExamView, ProgressRing, TermTooltip
+│   ├── pages/                  # Dashboard, ModulePage, LessonPage,
+│   │                           # GlossaryPage, NotFound
+│   ├── hooks/                  # useProgress (Context + localStorage)
+│   ├── data/                   # contentLoader.js (import.meta.glob),
+│   │                           # courses.js (API), glossary.js
+│   ├── utils/                  # glossaryHelper.js
+│   └── styles/                 # Tailwind + dark theme
 ├── index.html
-├── package.json
 ├── vite.config.js
 ├── tailwind.config.js
-└── postcss.config.js
+└── vercel.json
 ```
 
 ## Adding Content
 
-### Adding a New Lesson
+Content is **data-driven** — no code changes needed. `src/data/contentLoader.js` auto-discovers files in `src/content/ccna/**` via Vite's `import.meta.glob`.
 
-Edit `src/data/courses.js` and add to the appropriate module:
+### Add a lesson
 
-```javascript
-{
-  id: 'my-new-lesson',
-  title: 'My New Lesson',
-  type: 'notes', // or 'quiz'
-  content: `
-# Lesson Title
+1. Create `src/content/ccna/NNN_module-name/my-lesson.md`.
+2. Register it in that module's `module.json` lesson list with `type: "notes"`.
 
-Your markdown-like content here...
+### Add a quiz
 
-## Section Heading
+1. Create `src/content/ccna/NNN_module-name/my-topic-quiz.json`:
+   ```json
+   {
+     "id": "my-topic-quiz",
+     "title": "My Topic Quiz",
+     "questions": [
+       {
+         "id": "q1",
+         "question": "Your question?",
+         "options": ["A", "B", "C", "D"],
+         "correct": 1,
+         "explanation": "Why B is correct."
+       }
+     ]
+   }
+   ```
+2. Register it in `module.json` with `type: "quiz"`.
 
-- Bullet points
-- **Bold text**
-- \`inline code\`
-  `,
-  resources: [
-    { type: 'video', title: 'Video Title', url: 'https://...' }
-  ]
-}
-```
+### Add an exam
 
-### Adding Quiz Questions
+Same as quizzes but with filename `*-exam.json` and `type: "exam"` in `module.json`. ExamView handles timer and per-domain scoring.
 
-```javascript
-{
-  id: 'my-quiz',
-  title: 'Topic Quiz',
-  type: 'quiz',
-  questions: [
-    {
-      id: 'q1',
-      question: 'Your question here?',
-      options: ['Option A', 'Option B', 'Option C', 'Option D'],
-      correct: 1, // 0-indexed (Option B)
-      explanation: 'Explanation shown after answering.'
-    }
-  ]
-}
-```
-
-### Adding Glossary Terms
+### Add a glossary term
 
 Edit `src/data/glossary.js`:
 
-```javascript
+```js
 "New Term": {
-  vi: "Vietnamese explanation here",
+  vi: "Vietnamese explanation",
   category: "Category Name"
 }
 ```
 
-Terms are automatically detected and highlighted in lesson content.
+Terms are auto-detected and highlighted in lesson content.
+
+See `.claude/skills/content-authoring/SKILL.md` for the full content-authoring guide.
 
 ## Deployment
 
-### Vercel (Recommended)
-
-1. Push code to GitHub
-2. Import project to [Vercel](https://vercel.com)
-3. Deploy automatically
-
-### Netlify
-
-1. Push code to GitHub
-2. Import to [Netlify](https://netlify.com)
-3. Build command: `npm run build`
-4. Publish directory: `dist`
-
-### GitHub Pages
-
-```bash
-# Install gh-pages
-npm install -D gh-pages
-
-# Add to package.json scripts:
-# "deploy": "npm run build && gh-pages -d dist"
-
-# Deploy
-npm run deploy
-```
-
-Note: For GitHub Pages, update `vite.config.js`:
-```javascript
-export default defineConfig({
-  base: '/your-repo-name/',
-  // ...
-})
-```
+Configured for **Vercel** (see `vercel.json`) — push to GitHub and import the repo. For other targets, `npm run build` produces a static bundle in `dist/`.
 
 ## Tech Stack
 
-- **React 18** - UI library
-- **React Router 6** - Client-side routing
-- **Tailwind CSS 3** - Utility-first styling
-- **Vite 5** - Build tool
+- **React 18** — UI
+- **Vite 7** — build tool
+- **Tailwind CSS 3** — styling
+- **React Router 6** — routing
+- **react-markdown + remark-gfm** — Markdown rendering
 
-## Customization
+## Project Docs
 
-### Changing Colors
-
-Edit `tailwind.config.js` to modify the color scheme:
-
-```javascript
-theme: {
-  extend: {
-    colors: {
-      brand: {
-        500: '#your-color', // Primary color
-      }
-    }
-  }
-}
-```
-
-### Adding a New Course
-
-1. Add course data to `src/data/courses.js`
-2. The routing automatically handles `/course/:courseId/...` paths
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
+- Backlog: `.project/backlog/BACKLOG.md`
+- Roadmap: `.project/product/ROADMAP.md`
+- Architecture decisions: `.project/decisions/`
+- Skills (Claude Code): `.claude/skills/` (architecture, content-authoring, project-roadmap)
 
 ## License
 
 MIT
-
----
-
-Built with ❤️ for efficient CCNA preparation

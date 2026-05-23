@@ -1,0 +1,35 @@
+word | collocate | definition | context
+as far as I'm concerned | as far as I'm concerned, this is | used to introduce a personal opinion strongly | As far as I'm concerned, access to education is a basic human right.
+in my view | in my view, the main cause | used to give a personal opinion formally | In my view, the main cause of stress among young people is academic pressure.
+from my perspective | from my perspective, technology | used to frame an opinion from your own standpoint | From my perspective, technology has done more good than harm overall.
+to my mind | to my mind, the key issue | used to introduce what you personally think is most important | To my mind, the key issue is not cost but political will.
+I would argue that | I would argue that this | used to put forward a reasoned personal position | I would argue that social media has fundamentally changed how we communicate.
+it seems to me that | it seems to me that people | used to express an opinion with a degree of humility | It seems to me that people often underestimate the value of sleep.
+I tend to think that | I tend to think that balance | used to express a general personal inclination | I tend to think that a balance between work and rest is essential for productivity.
+broadly speaking | broadly speaking, most people | used to make a generalisation without claiming it is always true | Broadly speaking, most people agree that honesty is important in relationships.
+generally speaking | generally speaking, younger generations | used to introduce a general point | Generally speaking, younger generations are more open to change.
+to a certain extent | to a certain extent, I agree | used to partially agree or support a view | To a certain extent, I agree that technology isolates people, but it also connects them.
+up to a point | up to a point, that is true | used to partially agree before introducing a contrasting view | Up to a point, that is true, but we also need to consider the economic impact.
+having said that | having said that, there are | used to introduce a contrast after conceding a point | Exercise is important; having said that, diet plays an equally significant role.
+that being said | that being said, the situation | similar to having said that, slightly more formal | The policy has benefits; that being said, the implementation has been poor.
+on the one hand | on the one hand, it offers | used to introduce the first side of a comparison | On the one hand, globalisation creates jobs; on the other, it can exploit workers.
+on the other hand | on the other hand, critics argue | used to introduce the contrasting side | Remote work boosts flexibility; on the other hand, it can blur work-life boundaries.
+what I mean by this is | what I mean by this is that | used to clarify or elaborate on something just said | It is not sustainable — what I mean by this is that resources will eventually run out.
+to put it another way | to put it another way, the cost | used to rephrase something more clearly | The system is inefficient; to put it another way, we are wasting public money.
+in other words | in other words, the gap is | used to restate something in simpler or clearer terms | Inequality is rising; in other words, the gap between rich and poor is widening.
+what strikes me is | what strikes me is how | used to highlight something that you find particularly notable | What strikes me is how quickly attitudes towards remote work have shifted.
+interestingly | interestingly, research suggests | used to introduce a surprising or noteworthy point | Interestingly, studies show that shorter working hours can boost productivity.
+it is worth noting that | it is worth noting that not | used to draw attention to an important detail | It is worth noting that not all countries have benefited equally from globalisation.
+I suppose | I suppose it depends on | used to think aloud or express mild uncertainty | I suppose it depends on how you define success in the first place.
+it depends on | it depends on the context | used to avoid overgeneralising and show nuance | Whether social media is harmful really depends on how it is used.
+all in all | all in all, I believe | used to give a final overall opinion or summary | All in all, I believe the advantages of city living outweigh the disadvantages.
+at the end of the day | at the end of the day, what matters | used informally to state what is ultimately most important | At the end of the day, what matters most is quality of life, not just income.
+the way I see it | the way I see it, education | used to introduce a personal viewpoint conversationally | The way I see it, education should prepare students for life, not just exams.
+I strongly believe that | I strongly believe that society | used to express a firm and confident opinion | I strongly believe that society has a responsibility to protect its most vulnerable members.
+there is no denying that | there is no denying that stress | used to acknowledge an undeniable truth before making a point | There is no denying that stress is a serious issue in modern workplaces.
+it goes without saying that | it goes without saying that health | used for a point considered obvious but still worth stating | It goes without saying that health should be a government priority.
+not to mention | not to mention the environmental | used to add an extra point, often a strong one | The project is expensive, not to mention the environmental damage it would cause.
+let me elaborate on that | let me elaborate on that point | used to signal you are about to expand on what you just said | Let me elaborate on that — the issue is not just financial but also social.
+to give you an example | to give you an example of this | used to introduce a concrete illustration in spoken answers | To give you an example, in Japan, many companies now offer mental health days.
+speaking of which | speaking of which, a recent study | used to transition naturally to a related point | Technology is changing education; speaking of which, AI tutors are already being used.
+if anything | if anything, the situation has | used to suggest that the reality is even more extreme than stated | The problem has not improved; if anything, it has gotten worse in recent years.

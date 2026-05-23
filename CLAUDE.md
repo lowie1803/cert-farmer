@@ -24,7 +24,7 @@ src/
   components/         # Layout, ContentRenderer, QuizView, ExamView, ProgressRing, TermTooltip
   pages/              # Dashboard, ModulePage, LessonPage, GlossaryPage, NotFound
   hooks/              # useProgress (React Context + localStorage)
-  data/               # contentLoader.js (Vite glob), courses.js (API), glossary.js (600+ Vietnamese terms)
+  data/               # contentLoader.js (Vite glob), courses.js (API), glossary.js (145 Vietnamese terms)
   styles/             # Tailwind + custom dark theme (slate/amber palette)
 ```
 

@@ -1,0 +1,49 @@
+word | collocate | definition | context
+mitigate | mitigate the effects | to reduce the severity of something harmful | Governments must act swiftly to mitigate the effects of climate change.
+pose | pose a challenge | to present or create a problem or risk | Rapid urbanisation poses a significant challenge to public infrastructure.
+curb | curb the rise | to limit or control something undesirable | Authorities are taking steps to curb the rise in youth unemployment.
+foster | foster a culture of | to encourage the development of something | Schools should foster a culture of critical thinking from an early age.
+prompt | prompt a response | to cause or trigger something to happen | The scandal prompted an immediate response from the government.
+undermine | undermine efforts | to weaken or damage something gradually | Corruption can undermine even the best-designed social programmes.
+tackle | tackle the issue | to make a serious effort to deal with a problem | There is no simple way to tackle the issue of income inequality.
+address | address the root causes | to deal with a problem directly and seriously | Policymakers must address the root causes rather than the symptoms.
+advocate | advocate for change | to publicly support or recommend something | Many experts advocate for a shift towards renewable energy sources.
+highlight | highlight the importance | to draw attention to something | The report highlights the importance of early childhood education.
+acknowledge | acknowledge the limitations | to accept or admit the existence of something | It is important to acknowledge the limitations of this approach.
+reflect | reflect a broader trend | to show or be a sign of something | The statistics reflect a broader trend of declining public trust.
+sustain | sustain economic growth | to maintain something over a long period | It is difficult to sustain economic growth without adequate investment.
+reinforce | reinforce the argument | to strengthen or support something | These findings reinforce the argument for stricter regulations.
+emerge | emerge as a key factor | to come into existence or become known | Technology has emerged as a key factor in modern education.
+significant | significant impact | large enough to be important or noticeable | Exercise has a significant impact on both physical and mental health.
+substantial | substantial improvement | large in size, amount, or degree | There has been a substantial improvement in living standards over recent decades.
+prevalent | increasingly prevalent | widespread and common in a particular area or time | Misinformation has become increasingly prevalent in the digital age.
+viable | a viable solution | capable of working successfully; feasible | Renewable energy is now a commercially viable solution for most countries.
+detrimental | detrimental to health | causing harm or damage | Excessive screen time can be detrimental to children's development.
+inherent | inherent risks | existing as a natural or permanent part of something | There are inherent risks in any form of investment.
+diverse | diverse range of | showing a great deal of variety | A diverse range of factors contributes to academic success.
+crucial | crucial role | extremely important or necessary | Communication plays a crucial role in maintaining healthy relationships.
+evident | clearly evident | easily seen or understood; obvious | It is clearly evident that more resources are needed in rural areas.
+comprehensive | comprehensive approach | complete and including everything necessary | A comprehensive approach is needed to solve the housing crisis.
+implication | broader implications | a possible consequence or effect | The broader implications of this policy have yet to be fully explored.
+initiative | government initiative | a new plan or strategy to achieve a goal | Several initiatives have been launched to reduce plastic waste.
+disparity | growing disparity | a great difference between things | There is a growing disparity between urban and rural healthcare access.
+perception | public perception | the way something is understood or regarded | Public perception of immigration has shifted considerably in recent years.
+factor | contributing factor | something that contributes to a result | Stress is a major contributing factor in many chronic illnesses.
+consequence | serious consequences | a result or effect of an action or condition | Ignoring environmental warnings will have serious consequences for future generations.
+aspect | key aspect | a particular part or feature of something | One key aspect of effective leadership is the ability to listen.
+perspective | from a broader perspective | a particular way of thinking about something | From a broader perspective, the benefits outweigh the drawbacks.
+approach | balanced approach | a way of dealing with something | A balanced approach is required when addressing sensitive social issues.
+trend | growing trend | a general direction in which something is developing | There is a growing trend towards remote working across many industries.
+extent | to a great extent | the degree to which something is true | To a great extent, success depends on consistent effort over time.
+increasingly | increasingly important | more and more over time | It is becoming increasingly important to develop digital literacy skills.
+substantially | improved substantially | by a large amount or degree | Air quality in major cities has improved substantially over the past decade.
+particularly | particularly relevant | especially, more than usual | This issue is particularly relevant to young people entering the workforce.
+primarily | primarily due to | mainly, for the most part | The decline is primarily due to changes in consumer behaviour.
+inevitably | inevitably leads to | as a certain or necessary result | Increased demand inevitably leads to higher prices in a free market.
+arguably | arguably the most | can be supported by argument; possibly | This is arguably the most pressing environmental issue of our time.
+overall | overall, the evidence | taking everything into account | Overall, the evidence suggests that early intervention is most effective.
+in turn | and in turn | as a result of something in a chain of effects | Better education leads to higher income, which in turn improves quality of life.
+in contrast | in contrast to | used to show a difference between two things | In contrast to urban areas, rural communities often lack access to quality services.
+as a result | as a result of this | because of something that happened before | As a result of the pandemic, remote work became widely accepted.
+for the most part | for the most part, people | mostly; in most cases | For the most part, people support stricter environmental regulations.
+on the whole | on the whole, the policy | generally; considering everything | On the whole, the policy has had a positive effect on public health.

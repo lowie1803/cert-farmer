@@ -1,0 +1,36 @@
+word | collocate | definition | context
+nevertheless | nevertheless, the results | used to introduce a contrast despite what was just said | The sample size was small; nevertheless, the results were significant.
+nonetheless | nonetheless, progress was made | same as nevertheless, slightly more formal | Funding was cut; nonetheless, the team completed the project.
+however | however, this assumes | used to introduce a contrasting point | The model performs well; however, this assumes clean input data.
+albeit | albeit a minor one | conceding a point while maintaining the main claim | There was an improvement, albeit a minor one, in test scores.
+notwithstanding | notwithstanding the risks | despite something, used in formal writing | Notwithstanding the risks, the policy was approved.
+conversely | conversely, a rise in X | to introduce the opposite side of a point | High pressure improves yield; conversely, low pressure reduces it.
+on the contrary | on the contrary, evidence shows | to directly contradict a previous statement | This is not a weakness; on the contrary, it is a key advantage.
+in spite of | in spite of the evidence | despite something, used before noun phrases | In spite of the evidence, the hypothesis was retained.
+perhaps | perhaps the most significant | to soften a claim or express possibility | This is perhaps the most overlooked factor in the debate.
+arguably | arguably the best approach | to present a claim that can be supported by argument | This is arguably the most efficient solution available.
+presumably | presumably due to | to state something assumed but not confirmed | The delay was presumably due to supply chain disruptions.
+ostensibly | ostensibly designed to | appearing to be true but possibly not | The reform was ostensibly designed to reduce inequality.
+seemingly | seemingly unrelated factors | appearing a certain way on the surface | Two seemingly unrelated variables showed strong correlation.
+to some extent | to some extent, this reflects | partially true or partially applicable | To some extent, the findings support the original hypothesis.
+consequently | consequently, the rate fell | as a result of something previously mentioned | Temperatures rose sharply; consequently, crop yields declined.
+therefore | therefore, we conclude | to signal a logical conclusion | The data is inconclusive; therefore, further study is needed.
+hence | hence the term | for this reason, very formal | Demand exceeded supply; hence the sharp rise in prices.
+thus | thus reducing the risk | as a result, often used mid-sentence with a gerund | The filter removes noise, thus improving signal quality.
+thereby | thereby increasing efficiency | by doing this, used with gerund phrases | The process was automated, thereby reducing human error.
+this gives rise to | this gives rise to concerns | to formally introduce a consequence | Rapid urbanisation gives rise to significant infrastructure challenges.
+furthermore | furthermore, the study found | to add a point that strengthens the argument | The treatment was effective; furthermore, it had minimal side effects.
+moreover | moreover, this suggests | to add an even stronger or more important point | The cost was lower; moreover, the quality exceeded expectations.
+likewise | likewise, the second group | to indicate a parallel point | Group A improved significantly; likewise, Group B showed gains.
+similarly | similarly, other studies | to draw a comparison with the previous point | The first experiment failed; similarly, the replication yielded no results.
+in particular | in particular, the role of | to highlight a specific element within a broader point | The authors focus on innovation; in particular, the role of public funding.
+specifically | specifically, three factors | to introduce a precise detail or subset | The regulation targets one sector; specifically, heavy manufacturing.
+namely | namely, cost and time | to introduce the exact items just referred to | Two constraints were identified, namely cost and implementation time.
+that is to say | that is to say, the threshold | to rephrase or clarify the previous statement | The variable is bounded; that is to say, it cannot exceed 1.
+for instance | for instance, in Germany | to introduce a concrete example | Policy divergence is common; for instance, Germany and France differ on energy.
+to illustrate | to illustrate this point | to introduce an example that makes a concept clearer | To illustrate this point, consider a simple two-player game.
+as evidenced by | as evidenced by the data | to cite supporting evidence formally | The trend is accelerating, as evidenced by the year-on-year growth figures.
+in conclusion | in conclusion, this paper | to signal the final summary of an argument | In conclusion, this paper has argued that regulation alone is insufficient.
+on balance | on balance, the benefits | after weighing pros and cons | On balance, the benefits of the intervention outweigh the drawbacks.
+in light of | in light of the findings | considering what has been presented | In light of the findings, the original model requires revision.
+all things considered | all things considered, the approach | after taking everything into account | All things considered, the hybrid approach appears most viable.
