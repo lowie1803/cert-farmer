@@ -11,6 +11,9 @@ import urban from "@data/vocab-urban.js";
 import communication from "@data/vocab-communication.js";
 import food from "@data/vocab-food.js";
 import science from "@data/vocab-science.js";
+import academicConnectors from "@data/vocab-academic-connectors.js";
+import academicSkills from "@data/vocab-academic-skills.js";
+import speakingPhrases from "@data/vocab-speaking-phrases.js";
 
 interface BankEntry {
   word: string;
@@ -43,7 +46,10 @@ const TOPICS: TopicMeta[] = [
   { key: "urban",         label: "Urban Life & Transport",     description: "Cities, commute, infrastructure, housing",          entries: tagTopic(urban, "urban") },
   { key: "communication", label: "Communication & Relationships", description: "Family, friendship, conflict, media",            entries: tagTopic(communication, "communication") },
   { key: "food",          label: "Food & Eating Habits",       description: "Cuisine, nutrition, cooking, fast food",            entries: tagTopic(food, "food") },
-  { key: "science",       label: "Science & Nature",           description: "Research, animals, space, discoveries",             entries: tagTopic(science, "science") },
+  { key: "science",              label: "Science & Nature",        description: "Research, animals, space, discoveries",                       entries: tagTopic(science, "science") },
+  { key: "academic-connectors", label: "Academic Connectors",    description: "Contrast, causality, addition, exemplification, conclusion markers", entries: tagTopic(academicConnectors, "academic-connectors") },
+  { key: "academic-skills",     label: "Academic Skills",        description: "Cross-topic B2/C1 verbs, adjectives, and adverbs for IELTS/VSTEP essays", entries: tagTopic(academicSkills, "academic-skills") },
+  { key: "speaking-phrases",    label: "Speaking Phrases",       description: "Opinion starters, hedges, discourse markers for IELTS Speaking",     entries: tagTopic(speakingPhrases, "speaking-phrases") },
 ];
 
 const vocabList: BankEntry[] = TOPICS.flatMap((t) => t.entries);
@@ -160,7 +166,7 @@ const BrowseView: React.FC<{
   const [showMastered, setShowMastered] = useState(false);
   const [done, setDone] = useState<number | null>(null);
 
-  const cats = ["verb", "noun", "adjective", "adverb"];
+  const cats = ["verb", "noun", "adjective", "adverb", "phrase"];
 
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase();
