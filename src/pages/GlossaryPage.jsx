@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { usePageTitle } from '@hooks/usePageTitle';
 import { getGlossary, getGlossaryCategories } from '@data/glossaries';
 
 const courseTitles = {
@@ -14,6 +15,7 @@ export default function GlossaryPage() {
 
   const glossary = getGlossary(courseId);
   const glossaryCategories = getGlossaryCategories(courseId);
+  usePageTitle('Glossary');
 
   // Filter and sort terms
   const filteredTerms = useMemo(() => {

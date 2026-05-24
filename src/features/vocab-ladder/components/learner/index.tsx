@@ -40,17 +40,18 @@ export const Learn: React.FC<{
       <div className="vt-flash" onClick={() => setShow((s) => !s)}>
         <div className="vt-flash-word">{card.word}</div>
         {card.collocate && <div className="vt-flash-coll">{card.collocate}</div>}
-        {show ? (
-          <div className="vt-flash-back">
+        <div style={{ display: 'grid' }}>
+          <div style={{ gridArea: '1/1', visibility: show ? 'visible' : 'hidden' }} className="vt-flash-back">
             {card.definition && <p className="vt-flash-def">{card.definition}</p>}
-            {card.context && <p className="vt-flash-ctx">“{card.context}”</p>}
+            {card.context && <p className="vt-flash-ctx">"{card.context}"</p>}
             {!card.definition && !card.context && (
               <p className="vt-flash-ctx vt-dim">infer from the collocation</p>
             )}
           </div>
-        ) : (
-          <div className="vt-flash-tap">tap to reveal</div>
-        )}
+          <div style={{ gridArea: '1/1', visibility: show ? 'hidden' : 'visible' }} className="vt-flash-tap">
+            tap to reveal
+          </div>
+        </div>
       </div>
 
       <button className="vt-primary" onClick={learnIt}>Got it — next</button>
@@ -104,7 +105,7 @@ export const Bridge: React.FC<{
         <textarea
           value={text}
           onChange={(e) => setText(e.target.value)}
-          placeholder={`Use “${current.collocate || current.word}” about your own life or an opinion.`}
+          placeholder={`Use "${current.collocate || current.word}" about your own life or an opinion.`}
           rows={3}
           autoFocus
         />

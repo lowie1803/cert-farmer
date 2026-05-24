@@ -29,7 +29,7 @@ export default function Layout() {
         <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-2.5 h-2.5 rounded-full bg-accent group-hover:bg-accent/70 transition-colors" />
+            <img src="/favicon.svg" alt="" className="w-5 h-5 rounded-sm group-hover:opacity-80 transition-opacity" />
             <span className="font-display font-medium text-ink hidden sm:block">
               CertFarmer
             </span>
@@ -40,7 +40,7 @@ export default function Layout() {
             {/* Vocab link — always visible */}
             <Link
               to="/vocab"
-              className={`text-sm transition-colors ${
+              className={`text-base transition-colors ${
                 onVocabPage
                   ? 'text-ink font-medium'
                   : 'text-soft hover:text-ink'

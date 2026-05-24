@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useProgress } from '@hooks/useProgress';
+import { usePageTitle } from '@hooks/usePageTitle';
 import { getModule } from '@data/courses';
 
 export default function ModulePage() {
@@ -8,6 +9,7 @@ export default function ModulePage() {
   const { getLessonProgress, isLessonCompleted, calculateModuleProgress } = useProgress();
 
   const module = getModule(courseId, moduleId);
+  usePageTitle(module?.title ?? null);
 
   if (!module) {
     return (

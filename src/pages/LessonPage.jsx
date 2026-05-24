@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { usePageTitle } from '@hooks/usePageTitle';
 import { Link, useParams } from 'react-router-dom';
 import { useProgress } from '@hooks/useProgress';
 import { getLesson, getModule } from '@data/courses';
@@ -12,6 +13,7 @@ export default function LessonPage() {
 
   const module = getModule(courseId, moduleId);
   const lesson = getLesson(courseId, moduleId, lessonId);
+  usePageTitle(lesson?.title ?? null);
 
   // Mark notes as completed when viewed
   useEffect(() => {

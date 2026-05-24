@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useProgress } from '@hooks/useProgress';
+import { usePageTitle } from '@hooks/usePageTitle';
 import { getCourse, getAllCourses } from '@data/courses';
 import { getGlossary, hasGlossary } from '@data/glossaries';
 import ProgressRing from '@components/ProgressRing';
@@ -33,7 +34,7 @@ function CourseSelector() {
                     <h2 className="text-xl font-display font-medium text-ink group-hover:text-accent transition-colors">
                       {course.title}
                     </h2>
-                    <p className="text-sm text-soft mt-1">{course.description}</p>
+                    <p className="text-base text-soft mt-1">{course.description}</p>
                   </div>
                   <ProgressRing progress={progress} size={56} />
                 </div>
@@ -53,14 +54,14 @@ function CourseSelector() {
 
 export default function Dashboard() {
   const { courseId } = useParams();
+  const course = courseId ? getCourse(courseId) : null;
+  usePageTitle(course ? course.title : 'Home');
 
   if (!courseId) {
     return <CourseSelector />;
   }
 
   const { calculateCourseProgress, calculateModuleProgress, getCompletedCount, progress } = useProgress();
-
-  const course = getCourse(courseId);
 
   if (!course) {
     return (
