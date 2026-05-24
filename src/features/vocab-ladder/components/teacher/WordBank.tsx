@@ -1,19 +1,5 @@
 import React, { useState, useMemo } from "react";
 import type { VocabItem, ParsedItem } from "../../types";
-import core from "@data/vocab-b1b2.js";
-import health from "@data/vocab-health.js";
-import environment from "@data/vocab-environment.js";
-import education from "@data/vocab-education.js";
-import work from "@data/vocab-work.js";
-import technology from "@data/vocab-technology.js";
-import travel from "@data/vocab-travel.js";
-import urban from "@data/vocab-urban.js";
-import communication from "@data/vocab-communication.js";
-import food from "@data/vocab-food.js";
-import science from "@data/vocab-science.js";
-import academicConnectors from "@data/vocab-academic-connectors.js";
-import academicSkills from "@data/vocab-academic-skills.js";
-import speakingPhrases from "@data/vocab-speaking-phrases.js";
 
 interface BankEntry {
   word: string;
@@ -21,7 +7,7 @@ interface BankEntry {
   definition: string;
   context: string;
   category: string;
-  level: "B1" | "B2" | "C1";
+  level: string;
   topic: string;
 }
 
@@ -32,37 +18,26 @@ interface TopicMeta {
   entries: BankEntry[];
 }
 
-const tagTopic = (entries: unknown[], topic: string): BankEntry[] =>
-  (entries as Omit<BankEntry, "topic">[]).map((e) => ({ ...e, topic }));
-
-const TOPICS: TopicMeta[] = [
-  { key: "core",          label: "Foundations",                description: "Core academic verbs, nouns, and connectors",         entries: tagTopic(core, "core") },
-  { key: "health",        label: "Health & Lifestyle",         description: "Exercise, diet, mental health, well-being",         entries: tagTopic(health, "health") },
-  { key: "environment",   label: "Environment & Sustainability", description: "Pollution, climate, recycling, biodiversity",     entries: tagTopic(environment, "environment") },
-  { key: "education",     label: "Education & Learning",       description: "Study, university, lifelong learning",              entries: tagTopic(education, "education") },
-  { key: "work",          label: "Work & Careers",             description: "Workplace, remote work, burnout, promotion",        entries: tagTopic(work, "work") },
-  { key: "technology",    label: "Technology & Internet",      description: "Devices, social media, AI, privacy",                entries: tagTopic(technology, "technology") },
-  { key: "travel",        label: "Travel & Culture",           description: "Tourism, cross-cultural experience, language",      entries: tagTopic(travel, "travel") },
-  { key: "urban",         label: "Urban Life & Transport",     description: "Cities, commute, infrastructure, housing",          entries: tagTopic(urban, "urban") },
-  { key: "communication", label: "Communication & Relationships", description: "Family, friendship, conflict, media",            entries: tagTopic(communication, "communication") },
-  { key: "food",          label: "Food & Eating Habits",       description: "Cuisine, nutrition, cooking, fast food",            entries: tagTopic(food, "food") },
-  { key: "science",              label: "Science & Nature",        description: "Research, animals, space, discoveries",                       entries: tagTopic(science, "science") },
-  { key: "academic-connectors", label: "Academic Connectors",    description: "Contrast, causality, addition, exemplification, conclusion markers", entries: tagTopic(academicConnectors, "academic-connectors") },
-  { key: "academic-skills",     label: "Academic Skills",        description: "Cross-topic B2/C1 verbs, adjectives, and adverbs for IELTS/VSTEP essays", entries: tagTopic(academicSkills, "academic-skills") },
-  { key: "speaking-phrases",    label: "Speaking Phrases",       description: "Opinion starters, hedges, discourse markers for IELTS Speaking",     entries: tagTopic(speakingPhrases, "speaking-phrases") },
-];
-
-const vocabList: BankEntry[] = TOPICS.flatMap((t) => t.entries);
+export interface LanguageConfig {
+  code: string;
+  label: string;
+  flag?: string;
+  levels: string[];
+  categories: string[];
+  topics: TopicMeta[];
+}
 
 const ALL = "all";
 
 // ── Sets view ────────────────────────────────────────────────────────────────
 
 const SetsView: React.FC<{
+  topics: TopicMeta[];
+  levels: string[];
   inDeck: Set<string>;
   mastered: Set<string>;
   onImport: (parsed: ParsedItem[]) => { added: number; skipped: number };
-}> = ({ inDeck, mastered, onImport }) => {
+}> = ({ topics, levels, inDeck, mastered, onImport }) => {
   const [expanded, setExpanded] = useState<string | null>(null);
   const [done, setDone] = useState<{ label: string; n: number } | null>(null);
 
@@ -75,6 +50,10 @@ const SetsView: React.FC<{
     setDone({ label, n: added });
   };
 
+  if (topics.length === 0) {
+    return <div className="vt-empty">No topic sets defined for this language yet.</div>;
+  }
+
   return (
     <div>
       <p className="vt-hint">
@@ -82,14 +61,15 @@ const SetsView: React.FC<{
         Words already in your deck keep their original example.
       </p>
       <div className="vt-sets-grid">
-        {TOPICS.map(({ key, label, description, entries }) => {
+        {topics.map(({ key, label, description, entries }) => {
           const inDeckCount = entries.filter((e) => inDeck.has(e.word.toLowerCase())).length;
           const addable = entries.filter(
             (e) => !inDeck.has(e.word.toLowerCase()) && !mastered.has(e.word.toLowerCase())
           ).length;
-          const b1 = entries.filter((e) => e.level === "B1").length;
-          const b2 = entries.filter((e) => e.level === "B2").length;
-          const c1 = entries.filter((e) => e.level === "C1").length;
+          const levelCounts = levels.map((lv) => ({
+            lv,
+            n: entries.filter((e) => e.level === lv).length,
+          }));
           const isOpen = expanded === key;
           return (
             <div key={key} className="vt-set-card">
@@ -108,7 +88,12 @@ const SetsView: React.FC<{
                 <br />
                 <b>{entries.length}</b> words · <b>{inDeckCount}</b> in deck
                 <br />
-                <span className="vt-cap">B1·{b1} B2·{b2}{c1 > 0 ? ` C1·${c1}` : ""}</span>
+                <span className="vt-cap">
+                  {levelCounts
+                    .filter((c) => c.n > 0)
+                    .map((c) => `${c.lv}·${c.n}`)
+                    .join(" ")}
+                </span>
               </p>
               <div className="vt-set-actions">
                 <button
@@ -154,11 +139,14 @@ const SetsView: React.FC<{
 // ── Browse view ───────────────────────────────────────────────────────────────
 
 const BrowseView: React.FC<{
+  vocabList: BankEntry[];
+  levels: string[];
+  categories: string[];
   inDeck: Set<string>;
   mastered: Set<string>;
   onToggleMastered: (word: string) => void;
   onImport: (parsed: ParsedItem[]) => { added: number; skipped: number };
-}> = ({ inDeck, mastered, onToggleMastered, onImport }) => {
+}> = ({ vocabList, levels, categories, inDeck, mastered, onToggleMastered, onImport }) => {
   const [search, setSearch] = useState("");
   const [level, setLevel] = useState<string>(ALL);
   const [category, setCategory] = useState<string>(ALL);
@@ -166,18 +154,16 @@ const BrowseView: React.FC<{
   const [showMastered, setShowMastered] = useState(false);
   const [done, setDone] = useState<number | null>(null);
 
-  const cats = ["verb", "noun", "adjective", "adverb", "phrase"];
-
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase();
-    return (vocabList as BankEntry[]).filter((e) => {
+    return vocabList.filter((e) => {
       if (!showMastered && mastered.has(e.word.toLowerCase())) return false;
       if (level !== ALL && e.level !== level) return false;
       if (category !== ALL && e.category !== category) return false;
       if (q && !e.word.toLowerCase().startsWith(q)) return false;
       return true;
     });
-  }, [search, level, category, showMastered, mastered]);
+  }, [search, level, category, showMastered, mastered, vocabList]);
 
   const toggle = (word: string) => {
     if (inDeck.has(word.toLowerCase())) return;
@@ -201,7 +187,7 @@ const BrowseView: React.FC<{
   };
 
   const commit = () => {
-    const toAdd: ParsedItem[] = (vocabList as BankEntry[])
+    const toAdd: ParsedItem[] = vocabList
       .filter((e) => selected.has(e.word))
       .map(({ word, collocate, definition, context }) => ({ word, collocate, definition, context }));
     if (toAdd.length === 0) return;
@@ -224,7 +210,7 @@ const BrowseView: React.FC<{
           onChange={(e) => { setSearch(e.target.value); setDone(null); }}
         />
         <div className="vt-filter-row">
-          {([ALL, "B1", "B2", "C1"] as string[]).map((l) => (
+          {([ALL, ...levels] as string[]).map((l) => (
             <button
               key={l}
               className={`vt-chip${level === l ? " on" : ""}`}
@@ -235,7 +221,7 @@ const BrowseView: React.FC<{
           ))}
         </div>
         <div className="vt-filter-row">
-          {([ALL, ...cats] as string[]).map((c) => (
+          {([ALL, ...categories] as string[]).map((c) => (
             <button
               key={c}
               className={`vt-chip${category === c ? " on" : ""}`}
@@ -332,12 +318,18 @@ const BrowseView: React.FC<{
 // ── WordBank shell ────────────────────────────────────────────────────────────
 
 export const WordBank: React.FC<{
+  language: LanguageConfig;
   items: VocabItem[];
   onImport: (parsed: ParsedItem[]) => { added: number; skipped: number };
   mastered: Set<string>;
   onToggleMastered: (word: string) => void;
-}> = ({ items, onImport, mastered, onToggleMastered }) => {
+}> = ({ language, items, onImport, mastered, onToggleMastered }) => {
   const [bankView, setBankView] = useState<"sets" | "browse">("sets");
+
+  const vocabList = useMemo<BankEntry[]>(
+    () => language.topics.flatMap((t) => t.entries),
+    [language]
+  );
 
   const inDeck = useMemo(
     () => new Set(items.map((i) => i.word.toLowerCase())),
@@ -348,7 +340,7 @@ export const WordBank: React.FC<{
     <div className="vt-card">
       <div className="vt-card-head">
         <h2>Word Bank</h2>
-        <span className="vt-cap">{(vocabList as BankEntry[]).length} words</span>
+        <span className="vt-cap">{vocabList.length} words</span>
       </div>
 
       <div className="vt-bank-pills">
@@ -357,9 +349,23 @@ export const WordBank: React.FC<{
       </div>
 
       {bankView === "sets" ? (
-        <SetsView inDeck={inDeck} mastered={mastered} onImport={onImport} />
+        <SetsView
+          topics={language.topics}
+          levels={language.levels}
+          inDeck={inDeck}
+          mastered={mastered}
+          onImport={onImport}
+        />
       ) : (
-        <BrowseView inDeck={inDeck} mastered={mastered} onToggleMastered={onToggleMastered} onImport={onImport} />
+        <BrowseView
+          vocabList={vocabList}
+          levels={language.levels}
+          categories={language.categories}
+          inDeck={inDeck}
+          mastered={mastered}
+          onToggleMastered={onToggleMastered}
+          onImport={onImport}
+        />
       )}
     </div>
   );

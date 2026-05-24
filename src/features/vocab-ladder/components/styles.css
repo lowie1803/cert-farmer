@@ -187,3 +187,31 @@
   .vt-stats { gap: 18px; }
   .vt-brand h1 { font-size: 1.125rem; } /* text-lg */
 }
+
+/* --- Language indicator + storage warning --- */
+.vt-lang-row { display: flex; align-items: center; gap: 12px; margin-top: 10px; font-size: 0.875rem; }
+.vt-lang-current { display: inline-flex; align-items: center; gap: 6px; color: var(--vl-ink); font-weight: 500; }
+.vt-lang-flag { font-size: 1rem; }
+.vt-lang-switch { color: var(--vl-soft); text-decoration: none; font-size: 0.8125rem; }
+.vt-lang-switch:hover { color: var(--vl-accent); text-decoration: underline; }
+
+.vt-warn {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--vl-paper-2);
+  border: 1px solid var(--vl-line);
+  border-left: 3px solid var(--vl-accent);
+  border-radius: var(--vl-radius);
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  font-size: 0.8125rem;
+  color: var(--vl-soft);
+  line-height: 1.5;
+}
+.vt-warn-body b { color: var(--vl-ink); }
+.vt-warn-body em { font-style: italic; color: var(--vl-ink); }
+.vt-warn-actions { display: flex; gap: 6px; flex-wrap: wrap; }
+
+/* Deck bar wraps if needed for the extra buttons */
+.vt-deck-bar { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }

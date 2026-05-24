@@ -16,6 +16,7 @@ export default function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Dashboard />} />
           <Route path="vocab" element={<VocabPage />} />
+          <Route path="vocab/:lang" element={<VocabPage />} />
           <Route path="course/:courseId" element={<Dashboard />} />
           <Route path="course/:courseId/module/:moduleId" element={<ModulePage />} />
           <Route path="course/:courseId/module/:moduleId/lesson/:lessonId" element={<LessonPage />} />
