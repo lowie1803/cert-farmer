@@ -2,6 +2,7 @@
   "id": "gmat-math",
   "title": "GMAT Focus: Quantitative Reasoning",
   "description": "Problem Solving prep for the GMAT Focus Edition — arithmetic, algebra, and word problems",
+  "topic": "Business & Finance",
   "version": "1.0",
   "modules": [
     "001_quant-overview",

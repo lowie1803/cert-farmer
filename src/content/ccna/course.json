@@ -2,6 +2,7 @@
   "id": "ccna",
   "title": "CCNA 200-301",
   "description": "Cisco Certified Network Associate",
+  "topic": "Tech & Certification",
   "version": "1.1",
   "modules": [
     "001_network-fundamentals",

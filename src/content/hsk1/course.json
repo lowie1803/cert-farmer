@@ -2,6 +2,7 @@
   "id": "hsk1",
   "title": "HSK 1 — Mandarin Foundations",
   "description": "8-week introduction to Mandarin Chinese: pinyin, tones, ~150 characters, the 是 sentence, measure words, and completed-action 了.",
+  "topic": "Languages",
   "version": "1.0",
   "modules": [
     "001_pinyin-and-tones",

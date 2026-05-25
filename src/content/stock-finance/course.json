@@ -2,6 +2,7 @@
   "id": "stock-finance",
   "title": "Stock Market & Finance",
   "description": "Introduction to investing and the stock market",
+  "topic": "Business & Finance",
   "version": "1.0",
   "modules": [
     "001_what-is-the-stock-market",

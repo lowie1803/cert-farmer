@@ -2,6 +2,7 @@
   "id": "claude-usage",
   "title": "Claude for Coding",
   "description": "Master Claude Code CLI — setup, tools, skills, hooks, MCP, and real-world coding workflows",
+  "topic": "Tech & Certification",
   "version": "2.0",
   "modules": [
     "001_getting-started",

@@ -8,6 +8,9 @@ import ProgressRing from '@components/ProgressRing';
 
 const SHOW_HIDDEN_KEY = 'cert-farmer:show-hidden-courses';
 
+const TOPIC_ORDER = ['Tech & Certification', 'Languages', 'Business & Finance'];
+const FALLBACK_TOPIC = 'Other';
+
 function CourseSelector() {
   const allCourses = getAllCourses();
   const { calculateCourseProgress } = useProgress();
@@ -30,6 +33,17 @@ function CourseSelector() {
 
   const visibleCourses = allCourses.filter((c) => showHidden || !c.hidden);
   const hiddenCount = allCourses.filter((c) => c.hidden).length;
+
+  const coursesByTopic = visibleCourses.reduce((acc, course) => {
+    const topic = course.topic || FALLBACK_TOPIC;
+    (acc[topic] ||= []).push(course);
+    return acc;
+  }, {});
+
+  const orderedTopics = [
+    ...TOPIC_ORDER.filter((t) => coursesByTopic[t]?.length),
+    ...Object.keys(coursesByTopic).filter((t) => !TOPIC_ORDER.includes(t)),
+  ];
 
   return (
     <div className="p-4 md:p-8">
@@ -56,39 +70,48 @@ function CourseSelector() {
           </label>
         )}
 
-        <div className="grid gap-4 sm:grid-cols-2">
-          {visibleCourses.map((course) => {
-            const progress = calculateCourseProgress(course);
-            return (
-              <Link
-                key={course.id}
-                to={`/course/${course.id}`}
-                className="card p-6 group hover:border-accent/50 transition-all"
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2 flex-wrap">
-                      <h2 className="text-xl font-display font-medium text-ink group-hover:text-accent transition-colors">
-                        {course.title}
-                      </h2>
-                      {course.hidden && (
-                        <span className="text-[10px] uppercase tracking-wider text-soft/80 border border-line rounded px-1.5 py-0.5">
-                          🚧 In progress
-                        </span>
-                      )}
-                    </div>
-                    <p className="text-base text-soft mt-1">{course.description}</p>
-                  </div>
-                  <ProgressRing progress={progress} size={56} />
-                </div>
+        <div className="space-y-8">
+          {orderedTopics.map((topic) => (
+            <section key={topic}>
+              <h3 className="text-sm font-display font-medium text-accent uppercase tracking-wider mb-3">
+                {topic}
+              </h3>
+              <div className="grid gap-4 sm:grid-cols-2">
+                {coursesByTopic[topic].map((course) => {
+                  const progress = calculateCourseProgress(course);
+                  return (
+                    <Link
+                      key={course.id}
+                      to={`/course/${course.id}`}
+                      className="card p-6 group hover:border-accent/50 transition-all"
+                    >
+                      <div className="flex items-start justify-between mb-4">
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <h2 className="text-xl font-display font-medium text-ink group-hover:text-accent transition-colors">
+                              {course.title}
+                            </h2>
+                            {course.hidden && (
+                              <span className="text-[10px] uppercase tracking-wider text-soft/80 border border-line rounded px-1.5 py-0.5">
+                                🚧 In progress
+                              </span>
+                            )}
+                          </div>
+                          <p className="text-base text-soft mt-1">{course.description}</p>
+                        </div>
+                        <ProgressRing progress={progress} size={56} />
+                      </div>
 
-                <div className="flex items-center gap-4 text-sm text-soft">
-                  <span>{course.modules.length} modules</span>
-                  <span>{course.modules.reduce((sum, m) => sum + m.lessons.length, 0)} lessons</span>
-                </div>
-              </Link>
-            );
-          })}
+                      <div className="flex items-center gap-4 text-sm text-soft">
+                        <span>{course.modules.length} modules</span>
+                        <span>{course.modules.reduce((sum, m) => sum + m.lessons.length, 0)} lessons</span>
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+            </section>
+          ))}
         </div>
       </div>
     </div>
