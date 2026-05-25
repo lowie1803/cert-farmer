@@ -1,0 +1,52 @@
+{
+  "questions": [
+    { "id": "q1",  "domain": "Pinyin & Tones",      "question": "How is 不是 pronounced (with sandhi)?", "options": ["bù shì", "bú shì", "bū shì", "bǔ shì"], "correct": 1, "explanation": "不 shifts to tone 2 before another tone-4 syllable." },
+    { "id": "q2",  "domain": "Pinyin & Tones",      "question": "When two tone-3 syllables are adjacent, what happens to the first one?", "options": ["Stays tone 3", "Becomes tone 1", "Becomes tone 2", "Becomes neutral"], "correct": 2, "explanation": "Tone-3 sandhi: the first becomes tone 2. 你好 = ní hǎo." },
+    { "id": "q3",  "domain": "Pinyin & Tones",      "question": "Which row is the retroflex group?", "options": ["j q x", "z c s", "zh ch sh r", "b p m f"], "correct": 2, "explanation": "zh/ch/sh/r are retroflex — tongue curled back." },
+    { "id": "q4",  "domain": "Pinyin & Tones",      "question": "How is the syllable 'qu' actually pronounced?", "options": ["like English 'koo'", "like 'qü' (u = ü after j/q/x/y)", "like 'chu'", "like 'cü'"], "correct": 1, "explanation": "After j/q/x/y, u is really ü with the umlaut dropped in spelling." },
+
+    { "id": "q5",  "domain": "Components & Characters", "question": "Which component appears as 氵 on the left of characters and means 'water'?", "options": ["木", "水", "火", "山"], "correct": 1, "explanation": "水 (water) has the left-side form 氵." },
+    { "id": "q6",  "domain": "Components & Characters", "question": "What are the components of 好?", "options": ["人 + 子", "女 + 子", "口 + 子", "女 + 心"], "correct": 1, "explanation": "好 = 女 (woman) + 子 (child)." },
+    { "id": "q7",  "domain": "Components & Characters", "question": "Which character means 'middle / China' and originates from a vertical through a target?", "options": ["国", "中", "上", "下"], "correct": 1, "explanation": "中 (zhōng) = middle. 中国 = China." },
+    { "id": "q8",  "domain": "Components & Characters", "question": "What is the plural marker added to pronouns?", "options": ["人", "们", "们的", "多"], "correct": 1, "explanation": "们: 我→我们, 你→你们, 他→他们." },
+
+    { "id": "q9",  "domain": "是 / 很 / 的",          "question": "Which is grammatical?", "options": ["我是好。", "我很好。", "我是冷。", "我有好。"], "correct": 1, "explanation": "Adjective predicate → 很, not 是." },
+    { "id": "q10", "domain": "是 / 很 / 的",          "question": "How do you say 'this is my book'?", "options": ["这我书的是。", "这是我的书。", "我是这的书。", "我书的这是。"], "correct": 1, "explanation": "这 + 是 + 我的 + 书. Owner + 的 + thing." },
+    { "id": "q11", "domain": "是 / 很 / 的",          "question": "Which is most natural for 'my mom'?", "options": ["我的妈妈", "我妈妈", "Both are correct, B is more colloquial", "妈妈我"], "correct": 2, "explanation": "Both are correct; close family typically drops 的." },
+    { "id": "q12", "domain": "是 / 很 / 的",          "question": "Which is the polite second-person pronoun?", "options": ["你", "您", "你们", "他"], "correct": 1, "explanation": "您 (nín) — polite singular 'you'." },
+
+    { "id": "q13", "domain": "不 / 没 / 吗",          "question": "Which is the correct negation of 我有钱?", "options": ["我不有钱。", "我没有钱。", "我是不有钱。", "我钱不有。"], "correct": 1, "explanation": "有 takes 没, never 不." },
+    { "id": "q14", "domain": "不 / 没 / 吗",          "question": "Which is the negation of 我吃了饭?", "options": ["我没吃了饭。", "我不吃了饭。", "我没吃饭。", "我不吃饭了。"], "correct": 2, "explanation": "Drop 了 and use 没." },
+    { "id": "q15", "domain": "不 / 没 / 吗",          "question": "Which is wrong?", "options": ["你是学生吗？", "你吃什么？", "你吃什么吗？", "你冷吗？"], "correct": 2, "explanation": "Don't mix question word with 吗." },
+    { "id": "q16", "domain": "不 / 没 / 吗",          "question": "Which is the natural reply to 你冷吗？", "options": ["是。", "不冷。", "不是。", "没有。"], "correct": 1, "explanation": "Echo the adjective: 冷 / 不冷." },
+
+    { "id": "q17", "domain": "Question Words",       "question": "How do you ask 'Where is he?'", "options": ["哪儿他？", "他在哪儿？", "他哪儿在？", "在哪儿他？"], "correct": 1, "explanation": "Question word in the location slot: 他 + 在 + 哪儿." },
+    { "id": "q18", "domain": "Question Words",       "question": "What is the difference between 几 and 多少?", "options": ["No difference.", "几 expects small numbers (<10), 多少 is for any quantity.", "几 is for objects only.", "多少 is for time only."], "correct": 1, "explanation": "几 anticipates a small count; 多少 is the all-purpose 'how many/much'." },
+    { "id": "q19", "domain": "Question Words",       "question": "Which is the natural way to ask someone's name?", "options": ["你是谁名字？", "你叫什么名字？", "你的名字是吗？", "你什么名字叫？"], "correct": 1, "explanation": "你叫什么名字 — standard form." },
+
+    { "id": "q20", "domain": "Numbers & Time",       "question": "How is 25 written?", "options": ["二五", "二十五", "两十五", "二五十"], "correct": 1, "explanation": "Tens compose as N 十 M. 25 = 二十五." },
+    { "id": "q21", "domain": "Numbers & Time",       "question": "How do you say '3:30'?", "options": ["三点半", "三半点", "三十分", "半三点"], "correct": 0, "explanation": "Hour + 点 + 半." },
+    { "id": "q22", "domain": "Numbers & Time",       "question": "Which is correct for '2 o'clock'?", "options": ["二点", "两点", "Either A or B", "二点钟"], "correct": 1, "explanation": "Before 点 you use 两, not 二." },
+    { "id": "q23", "domain": "Numbers & Time",       "question": "Which is 'Sunday'?", "options": ["星期一", "星期七", "星期日 / 星期天", "周日六"], "correct": 2, "explanation": "Sunday is 星期日 (formal) or 星期天." },
+    { "id": "q24", "domain": "Numbers & Time",       "question": "Which is canonical Chinese date order?", "options": ["Day / month / year", "Year / month / day / weekday / time (big to small)", "Month / day / year", "Weekday / year / month"], "correct": 1, "explanation": "Big to small." },
+
+    { "id": "q25", "domain": "Measure Words",        "question": "Which is correct for 'three books'?", "options": ["三书", "三本书", "三个书", "三件书"], "correct": 1, "explanation": "Books use 本." },
+    { "id": "q26", "domain": "Measure Words",        "question": "Which is correct for 'two cups of tea'?", "options": ["二杯茶", "两杯茶", "两本茶", "两个茶"], "correct": 1, "explanation": "Before MW use 两; MW for cups/glasses is 杯." },
+    { "id": "q27", "domain": "Measure Words",        "question": "What is the household-member MW used in 我家有四__人?", "options": ["个", "本", "口", "件"], "correct": 2, "explanation": "口 is the special MW for household members." },
+
+    { "id": "q28", "domain": "了 & Combining",       "question": "Which is grammatical for 'I drank three cups of tea'?", "options": ["我喝三杯茶了。", "我喝了三杯茶。", "Both A and B", "我了喝三杯茶。"], "correct": 2, "explanation": "Both V-了-O and sentence-final 了 are accepted at HSK 1." },
+    { "id": "q29", "domain": "了 & Combining",       "question": "How do you join two clauses 'I'm going to the store. I'll buy water.'?", "options": ["我去商店和我买水。", "我去商店，买水。", "我去商店买水和。", "和我去商店买水。"], "correct": 1, "explanation": "和 joins nouns, not clauses. Use a comma." },
+    { "id": "q30", "domain": "了 & Combining",       "question": "Where does 也 sit in 'I am also a student'?", "options": ["也我是学生。", "我也是学生。", "我是也学生。", "我是学生也。"], "correct": 1, "explanation": "也 sits before the verb." },
+    { "id": "q31", "domain": "了 & Combining",       "question": "What does 都 mean and where does it sit?", "options": ["'also', before the verb", "'all/both', before the verb", "'all', at the end", "'every', before the noun"], "correct": 1, "explanation": "都 = all/both; sits before the verb like 也." },
+    { "id": "q32", "domain": "了 & Combining",       "question": "Which sentence is grammatical?", "options": ["我没看了书。", "我没看书。", "我看不了书。", "没了看书我。"], "correct": 1, "explanation": "没 + V, no 了." },
+
+    { "id": "q33", "domain": "Vocabulary",           "question": "What does 学校 mean?", "options": ["school", "shop", "hospital", "park"], "correct": 0, "explanation": "学校 (xuéxiào) = school." },
+    { "id": "q34", "domain": "Vocabulary",           "question": "What does 火车 literally decompose into?", "options": ["fast car", "fire car (= train)", "iron horse", "steam wheel"], "correct": 1, "explanation": "火 (fire) + 车 (vehicle) = train." },
+    { "id": "q35", "domain": "Vocabulary",           "question": "Which verb is used for passengers taking a plane?", "options": ["开飞机", "坐飞机", "走飞机", "去飞机"], "correct": 1, "explanation": "坐 + transport for passengers; 开 for driving yourself." },
+    { "id": "q36", "domain": "Vocabulary",           "question": "Which means 'home / family'?", "options": ["国", "家", "店", "校"], "correct": 1, "explanation": "家 (jiā) = home / family." },
+    { "id": "q37", "domain": "Vocabulary",           "question": "Which is the correct pinyin for 朋友?", "options": ["péngyǒu / péngyou", "péngyòu", "bēngyǒu", "péngshǒu"], "correct": 0, "explanation": "朋友 (péngyou; second syllable usually neutral)." },
+    { "id": "q38", "domain": "Vocabulary",           "question": "What does 现在 mean?", "options": ["yesterday", "now", "soon", "later"], "correct": 1, "explanation": "现在 (xiànzài) = now." },
+    { "id": "q39", "domain": "Vocabulary",           "question": "Which family pair means 'older brother / older sister'?", "options": ["弟弟 / 妹妹", "爸爸 / 妈妈", "哥哥 / 姐姐", "儿子 / 女儿"], "correct": 2, "explanation": "哥哥 / 姐姐 = older brother / older sister." },
+    { "id": "q40", "domain": "Vocabulary",           "question": "Which means 'to want / would like to'?", "options": ["想", "去", "做", "说"], "correct": 0, "explanation": "想 (xiǎng) + verb = want to / would like to." }
+  ]
+}

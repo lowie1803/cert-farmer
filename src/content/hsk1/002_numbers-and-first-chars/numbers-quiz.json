@@ -1,0 +1,119 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "How is the number 25 written in Chinese?",
+      "options": [
+        "二五",
+        "二十五",
+        "两十五",
+        "五二十"
+      ],
+      "correct": 1,
+      "explanation": "Tens are formed as 'N 十 M' where N is the tens digit (omitted for 10–19) and M is the ones digit. 25 = 二十五 ('two-ten-five')."
+    },
+    {
+      "id": "q2",
+      "question": "Which is correct for '2 books'?",
+      "options": [
+        "二本书",
+        "两本书",
+        "二个书",
+        "两二书"
+      ],
+      "correct": 1,
+      "explanation": "Before a measure word (here 本), 'two' is 两, not 二. 二 is reserved for numbers in sequence and ordinals."
+    },
+    {
+      "id": "q3",
+      "question": "How is 一年 pronounced?",
+      "options": [
+        "yī nián",
+        "yí nián",
+        "yì nián",
+        "yǐ nián"
+      ],
+      "correct": 2,
+      "explanation": "一 shifts to tone 4 (yì) before a syllable in tones 1, 2, or 3. 年 is tone 2, so 一年 = yì nián."
+    },
+    {
+      "id": "q4",
+      "question": "What does 中国 literally decompose into?",
+      "options": [
+        "Middle + person",
+        "Middle + country",
+        "Sun + jade",
+        "Heart + nation"
+      ],
+      "correct": 1,
+      "explanation": "中 = middle, 国 = country. Literally 'the Middle Kingdom' — the standard Chinese name for China."
+    },
+    {
+      "id": "q5",
+      "question": "Which character means 'small'?",
+      "options": ["大", "中", "小", "少"],
+      "correct": 2,
+      "explanation": "小 (xiǎo) means 'small'. 大 (dà) is 'big', 中 (zhōng) is 'middle'."
+    },
+    {
+      "id": "q6",
+      "question": "What are the components of 好 (good)?",
+      "options": [
+        "Woman 女 + child 子",
+        "Person 人 + sun 日",
+        "Mouth 口 + person 人",
+        "Sun 日 + moon 月"
+      ],
+      "correct": 0,
+      "explanation": "好 combines 女 (woman) and 子 (child) — historically 'a woman with her child' as a picture of well-being."
+    },
+    {
+      "id": "q7",
+      "question": "When two horizontal strokes cross a vertical, what is the stroke order?",
+      "options": [
+        "Vertical first, then horizontals",
+        "Horizontal(s) first, then vertical (e.g. 十 = 一 then 丨)",
+        "Always left to right regardless",
+        "It depends on the character"
+      ],
+      "correct": 1,
+      "explanation": "Rule: horizontal before vertical when they cross. 十 is one horizontal stroke followed by one vertical."
+    },
+    {
+      "id": "q8",
+      "question": "Which is the correct reading of 105?",
+      "options": [
+        "一百五",
+        "一百零五",
+        "一零五",
+        "百零五"
+      ],
+      "correct": 1,
+      "explanation": "When there is a gap in the middle of a multi-digit number, 零 (líng, zero) is spoken. 105 = 一百零五."
+    },
+    {
+      "id": "q9",
+      "question": "Which character pair means 'I/me' and 'you'?",
+      "options": [
+        "他 / 她",
+        "我 / 你",
+        "好 / 不",
+        "是 / 不"
+      ],
+      "correct": 1,
+      "explanation": "我 = I/me, 你 = you. 他/她 are the third-person pronouns."
+    },
+    {
+      "id": "q10",
+      "question": "What is the function of 们 (men)?",
+      "options": [
+        "A negation particle",
+        "A plural marker added to pronouns and some human nouns (我们, 你们, 学生们)",
+        "An ordinal-number prefix",
+        "A possessive particle equivalent to 的"
+      ],
+      "correct": 1,
+      "explanation": "们 pluralizes pronouns and human-referring nouns: 我 → 我们 (we), 你 → 你们 (you-plural), 学生 → 学生们 (students)."
+    }
+  ]
+}

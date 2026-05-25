@@ -1,0 +1,10 @@
+{
+  "id": "richer-questions",
+  "title": "Week 8 — Richer Questions",
+  "icon": "🚧",
+  "description": "A-不-A pattern, 为什么 / 怎么 / 怎么样. (Authoring in progress.)",
+  "domain": "HSK 2 — The Dynamic Sentence",
+  "lessons": [
+    { "id": "theme-notes", "title": "Theme & grammar (preview)", "type": "notes" }
+  ]
+}

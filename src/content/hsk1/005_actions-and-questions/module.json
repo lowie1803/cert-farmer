@@ -1,0 +1,12 @@
+{
+  "id": "actions-and-questions",
+  "title": "Week 5 — Actions & Question Words",
+  "icon": "🍵",
+  "description": "S-V-O word order, the irreplaceable 没有 (not 不有), and question words sit where the answer would sit.",
+  "domain": "HSK 1 — Mandarin Foundations",
+  "lessons": [
+    { "id": "theme-notes",   "title": "Theme & grammar",            "type": "notes" },
+    { "id": "grammar-quiz",  "title": "Grammar quiz: 没有 & WH-words", "type": "quiz" },
+    { "id": "vocab-quiz",    "title": "Vocab recognition quiz",      "type": "quiz" }
+  ]
+}

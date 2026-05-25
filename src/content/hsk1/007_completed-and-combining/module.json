@@ -1,0 +1,12 @@
+{
+  "id": "completed-and-combining",
+  "title": "Week 7 — Completed Actions & Combining Sentences",
+  "icon": "✅",
+  "description": "Completed-action 了 (我吃了饭), two-clause sentences, places, and movement / transport vocab.",
+  "domain": "HSK 1 — Mandarin Foundations",
+  "lessons": [
+    { "id": "theme-notes",   "title": "Theme & grammar",     "type": "notes" },
+    { "id": "grammar-quiz",  "title": "Grammar quiz: 了 & clauses", "type": "quiz" },
+    { "id": "vocab-quiz",    "title": "Vocab recognition quiz", "type": "quiz" }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Which is the correct negation of 我有钱?",
+      "options": [
+        "我不有钱。",
+        "我没有钱。",
+        "我无有钱。",
+        "我不是有钱。"
+      ],
+      "correct": 1,
+      "explanation": "有 always negates with 没, never 不. 不有 is one of the most-marked errors on HSK 1."
+    },
+    {
+      "id": "q2",
+      "question": "How do you ask 'What do you eat?'",
+      "options": [
+        "什么你吃？",
+        "你吃什么？",
+        "你什么吃？",
+        "什么吃你？"
+      ],
+      "correct": 1,
+      "explanation": "Question words stay in the slot the answer would occupy. The object slot follows the verb, so 你 + 吃 + 什么."
+    },
+    {
+      "id": "q3",
+      "question": "Which sentence is the standard way to ask 'Who is your teacher?'",
+      "options": [
+        "你的老师吗谁？",
+        "谁是你的老师？",
+        "你的老师是谁？",
+        "Both 'B' and 'C' are correct"
+      ],
+      "correct": 3,
+      "explanation": "Both 谁是你的老师 and 你的老师是谁 are grammatical — 谁 just sits where the noun would sit."
+    },
+    {
+      "id": "q4",
+      "question": "Which pairing of negation and verb is grammatical?",
+      "options": [
+        "不有 朋友",
+        "没 喝 茶",
+        "不 喝 茶",
+        "All three are correct"
+      ],
+      "correct": 2,
+      "explanation": "不有 is ungrammatical. 没喝茶 is for completed-action negation ('didn't drink tea') — fine in week 7 but uses 没有 in HSK 1 contexts. 不喝茶 ('doesn't drink tea', habit) is the standard HSK 1 form."
+    },
+    {
+      "id": "q5",
+      "question": "What is the difference between 几 and 多少?",
+      "options": [
+        "几 is for big numbers, 多少 for small",
+        "几 expects a small number (< 10), 多少 is for any quantity, esp. larger or unknown",
+        "They are interchangeable",
+        "几 is for objects, 多少 is only for people"
+      ],
+      "correct": 1,
+      "explanation": "几 (jǐ) anticipates a small answer; 多少 (duōshao) handles any quantity and is the default for prices, big numbers, and 'how much'."
+    },
+    {
+      "id": "q6",
+      "question": "Which is wrong?",
+      "options": [
+        "你吃什么？",
+        "他是谁？",
+        "你吃什么吗？",
+        "你吃饭吗？"
+      ],
+      "correct": 2,
+      "explanation": "Never combine a question word (什么) with 吗. 你吃什么 is already a question."
+    },
+    {
+      "id": "q7",
+      "question": "Which sentence means 'I want to drink tea'?",
+      "options": [
+        "我想喝茶。",
+        "我喝想茶。",
+        "我喝茶想。",
+        "我想茶喝。"
+      ],
+      "correct": 0,
+      "explanation": "想 (want to / would like to) sits before the main verb. 我 + 想 + 喝 + 茶."
+    },
+    {
+      "id": "q8",
+      "question": "What does 哪儿 ask about?",
+      "options": [
+        "Time",
+        "Reason",
+        "Location",
+        "Quantity"
+      ],
+      "correct": 2,
+      "explanation": "哪儿 (nǎr) / 哪里 (nǎlǐ) = where. It sits in the location slot the answer would occupy."
+    },
+    {
+      "id": "q9",
+      "question": "Which is the natural Chinese for 'He doesn't speak Chinese'?",
+      "options": [
+        "他没说中文。",
+        "他不说中文。",
+        "他是不说中文。",
+        "他中文不说。"
+      ],
+      "correct": 1,
+      "explanation": "Habitual/general negation uses 不. 他不说中文 = he doesn't (as a habit) speak Chinese. 没说 would mean 'didn't speak (on a specific occasion)'."
+    },
+    {
+      "id": "q10",
+      "question": "Choose the grammatical sentence:",
+      "options": [
+        "我吃饭不。",
+        "我没有书。",
+        "我不有朋友。",
+        "我有不书。"
+      ],
+      "correct": 1,
+      "explanation": "我没有书 ('I don't have books') is the only grammatical option. 有 must be negated with 没; the negator precedes 有, not the noun."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "description-and-yesno",
+  "title": "Week 4 — Description & Yes/No Questions",
+  "icon": "🪞",
+  "description": "Adjectives take 很 (not 是), the 吗 question particle, and family vocabulary.",
+  "domain": "HSK 1 — Mandarin Foundations",
+  "lessons": [
+    { "id": "theme-notes",   "title": "Theme & grammar",       "type": "notes" },
+    { "id": "grammar-quiz",  "title": "Grammar quiz: 很 & 吗",  "type": "quiz" },
+    { "id": "vocab-quiz",    "title": "Vocab recognition quiz", "type": "quiz" }
+  ]
+}

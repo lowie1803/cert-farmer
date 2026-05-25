@@ -218,13 +218,13 @@ export const VocabLadder: React.FC<VocabLadderProps> = ({
           />
         )}
         {loaded && mode === "learn" && tab === "learn" && (
-          <Learn queue={newItems} onLearn={store.markSeen} />
+          <Learn queue={newItems} onLearn={store.markSeen} lang={language.code} />
         )}
         {loaded && mode === "learn" && tab === "bridge" && (
-          <Bridge queue={toBridge} onBridge={store.bridge} onSkip={store.skipBridge} />
+          <Bridge queue={toBridge} onBridge={store.bridge} onSkip={store.skipBridge} lang={language.code} />
         )}
         {loaded && mode === "learn" && tab === "review" && (
-          <Review queue={due} onGrade={store.review} />
+          <Review queue={due} onGrade={store.review} lang={language.code} />
         )}
 
         {loaded && mode === "teach" && tab === "wordbank" && (

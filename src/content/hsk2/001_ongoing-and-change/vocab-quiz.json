@@ -1,0 +1,84 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What does 常常 mean?",
+      "options": ["seldom", "often", "still", "already"],
+      "correct": 1,
+      "explanation": "常常 (chángcháng) = often."
+    },
+    {
+      "id": "q2",
+      "question": "Which means 'already'?",
+      "options": ["还", "正在", "已经", "常常"],
+      "correct": 2,
+      "explanation": "已经 (yǐjīng) = already, usually paired with sentence-final 了."
+    },
+    {
+      "id": "q3",
+      "question": "What does 睡觉 mean?",
+      "options": ["to work", "to sleep", "to study", "to drive"],
+      "correct": 1,
+      "explanation": "睡觉 (shuìjiào) = to sleep (literally 'sleep a sleep')."
+    },
+    {
+      "id": "q4",
+      "question": "Which means 'to work'?",
+      "options": ["学习", "工作", "睡觉", "看电视"],
+      "correct": 1,
+      "explanation": "工作 (gōngzuò) = to work / a job."
+    },
+    {
+      "id": "q5",
+      "question": "What does 学习 mean?",
+      "options": ["to teach", "to study", "to remember", "to read"],
+      "correct": 1,
+      "explanation": "学习 (xuéxí) = to study."
+    },
+    {
+      "id": "q6",
+      "question": "What does 打电话 literally decompose into?",
+      "options": [
+        "Hit + electric-words (= make a phone call)",
+        "Open + lightning-speech",
+        "Take + electric-call",
+        "See + telephone"
+      ],
+      "correct": 0,
+      "explanation": "打 (hit/strike) + 电话 (telephone) = make a phone call. 打 is the standard verb for placing a call."
+    },
+    {
+      "id": "q7",
+      "question": "Which is the pinyin for 正在?",
+      "options": ["zhèngzài", "zhèngzhèng", "zhōngzài", "zēngzài"],
+      "correct": 0,
+      "explanation": "正在 (zhèngzài) = right now (in the middle of)."
+    },
+    {
+      "id": "q8",
+      "question": "Which means 'still / also'?",
+      "options": ["还", "都", "也", "正"],
+      "correct": 0,
+      "explanation": "还 (hái) = still / also / additionally."
+    },
+    {
+      "id": "q9",
+      "question": "What does 看电视 mean?",
+      "options": ["read a book", "watch TV", "see a friend", "look at the time"],
+      "correct": 1,
+      "explanation": "看 (watch) + 电视 (TV — 'electric vision') = watch TV."
+    },
+    {
+      "id": "q10",
+      "question": "Which sentence means 'He has already eaten'?",
+      "options": [
+        "他还吃饭。",
+        "他已经吃饭了。",
+        "他正在吃饭。",
+        "他常常吃饭。"
+      ],
+      "correct": 1,
+      "explanation": "已经 + V + 了 — completed transition into the eaten state."
+    }
+  ]
+}

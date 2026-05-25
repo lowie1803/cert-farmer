@@ -1,0 +1,12 @@
+{
+  "id": "ongoing-and-change",
+  "title": "Week 1 — Ongoing Action & Change of State",
+  "icon": "🔄",
+  "description": "在 marking ongoing action (我在吃饭), 了 as a change-of-state marker, and adverbs 常常 / 已经 / 正在.",
+  "domain": "HSK 2 — The Dynamic Sentence",
+  "lessons": [
+    { "id": "theme-notes",   "title": "Theme & grammar",            "type": "notes" },
+    { "id": "grammar-quiz",  "title": "Grammar quiz: 在 & change-of-state 了", "type": "quiz" },
+    { "id": "vocab-quiz",    "title": "Vocab recognition quiz",      "type": "quiz" }
+  ]
+}

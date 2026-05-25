@@ -1,0 +1,124 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Which sentence is correct for 'I am tall'?",
+      "options": [
+        "我是高。",
+        "我很高。",
+        "我高的。",
+        "我有高。"
+      ],
+      "correct": 1,
+      "explanation": "Adjectives are stand-alone predicates in Chinese — no 是 is used. 很 fills the verb slot in neutral statements. Use of 是 here is a classic beginner error."
+    },
+    {
+      "id": "q2",
+      "question": "Why does 我高 (without 很) sound incomplete?",
+      "options": [
+        "Adjectives are not allowed as predicates",
+        "It reads as an implicit comparison ('I'm taller than ...')",
+        "It's missing a measure word",
+        "It is missing a tense marker"
+      ],
+      "correct": 1,
+      "explanation": "A bare adjective predicate implies comparison. 很 (or 真/非常/太) marks the sentence as a neutral statement."
+    },
+    {
+      "id": "q3",
+      "question": "How do you ask 'Is he Chinese?'",
+      "options": [
+        "他是中国人？",
+        "他是中国人吗？",
+        "他中国人是吗？",
+        "他吗中国人是？"
+      ],
+      "correct": 1,
+      "explanation": "Put 吗 at the end of a statement. Word order is unchanged: 他是中国人 → 他是中国人吗？"
+    },
+    {
+      "id": "q4",
+      "question": "How do you say 'I'm not cold' in Chinese?",
+      "options": [
+        "我没冷。",
+        "我不冷。",
+        "我不很冷。",
+        "我不是冷。"
+      ],
+      "correct": 1,
+      "explanation": "Adjective predicates negate with 不, not 没. 很 typically drops in negative statements: 我不冷."
+    },
+    {
+      "id": "q5",
+      "question": "Which is the best answer to 你是学生吗？",
+      "options": [
+        "是 / 不是",
+        "对 / 错",
+        "好 / 不好",
+        "有 / 没有"
+      ],
+      "correct": 0,
+      "explanation": "Echo the verb: 是 / 不是. There's no all-purpose 'yes/no' in Chinese."
+    },
+    {
+      "id": "q6",
+      "question": "Which sentence means 'My mom is not tall'?",
+      "options": [
+        "我妈妈很高。",
+        "我妈妈不高。",
+        "我妈妈是高。",
+        "妈妈我不高。"
+      ],
+      "correct": 1,
+      "explanation": "我妈妈 (my mom) + 不 (negation) + 高 (tall). Note 的 is typically dropped before close family."
+    },
+    {
+      "id": "q7",
+      "question": "What does 很 do in 她很冷?",
+      "options": [
+        "It means 'is' — the verb 'to be'",
+        "It's a structural placeholder; it normally has no 'very' meaning here",
+        "It marks a question",
+        "It marks a comparison"
+      ],
+      "correct": 1,
+      "explanation": "Bare adjectives feel comparative. 很 fills the slot in neutral statements without the 'very' force it has in isolation."
+    },
+    {
+      "id": "q8",
+      "question": "How do you intensify 'I am really cold' (more than neutral 很冷)?",
+      "options": [
+        "我很很冷。",
+        "我真冷 / 我非常冷 / 我太冷了。",
+        "我是冷。",
+        "我冷冷。"
+      ],
+      "correct": 1,
+      "explanation": "真, 非常, and 太...了 add real intensity. Doubling 很 is not idiomatic."
+    },
+    {
+      "id": "q9",
+      "question": "Which pairing of question and short answer is correct?",
+      "options": [
+        "你冷吗？ — 是。",
+        "你是学生吗？ — 冷。",
+        "你冷吗？ — 不冷。",
+        "你高吗？ — 没有。"
+      ],
+      "correct": 2,
+      "explanation": "Short answers echo the predicate. For an adjective question, the answer is the adjective (or its negation): 冷 / 不冷."
+    },
+    {
+      "id": "q10",
+      "question": "Which way of saying 'my dad' is most natural in everyday speech?",
+      "options": [
+        "我的爸爸",
+        "我爸爸",
+        "我爸的",
+        "爸我"
+      ],
+      "correct": 1,
+      "explanation": "With close family members, 的 is typically dropped. 我爸爸 is the warm, natural form; 我的爸爸 sounds technical."
+    }
+  ]
+}

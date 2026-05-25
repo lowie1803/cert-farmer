@@ -1,0 +1,12 @@
+{
+  "id": "time-and-measure-words",
+  "title": "Week 6 — Time, Dates & Measure Words",
+  "icon": "📅",
+  "description": "Measure words (三本书, 一个人), 两 vs 二, and dates told big-to-small (year/month/day, weekday, clock).",
+  "domain": "HSK 1 — Mandarin Foundations",
+  "lessons": [
+    { "id": "theme-notes",   "title": "Theme & grammar",          "type": "notes" },
+    { "id": "grammar-quiz",  "title": "Grammar quiz: MW & dates", "type": "quiz" },
+    { "id": "vocab-quiz",    "title": "Vocab recognition quiz",   "type": "quiz" }
+  ]
+}

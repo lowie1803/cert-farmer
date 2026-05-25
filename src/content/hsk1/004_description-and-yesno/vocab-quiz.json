@@ -1,0 +1,89 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What does 妈妈 mean?",
+      "options": ["father", "mother", "older sister", "daughter"],
+      "correct": 1,
+      "explanation": "妈妈 (māma) = mother. Father is 爸爸 (bàba)."
+    },
+    {
+      "id": "q2",
+      "question": "Which adjective means 'cold'?",
+      "options": ["热", "冷", "高", "好"],
+      "correct": 1,
+      "explanation": "冷 (lěng) = cold. 热 (rè) = hot."
+    },
+    {
+      "id": "q3",
+      "question": "What does 哥哥 mean?",
+      "options": ["younger brother", "older brother", "older sister", "younger sister"],
+      "correct": 1,
+      "explanation": "哥哥 (gēge) = older brother. 弟弟 (dìdi) = younger brother."
+    },
+    {
+      "id": "q4",
+      "question": "Which means 'many / much'?",
+      "options": ["少", "多", "大", "小"],
+      "correct": 1,
+      "explanation": "多 (duō) = many / much. Its opposite 少 (shǎo) = few."
+    },
+    {
+      "id": "q5",
+      "question": "Which family pair means 'son and daughter'?",
+      "options": [
+        "哥哥 / 姐姐",
+        "爸爸 / 妈妈",
+        "儿子 / 女儿",
+        "弟弟 / 妹妹"
+      ],
+      "correct": 2,
+      "explanation": "儿子 (érzi) = son, 女儿 (nǚ'ér) = daughter."
+    },
+    {
+      "id": "q6",
+      "question": "What does 妹妹 mean?",
+      "options": ["older sister", "younger sister", "daughter", "wife"],
+      "correct": 1,
+      "explanation": "妹妹 (mèimei) = younger sister. Older sister is 姐姐."
+    },
+    {
+      "id": "q7",
+      "question": "Which is the pinyin for 高?",
+      "options": ["gāo", "gǎo", "káo", "hāo"],
+      "correct": 0,
+      "explanation": "高 (gāo, tone 1) = tall / high."
+    },
+    {
+      "id": "q8",
+      "question": "Which character means 'good'?",
+      "options": ["好", "大", "多", "小"],
+      "correct": 0,
+      "explanation": "好 (hǎo) = good — historically 女 (woman) + 子 (child)."
+    },
+    {
+      "id": "q9",
+      "question": "Which sentence means 'My older brother is tall'?",
+      "options": [
+        "我哥哥是高。",
+        "我哥哥很高。",
+        "我的哥哥高的。",
+        "我哥哥有高。"
+      ],
+      "correct": 1,
+      "explanation": "Adjective predicate → use 很, not 是. 的 is typically dropped before family."
+    },
+    {
+      "id": "q10",
+      "question": "Which character pair means 'big / small'?",
+      "options": [
+        "高 / 冷",
+        "多 / 少",
+        "好 / 不好",
+        "大 / 小"
+      ],
+      "correct": 3,
+      "explanation": "大 (dà) = big; 小 (xiǎo) = small. They are the classic size opposites."
+    }
+  ]
+}

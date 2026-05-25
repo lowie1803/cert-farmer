@@ -1,0 +1,10 @@
+{
+  "id": "degree-complement",
+  "title": "Week 4 — Degree Complement (得)",
+  "icon": "🚧",
+  "description": "Verb + 得 + description (跑得很快, 说得很好). (Authoring in progress.)",
+  "domain": "HSK 2 — The Dynamic Sentence",
+  "lessons": [
+    { "id": "theme-notes", "title": "Theme & grammar (preview)", "type": "notes" }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "numbers-and-first-chars",
+  "title": "Week 2 — Numbers & First Characters",
+  "icon": "🔢",
+  "description": "Stroke-order rules, numbers 一–十 and 百, and the first ~20 high-frequency characters that re-use last week's components.",
+  "domain": "HSK 1 — Mandarin Foundations",
+  "lessons": [
+    { "id": "stroke-order-rules",  "title": "Stroke-order rules",            "type": "notes" },
+    { "id": "numbers-1-100",       "title": "Numbers 一 to 百",               "type": "notes" },
+    { "id": "first-twenty-chars",  "title": "First 20 high-frequency characters", "type": "notes" },
+    { "id": "numbers-quiz",        "title": "Numbers & Characters Quiz",      "type": "quiz" }
+  ]
+}

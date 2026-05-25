@@ -106,6 +106,11 @@
 .vt-answer { text-align: center; margin: 4px 0 16px; }
 .vt-answer b { font-family: var(--vl-font-display); font-size: 1.5rem; font-weight: 500; display: block; } /* text-2xl */
 .vt-answer span { color: var(--vl-accent); font-style: italic; font-size: 1rem; } /* text-base */
+
+.vt-speak { display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; margin-left: 8px; padding: 4px; background: transparent; border: none; color: var(--vl-soft); cursor: pointer; border-radius: 6px; font-size: 1.1em; line-height: 1; opacity: 0.6; transition: opacity 0.16s, color 0.16s, background 0.16s; }
+.vt-speak:hover { opacity: 1; color: var(--vl-accent); background: var(--vl-line); }
+.vt-speak:focus-visible { outline: 2px solid var(--vl-accent); outline-offset: 1px; }
+.vt-speak.sm { font-size: 0.95em; padding: 3px; margin-left: 6px; }
 .vt-grade { display: flex; gap: 10px; }
 .vt-grade button { flex: 1; font-family: var(--vl-font-display); font-size: 1rem; font-weight: 500; padding: 13px; border-radius: 11px; cursor: pointer; border: 1px solid; transition: 0.16s; } /* text-base */
 .vt-miss { background: var(--vl-paper); color: var(--vl-miss); border-color: var(--vl-miss); }

@@ -1,0 +1,10 @@
+{
+  "id": "modals-1",
+  "title": "Week 5 — Modals I (想 / 要 / 会)",
+  "icon": "🚧",
+  "description": "Want / will-must / know-how. (Authoring in progress.)",
+  "domain": "HSK 2 — The Dynamic Sentence",
+  "lessons": [
+    { "id": "theme-notes", "title": "Theme & grammar (preview)", "type": "notes" }
+  ]
+}

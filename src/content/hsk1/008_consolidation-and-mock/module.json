@@ -1,0 +1,11 @@
+{
+  "id": "consolidation-and-mock",
+  "title": "Week 8 — Consolidation & Mock Exam",
+  "icon": "📋",
+  "description": "No new vocab. Re-drill the four error-killers (是 vs 很, 不有 vs 没有, 两 vs 二, V-了-O) and sit a timed mock.",
+  "domain": "HSK 1 — Mandarin Foundations",
+  "lessons": [
+    { "id": "review-notes",     "title": "Final-week review",       "type": "notes" },
+    { "id": "hsk1-mock-exam",   "title": "HSK 1 Mock Exam",         "type": "exam", "timeLimit": 35, "passingScore": 70 }
+  ]
+}

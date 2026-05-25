@@ -1,0 +1,12 @@
+{
+  "id": "greetings-and-identity",
+  "title": "Week 3 — Greetings, Pronouns & Identity",
+  "icon": "👋",
+  "description": "The 是 sentence (nouns only), the modifier 的, pronouns, and the first speakable conversation.",
+  "domain": "HSK 1 — Mandarin Foundations",
+  "lessons": [
+    { "id": "theme-notes",   "title": "Theme & grammar",       "type": "notes" },
+    { "id": "grammar-quiz",  "title": "Grammar quiz: 是 & 的",  "type": "quiz" },
+    { "id": "vocab-quiz",    "title": "Vocab recognition quiz", "type": "quiz" }
+  ]
+}

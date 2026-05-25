@@ -1,0 +1,10 @@
+{
+  "id": "comparison",
+  "title": "Week 3 — Comparison (比)",
+  "icon": "🚧",
+  "description": "比 (他比我高) and its 没有 negation (我没有他高). (Authoring in progress.)",
+  "domain": "HSK 2 — The Dynamic Sentence",
+  "lessons": [
+    { "id": "theme-notes", "title": "Theme & grammar (preview)", "type": "notes" }
+  ]
+}

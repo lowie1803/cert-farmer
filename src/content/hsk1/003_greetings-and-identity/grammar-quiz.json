@@ -1,0 +1,124 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Which sentence is grammatical?",
+      "options": [
+        "我是好。",
+        "我是学生。",
+        "他是高。",
+        "她是漂亮。"
+      ],
+      "correct": 1,
+      "explanation": "是 is only used to link two noun phrases. '我是学生' (I am a student) is noun = noun. With adjectives (好, 高, 漂亮) you must use 很, not 是."
+    },
+    {
+      "id": "q2",
+      "question": "How do you say 'my friend'?",
+      "options": [
+        "我朋友的",
+        "我的朋友",
+        "朋友的我",
+        "朋友我的"
+      ],
+      "correct": 1,
+      "explanation": "Owner + 的 + thing. 我 (owner) + 的 + 朋友 (thing) = 我的朋友. Note: with family members, 的 is often dropped (我妈妈)."
+    },
+    {
+      "id": "q3",
+      "question": "What does 再见 literally mean?",
+      "options": [
+        "Good day",
+        "See you tomorrow",
+        "Again see — i.e. 'see you again'",
+        "Take care"
+      ],
+      "correct": 2,
+      "explanation": "再 = again, 见 = see. Literally 'again see', i.e. 'see you again' / goodbye."
+    },
+    {
+      "id": "q4",
+      "question": "How is 不是 pronounced (with sandhi)?",
+      "options": [
+        "bù shì",
+        "bú shì",
+        "bǔ shì",
+        "bū shì"
+      ],
+      "correct": 1,
+      "explanation": "不 shifts from tone 4 to tone 2 before another tone-4 syllable. 是 is tone 4, so 不是 = bú shì."
+    },
+    {
+      "id": "q5",
+      "question": "Which is the most natural way to ask someone's name?",
+      "options": [
+        "你的名字是什么？",
+        "你是什么名字？",
+        "你叫什么名字？",
+        "什么名字你？"
+      ],
+      "correct": 2,
+      "explanation": "你叫什么名字 ('you are-called what name') is the standard HSK 1 form. 叫 is more natural than 是 for naming."
+    },
+    {
+      "id": "q6",
+      "question": "What is the plural of 他?",
+      "options": [
+        "他人",
+        "他们",
+        "他多",
+        "他们的"
+      ],
+      "correct": 1,
+      "explanation": "Pronouns pluralize with 们: 我→我们, 你→你们, 他→他们."
+    },
+    {
+      "id": "q7",
+      "question": "Which sentence means 'This is my teacher'?",
+      "options": [
+        "我是老师的。",
+        "这是我的老师。",
+        "这是老师我。",
+        "老师是我的这。"
+      ],
+      "correct": 1,
+      "explanation": "这 (this) + 是 + 我的老师 (my teacher) = 这是我的老师."
+    },
+    {
+      "id": "q8",
+      "question": "What's the polite version of 你好?",
+      "options": [
+        "你们好",
+        "您好",
+        "好你",
+        "大家好"
+      ],
+      "correct": 1,
+      "explanation": "您 (nín) is the polite second-person pronoun, used with elders, customers, or strangers. 您好 is the polite greeting."
+    },
+    {
+      "id": "q9",
+      "question": "Which is the correct response to 谢谢?",
+      "options": [
+        "再见",
+        "不客气",
+        "对不起",
+        "你好"
+      ],
+      "correct": 1,
+      "explanation": "不客气 ('don't be polite') = 'you're welcome' — the standard reply to 谢谢."
+    },
+    {
+      "id": "q10",
+      "question": "In the sentence 这是我的朋友, what role does 的 play?",
+      "options": [
+        "Past-tense marker",
+        "Possessive / modifier particle linking owner to thing",
+        "Question particle",
+        "Plural marker"
+      ],
+      "correct": 1,
+      "explanation": "的 links a modifier (owner 我) to the noun it modifies (friend 朋友). 我的朋友 = 'my friend'."
+    }
+  ]
+}

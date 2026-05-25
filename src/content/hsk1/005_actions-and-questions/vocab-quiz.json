@@ -1,0 +1,84 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Which verb means 'to eat'?",
+      "options": ["喝", "吃", "看", "去"],
+      "correct": 1,
+      "explanation": "吃 (chī) = eat. Notice the 口 (mouth) radical."
+    },
+    {
+      "id": "q2",
+      "question": "Which verb means 'to drink'?",
+      "options": ["喝", "吃", "做", "说"],
+      "correct": 0,
+      "explanation": "喝 (hē) = drink. Like 吃, it has the 口 radical."
+    },
+    {
+      "id": "q3",
+      "question": "What does 去 mean?",
+      "options": ["come", "go", "stay", "see"],
+      "correct": 1,
+      "explanation": "去 (qù) = to go (away from the speaker)."
+    },
+    {
+      "id": "q4",
+      "question": "Which means 'book'?",
+      "options": ["茶", "饭", "书", "水"],
+      "correct": 2,
+      "explanation": "书 (shū) = book. 饭 = meal; 茶 = tea; 水 = water."
+    },
+    {
+      "id": "q5",
+      "question": "What does 说 mean?",
+      "options": ["read", "speak / say", "listen", "write"],
+      "correct": 1,
+      "explanation": "说 (shuō) = speak / say. The 言 radical (left side) marks speech-related characters."
+    },
+    {
+      "id": "q6",
+      "question": "Which pinyin matches 想?",
+      "options": ["xiǎng", "xiāng", "shǎng", "qiǎng"],
+      "correct": 0,
+      "explanation": "想 (xiǎng) = want to / think."
+    },
+    {
+      "id": "q7",
+      "question": "What does 中文 mean?",
+      "options": [
+        "China (the country)",
+        "Chinese language",
+        "Chinese person",
+        "Middle culture"
+      ],
+      "correct": 1,
+      "explanation": "中文 (Zhōngwén) = the Chinese language. 中国 = the country; 中国人 = a Chinese person."
+    },
+    {
+      "id": "q8",
+      "question": "Which means 'tea'?",
+      "options": ["茶", "饭", "水", "酒"],
+      "correct": 0,
+      "explanation": "茶 (chá) = tea."
+    },
+    {
+      "id": "q9",
+      "question": "What does 看 mean (HSK 1)?",
+      "options": [
+        "to look at, read, or watch (depending on object)",
+        "to hear",
+        "to forget",
+        "to teach"
+      ],
+      "correct": 0,
+      "explanation": "看 (kàn) is a broad verb — 看书 (read), 看电视 (watch TV), 看朋友 (visit a friend)."
+    },
+    {
+      "id": "q10",
+      "question": "Which means 'meal / cooked rice'?",
+      "options": ["茶", "饭", "水", "书"],
+      "correct": 1,
+      "explanation": "饭 (fàn) = a meal or cooked rice. 吃饭 ('eat rice') is the everyday way to say 'have a meal'."
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What does 家 mean?",
+      "options": ["family / home", "country", "school", "shop"],
+      "correct": 0,
+      "explanation": "家 (jiā) = home or family. 我家 = my home/family."
+    },
+    {
+      "id": "q2",
+      "question": "Which means 'school'?",
+      "options": ["医院", "学校", "商店", "饭店"],
+      "correct": 1,
+      "explanation": "学校 (xuéxiào) = school. Note 学 reuses the 学 from 学生."
+    },
+    {
+      "id": "q3",
+      "question": "What does 北京 mean?",
+      "options": ["the capital", "Beijing", "the north", "a province"],
+      "correct": 1,
+      "explanation": "北京 (Běijīng) is the proper name of China's capital — literally 'Northern Capital'."
+    },
+    {
+      "id": "q4",
+      "question": "Which is the verb 'to come'?",
+      "options": ["去", "来", "回", "坐"],
+      "correct": 1,
+      "explanation": "来 (lái) = come (toward speaker). 去 = go (away)."
+    },
+    {
+      "id": "q5",
+      "question": "What does 火车 literally decompose into?",
+      "options": [
+        "Fire + car (= train)",
+        "Fast + car",
+        "Iron + horse",
+        "Wood + cart"
+      ],
+      "correct": 0,
+      "explanation": "火 (fire) + 车 (cart/car) = train. A historical name from steam engines."
+    },
+    {
+      "id": "q6",
+      "question": "Which means 'taxi'?",
+      "options": ["飞机", "火车", "出租车", "汽车"],
+      "correct": 2,
+      "explanation": "出租车 (chūzūchē) literally 'rent-out vehicle' = taxi."
+    },
+    {
+      "id": "q7",
+      "question": "What does 回 mean?",
+      "options": ["return / go back", "leave", "stay", "walk"],
+      "correct": 0,
+      "explanation": "回 (huí) = return. 回家 = go home."
+    },
+    {
+      "id": "q8",
+      "question": "Which is the pinyin for 商店?",
+      "options": ["shāngdiàn", "shàngdiàn", "shǎngdiān", "xiāngdiàn"],
+      "correct": 0,
+      "explanation": "商店 (shāngdiàn) = shop / store."
+    },
+    {
+      "id": "q9",
+      "question": "What does 医院 mean?",
+      "options": ["library", "park", "hospital", "office"],
+      "correct": 2,
+      "explanation": "医院 (yīyuàn) = hospital. 医 = medical, 院 = courtyard / institution."
+    },
+    {
+      "id": "q10",
+      "question": "Which is the correct word for 'airplane'?",
+      "options": ["火车", "飞机", "汽车", "出租车"],
+      "correct": 1,
+      "explanation": "飞机 (fēijī, 'flying machine') = airplane."
+    }
+  ]
+}

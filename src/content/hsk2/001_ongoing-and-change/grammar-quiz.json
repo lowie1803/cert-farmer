@@ -1,0 +1,119 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Which sentence means 'I'm eating (right now)'?",
+      "options": ["我在家。", "我在吃饭。", "我吃饭了。", "我吃在饭。"],
+      "correct": 1,
+      "explanation": "Ongoing-action 在 sits before the verb: 我 + 在 + 吃饭."
+    },
+    {
+      "id": "q2",
+      "question": "What is the difference between location 在 and ongoing 在?",
+      "options": [
+        "They are the same — context disambiguates.",
+        "Location 在 takes a place after it; ongoing 在 takes a verb after it.",
+        "Location 在 is HSK 2, ongoing 在 is HSK 1.",
+        "Location 在 is positive, ongoing 在 is for questions."
+      ],
+      "correct": 1,
+      "explanation": "Same character, two jobs. 我在家 (location: at home). 我在吃 (ongoing: in the middle of eating)."
+    },
+    {
+      "id": "q3",
+      "question": "What does 下雨了 mean?",
+      "options": [
+        "It rained.",
+        "It will rain.",
+        "It's started raining (change of state).",
+        "It rains."
+      ],
+      "correct": 2,
+      "explanation": "Sentence-final 了 marks change of state — not raining before, raining now."
+    },
+    {
+      "id": "q4",
+      "question": "Choose the change-of-state sentence:",
+      "options": [
+        "我吃了三个苹果。",
+        "我饿了。",
+        "我吃饭。",
+        "我是学生。"
+      ],
+      "correct": 1,
+      "explanation": "我饿了 = 'I've gotten hungry' (state changed). 我吃了三个苹果 is completion of action, not state change."
+    },
+    {
+      "id": "q5",
+      "question": "Where does 已经 sit?",
+      "options": [
+        "At the end of the sentence.",
+        "Before the verb, usually paired with sentence-final 了.",
+        "Before the subject.",
+        "It can sit anywhere."
+      ],
+      "correct": 1,
+      "explanation": "已经 sits before the verb and is typically paired with sentence-final 了: 他已经吃饭了."
+    },
+    {
+      "id": "q6",
+      "question": "Which sentence is the most natural for 'She is sleeping right now'?",
+      "options": [
+        "她睡觉。",
+        "她在睡觉。 / 她正在睡觉(呢)。",
+        "她睡觉了。",
+        "她睡了觉。"
+      ],
+      "correct": 1,
+      "explanation": "Ongoing action: 在 / 正在 + verb. Adding 呢 at the end is friendly and very natural."
+    },
+    {
+      "id": "q7",
+      "question": "What does 我会说中文了 imply?",
+      "options": [
+        "I have always been able to speak Chinese.",
+        "I want to speak Chinese.",
+        "I can speak Chinese now (change of state — I couldn't before).",
+        "I'm speaking Chinese right now."
+      ],
+      "correct": 2,
+      "explanation": "Sentence-final 了 marks the transition: previously couldn't, now can."
+    },
+    {
+      "id": "q8",
+      "question": "Which is correct for 'I often drink tea'?",
+      "options": [
+        "常常我喝茶。",
+        "我喝常常茶。",
+        "我常常喝茶。",
+        "我喝茶常常。"
+      ],
+      "correct": 2,
+      "explanation": "常常 is an adverb; it sits before the verb: 我 + 常常 + 喝 + 茶."
+    },
+    {
+      "id": "q9",
+      "question": "Pick the natural translation of 'It's started snowing.'",
+      "options": [
+        "下雪。",
+        "下雪了。",
+        "在下雪。",
+        "已经下雪。"
+      ],
+      "correct": 1,
+      "explanation": "下雪了 = change of state: snow has started. Bare 下雪 sounds incomplete. 在下雪 = 'is snowing' (ongoing) — also acceptable but doesn't emphasize the start."
+    },
+    {
+      "id": "q10",
+      "question": "What is the role of 呢 in 我正在吃饭呢?",
+      "options": [
+        "A question marker.",
+        "A negative marker.",
+        "A softening particle, often used with ongoing 正在.",
+        "A possessive marker."
+      ],
+      "correct": 2,
+      "explanation": "呢 softens / continues the conversational tone, very natural with 正在."
+    }
+  ]
+}

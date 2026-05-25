@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useProgress } from '@hooks/useProgress';
 import { usePageTitle } from '@hooks/usePageTitle';
@@ -6,22 +6,58 @@ import { getCourse, getAllCourses } from '@data/courses';
 import { getGlossary, hasGlossary } from '@data/glossaries';
 import ProgressRing from '@components/ProgressRing';
 
+const SHOW_HIDDEN_KEY = 'cert-farmer:show-hidden-courses';
+
 function CourseSelector() {
   const allCourses = getAllCourses();
   const { calculateCourseProgress } = useProgress();
+  const [showHidden, setShowHidden] = useState(() => {
+    try {
+      return localStorage.getItem(SHOW_HIDDEN_KEY) === '1';
+    } catch {
+      return false;
+    }
+  });
+
+  const toggleShowHidden = (next) => {
+    setShowHidden(next);
+    try {
+      localStorage.setItem(SHOW_HIDDEN_KEY, next ? '1' : '0');
+    } catch {
+      /* ignore */
+    }
+  };
+
+  const visibleCourses = allCourses.filter((c) => showHidden || !c.hidden);
+  const hiddenCount = allCourses.filter((c) => c.hidden).length;
 
   return (
     <div className="p-4 md:p-8">
       <div className="max-w-4xl mx-auto">
-        <div className="mb-8">
+        <div className="mb-6">
           <h1 className="text-2xl md:text-3xl font-display font-medium text-ink mb-1">
             Choose a Course
           </h1>
           <p className="text-soft">Select a certification track to start studying</p>
         </div>
 
+        {hiddenCount > 0 && (
+          <label className="flex items-center gap-2 mb-6 text-sm text-soft cursor-pointer select-none">
+            <input
+              type="checkbox"
+              checked={showHidden}
+              onChange={(e) => toggleShowHidden(e.target.checked)}
+              className="accent-accent"
+            />
+            <span>
+              Show hidden courses
+              <span className="ml-1 text-soft/70">({hiddenCount} in progress)</span>
+            </span>
+          </label>
+        )}
+
         <div className="grid gap-4 sm:grid-cols-2">
-          {allCourses.map((course) => {
+          {visibleCourses.map((course) => {
             const progress = calculateCourseProgress(course);
             return (
               <Link
@@ -31,9 +67,16 @@ function CourseSelector() {
               >
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex-1 min-w-0">
-                    <h2 className="text-xl font-display font-medium text-ink group-hover:text-accent transition-colors">
-                      {course.title}
-                    </h2>
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <h2 className="text-xl font-display font-medium text-ink group-hover:text-accent transition-colors">
+                        {course.title}
+                      </h2>
+                      {course.hidden && (
+                        <span className="text-[10px] uppercase tracking-wider text-soft/80 border border-line rounded px-1.5 py-0.5">
+                          🚧 In progress
+                        </span>
+                      )}
+                    </div>
                     <p className="text-base text-soft mt-1">{course.description}</p>
                   </div>
                   <ProgressRing progress={progress} size={56} />

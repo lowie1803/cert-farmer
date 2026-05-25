@@ -1,0 +1,13 @@
+{
+  "id": "pinyin-and-tones",
+  "title": "Week 1 — Pinyin & Tones",
+  "icon": "🀄",
+  "description": "The Mandarin sound system. Initials, finals, four tones + neutral, and eight pictographic components. Zero HSK vocabulary this week — on purpose.",
+  "domain": "HSK 1 — Mandarin Foundations",
+  "lessons": [
+    { "id": "pinyin-system",            "title": "Pinyin: initials & finals",       "type": "notes" },
+    { "id": "tones-and-tone-sandhi",    "title": "Tones & tone-3 sandhi",           "type": "notes" },
+    { "id": "pictographic-components",  "title": "Eight pictographic components",   "type": "notes" },
+    { "id": "pinyin-tones-quiz",        "title": "Pinyin & Tones Quiz",             "type": "quiz" }
+  ]
+}

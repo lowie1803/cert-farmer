@@ -1,0 +1,79 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What does 老师 mean?",
+      "options": ["student", "teacher", "friend", "doctor"],
+      "correct": 1,
+      "explanation": "老师 (lǎoshī) = teacher. 学生 (xuéshēng) = student."
+    },
+    {
+      "id": "q2",
+      "question": "Which pinyin matches 学生?",
+      "options": ["xiānshēng", "xuésheng", "xuéxí", "xuéshēng"],
+      "correct": 3,
+      "explanation": "学生 = xuéshēng (tone 2 + tone 1) = student."
+    },
+    {
+      "id": "q3",
+      "question": "What does 朋友 mean?",
+      "options": ["family", "classmate", "friend", "stranger"],
+      "correct": 2,
+      "explanation": "朋友 (péngyou) = friend."
+    },
+    {
+      "id": "q4",
+      "question": "How do you say 'I'm sorry'?",
+      "options": ["谢谢", "对不起", "不客气", "没关系"],
+      "correct": 1,
+      "explanation": "对不起 (duìbuqǐ) is the standard apology. The reply 'it's okay' is 没关系."
+    },
+    {
+      "id": "q5",
+      "question": "Which hanzi means 'name'?",
+      "options": ["叫", "什么", "名字", "你好"],
+      "correct": 2,
+      "explanation": "名字 (míngzi) = name. 叫 (jiào) = to be called."
+    },
+    {
+      "id": "q6",
+      "question": "Which one means 'she'?",
+      "options": ["他", "她", "它", "您"],
+      "correct": 1,
+      "explanation": "她 (tā) = she. The radical 女 (woman) distinguishes it from 他 (he)."
+    },
+    {
+      "id": "q7",
+      "question": "How do you say 'goodbye'?",
+      "options": ["你好", "谢谢", "再见", "对不起"],
+      "correct": 2,
+      "explanation": "再见 (zàijiàn) literally 'again see' = goodbye."
+    },
+    {
+      "id": "q8",
+      "question": "What does 中国人 mean?",
+      "options": ["Chinese language", "Chinese person", "China country", "Beijing person"],
+      "correct": 1,
+      "explanation": "中国 (China) + 人 (person) = Chinese person. The language is 中文."
+    },
+    {
+      "id": "q9",
+      "question": "Which is the polite 'you'?",
+      "options": ["你", "您", "你们", "他"],
+      "correct": 1,
+      "explanation": "您 (nín) is the polite singular 'you', used with elders or in formal settings."
+    },
+    {
+      "id": "q10",
+      "question": "What does 不客气 literally mean?",
+      "options": [
+        "Not welcome",
+        "Don't be polite — i.e. you're welcome",
+        "No problem",
+        "Don't worry"
+      ],
+      "correct": 1,
+      "explanation": "不 (not) + 客气 (polite/courteous) = 'don't stand on ceremony', the standard reply to 谢谢."
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What does 今天 mean?",
+      "options": ["yesterday", "today", "tomorrow", "this year"],
+      "correct": 1,
+      "explanation": "今天 (jīntiān) = today. 明天 = tomorrow, 昨天 = yesterday."
+    },
+    {
+      "id": "q2",
+      "question": "Which means 'now'?",
+      "options": ["现在", "明天", "星期", "今年"],
+      "correct": 0,
+      "explanation": "现在 (xiànzài) = now."
+    },
+    {
+      "id": "q3",
+      "question": "What does 星期三 mean?",
+      "options": ["March", "the third week", "Wednesday", "Tuesday"],
+      "correct": 2,
+      "explanation": "星期 + N = the Nth weekday counting from Monday. 星期三 = Wednesday."
+    },
+    {
+      "id": "q4",
+      "question": "Which is the pinyin for 点 (used in clock time)?",
+      "options": ["diàn", "diǎn", "tiǎn", "diān"],
+      "correct": 1,
+      "explanation": "点 (diǎn) means 'o'clock' (literally 'point/dot'). 三点 = 3 o'clock."
+    },
+    {
+      "id": "q5",
+      "question": "Which character is the time-unit for 'year'?",
+      "options": ["月", "日", "年", "星期"],
+      "correct": 2,
+      "explanation": "年 (nián) = year. 月 = month, 日 = day, 星期 = week."
+    },
+    {
+      "id": "q6",
+      "question": "Which is the measure word for cups of tea or water?",
+      "options": ["个", "本", "杯", "张"],
+      "correct": 2,
+      "explanation": "杯 (bēi) = cup/glass. 一杯水 = a glass of water, 两杯茶 = two cups of tea."
+    },
+    {
+      "id": "q7",
+      "question": "Which means 'tomorrow'?",
+      "options": ["昨天", "今天", "明天", "前天"],
+      "correct": 2,
+      "explanation": "明天 (míngtiān, 'bright day') = tomorrow."
+    },
+    {
+      "id": "q8",
+      "question": "Which character is used in writing for 'date number' (e.g. '3rd of the month')?",
+      "options": ["号 or 日", "块", "点", "分"],
+      "correct": 0,
+      "explanation": "号 (hào) is used in speech, 日 (rì) is used in formal writing. 三号 / 三日 = the 3rd."
+    },
+    {
+      "id": "q9",
+      "question": "What measure word fits 一__人 (one [household member])?",
+      "options": ["个", "口", "本", "件"],
+      "correct": 1,
+      "explanation": "When counting members of a household, the special MW 口 is used: 我家有四口人 = there are four people in my family."
+    },
+    {
+      "id": "q10",
+      "question": "Which means 'yesterday'?",
+      "options": ["昨天", "今天", "明天", "下星期"],
+      "correct": 0,
+      "explanation": "昨天 (zuótiān) = yesterday."
+    }
+  ]
+}

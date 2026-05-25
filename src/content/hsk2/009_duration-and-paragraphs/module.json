@@ -1,0 +1,10 @@
+{
+  "id": "duration-and-paragraphs",
+  "title": "Week 9 — Duration & Paragraphs",
+  "icon": "🚧",
+  "description": "Time-duration (学了两年中文) and connected paragraphs. (Authoring in progress.)",
+  "domain": "HSK 2 — The Dynamic Sentence",
+  "lessons": [
+    { "id": "theme-notes", "title": "Theme & grammar (preview)", "type": "notes" }
+  ]
+}

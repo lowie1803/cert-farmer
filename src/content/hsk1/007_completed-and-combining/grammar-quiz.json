@@ -1,0 +1,124 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Which sentence is grammatical for 'I ate'?",
+      "options": [
+        "我吃饭了。",
+        "我吃了饭。",
+        "Both A and B",
+        "我了吃饭。"
+      ],
+      "correct": 2,
+      "explanation": "Both V-了-O (我吃了饭) and end-of-sentence 了 (我吃饭了) are accepted at the HSK 1 level. The end form has a slightly different nuance, but both convey completion."
+    },
+    {
+      "id": "q2",
+      "question": "Which is the correct negation of 我吃了饭?",
+      "options": [
+        "我没吃了饭。",
+        "我不吃了饭。",
+        "我没吃饭。",
+        "我不吃饭。"
+      ],
+      "correct": 2,
+      "explanation": "Completed-action negation uses 没(有) and **drops** 了. 我没吃饭 = I didn't eat. 不吃 would be a habit/future refusal."
+    },
+    {
+      "id": "q3",
+      "question": "Which is the natural way to ask 'Did you go to Beijing?'",
+      "options": [
+        "你去北京吗了？",
+        "你去了北京吗？",
+        "你北京了去吗？",
+        "你了去北京吗？"
+      ],
+      "correct": 1,
+      "explanation": "Pattern: Subject + V-了 + Object + 吗. 你去了北京吗 = 'Did you go to Beijing?'"
+    },
+    {
+      "id": "q4",
+      "question": "Which use of 和 is correct?",
+      "options": [
+        "我吃饭和我喝水。",
+        "我和我哥哥去学校。",
+        "我去学校和我去商店。",
+        "和我去学校。"
+      ],
+      "correct": 1,
+      "explanation": "和 joins nouns, not clauses. 'I and my brother go to school' = 我和我哥哥去学校. To join clauses, use a comma."
+    },
+    {
+      "id": "q5",
+      "question": "Where does 也 sit in 'I am also a student'?",
+      "options": [
+        "也我是学生。",
+        "我也是学生。",
+        "我是也学生。",
+        "我是学生也。"
+      ],
+      "correct": 1,
+      "explanation": "也 sits **before the verb**: 我 + 也 + 是 + 学生. Putting 也 at the start (English-style) is wrong."
+    },
+    {
+      "id": "q6",
+      "question": "Which is the standard verb-of-conveyance pattern for 'take a plane'?",
+      "options": [
+        "去飞机",
+        "坐飞机",
+        "开飞机",
+        "看飞机"
+      ],
+      "correct": 1,
+      "explanation": "For passenger transport (planes, trains, buses, taxis), the verb is 坐. 开 is only for driving yourself."
+    },
+    {
+      "id": "q7",
+      "question": "Which sentence means 'They are all Chinese'?",
+      "options": [
+        "都他们是中国人。",
+        "他们都是中国人。",
+        "他们是中国人都。",
+        "他们是都中国人。"
+      ],
+      "correct": 1,
+      "explanation": "都 (all / both) sits before the verb, like 也: 他们 + 都 + 是 + 中国人."
+    },
+    {
+      "id": "q8",
+      "question": "What does 了 mark in HSK 1?",
+      "options": [
+        "Past tense",
+        "Aspect — completion of an action",
+        "Future tense",
+        "Possession"
+      ],
+      "correct": 1,
+      "explanation": "了 marks completion, not tense. A completed future event can still use 了: 明天我吃了饭去看你."
+    },
+    {
+      "id": "q9",
+      "question": "Which is grammatical?",
+      "options": [
+        "我没看了书。",
+        "我没看书。",
+        "我没了看书。",
+        "我看不了书。"
+      ],
+      "correct": 1,
+      "explanation": "Completed-negative: 没 + verb, no 了. 我没看书 = 'I didn't read the book.'"
+    },
+    {
+      "id": "q10",
+      "question": "Choose the correct sentence for 'I went home yesterday'.",
+      "options": [
+        "昨天我回家了。",
+        "我了回家昨天。",
+        "我回昨天家了。",
+        "回家昨天我了。"
+      ],
+      "correct": 0,
+      "explanation": "Time word can lead: 昨天 + 我 + 回家 + 了. End-of-sentence 了 with a clear past-time word is the most natural HSK 1 form."
+    }
+  ]
+}

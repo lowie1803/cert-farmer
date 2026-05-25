@@ -1,0 +1,10 @@
+{
+  "id": "consolidation-and-mock",
+  "title": "Week 10 — Consolidation & Mock",
+  "icon": "🚧",
+  "description": "Re-drill 了/过, 会/能/可以, 比; timed HSK 2 mock. (Authoring in progress.)",
+  "domain": "HSK 2 — The Dynamic Sentence",
+  "lessons": [
+    { "id": "review-notes", "title": "Final-week review (preview)", "type": "notes" }
+  ]
+}

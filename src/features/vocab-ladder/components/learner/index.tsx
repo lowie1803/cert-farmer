@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import type { VocabItem } from "../../types";
 import { INTERVALS } from "../../lib/srs";
 import { hideWord } from "../../lib/text";
+import { SpeakButton } from "../SpeakButton";
 
 const StageDots: React.FC<{ stage: number; small?: boolean }> = ({ stage, small }) => (
   <span className={small ? "vt-stage-dots sm" : "vt-stage-dots"}>
@@ -14,7 +15,8 @@ const StageDots: React.FC<{ stage: number; small?: boolean }> = ({ stage, small 
 export const Learn: React.FC<{
   queue: VocabItem[];
   onLearn: (id: string) => void;
-}> = ({ queue, onLearn }) => {
+  lang: string;
+}> = ({ queue, onLearn, lang }) => {
   const [show, setShow] = useState(false);
   if (queue.length === 0)
     return (
@@ -38,8 +40,16 @@ export const Learn: React.FC<{
       <p className="vt-hint">Read it. Try to guess the meaning from the collocation before you flip.</p>
 
       <div className="vt-flash" onClick={() => setShow((s) => !s)}>
-        <div className="vt-flash-word">{card.word}</div>
-        {card.collocate && <div className="vt-flash-coll">{card.collocate}</div>}
+        <div className="vt-flash-word">
+          {card.word}
+          <SpeakButton text={card.word} lang={lang} />
+        </div>
+        {card.collocate && (
+          <div className="vt-flash-coll">
+            {card.collocate}
+            <SpeakButton text={card.collocate} lang={lang} size="sm" />
+          </div>
+        )}
         <div style={{ display: 'grid' }}>
           <div style={{ gridArea: '1/1', visibility: show ? 'visible' : 'hidden' }} className="vt-flash-back">
             {card.definition && <p className="vt-flash-def">{card.definition}</p>}
@@ -63,7 +73,8 @@ export const Bridge: React.FC<{
   queue: VocabItem[];
   onBridge: (id: string, sentence: string) => void;
   onSkip: (id: string) => void;
-}> = ({ queue, onBridge, onSkip }) => {
+  lang: string;
+}> = ({ queue, onBridge, onSkip, lang }) => {
   const [text, setText] = useState("");
   if (queue.length === 0)
     return (
@@ -95,8 +106,16 @@ export const Bridge: React.FC<{
       </p>
 
       <div className="vt-target">
-        <div className="vt-target-word">{current.word}</div>
-        {current.collocate && <div className="vt-target-coll">{current.collocate}</div>}
+        <div className="vt-target-word">
+          {current.word}
+          <SpeakButton text={current.word} lang={lang} />
+        </div>
+        {current.collocate && (
+          <div className="vt-target-coll">
+            {current.collocate}
+            <SpeakButton text={current.collocate} lang={lang} size="sm" />
+          </div>
+        )}
         {current.definition && <div className="vt-target-ctx">{current.definition}</div>}
       </div>
 
@@ -126,7 +145,8 @@ export const Bridge: React.FC<{
 export const Review: React.FC<{
   queue: VocabItem[];
   onGrade: (id: string, correct: boolean) => void;
-}> = ({ queue, onGrade }) => {
+  lang: string;
+}> = ({ queue, onGrade, lang }) => {
   const [revealed, setRevealed] = useState(false);
   if (queue.length === 0)
     return (
@@ -172,8 +192,16 @@ export const Review: React.FC<{
       ) : (
         <>
           <div className="vt-answer">
-            <b>{card.word}</b>
-            {card.collocate && <span>{card.collocate}</span>}
+            <b>
+              {card.word}
+              <SpeakButton text={card.word} lang={lang} />
+            </b>
+            {card.collocate && (
+              <span>
+                {card.collocate}
+                <SpeakButton text={card.collocate} lang={lang} size="sm" />
+              </span>
+            )}
           </div>
           <div className="vt-grade">
             <button className="vt-miss" onClick={() => grade(false)}>Missed</button>

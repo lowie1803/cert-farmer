@@ -1,0 +1,124 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What does Mandarin contrast in its stop consonants (b/p, d/t, g/k)?",
+      "options": [
+        "Voicing (vibrating vocal cords)",
+        "Aspiration (a puff of air on release)",
+        "Tongue position (front vs back)",
+        "Length of the consonant"
+      ],
+      "correct": 1,
+      "explanation": "The b/p, d/t, g/k contrast is aspiration, not voicing. Pinyin 'b' is closer to English unvoiced p than to English voiced b."
+    },
+    {
+      "id": "q2",
+      "question": "How is the syllable 'ju' actually pronounced?",
+      "options": [
+        "Like English 'joo' with a regular u",
+        "Like 'jü' — the u is really ü, but ü is spelled u after j/q/x/y",
+        "Like 'jew' with an English ew",
+        "It depends on the tone"
+      ],
+      "correct": 1,
+      "explanation": "After j, q, x, and y, the letter u is always pronounced ü. The umlaut is dropped in spelling, not in pronunciation."
+    },
+    {
+      "id": "q3",
+      "question": "When two tone-3 syllables come in a row, what happens?",
+      "options": [
+        "Both stay tone 3",
+        "The second one becomes tone 2",
+        "The first one becomes tone 2",
+        "Both become neutral tone"
+      ],
+      "correct": 2,
+      "explanation": "Tone-3 sandhi: the first of two tone-3 syllables shifts to tone 2. 你好 is written nǐ hǎo but pronounced ní hǎo."
+    },
+    {
+      "id": "q4",
+      "question": "How is 不 (bù) pronounced in 不是?",
+      "options": [
+        "bù shì (no change)",
+        "bú shì (bù shifts to tone 2)",
+        "bǔ shì (bù shifts to tone 3)",
+        "bū shì (bù shifts to tone 1)"
+      ],
+      "correct": 1,
+      "explanation": "不 shifts from tone 4 to tone 2 when followed by another tone-4 syllable. 是 is tone 4, so 不是 is pronounced bú shì."
+    },
+    {
+      "id": "q5",
+      "question": "Which pinyin row is the retroflex group (tongue curled back)?",
+      "options": [
+        "j, q, x",
+        "z, c, s",
+        "zh, ch, sh, r",
+        "b, p, m, f"
+      ],
+      "correct": 2,
+      "explanation": "zh, ch, sh, and r are retroflex — tongue tip curled up toward the hard palate. j/q/x are palatal; z/c/s are alveolar."
+    },
+    {
+      "id": "q6",
+      "question": "Which component means 'water' and appears as 氵 on the left side of characters?",
+      "options": [
+        "木 (tree)",
+        "水 (water)",
+        "火 (fire)",
+        "山 (mountain)"
+      ],
+      "correct": 1,
+      "explanation": "水 (shuǐ, water) appears as the radical 氵 (three drops) when placed on the left side of a character: 河, 湖, 海, 江."
+    },
+    {
+      "id": "q7",
+      "question": "Which is true about Mandarin syllable structure?",
+      "options": [
+        "Syllables may end in any consonant",
+        "Syllables can end in vowels, -n, -ng, or the -r suffix; no final stops",
+        "Every syllable must end with a vowel",
+        "Consonant clusters of two or three consonants are allowed at the end"
+      ],
+      "correct": 1,
+      "explanation": "Mandarin has no final stops and no consonant clusters. A syllable ends in a vowel, -n, -ng, or the retroflex -r suffix."
+    },
+    {
+      "id": "q8",
+      "question": "What is the correct description of tone 3 inside a sentence (not in isolation)?",
+      "options": [
+        "Always a full low-then-rising dip",
+        "Almost always pronounced as a low tone (half-third)",
+        "Identical to tone 2",
+        "Identical to the neutral tone"
+      ],
+      "correct": 1,
+      "explanation": "In connected speech, tone 3 is usually pronounced as a sustained low tone (half-third). Singing the full dip is a beginner tell."
+    },
+    {
+      "id": "q9",
+      "question": "Which component originally depicted a person from the side and appears inside 你, 他, 们?",
+      "options": [
+        "口 (mouth)",
+        "月 (moon)",
+        "人 (person)",
+        "日 (sun)"
+      ],
+      "correct": 2,
+      "explanation": "人 (rén, person) is a pictograph of a walking person. It appears as 亻 on the left of characters like 你, 他, 们, 休."
+    },
+    {
+      "id": "q10",
+      "question": "Why is the neutral tone called 'no tone' rather than 'tone 0'?",
+      "options": [
+        "It is pronounced silently",
+        "Its pitch is unstressed and inherits from the preceding syllable; the duration is short",
+        "It only appears in foreign loanwords",
+        "It is identical to tone 1"
+      ],
+      "correct": 1,
+      "explanation": "Neutral-tone syllables are short and unstressed; their pitch follows the previous tone. The duration cue is as important as the pitch."
+    }
+  ]
+}

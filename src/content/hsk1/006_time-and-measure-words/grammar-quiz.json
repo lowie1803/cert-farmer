@@ -1,0 +1,99 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Which is correct for 'two people'?",
+      "options": ["二人", "二个人", "两个人", "两人个"],
+      "correct": 2,
+      "explanation": "Before a measure word, 'two' is 两 not 二. The MW for people is 个. 两个人 = two people."
+    },
+    {
+      "id": "q2",
+      "question": "Which is the standard measure word for books?",
+      "options": ["个", "本", "张", "件"],
+      "correct": 1,
+      "explanation": "本 (běn) is the MW for bound items (books, notebooks, dictionaries). 三本书 = three books."
+    },
+    {
+      "id": "q3",
+      "question": "How is the year 2026 read aloud in Chinese?",
+      "options": [
+        "两千零二十六年",
+        "二〇二六年 (digit by digit)",
+        "二十二十六年",
+        "二六年"
+      ],
+      "correct": 1,
+      "explanation": "Years are read digit by digit: 2026 = 二〇二六年 (èr líng èr liù nián). The 'two thousand and X' style is for math, not dates."
+    },
+    {
+      "id": "q4",
+      "question": "What time is 三点半?",
+      "options": ["3:15", "3:30", "3:45", "4:30"],
+      "correct": 1,
+      "explanation": "半 (bàn) = half. 三点半 = 3 o'clock and a half = 3:30."
+    },
+    {
+      "id": "q5",
+      "question": "Which is correct for 'Sunday'?",
+      "options": ["星期七", "星期日 or 星期天", "星期零", "星期八"],
+      "correct": 1,
+      "explanation": "Sunday is 星期日 (formal) or 星期天 (colloquial). There is no 星期七."
+    },
+    {
+      "id": "q6",
+      "question": "Which order is the canonical Chinese date order?",
+      "options": [
+        "Day → month → year",
+        "Year → month → day → weekday → time (big-to-small)",
+        "Month → day → year",
+        "Weekday → date → year"
+      ],
+      "correct": 1,
+      "explanation": "Chinese order is big-to-small: 年 → 月 → 日 → 星期 → 点."
+    },
+    {
+      "id": "q7",
+      "question": "Which is correct for '2 o'clock'?",
+      "options": ["二点", "两点", "两点钟", "Both B and C"],
+      "correct": 3,
+      "explanation": "Before 点 you use 两, not 二. Adding 钟 (zhōng, 'clock-time') is optional and slightly more formal."
+    },
+    {
+      "id": "q8",
+      "question": "How do you ask 'What time is it now?'",
+      "options": [
+        "现在什么点？",
+        "现在几点？",
+        "几点现在？",
+        "多少点现在？"
+      ],
+      "correct": 1,
+      "explanation": "几点 ('how-many-o'clock') is the idiomatic way to ask the time. Note: 几 expects a small number, which fits 1–12."
+    },
+    {
+      "id": "q9",
+      "question": "Choose the most natural sentence:",
+      "options": [
+        "明天我吃饭。",
+        "我明天吃饭。",
+        "Both A and B are natural",
+        "Neither is natural"
+      ],
+      "correct": 2,
+      "explanation": "Time nouns can sit before the subject or between the subject and the verb. Both 明天我吃饭 and 我明天吃饭 are correct; the first slightly emphasizes the time."
+    },
+    {
+      "id": "q10",
+      "question": "Which sentence is grammatical for 'I have three books'?",
+      "options": [
+        "我有三书。",
+        "我有三本书。",
+        "我三本书有。",
+        "我有书三本。"
+      ],
+      "correct": 1,
+      "explanation": "Pattern: Subject + 有 + Number + MW + Noun. 我有三本书 (I have three books)."
+    }
+  ]
+}
